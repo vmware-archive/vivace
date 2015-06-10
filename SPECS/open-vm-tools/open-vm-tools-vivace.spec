@@ -1,5 +1,5 @@
 Summary:	Usermode tools for VmWare virts
-Name:		open-vm-tools
+Name:		open-vm-tools-vivace
 Version:	9.10.0
 Release:	1
 License:	LGPLv2+
@@ -7,7 +7,7 @@ URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
 Group:		Applications/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
 Patch0:		open-vm-tools-glibc-fixes.patch
 Patch1:		open-vm-tools-service-link.patch
 BuildRequires: 	glib-devel
@@ -29,7 +29,7 @@ Requires:	openssl
 %description
 VmWare virtualization user mode tools
 %prep
-%setup -q
+%setup -qn open-vm-tools-%{version}
 %patch0 -p1
 %patch1 -p1
 %build

@@ -13,9 +13,11 @@ PHOTON_SPECS_DIR := $(VVC_SRCROOT)SPECS
 # bintray config for sources pulling
 PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)support/pullsources/bintray.conf
 
+# package list to build
+PHOTON_PACKAGE_LIST := $(VVC_SRCROOT)support/package-builder/input.json
+
 # package list to create iso
 PHOTON_INSTALLER_PACKAGE_LIST := $(VVC_SRCROOT)installer/package_list.json
-
 
 $(VVC_SRCROOT)/photon/Makefile: ;
 
