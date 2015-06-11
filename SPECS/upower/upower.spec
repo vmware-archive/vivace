@@ -33,7 +33,7 @@ make DESTDIR=%{buildroot} install
 %{_bindir}/*
 %{_sysconfdir}/*
 %{_localstatedir}/*
-%{_lib}/*
+/lib/*
 %{_libdir}/*
 %{_libexecdir}/*
 %{_datadir}/*

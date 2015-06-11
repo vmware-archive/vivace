@@ -46,21 +46,13 @@ EOF
 getent group polkitd > /dev/null || groupadd -fg 27 polkitd &&
 getent passwd polkitd > /dev/null || useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
         -g polkitd -s /bin/false polkitd
-cat > /etc/dbus-1/system-local.conf << "EOF"
-<!DOCTYPE busconfig PUBLIC
-"-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
-"http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
-<busconfig>
-    <!-- for some reason this isn't being set properly in Hardy 15 May, 2008 -->
-    <limit name="max_connections_per_user">256</limit>
-</busconfig>
-EOF
+
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*
 %{_bindir}/*
 %{_libdir}/*
-%{_lib}/*
+/lib/*
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)
