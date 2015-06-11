@@ -8,7 +8,7 @@ Group:		Applications/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
-Patch0:		open-vm-tools-glibc-fixes.patch
+Patch0:		open-vm-tools-strerror_r-fix.patch
 Patch1:		open-vm-tools-service-link.patch
 BuildRequires: 	glib-devel
 BuildRequires: 	xerces-c-devel
@@ -33,9 +33,8 @@ VmWare virtualization user mode tools
 %patch0 -p1
 %patch1 -p1
 %build
-export CFLAGS="$RPM_OPT_FLAGS -Wno-unused-local-typedefs -Wno-deprecated-declarations -D_DEFAULT_SOURCE"
-export CXXFLAGS="$RPM_OPT_FLAGS -Wno-unused-local-typedefs -Wno-deprecated-declarations -D_DEFAULT_SOURCE"
-./configure --prefix=/usr --without-gtkmm --without-kernel-modules --without-icu --disable-static
+autoreconf -i
+./configure --prefix=/usr --without-x --without-kernel-modules --without-icu --disable-static
 make %{?_smp_mflags}
 %install
 
@@ -76,9 +75,11 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %{_sysconfdir}/*
 %{_datadir}/*
 %{_prefix}/etc/*
-%{_lib}/*
+/lib/*
 %{_sbindir}/*
 
 %changelog
+*	Tue Apr 21 2015 Divya Thaluru <dthaluru@vmware.com> 9.10.0-2
+	Added open-vm-tools-stderr_r-fix upstream patch and removed glibc patch.
 *	Thu Nov 06 2014 Sharath George <sharathg@vmware.com> 9.10.0-1
 	Initial version

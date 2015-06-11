@@ -11,7 +11,8 @@ Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 BuildRequires:	python2-devel
 BuildRequires:	python2-libs
 BuildRequires:	libXau libXau-devel xcb-proto
-BuildRequires:	libXdmcp
+BuildRequires:	libXdmcp-devel
+Requires:	libXdmcp
 Requires:	libXau
 Provides:	pkgconfig(x11-xcb)
 %description
