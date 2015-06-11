@@ -29,7 +29,7 @@ alsactl -L store
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
-%{_lib}/*
+/lib/*
 %{_sbindir}/*
 %{_datadir}/*
 %{_localstatedir}/*

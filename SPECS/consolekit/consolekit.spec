@@ -66,7 +66,7 @@ chmod -v 755 %{buildroot}/usr/lib/ConsoleKit/run-session.d/pam-foreground-compat
 %defattr(-,root,root)
 %{_sysconfdir}/*
 %{_bindir}/*
-%{_lib}/*
+/lib/*
 %{_sbindir}/*
 %{_libdir}/*
 %{_libexecdir}/*
