@@ -27,7 +27,7 @@ make %{?_smp_mflags}
 make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
-%{_lib}/*
+/lib/*
 %{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/

@@ -32,15 +32,6 @@ make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
 install -vdm 755 %{buildroot}/etc/pam.d
-cat >> %{buildroot}/etc/pam.d/system-session << "EOF"
-# Begin ConsoleKit addition
-
-session   optional    pam_loginuid.so
-session   optional    pam_ck_connector.so nox11
-
-# End ConsoleKit addition
-EOF
-
 install -vdm 755 %{buildroot}/usr/lib/ConsoleKit/run-session.d
 cat > %{buildroot}/usr/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck << "EOF"
 #!/bin/sh
@@ -62,6 +53,18 @@ sed -i "\%^$CK_SESSION_ID\$%d" "$TAGFILE"
 fi
 EOF
 chmod -v 755 %{buildroot}/usr/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck
+
+%post
+cat >> /etc/pam.d/system-session << "EOF"
+# Begin ConsoleKit addition
+session   optional    pam_loginuid.so
+session   optional    pam_ck_connector.so nox11
+# End ConsoleKit addition
+EOF
+
+%preun
+sed '/Begin ConsoleKit/,/End ConsoleKit/d' -i /etc/pam.d/system-sesssion
+
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*
