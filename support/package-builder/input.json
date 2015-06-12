@@ -13,7 +13,7 @@
                 "sqlite-autoconf", "elfutils-libelf", "elfutils-libelf-devel",
                 "nspr", "nss", "popt", "lua", "rpm", "openssh",
                 "db", "libsolv", "libgpg-error", "hawkey", "libassuan", "gpgme", "librepo", "pcre", "glib", "tdnf",
-                "photon-release"
+                "vivace-release"
                 ],
 
     "minimal":["glibc", "zlib", "filesystem", "binutils", "gmp", "mpfr", "libgcc", "libstdc++","libgomp", 
@@ -23,7 +23,7 @@
                 "attr", "libcap", "kmod", "systemd", "expat", "dbus", "file", "e2fsprogs", "elfutils-libelf", "lua", "popt", 
 		"sqlite-autoconf", "nspr", "nss", "rpm",
                 "openssh", "libffi", "gdbm", "python2", "python2-libs", "pcre", "glib", "libxml2",
-                "photon-release",
+                "vivace-release",
                 "sed", "grep", "cpio", "gzip", "nano", "db", "libsolv", "libgpg-error", "hawkey", "libassuan", "gpgme", "librepo", "tdnf",
                 "libdnet", "xerces-c", "xml-security-c", "libmspack", "open-vm-tools-vivace",
                 "docker","bridge-utils",
@@ -38,7 +38,7 @@
                 "attr", "libcap", "kmod", "systemd", "expat", "dbus", "file", "e2fsprogs", "elfutils-libelf", "lua", "popt", 
 		"sqlite-autoconf", "nspr", "nss", "rpm",
                 "openssh", "libffi", "gdbm", "python2", "python2-libs", "pcre", "glib", "libxml2",
-                "photon-release",
+                "vivace-release",
                 "sed", "grep", "cpio", "gzip", "nano", "db", "libsolv", "libgpg-error", "hawkey", "libassuan", "gpgme", "librepo", "tdnf",
                 "libdnet", "xerces-c", "xml-security-c", "libmspack", "open-vm-tools-vivace",
                 "docker","bridge-utils",

@@ -34,7 +34,7 @@ VmWare virtualization user mode tools
 %patch1 -p1
 %build
 autoreconf -i
-./configure --prefix=/usr --without-x --without-kernel-modules --without-icu --disable-static
+./configure --prefix=/usr --sysconfdir=/etc --without-gtkmm --without-kernel-modules --without-icu --disable-static
 make %{?_smp_mflags}
 %install
 
@@ -74,7 +74,6 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %{_bindir}/*
 %{_sysconfdir}/*
 %{_datadir}/*
-%{_prefix}/etc/*
 /lib/*
 %{_sbindir}/*
 
