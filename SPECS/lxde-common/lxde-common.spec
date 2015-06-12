@@ -23,7 +23,6 @@ make DESTDIR=%{buildroot} install
 cat > %{buildroot}/etc/xdg/lxsession/LXDE/autostart << "EOF"
 @pcmanfm --desktop --profile LXDE
 @xscreensaver -no-splash
-@vmtoolsd -n vmusr
 @xcompmgr
 @cairo-dock -c
 EOF
