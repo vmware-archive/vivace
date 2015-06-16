@@ -62,6 +62,8 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %post
 /sbin/ldconfig
 /bin/systemctl enable vmtoolsd
+%preun
+/bin/systemctl disable vmtoolsd
 %postun	-p /sbin/ldconfig
 %files 
 %defattr(-,root,root)
