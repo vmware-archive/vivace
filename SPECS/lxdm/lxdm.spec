@@ -21,9 +21,9 @@ The LXDM is a lightweight Display Manager for the LXDE desktop. It can also be u
 cat > pam/lxdm << "EOF"
 #%PAM-1.0
 auth        include    system-auth
-account     include    system-auth
-password    include    system-auth
-session     include    system-auth
+account     include    system-account
+password    include    system-password
+session     include    system-session
 EOF
 
 sed -i 's:sysconfig/i18n:profile.d/i18n.sh:g' data/lxdm.in &&

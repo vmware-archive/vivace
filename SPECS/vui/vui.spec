@@ -10,7 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
-Requires:	lxde-common alsa-utils lxterminal firefox thunderbird
+Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview
 
 %description
 Metapackage for Vivace User Interface.
@@ -22,13 +22,18 @@ Metapackage for Vivace User Interface.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/root/.config
-find -type d -exec install -d {,%{buildroot}/root/.config/}{} \;
-find -type f -exec install -D -m 644 {,%{buildroot}/root/.config/}{} \;
+install -d $RPM_BUILD_ROOT/skel/.config
+find -type d -exec install -d {,%{buildroot}/etc/skel/.config/}{} \;
+find -type f -exec install -D -m 644 {,%{buildroot}/etc/skel/.config/}{} \;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+#copy skel to root home folder
+mkdir -p /root/.config
+cp -a /etc/skel/.config/cairo-dock /root/.config/ 
+cp -a /etc/skel/.config/pcmanfm /root/.config/
+
 %files
-%defattr(-,root,root,-)
-/root/.config
+/etc/skel/.config/*

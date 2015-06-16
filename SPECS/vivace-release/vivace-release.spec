@@ -36,3 +36,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir /etc/yum.repos.d
 %config(noreplace) /etc/yum.repos.d/vivace.repo
 %config(noreplace) /etc/yum.repos.d/photon-iso.repo
+%config(noreplace) /etc/yum.repos.d/photon-extras.repo
