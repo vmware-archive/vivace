@@ -100,7 +100,7 @@ brings xUnit to all .NET languages.
 %package nunit-devel
 Summary:	pkgconfig for nunit
 Group:		Development/Libraries
-Requires:	mono-core = %{version}-%{release}, pkgconfig
+Requires:	mono-core = %{version}-%{release}, pkg-config
 Requires:	mono-nunit = %{version}-%{release}
 
 %description nunit-devel
