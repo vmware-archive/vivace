@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
 Patch0:		open-vm-tools-strerror_r-fix.patch
 Patch1:		open-vm-tools-service-link.patch
-BuildRequires: 	glib-devel
+BuildRequires: 	glib-devel glibmm
 BuildRequires: 	xerces-c-devel
 BuildRequires: 	xml-security-c-devel
 BuildRequires: 	libdnet
@@ -18,12 +18,12 @@ BuildRequires: 	libmspack
 BuildRequires:	Linux-PAM
 BuildRequires:	openssl-devel
 BuildRequires:	procps-ng-devel
-BuildRequires:	libX11-devel libXext-devel libXinerama-devel libXi-devel libXrender-devel libXrandr-devel libXtst-devel libSM-devel libICE-devel libXcomposite-devel gtk2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel harfbuzz-devel
-Requires:	libX11 libXext libXinerama libXi libXrender libXrandr libXtst libSM libICE libXcomposite gtk2
+BuildRequires:	libX11-devel libXext-devel libXinerama-devel libXi-devel fontconfig-devel libXrender-devel freetype2-devel libXrandr-devel libXtst-devel libSM-devel libICE-devel libXcomposite-devel gtk2-devel cairo-devel cairomm-devel pango-devel pangomm-devel gdk-pixbuf-devel atk-devel atkmm-devel pixman-devel libpng-devel harfbuzz-devel gtkmm-devel fuse-devel
+Requires:	libX11 libXext libXinerama libXi libXrender freetype2 libXrandr libXtst libSM libICE libXcomposite gtk2 gtkmm fontconfig atkmm fuse 
 Requires:	xerces-c
 Requires:	libdnet
 Requires:	libmspack
-Requires:	glib
+Requires:	glib glibmm
 Requires:	xml-security-c
 Requires:	openssl
 %description
@@ -34,7 +34,7 @@ VmWare virtualization user mode tools
 %patch1 -p1
 %build
 autoreconf -i
-./configure --prefix=/usr --sysconfdir=/etc --without-gtkmm --without-kernel-modules --without-icu --disable-static
+./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static
 make %{?_smp_mflags}
 %install
 
@@ -62,8 +62,11 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %post
 /sbin/ldconfig
 /bin/systemctl enable vmtoolsd
+/sbin/depmod
+
 %preun
 /bin/systemctl disable vmtoolsd
+
 %postun	-p /sbin/ldconfig
 %files 
 %defattr(-,root,root)
