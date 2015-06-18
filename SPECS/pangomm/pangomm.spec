@@ -25,7 +25,7 @@ make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
 %post
-pangomm-querymodules --update-cache  
+pango-querymodules --update-cache  
 %files
 %defattr(-,root,root)
 #%{_bindir}/*

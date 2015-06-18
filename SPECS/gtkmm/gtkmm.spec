@@ -32,8 +32,7 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 make DESTDIR=%{buildroot} install
 
-%post
--p /sbin/ldconfig
+%post -p /sbin/ldconfig
 
 %files
 %defattr(-, root, root)
