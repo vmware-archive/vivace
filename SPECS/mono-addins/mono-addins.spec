@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.gz
 Patch0:		mono-addins-1.0-libdir.patch
-BuildRequires:	intltool gettext glib-devel tzdata gtk-sharp2
+BuildRequires:	intltool gettext glib-devel tzdata gtk-sharp2 mono-devel
 Requires:	gettext glib gtk-sharp2
 %description
 Mono.Addins is a generic framework for creating extensible applications,
