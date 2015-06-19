@@ -1,3 +1,4 @@
+%global security_hardening nonow
 Summary:	The Xorg Server
 Name:		xorg-server
 Version:	1.17.1

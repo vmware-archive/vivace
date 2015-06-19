@@ -1,3 +1,4 @@
+%global security_hardening nonow
 Summary:	X.Org Video Driver for framebuffer devices.
 Name:		xf86-video-fbdev
 Version:	0.4.4

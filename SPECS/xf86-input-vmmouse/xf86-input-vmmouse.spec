@@ -1,3 +1,4 @@
+%global security_hardening nonow
 Summary:	VMMouse input driver for the Xorg X server.
 Name:		xf86-input-vmmouse
 Version:	13.0.0
