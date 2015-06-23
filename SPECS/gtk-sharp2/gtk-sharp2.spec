@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}12/gtk-sharp-%{version}.tar.gz
 BuildRequires:	intltool gettext glib-devel tzdata mono-devel gtk2-devel libglade-devel pango-devel libxml2-devel atk-devel cairo-devel gdk-pixbuf-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel
-Requires:	gettext glib mono-core gtk2 libglade pango libxml2 atk cairo
+Requires:	gettext glib mono gtk2 libglade pango libxml2 atk cairo
 Requires:	perl-XML-LibXML
 %description
 GTK+ and GNOME bindings for Mono.

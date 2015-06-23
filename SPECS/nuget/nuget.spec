@@ -15,7 +15,7 @@ Source1:	nuget-core.pc
 Source2:	nuget.sh
 Patch0:		nuget-fix_xdt_hintpath
 BuildRequires:	tzdata mono-devel mono-more
-Requires:	mono-core mono-more
+Requires:	mono mono-more
 %description
 Package manager for NuGet repositories.
 %prep

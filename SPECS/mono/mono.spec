@@ -18,19 +18,7 @@ Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.44.
 Source1:	mono.snk
 Patch0:		mono-4.0.0-ignore-reference-assemblies.patch
 BuildRequires:	intltool gettext glib-devel tzdata libgdiplus-devel
-#mono-core >= 4.0
 Requires:	gettext glib libgdiplus
-
-%define _use_internal_dependency_generator 0
-%define __find_provides env sh -c 'filelist=($(cat)) && { printf "%s\\n" "${filelist[@]}" | /usr/lib/rpm/redhat/find-provides && printf "%s\\n" "${filelist[@]}" | prefix=%{buildroot}%{_prefix} %{buildroot}%{_bindir}/mono-find-provides; } | sort | uniq'
-%define __find_requires env sh -c 'filelist=($(cat)) && { printf "%s\\n" "${filelist[@]}" | /usr/lib/rpm/redhat/find-requires && printf "%s\\n" "${filelist[@]}" | prefix=%{buildroot}%{_prefix} %{buildroot}%{_bindir}/mono-find-requires; } | sort | uniq | grep ^...'
-
-%description
-Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
-
-%package core
-Summary:	The Mono CIL runtime, suitable for running .NET code
-Group:		Development/Languages
 Requires:	libgdiplus
 Provides:	mono(Mono.Cairo)
 Provides:	mono(Mono.Posix)
@@ -67,16 +55,18 @@ Provides:	mono(Microsoft.Build.Engine)
 Provides:	mono(Microsoft.CSharp)
 Provides:	mono(WindowsBase)
 
-%description core
-This package contains the core of the Mono runtime including its
-Virtual Machine, Just-in-time compiler, C# compiler, security
-tools and libraries (corlib, XML, System.Security, ZipLib,
-I18N, Cairo and Mono.*).
+
+%define _use_internal_dependency_generator 0
+%define __find_provides env sh -c 'filelist=($(cat)) && { printf "%s\\n" "${filelist[@]}" | /usr/lib/rpm/redhat/find-provides && printf "%s\\n" "${filelist[@]}" | prefix=%{buildroot}%{_prefix} %{buildroot}%{_bindir}/mono-find-provides; } | sort | uniq'
+%define __find_requires env sh -c 'filelist=($(cat)) && { printf "%s\\n" "${filelist[@]}" | /usr/lib/rpm/redhat/find-requires && printf "%s\\n" "${filelist[@]}" | prefix=%{buildroot}%{_prefix} %{buildroot}%{_bindir}/mono-find-requires; } | sort | uniq | grep ^...'
+
+%description
+Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 
 %package devel
 Summary: Development tools for Mono
 Group: Development/Languages
-Requires: mono-core = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description devel
 This package completes the Mono developer toolchain with the mono profiler,
@@ -86,7 +76,7 @@ assembler and other various tools.
 Summary:	NUnit Testing Framework
 License:	zlib with acknowledgement
 Group:		Development/Languages
-Requires:	mono-core = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 
 %description nunit
 NUnit is a unit-testing framework for all .Net languages. Initially
@@ -100,7 +90,7 @@ brings xUnit to all .NET languages.
 %package nunit-devel
 Summary:	pkgconfig for nunit
 Group:		Development/Libraries
-Requires:	mono-core = %{version}-%{release}, pkg-config
+Requires:	%{name} = %{version}-%{release}, pkg-config
 Requires:	mono-nunit = %{version}-%{release}
 
 %description nunit-devel
@@ -109,7 +99,7 @@ Development files for nunit
 %package more
 Summary: Provides all the files which are not in a core/nunit rpms.
 Group: Development/Languages
-Requires: mono-core = %{version}-%{release}
+Requires: %{name} = %{version}-%{release}
 %description more
 Provides all the files which are not in a core/nunit rpms.
 
@@ -179,7 +169,7 @@ rm -rf %{buildroot}%{_mandir}/man?/mono-configuration-crypto*
 %post devel -p /sbin/ldconfig
 %postun devel -p /sbin/ldconfig
 
-%files core -f mcs.lang
+%files -f mcs.lang
 %doc AUTHORS COPYING.LIB ChangeLog NEWS README.md
 %{_bindir}/mono
 %{_bindir}/mono-test-install

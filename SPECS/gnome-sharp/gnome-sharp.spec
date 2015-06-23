@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
 BuildRequires:	intltool gettext glib-devel tzdata mono-devel gtk2-devel libglade-devel pango-devel libxml2-devel atk-devel cairo-devel gdk-pixbuf-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel gtk-sharp2 libgnomeui-devel libgnomecanvas-devel libgnome-devel libart_lgpl-devel gnome-vfs-devel popt-devel libbonobo-devel libbonoboui-devel libSM-devel libXinerama-devel dbus-glib-devel libICE-devel
-Requires:	gettext glib mono-core gtk2 libglade pango libxml2 atk cairo gtk-sharp2 libgnomeui libgnomecanvas libgnome libart_lgpl gnome-vfs libSM libICE
+Requires:	gettext glib mono gtk2 libglade pango libxml2 atk cairo gtk-sharp2 libgnomeui libgnomecanvas libgnome libart_lgpl gnome-vfs libSM libICE
 %description
 GTK+ and GNOME bindings for Mono.
 %prep

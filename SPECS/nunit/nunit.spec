@@ -15,7 +15,7 @@ Source1:	nunit.pc
 Source2:	nunit-gui.sh
 Source3:	nunit-console.sh
 BuildRequires:	unzip intltool mono-devel mono-more tzdata libgdiplus-devel
-Requires:	mono-core mono-more tzdata libgdiplus
+Requires:	mono mono-more tzdata libgdiplus
 %description
 NUnit is a testing framework for .NET applications.
 %prep
