@@ -87,7 +87,8 @@ ac_add_options --with-system-zlib
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
-make %{?_smp_mflags} -f client.mk
+# Firefox build is multithreaded by itself
+make -f client.mk
 %install
 make -f client.mk DESTDIR=%{buildroot} install INSTALL_SDK=
 desktop-file-install \
