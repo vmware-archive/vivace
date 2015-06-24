@@ -14,11 +14,11 @@ BuildRequires: 	python2-devel
 BuildRequires: 	python2-libs
 BuildRequires: 	gobject-introspection-devel
 BuildRequires: 	glib-devel
-BuildRequires:	pygobject = 2.28.6 atk-devel pango-devel gtk2-devel py2cairo cairo-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel gdk-pixbuf-devel
+BuildRequires:	pygobject2 atk-devel pango-devel gtk2-devel py2cairo cairo-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel gdk-pixbuf-devel
 Requires:	python2
 Requires:	gobject-introspection
 Requires:	glib pango gtk2 
-Requires:	pygobject = 2.28.6
+Requires:	pygobject2
 
 %description
 Python bindings for GTK.
