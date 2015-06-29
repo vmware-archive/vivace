@@ -27,15 +27,17 @@ cat > %{buildroot}/etc/xdg/lxsession/LXDE/autostart << "EOF"
 @cairo-dock -c
 EOF
 
+install -d %{buildroot}/etc/skel/
+cat > %{buildroot}/etc/skel/.xinitrc << "EOF"
+ck-launch-session dbus-launch --sh-syntax --exit-with-session startlxde
+EOF
+
 %post
 update-mime-database /usr/share/mime &&
 gtk-update-icon-cache -qf /usr/share/icons/hicolor &&
 update-desktop-database -q
+cp /etc/skel/.xinitrc /root
 
-# TODO: install to home - not good idea.
-cat > ~/.xinitrc << "EOF"
-ck-launch-session startlxde
-EOF
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*

@@ -43,6 +43,13 @@ install -d $RPM_BUILD_ROOT/usr/share/backgrounds
 install -m 644 %{SOURCE2} $RPM_BUILD_ROOT/usr/share/backgrounds/
 install -m 644 %{SOURCE3} $RPM_BUILD_ROOT/usr/share/lxdm/themes/Industrial/
 
+cat >> $RPM_BUILD_ROOT/etc/lxdm/PostLogout << "EOF"
+# Workaround: --exit-with-session doesn't work.
+# dbus-daemon --session is started in /etc/skel/.xinitrc and terminated here.
+for p in `ps ax | grep "dbus-daemon" | grep "session" | awk '{print $1}'` ; do
+    kill $p
+done
+EOF
 
 %post
 systemctl enable lxdm
