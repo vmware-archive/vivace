@@ -7,7 +7,7 @@ URL:		http://www.rdesktop.org/
 Group:		Applications/Communications
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz?download
+Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	openssl-devel glib-devel libX11-devel libXext-devel libXinerama-devel libXrender-devel libpng-devel libXrandr-devel gobject-introspection-python python2-devel alsa-lib-devel
 Requires:	glib libX11 libXext libXinerama libXrender alsa-lib libXrandr openssl
 %description
