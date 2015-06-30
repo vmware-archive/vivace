@@ -7,7 +7,7 @@ Url:		http://scrollkeeper.sourceforge.net/index.shtml
 Group:		System Environment/Base
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:        http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.gz/download
+Source0:        http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  libxml2-devel libxslt docbook-xml docbook-xsl intltool
 Requires:	libxml2 libxslt docbook-xml docbook-xsl
