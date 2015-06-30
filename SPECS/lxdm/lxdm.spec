@@ -51,6 +51,8 @@ for p in `ps ax | grep "dbus-daemon" | grep "session" | awk '{print $1}'` ; do
 done
 EOF
 
+sed -i 's/ --exit-with-session//' %{buildroot}/etc/lxdm/Xsession
+
 %post
 systemctl enable lxdm
 

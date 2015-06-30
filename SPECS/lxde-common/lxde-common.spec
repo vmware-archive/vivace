@@ -29,7 +29,7 @@ EOF
 
 install -d %{buildroot}/etc/skel/
 cat > %{buildroot}/etc/skel/.xinitrc << "EOF"
-ck-launch-session dbus-launch --sh-syntax --exit-with-session startlxde
+ck-launch-session startlxde
 EOF
 
 %post
