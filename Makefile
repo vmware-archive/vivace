@@ -10,8 +10,9 @@ PHOTON_STAGE := $(VVC_SRCROOT)stage
 # specs dir to use
 PHOTON_SPECS_DIR := $(VVC_SRCROOT)SPECS
 
-# bintray config for sources pulling
+# Sources pulling
 PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)support/pullsources/bintray.conf
+PHOTON_SOURCES_LIST := $(VVC_SRCROOT)support/pullsources/sources_list.sha1
 
 # package list to build
 PHOTON_PACKAGE_LIST := $(VVC_SRCROOT)support/package-builder/input.json
