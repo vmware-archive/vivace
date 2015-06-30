@@ -16,23 +16,22 @@ It can save several connections (including their options), and browse the networ
 %prep
 %setup -q 
 %build
-./configure 	--prefix=%{_prefix} 
+./configure \
+	--prefix=%{_prefix} \
+	--sysconfdir=%{_sysconfdir} \
+        --with-keymap-path=%{_datadir}/rdesktop/keymaps
 
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
-mv %{buildroot}%{_datadir}/pixmaps/grdesktop/icon.png %{buildroot}%{_datadir}/pixmaps/grdesktop.png
-rm -r %{buildroot}%{_datadir}/pixmaps/grdesktop
-sed -i 's#icon.png#grdesktop.png#g' %{buildroot}%{_datadir}/applications/grdesktop.desktop
 
 %files
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README TODO doc
 %{_bindir}/
-#/etc/X11/applnk/Internet/grdesktop.desktop
 %{_datadir}/
 %{_prefix}/man
-%{_prefix}%{_sysconfdir}
+%{_sysconfdir}
 
 %changelog
 *	Fri Jun 26 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.23-1
