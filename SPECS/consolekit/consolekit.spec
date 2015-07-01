@@ -63,7 +63,7 @@ session   optional    pam_ck_connector.so nox11
 EOF
 
 %preun
-sed '/Begin ConsoleKit/,/End ConsoleKit/d' -i /etc/pam.d/system-sesssion
+sed '/Begin ConsoleKit/,/End ConsoleKit/d' -i /etc/pam.d/system-session
 
 %files
 %defattr(-,root,root)
@@ -74,6 +74,7 @@ sed '/Begin ConsoleKit/,/End ConsoleKit/d' -i /etc/pam.d/system-sesssion
 %{_libdir}/*
 %{_libexecdir}/*
 %{_datadir}/*
+%exclude %{_libdir}/debug/
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
