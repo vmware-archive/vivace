@@ -20,6 +20,8 @@ PHOTON_PACKAGE_LIST := $(VVC_SRCROOT)support/package-builder/input.json
 # package list to create iso
 PHOTON_INSTALLER_PACKAGE_LIST := $(VVC_SRCROOT)installer/package_list.json
 
+PHOTON_DATA_DIR := $(VVC_SRCROOT)common/data
+
 $(VVC_SRCROOT)/photon/Makefile: ;
 
 include $(VVC_SRCROOT)/photon/Makefile

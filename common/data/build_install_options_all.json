@@ -1,0 +1,25 @@
+{
+    "iso_packages" : {
+        "order" : 0,
+        "type" : "iso",
+        "title" : "ISO Packages",
+        "file" : "packages_iso.json",
+        "visible" : false
+    },
+    "minimal_packages" : {
+        "order" : 1,
+        "type" : "minimal",
+        "title" : "1. Vivace Minimal",
+        "file" : "packages_minimal.json",
+        "visible" : true
+    },
+    "full_packages" : {
+        "order" : 2,
+        "type" : "full",
+        "title" : "2. Vivace Full",
+        "file" : "packages_full.json",
+        "visible" : true
+    }
+}
+
+
