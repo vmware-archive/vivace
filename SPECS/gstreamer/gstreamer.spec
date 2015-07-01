@@ -57,5 +57,5 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/*
 
 %changelog
-*	Wed Jun 24 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 2.24.28-1
+*	Wed Jun 24 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.5.1-1
 -	initial version

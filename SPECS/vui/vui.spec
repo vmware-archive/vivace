@@ -10,7 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
-Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview
+Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview grdesktop
 
 %description
 Metapackage for Vivace User Interface.
@@ -36,4 +36,4 @@ cp -a /etc/skel/.config/cairo-dock /root/.config/
 cp -a /etc/skel/.config/pcmanfm /root/.config/
 
 %files
-/etc/skel/.config/*
+%{_sysconfdir}/skel/.config/*

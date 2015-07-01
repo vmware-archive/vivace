@@ -8,8 +8,8 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.gnome.com/sources/%{name}/1.15/%{name}-%{version}.tar.xz
-BuildRequires:	intltool gettext glib-devel tzdata mono-devel mono-more gtk-sharp2 gnome-sharp mono-addins desktop-file-utils gnome-doc-utils dbus-sharp dbus-sharp-glib libX11-devel gtk2-devel gdk-pixbuf-devel cairo-devel pango-devel atk-devel pixman-devel libpng-devel libXrender-devel libSM-devel libICE-devel fontconfig-devel freetype2-devel libXext-devel harfbuzz-devel which gobject-introspection python2-libs python2-devel
-Requires:	gettext glib mono shared-mime-info gtk-sharp2 gnome-sharp mono-addins gnome-doc-utils dbus-sharp dbus-sharp-glib libX11 gtk2 gdk-pixbuf cairo pango atk
+BuildRequires:	intltool gettext glib-devel tzdata mono-devel mono-extras gtk-sharp2 gnome-sharp mono-addins desktop-file-utils gnome-doc-utils dbus-sharp dbus-sharp-glib libX11-devel gtk2-devel gdk-pixbuf-devel cairo-devel pango-devel atk-devel pixman-devel libpng-devel libXrender-devel libSM-devel libICE-devel fontconfig-devel freetype2-devel libXext-devel harfbuzz-devel which gobject-introspection python2-libs python2-devel
+Requires:	gettext glib mono shared-mime-info gtk-sharp2 gnome-sharp mono-addins gnome-doc-utils dbus-sharp dbus-sharp-glib libX11 gtk2 gdk-pixbuf cairo pango atk mono-extras
 %description
 Tomboy is a desktop note-taking application which is simple and easy to use.
 It lets you organise your notes intelligently by allowing you to easily link

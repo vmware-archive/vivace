@@ -10,7 +10,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://github.com/downloads/mono/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	intltool gettext glib-devel tzdata mono mono-devel mono-more
+BuildRequires:	intltool gettext glib-devel tzdata mono mono-devel mono-extras
 Requires:	gettext glib mono
 %description
 D-Bus mono bindings for use with mono programs.

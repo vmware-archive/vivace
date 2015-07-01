@@ -96,11 +96,11 @@ Requires:	mono-nunit = %{version}-%{release}
 %description nunit-devel
 Development files for nunit
 
-%package more
+%package extras
 Summary: Provides all the files which are not in a core/nunit rpms.
 Group: Development/Languages
 Requires: %{name} = %{version}-%{release}
-%description more
+%description extras
 Provides all the files which are not in a core/nunit rpms.
 
 %define gac_dll(dll)  %{_monogacdir}/%{1} \
@@ -408,7 +408,7 @@ rm -rf %{buildroot}%{_mandir}/man?/mono-configuration-crypto*
 %files nunit-devel
 %{_libdir}/pkgconfig/mono-nunit.pc
 
-%files more
+%files extras
 #%files locale-extras
 %gac_dll I18N.CJK
 %gac_dll I18N.MidEast
