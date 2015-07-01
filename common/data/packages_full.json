@@ -54,7 +54,7 @@
 
 		"libgdiplus", "mono", "perl-XML-NamespaceSupport", "perl-XML-SAX-Base", "perl-XML-SAX", "perl-XML-LibXML", "gtk-sharp2",
 		"mono-addins", "gnome-sharp", "nuget", "dos2unix", "nunit", "monodevelop", "mono-devel", "pinta", "dbus-sharp", "dbus-sharp-glib",
-		"gnome-doc-utils", "tomboy", "libpipeline", "mc" ]
+		"mono-extras", "gnome-doc-utils", "tomboy", "libpipeline", "mc", "cairomm", "pangomm", "atkmm", "gtkmm" ]
 
 }
 
