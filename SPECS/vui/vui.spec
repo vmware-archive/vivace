@@ -10,7 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
-Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview grdesktop
+Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview grdesktop lxtask
 
 %description
 Metapackage for Vivace User Interface.

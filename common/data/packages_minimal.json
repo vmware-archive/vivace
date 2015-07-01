@@ -25,7 +25,7 @@
 		"libbonoboui", "alsa-utils", "libusb", "upower", "libgnomeui", "libcroco", "scrollkeeper", "gnome-menus", "librsvg",
 		"at-spi2-core", "at-spi2-atk", "gtk3", "glu", "cairo-dock", "cairo-dock-libs", "cairo-dock-plugins", "consolekit", "lxdm",
 		"firefox", "lxde-icon-theme", "openbox", "lxsession", "shared-mime-info", "lxappearance", "xcompmgr", "lxde-common", "rdesktop",
-		"grdesktop", "gpicview", "vui", "libpipeline", "mc", "cairomm", "pangomm", "atkmm", "gtkmm"
+		"grdesktop", "gpicview", "vui", "libpipeline", "mc", "cairomm", "pangomm", "atkmm", "gtkmm", "lxtask"
 			 ]
 }
 
