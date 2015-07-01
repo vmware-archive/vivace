@@ -10,10 +10,10 @@ Distribution:	Photon
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.6/%{name}-%{version}.tar.xz
 Patch0:         banshee-2.6.2-gstreamer-port-to-1.0.patch
 BuildRequires:  gtk-sharp2 libtool glibc glib-devel gstreamer-devel
-BuildRequires:  which unzip gnome-sharp tzdata mono-devel mono-more mono-addins dbus-glib-devel gstreamer-devel gstreamer-plugins-base-devel gtk3-devel gtk2-devel cairo-devel pango-devel gdk-pixbuf-devel libX11-devel
+BuildRequires:  which unzip gnome-sharp tzdata mono-devel mono-extras mono-addins dbus-glib-devel gstreamer-devel gstreamer-plugins-base-devel gtk3-devel gtk2-devel cairo-devel pango-devel gdk-pixbuf-devel libX11-devel
 BuildRequires:  intltool >= 0.35.0 dbus-sharp-glib taglib-sharp-devel gnome-vfs-devel mercurial pixman-devel libpng-devel libXrender-devel libXext-devel harfbuzz-devel
 BuildRequires:  automake autoconf gtk-sharp2 dbus-sharp libXrandr-devel
-Requires:	mono mono-addins mono-more dbus-glib dbus-sharp dbus-sharp-glib libtool glib gstreamer gstreamer-plugins-base taglib-sharp gtk3 gtk2 cairo pango gdk-pixbuf libX11 pixman libpng libXrender
+Requires:	mono mono-addins mono-extras dbus-glib dbus-sharp dbus-sharp-glib libtool glib gstreamer gstreamer-plugins-base taglib-sharp gtk3 gtk2 cairo pango gdk-pixbuf libX11 pixman libpng libXrender
 Requires:       gtk-sharp2 gnome-sharp gnome-vfs libXrandr libXext harfbuzz
 %description
 Import, organize, and discover new music with Banshee through its
