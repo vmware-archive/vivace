@@ -34,7 +34,8 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_bindir}/*
-%{_datadir}/*
+%{_datadir}
+%exclude %{_datadir}/applications
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
