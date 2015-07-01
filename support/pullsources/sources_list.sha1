@@ -337,7 +337,7 @@ open-vm-tools-9.10.0.tar.gz - 958c40c8038d52947680444f507f693825d358be
 openvswitch-2.3.1.tar.gz - ef8854781265a7e3ea80b5070db6cac2dff704d5
 ORBit2-2.14.19.tar.bz2 - e7c26aa4b82c146b3ec08d490e3469b4913e4e2f
 ostree-2015.7.tar.gz - baa502aa46363cd4828d257fb87f5e18a7ed000a
-PAM-Configuration-Files.tar.gz - dfab9f95eb76f0c82a9601fa68f543a37d4607b9
+PAM-Configuration-Files-1.0.tar.gz - 018667e773afb7a6fafb03a1967202dbe9b7f232
 pango-1.36.8.tar.xz - c6ba02ee8f9d8b22b7cfd74c4b6ae170bebc8d2b
 pangomm-2.36.0.tar.xz - eb23bca29b2ea216b58f39292a9c5e5c293716c5
 parted-3.2.tar.xz - 8cabb2d6789badec15c857dcc003d0dd931a818b
