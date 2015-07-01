@@ -39,6 +39,9 @@ find . -name "*.csproj" -print -exec sed -i 's#ToolsVersion="3.5"#ToolsVersion="
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+install -d -m 755 %{buildroot}/%{_datadir}/pixmaps
+ln -s %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg %{buildroot}/%{_datadir}/pixmaps/%{name}.svg
+ln -s %{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 %files
 %defattr(-,root,root)
 %{_bindir}

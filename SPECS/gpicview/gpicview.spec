@@ -19,6 +19,8 @@ The GPicView package contains a lightweight image viewer.
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+install -d -m 755 %{buildroot}/%{_datadir}/pixmaps
+ln -s %{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 %files
 %defattr(-,root,root)
 %{_bindir}/*

@@ -46,6 +46,9 @@ find %{buildroot} -name '*.la' -delete
 chmod a+x %{buildroot}%{_libdir}/%{name}/*.exe
 chmod a+x %{buildroot}%{_libdir}/%{name}/addins/*.dll
 
+install -d -m 755 %{buildroot}/%{_datadir}/pixmaps
+ln -s %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg %{buildroot}/%{_datadir}/pixmaps/%{name}.svg
+ln -s %{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/appdata
 cat > $RPM_BUILD_ROOT%{_datadir}/appdata/%{name}.appdata.xml <<EOF
