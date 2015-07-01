@@ -24,6 +24,7 @@ It can save several connections (including their options), and browse the networ
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+ln -s grdesktop/icon.png %{buildroot}/%{_datadir}/pixmaps/grdesktop.png
 
 %files
 %defattr(-,root,root)
