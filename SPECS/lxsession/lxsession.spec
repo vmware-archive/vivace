@@ -22,9 +22,11 @@ make %{?_smp_mflags}
 make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
-%{_sysconfdir}/*
 %{_bindir}/*
 %{_datadir}/*
+#Do not pack lxpolkit. Use standard polkitd instead
+%exclude %{_sysconfdir}/xdg/autostart/lxpolkit.desktop
+%exclude %{_bindir}/lxpolkit
 %changelog
 *	Fri May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 0.5.2-1
 -	initial version
