@@ -29,6 +29,7 @@ alsactl -L store
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug/
 /lib/*
 %{_sbindir}/*
 %{_datadir}/*
