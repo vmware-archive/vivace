@@ -8,8 +8,8 @@ Group:		Applications/Multimedia
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-%{version}.tar.xz
-BuildRequires:	gstreamer-devel pango-devel glib-devel libX11-devel libXext-devel cairo-devel pixman-devel freetype2-devel harfbuzz-devel libpng-devel libXrender-devel
-Requires:	libxml2 gstreamer glib libX11 libXext pango cairo pixman freetype2 harfbuzz libpng libXrender 
+BuildRequires:	gstreamer-devel pango-devel glib-devel libX11-devel libXext-devel cairo-devel pixman-devel freetype2-devel harfbuzz-devel libpng-devel libXrender-devel alsa-lib-devel
+Requires:	libxml2 gstreamer glib libX11 libXext pango cairo pixman freetype2 harfbuzz libpng libXrender alsa-lib
 %description
 GStreamer is a streaming media framework, based on graphs of filters which
 operate on media data. Applications using this library can do anything
@@ -21,6 +21,7 @@ plug-ins.
 Summary:	GStreamer Plugin Library Headers
 Group: 		Development/Libraries
 Requires:	%{name} = %{version}
+Requires:	alsa-lib-devel
 %description	devel
 GStreamer Plugins Base library development and header files.
 %prep
