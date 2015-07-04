@@ -33,7 +33,10 @@ VmWare virtualization user mode tools
 %patch0 -p1
 %patch1 -p1
 %build
+sed -i 's#/var/run/vmblock#/run/vmblock#' lib/include/vmblock.h
+#sed -i 's#ifdef VMX86_DEVEL#if 1#' vmblock-fuse/os.h
 autoreconf -i
+export CFLAGS="%{optflags} -DVMX86_DEVEL=1"
 ./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static
 make %{?_smp_mflags}
 %install
@@ -56,15 +59,50 @@ TimeoutStopSec=5
 WantedBy=multi-user.target
 EOF
 
+# vmware-vmblock-fuse service
+cat >> %{buildroot}/lib/systemd/system/vmware-vmblock-fuse.service <<-EOF
+[Unit]
+Description=Open Virtual Machine Tools (vmware-vmblock-fuse)
+ConditionVirtualization=vmware
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/mkdir -p /run/vmblock-fuse
+ExecStart=/usr/bin/vmware-vmblock-fuse -d -f -o subtype=vmware-vmblock,default_permissions,allow_other /run/vmblock-fuse
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+# Mount shared folders
+cat >> %{buildroot}/lib/systemd/system/mnt-hgfs.mount <<-EOF
+[Unit]
+Description=Load VMware shared folders
+ConditionPathExists=.host:/
+ConditionVirtualization=vmware
+
+[Mount]
+What=.host:/
+Where=/mnt/hgfs/
+Type=vmhgfs
+Options=defaults,noatime
+
+[Install]
+WantedBy=multi-user.target
+EOF
 
 make DESTDIR=%{buildroot} install
 rm -f %{buildroot}/sbin/mount.vmhgfs
 %post
 /sbin/ldconfig
 /bin/systemctl enable vmtoolsd
+/bin/systemctl enable vmware-vmblock-fuse
+/bin/systemctl enable mnt-hgfs.mount
 /sbin/depmod
 
 %preun
+/bin/systemctl disable mnt-hgfs.mount
+/bin/systemctl disable vmware-vmblock-fuse
 /bin/systemctl disable vmtoolsd
 
 %postun	-p /sbin/ldconfig
