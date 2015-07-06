@@ -12,8 +12,8 @@ Patch0:		monodevelop-avoidgiterrors.patch
 Patch1:		monodevelop-downgrade_to_mvc3.patch
 Patch2:		monodevelop-nunit-unbundle.patch
 Patch3:		monodevelop-nuget-unbundle.patch
-BuildRequires:	intltool gettext glib-devel tzdata mono-devel mono-extras shared-mime-info gtk-sharp2 gnome-sharp mono-addins dos2unix nunit nuget
-Requires:	gettext glib mono-devel shared-mime-info gtk-sharp2 gnome-sharp mono-addins nunit nuget mono-extras
+BuildRequires:	mono-devel mono-extras shared-mime-info gtk-sharp2-devel gnome-sharp-devel mono-addins dos2unix nunit nuget
+Requires:	mono-devel shared-mime-info gtk-sharp2 gnome-sharp mono-addins nunit nuget mono-extras
 %description
 MonoDevelop is a full-featured IDE for Mono and GTK#.
 %prep

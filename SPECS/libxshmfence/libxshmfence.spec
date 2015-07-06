@@ -15,6 +15,7 @@ The X11 Shared Memory fences library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	pkg-config util-macros proto
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -17,6 +17,7 @@ GStreamer is a streaming media framework that enables applications to share a co
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel libxml2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

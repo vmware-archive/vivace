@@ -8,8 +8,8 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/data/%{name}-%{version}.tar.bz2
-BuildRequires:	util-macros xorg-applications libXcursor-devel libX11-devel libXrender-devel libXfixes-devel
-Requires:	libXcursor libX11 libXrender libXfixes
+BuildRequires:	xorg-applications libXcursor-devel
+Requires:	libXcursor
 %description
 The xcursor-themes package contains the redglass and whiteglass animated cursor themes.
 %prep

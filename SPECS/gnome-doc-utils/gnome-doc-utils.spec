@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.20/%{name}-%{version}.tar.xz
 BuildArch:	noarch
-BuildRequires:	intltool libxml2-devel libxslt gobject-introspection python2-libs python2-devel
+BuildRequires:	intltool libxslt gobject-introspection-devel
 Requires:	libxml2 libxslt
 BuildArch:	noarch
 %description

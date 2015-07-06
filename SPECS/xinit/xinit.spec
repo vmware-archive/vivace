@@ -8,7 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/app/%{name}-%{version}.tar.bz2
-BuildRequires:	util-macros proto libX11-devel
+BuildRequires:	libX11-devel
 Requires:	libX11 twm xclock xterm xf86-input-evdev xf86-input-vmmouse xf86-video-vmware xf86-video-fbdev
 %description
 The xinit package contains a usable script to start the xserver.

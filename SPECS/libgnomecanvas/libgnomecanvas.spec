@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.30/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool libxml2-devel glib-devel gtk2-devel python2-libs python2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel libglade-devel libart_lgpl-devel fontconfig-devel freetype2-devel libXinerama-devel
-Requires:	libxml2 glib gtk2 python2 cairo pango gdk-pixbuf atk pixman libpng libXrender libX11 libXext harfbuzz libglade libart_lgpl fontconfig freetype2 libXinerama
+BuildRequires:	libart_lgpl-devel
+Requires:	libart_lgpl
 %description
 The libgnomecanvas package contains the GNOME canvas library. It is an engine for structured graphics and one of the essential GNOME libraries.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libart_lgpl-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

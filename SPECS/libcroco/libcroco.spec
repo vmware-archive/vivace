@@ -15,6 +15,7 @@ The libcroco package contains a standalone CSS2 parsing and manipulation library
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel libxml2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.32/%{name}-%{version}.tar.xz
-BuildRequires:	intltool libxml2-devel glib-devel dbus-glib-devel polkit-devel
-Requires:	libxml2 glib dbus-glib polkit
+BuildRequires:	libxml2-devel dbus-glib-devel polkit-devel
+Requires:	libxml2 dbus-glib polkit
 %description
 The GConf package contains a configuration database system used by many GNOME applications.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libxml2-devel dbus-glib-devel polkit-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

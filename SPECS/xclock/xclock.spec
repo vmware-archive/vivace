@@ -8,8 +8,8 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/app/%{name}-%{version}.tar.bz2
-BuildRequires:	util-macros proto libX11-devel libXmu-devel libXaw-devel libXrender-devel libXft-devel libxkbfile-devel libXt-devel libSM-devel libICE-devel fontconfig-devel freetype2-devel
-Requires:	xorg-applications libX11 libXmu libXaw libXrender libXft libxkbfile libXt libSM libICE fontconfig freetype2
+BuildRequires:	libXmu-devel libXaw-devel libXft-devel libxkbfile-devel libXt-devel
+Requires:	xorg-applications libXmu libXaw libXft libxkbfile libXt
 %description
 The xclock package contains a simple clock application which is used in the default xinit configuration.
 %prep

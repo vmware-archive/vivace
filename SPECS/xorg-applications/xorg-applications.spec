@@ -45,8 +45,8 @@ Source34:	http://ftp.x.org/pub/individual/app/xvinfo-1.1.2.tar.bz2
 Source35:	http://ftp.x.org/pub/individual/app/xwd-1.0.6.tar.bz2
 Source36:	http://ftp.x.org/pub/individual/app/xwininfo-1.1.3.tar.bz2
 Source37:	http://ftp.x.org/pub/individual/app/xwud-1.0.4.tar.bz2
-BuildRequires:	pkg-config util-macros libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont-devel libICE-devel libSM-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel freetype2-devel libXau-devel libxcb-devel
-Requires:	libpng mesa xcb-util libfontenc libXfont libICE libSM libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv freetype2 libXau libxcb
+BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel freetype2-devel libXau-devel
+Requires:	libpng mesa xcb-util libfontenc libXfont libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv freetype2 libXau
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations. 
 %prep

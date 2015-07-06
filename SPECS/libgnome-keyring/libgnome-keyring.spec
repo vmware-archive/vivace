@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.6/%{name}-%{version}.tar.xz
-BuildRequires:	intltool glib-devel dbus-glib-devel libgcrypt-devel
-Requires:	glib dbus-glib libgcrypt
+BuildRequires:	dbus-glib-devel libgcrypt-devel
+Requires:	dbus-glib libgcrypt
 %description
 The libgnome-keyring is used by applications to integrate with the GNOME Keyring system.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	dbus-glib-devel libgcrypt-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

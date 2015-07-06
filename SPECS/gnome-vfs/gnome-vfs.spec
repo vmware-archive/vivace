@@ -10,13 +10,14 @@ Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
 Patch0:		gnome-vfs-2.24.1-disable-gnome-mime-data.patch
 Patch1:		gnome-vfs2-g_memmove-no-more.patch
-BuildRequires:	intltool libxml2-devel glib-devel dbus-glib-devel GConf-devel bzip2-devel gtk-doc
-Requires:	libxml2 glib dbus-glib GConf bzip2
+BuildRequires:	intltool libxml2-devel dbus-glib-devel GConf-devel bzip2-devel gtk-doc
+Requires:	libxml2 dbus-glib GConf bzip2
 %description
 The GNOME Virtual File System package contains virtual file system libraries. This is used as one of the foundations of the Nautilus file manager.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool libxml2-devel dbus-glib-devel GConf-devel bzip2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

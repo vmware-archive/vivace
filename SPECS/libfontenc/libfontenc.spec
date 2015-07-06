@@ -8,7 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto zlib-devel
+BuildRequires:	pkg-config proto zlib-devel
 Requires:	zlib
 Provides:	pkgconfig(fontenc)
 %description
@@ -16,6 +16,7 @@ The X11 Fontenc runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	proto zlib-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

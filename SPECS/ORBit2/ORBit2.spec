@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.14/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool glib-devel libidl-devel
-Requires:	glib libidl
+BuildRequires:	libidl-devel
+Requires:	libidl
 %description
 The ORBit2 package contains a high-performance CORBA Object Request Broker. This allows programs to send requests and receive replies from other programs.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libidl-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

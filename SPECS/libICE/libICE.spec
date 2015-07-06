@@ -8,8 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto xtrans
-# TODO: libICE-devel depends on pkgconfig(proto)
+BuildRequires:	xtrans-devel
 Requires:	proto
 Provides:	pkgconfig(ice)
 %description
@@ -17,6 +16,7 @@ The X11 Inter-Client Exchange runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	xtrans-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

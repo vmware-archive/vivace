@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.freedesktop.org/pub/mesa/%{name}/%{name}-%{version}.tar.bz2
-BuildRequires:	mesa-devel libXext-devel libXdamage-devel libXfixes-devel libxcb-devel libX11-devel libxshmfence-devel libXxf86vm-devel
-Requires:	mesa libXext libXdamage libXfixes libxcb libX11 libxshmfence libXxf86vm
+BuildRequires:	mesa-devel
+Requires:	mesa
 %description
 This package provides the Mesa OpenGL Utility library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	mesa-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

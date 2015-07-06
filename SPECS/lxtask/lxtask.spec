@@ -8,8 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-BuildRequires:	intltool gtk2-devel gobject-introspection python2-libs python2-devel glib-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel libX11-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel libjpeg-turbo-devel
-Requires:	gtk2 glib cairo pango gdk-pixbuf atk libX11 pixman libXrender libXext libpng harfbuzz libjpeg-turbo
+BuildRequires:	intltool gtk2-devel
+Requires:	gtk2
 %description
 The LXTask package contains a lightweight and desktop-independent task manager.
 %prep

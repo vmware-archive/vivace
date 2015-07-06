@@ -10,14 +10,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 URL:            ftp://ftp.gnome.org
 Source0:        ftp://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
-BuildRequires: 	python2-devel
-BuildRequires: 	python2-libs
-BuildRequires: 	gobject-introspection-devel
-BuildRequires: 	glib-devel
-BuildRequires:	pygobject2 atk-devel pango-devel gtk2-devel py2cairo cairo-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel gdk-pixbuf-devel
-Requires:	python2
-Requires:	gobject-introspection
-Requires:	glib pango gtk2 
+BuildRequires:	pygobject2 gtk2-devel py2cairo
+Requires:	gtk2 
 Requires:	pygobject2
 
 %description

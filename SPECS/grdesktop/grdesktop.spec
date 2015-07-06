@@ -8,8 +8,8 @@ Group:		Applications/Communications
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.savannah.gnu.org/releases/grdesktop/%{name}-%{version}.tar.gz
-BuildRequires:	libgnomeui-devel libgnome-devel gtk2-devel libgnome glib-devel libX11-devel libXext-devel libXinerama-devel gtk3-devel libXrender-devel libpng-devel libXrandr-devel gobject-introspection-python python2-devel alsa-lib-devel gnome-vfs-devel libgnomecanvas-devel gdk-pixbuf-devel libgnome-keyring-devel libxml2-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper
-Requires:	rdesktop libgnome glib gnome-vfs libX11 libXext libXinerama libXrender alsa-lib libXrandr openssl gtk2 gtk3 libgnomeui libgnomecanvas gdk-pixbuf libgnome-keyring libxml2 cairo pango atk GConf popt libbonobo libart_lgpl
+BuildRequires:	libgnomeui-devel gtk2-devel gtk3-devel gobject-introspection-devel alsa-lib-devel libxml2-devel GConf-devel scrollkeeper
+Requires:	rdesktop alsa-lib gtk2 gtk3 libgnomeui libxml2 GConf
 %description
 grdesktop is a GNOME frontend, for the remote desktop client (rdesktop).
 It can save several connections (including their options), and browse the network for available terminal servers.

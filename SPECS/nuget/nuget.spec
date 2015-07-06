@@ -14,7 +14,7 @@ Source0: http://download.mono-project.com/sources/%{name}/%{name}-%{version}+md5
 Source1:	nuget-core.pc
 Source2:	nuget.sh
 Patch0:		nuget-fix_xdt_hintpath
-BuildRequires:	tzdata mono-devel mono-extras
+BuildRequires:	mono-devel mono-extras
 Requires:	mono mono-extras
 %description
 Package manager for NuGet repositories.

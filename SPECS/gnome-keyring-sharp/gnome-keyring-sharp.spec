@@ -8,14 +8,15 @@ Group:		Development/Libraries/Other
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.go-mono.com/archive/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	glib-devel libtool gtk-sharp2 mono-devel libgnome-keyring-devel
-Requires:	libgnome-keyring 
+BuildRequires:	libtool gtk-sharp2-devel mono-devel libgnome-keyring-devel
+Requires:	libgnome-keyring gtk-sharp2
 %description
 gnome-keyring-sharp is a fully managed implementation of libgnome-keyring.When the gnome-keyring-daemon is running, you can use this to retrive/store confidential information such as passwords, notes or network services user information.
 
 %package devel
 License:        MIT
 Requires:       %{name} = %{version} pkg-config
+Requires:	gtk-sharp2-devel mono-devel libgnome-keyring-devel
 Summary:        Managed implementation of libgnome-keyring
 Group:          Development/Libraries/Other
 AutoReqProv:    on

@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.16/%{name}-%{version}.tar.xz
-BuildRequires:	glib-devel gobject-introspection-devel gobject-introspection-python python2-devel python2-libs
+BuildRequires:	gobject-introspection-devel gobject-introspection-python
 Requires:	glib
 %description
 ATK provides the set of accessibility interfaces that are implemented by other toolkits and applications. Using the ATK interfaces, accessibility tools have full access to view and control running applications.
 %package	devel
 Summary:	Header and development files for
 Requires:	%{name} = %{version}
+Requires:	gobject-introspection-devel gobject-introspection-python
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

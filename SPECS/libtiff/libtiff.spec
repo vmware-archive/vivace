@@ -16,6 +16,7 @@ The LibTIFF package contains the TIFF libraries and associated utilities. The li
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libjpeg-turbo-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

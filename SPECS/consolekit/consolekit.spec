@@ -9,14 +9,15 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://anduin.linuxfromscratch.org/sources/BLFS/svn/c/ConsoleKit-%{version}.tar.xz
 BuildRequires:	dbus-glib-devel 
-BuildRequires:  polkit-devel  glib-devel libacl-devel libX11-devel libXrender-devel libXext-devel
-Requires:	dbus-glib polkit libacl libX11 libXrender libXext glib
+BuildRequires:  polkit-devel libacl-devel libXrender-devel libXext-devel
+Requires:	dbus-glib polkit libacl libXrender libXext
 %description
 The ConsoleKit package is a framework for keeping track of the various users, sessions, and seats present on a system. It provides a mechanism for software to react to changes of any of these items or of any of the metadata associated with them.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:       polkit-devel libacl-devel libXrender-devel libXext-devel
 %description 	devel
 Install this package if you want do compile applications using the ConsoleKit.
 %prep

@@ -8,13 +8,14 @@ Group:		User Interface/Library
 Source0:	https://launchpad.net/%{name}/12.10/%{version}/+download/%{name}-%{version}.tar.gz
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	intltool dbus glib-devel gtk3-devel gobject-introspection-devel python2-libs python2-devel gnome-doc-utils json-glib-devel gobject-introspection-python gdk-pixbuf-devel pango-devel cairo-devel atk-devel pixman-devel harfbuzz-devel freetype2-devel libXrender-devel libXext-devel libX11-devel libpng-devel gtk2-devel
-Requires:	dbus glib gtk3 json-glib gobject-introspection gtk2
+BuildRequires:	intltool gtk3-devel gnome-doc-utils json-glib-devel gtk2-devel
+Requires:	gtk3 json-glib gtk2
 %description
 A small little library that was created by pulling out some comon code out of indicator-applet. It passes a menu structure across DBus so that a program can create a menu simply without worrying about how it is displayed on the other side of the bus.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool gtk3-devel json-glib-devel gtk2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

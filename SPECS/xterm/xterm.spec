@@ -8,8 +8,8 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://invisible-island.net/%{name}/%{name}-%{version}.tgz
-BuildRequires:	util-macros proto libXaw-devel libX11-devel libXt-devel libSM-devel libXmu-devel libICE-devel ncurses-devel
-Requires:	xorg-applications libXaw libX11 libXt libICE libSM libXmu ncurses
+BuildRequires:	proto libXaw-devel libX11-devel libXt-devel libXmu-devel ncurses-devel
+Requires:	xorg-applications libXaw libX11 libXt libXmu ncurses
 %description
 xterm is a terminal emulator for the X Window System. 
 %prep

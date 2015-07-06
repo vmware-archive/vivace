@@ -8,11 +8,9 @@ Group:		Productivity/Graphics/Bitmap Editors
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        https://github.com/PintaProject/Pinta/releases/download/1.6/pinta-1.6.zip
-BuildRequires:  gtk-sharp2
-BuildRequires:  unzip tzdata mono-devel >= 2.8 mono mono-addins 
-BuildRequires:  intltool >= 0.35.0
-BuildRequires:  automake autoconf gtk-sharp2
-Requires:	mono mono-addins
+BuildRequires:  unzip mono-devel >= 2.8 mono-addins 
+BuildRequires:  automake autoconf gtk-sharp2-devel
+Requires:	mono-addins
 Requires:       gtk-sharp2
 %description
 Pinta is a free, open source drawing/editing program modeled after Paint.NET. Its goal is to provide users with a simple yet powerful way to draw and manipulate images on Linux, Mac, Windows, and *BSD. 

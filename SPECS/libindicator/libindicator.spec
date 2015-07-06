@@ -8,14 +8,15 @@ Group:		User Interface/Library
 Source0:	https://launchpad.net/%{name}/12.10/%{version}/+download/%{name}-%{version}.tar.gz
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	intltool dbus dbus-glib-devel glib-devel gtk3-devel gdk-pixbuf-devel pango-devel cairo-devel atk-devel pixman-devel harfbuzz-devel freetype2-devel libXrender-devel libXext-devel libX11-devel libpng-devel
-Requires:	dbus dbus-glib glib gtk3
+BuildRequires:	gtk3-devel
+Requires:	gtk3
 %description
 A set of symbols and convenience functions that all Ayatana indicators are
 likely to use.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	gtk3-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

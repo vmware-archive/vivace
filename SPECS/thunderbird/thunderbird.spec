@@ -9,9 +9,9 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
 Source1:        %{name}.desktop
-BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel libjpeg-turbo-devel libpng-devel zlib-devel yasm-devel alsa-lib-devel fontconfig-devel freetype2-devel harfbuzz-devel cairo-devel libXt-devel libXext-devel libXrender-devel libX11-devel libffi pixman-devel glib-devel pango-devel gdk-pixbuf-devel atk-devel libSM-devel libICE-devel libXcomposite-devel libXfixes-devel libXdamage-devel
+BuildRequires:	gtk2-devel which unzip zip nspr nss-devel icu-devel yasm-devel alsa-lib-devel libffi libXcomposite-devel
 BuildRequires:	desktop-file-utils
-Requires:	gtk2 nspr nss icu libjpeg-turbo libpng zlib yasm alsa-lib freetype2 harfbuzz cairo libXt libXext libXrender libX11 libffi pixman glib pango gdk-pixbuf atk libSM libICE libXcomposite libXfixes libXdamage desktop-file-utils
+Requires:	gtk2 nspr nss icu yasm alsa-lib libXcomposite desktop-file-utils
 %description
 Thunderbird is a stand-alone mail/news client based on the Mozilla codebase. It uses the Gecko rendering engine to enable it to display and compose HTML emails.
 %prep

@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.40/%{name}-%{version}.tar.xz
-BuildRequires:	gdk-pixbuf-devel pango-devel libxml2-devel libcroco-devel gobject-introspection-devel cairo-devel libpng-devel pixman-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel python2-devel python2-libs gobject-introspection-python
-Requires:	gdk-pixbuf pango libxml2 libcroco gobject-introspection cairo libpng pixman libXrender libXext libX11 harfbuzz
+BuildRequires:	gdk-pixbuf-devel pango-devel libcroco-devel gobject-introspection-devel gobject-introspection-python
+Requires:	gdk-pixbuf pango libcroco gobject-introspection
 %description
 The librsvg package contains a library and tools used to manipulate, convert and view Scalable Vector Graphic (SVG) images.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	gdk-pixbuf-devel pango-devel libcroco-devel gobject-introspection-devel gobject-introspection-python
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

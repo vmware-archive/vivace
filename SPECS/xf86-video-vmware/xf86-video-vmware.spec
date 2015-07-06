@@ -9,8 +9,8 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
-BuildRequires:	xorg-server-devel pixman-devel libpciaccess-devel libX11-devel libXext-devel libdrm-devel mesa-devel
-Requires:	xorg-server pixman libpciaccess libX11 libXext libdrm mesa
+BuildRequires:	xorg-server-devel
+Requires:	xorg-server
 %description
 The Xorg VMware Driver package contains the X.Org Video Driver for VMware SVGA virtual video cards. 
 %prep

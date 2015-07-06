@@ -8,8 +8,8 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-BuildRequires:	intltool gtk2-devel glib-devel libX11-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel dbus-glib libunique-devel polkit-devel dbus-glib-devel
-Requires:	gtk2 dbus-glib libunique polkit dbus-glib
+BuildRequires:	libunique-devel polkit-devel dbus-glib-devel
+Requires:	libunique polkit dbus-glib
 %description
 The LXSession package contains the default session manager for LXDE.
 %prep

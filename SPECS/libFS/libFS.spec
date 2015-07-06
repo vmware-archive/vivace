@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/libFS-1.0.6.tar.bz2
-BuildRequires:	pkg-config util-macros fontconfig-devel xtrans
-Requires:	fontconfig libX11
+BuildRequires:	xtrans-devel
+Requires:	xtrans
 %description
 X Font Service client library.
 %package	devel
 Summary:	Header and development files for libFS
 Requires:	%{name} = %{version}
+Requires:	xtrans-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

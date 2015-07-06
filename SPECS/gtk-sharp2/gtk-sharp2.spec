@@ -8,11 +8,17 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}12/gtk-sharp-%{version}.tar.gz
-BuildRequires:	intltool gettext glib-devel tzdata mono-devel gtk2-devel libglade-devel pango-devel libxml2-devel atk-devel cairo-devel gdk-pixbuf-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel
-Requires:	gettext glib mono gtk2 libglade pango libxml2 atk cairo
+BuildRequires:	gettext tzdata mono-devel libglade-devel
+Requires:	gettext mono libglade
 Requires:	perl-XML-LibXML
 %description
 GTK+ and GNOME bindings for Mono.
+%package	devel
+Summary:	Header and development files
+Requires:	%{name} = %{version}
+Requires:	gettext tzdata mono-devel libglade-devel
+%description	devel
+It contains the libraries and header files to create applications 
 %prep
 %setup -q -n gtk-sharp-2.12.26
 %build
@@ -25,7 +31,14 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_bindir}
 %{_libdir}
+%exclude %{_libdir}/*.la
+%exclude %{_libdir}/*.a
 %{_datadir}
+%exclude %{_libdir}/debug/
+%files devel
+%defattr(-,root,root)
+%{_libdir}/*.la
+%{_libdir}/*.a
 %changelog
 *	Thu Jun 4 2015 Alexey Makhalov <amakhalov@vmware.com> 2.12.26-1
 -	initial version

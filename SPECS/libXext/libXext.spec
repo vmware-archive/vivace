@@ -8,14 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/libXext-1.3.3.tar.bz2
-BuildRequires:	pkg-config util-macros fontconfig-devel libxcb-devel xtrans libX11-devel libXau-devel
-Requires:	fontconfig libxcb libX11 libXau
+BuildRequires:	libX11-devel
+Requires:	libX11
 Provides:	pkgconfig(xext)
 %description
 Core X11 protocol client library.
 %package	devel
 Summary:	Header and development files for libXext
 Requires:	%{name} = %{version}
+Requires:	libX11-devel
 %description	devel
 libXext - library for common extensions to the X11 protocol.
 %prep

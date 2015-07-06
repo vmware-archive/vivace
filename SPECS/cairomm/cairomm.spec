@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://cairographics.org/releases/%{name}-%{version}.tar.gz
-BuildRequires:	glib-devel freetype2-devel libxcb-devel pixman-devel libXext-devel libX11-devel libpng-devel fontconfig-devel cairo-devel libXrender-devel libsigc++ harfbuzz-devel  
-Requires:	glib libpng fontconfig libXext pixman libxcb freetype2 cairo libsigc++ libXrender boost libX11
+BuildRequires:	cairo-devel libsigc++  
+Requires:	cairo libsigc++
 %description
 cairomm is a C++ wrapper for the cairo graphics library. It offers all the power of cairo with an interface familiar to C++ developers, including use of the Standard Template Library where it makes sense.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	cairo-devel libsigc++  
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

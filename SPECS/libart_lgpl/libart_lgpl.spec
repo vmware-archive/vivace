@@ -9,13 +9,14 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
 Patch0:		libart_lgpl-2.3.21-upstream_fixes-1.patch
-BuildRequires:	intltool libxml2-devel glib-devel gtk2-devel python2-libs python2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel libglade-devel
-Requires:	libxml2 glib gtk2 python2 cairo pango gdk-pixbuf atk pixman libpng libXrender libX11 libXext harfbuzz libglade
+BuildRequires:	libglade-devel
+Requires:	libglade
 %description
 The libart_lgpl package contains the libart libraries. These are useful for high-performance 2D graphics.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libglade-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

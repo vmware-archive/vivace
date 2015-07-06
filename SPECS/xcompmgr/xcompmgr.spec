@@ -8,8 +8,8 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool util-macros libX11-devel libXext-devel libXcomposite-devel libXdamage-devel libXrender-devel libXfixes-devel
-Requires:	libX11 libXext libXcomposite libXdamage libXrender libXfixes
+BuildRequires:	libXcomposite-devel libXdamage-devel libXrender-devel 
+Requires:	libXcomposite libXdamage libXrender 
 %description
 xcompmgr is a sample compositing manager for X server.
 %prep

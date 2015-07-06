@@ -15,6 +15,7 @@ The PCI access library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	pkg-config util-macros 
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

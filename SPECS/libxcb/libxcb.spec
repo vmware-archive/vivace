@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 BuildRequires:	python2-devel
 BuildRequires:	python2-libs
-BuildRequires:	libXau libXau-devel xcb-proto
+BuildRequires:	libXau-devel xcb-proto
 BuildRequires:	libXdmcp-devel
 Requires:	libXdmcp
 Requires:	libXau
@@ -20,6 +20,7 @@ The libxcb package provides an interface to the X Window System protocol, which 
 %package	devel
 Summary:	Header and development files for libxcb
 Requires:	%{name} = %{version}
+Requires:	libXau-devel xcb-proto libXdmcp-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

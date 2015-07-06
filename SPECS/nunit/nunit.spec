@@ -14,8 +14,8 @@ Source0:	http://launchpad.net/nunitv2/trunk/%{version}/+download/NUnit-%{version
 Source1:	nunit.pc
 Source2:	nunit-gui.sh
 Source3:	nunit-console.sh
-BuildRequires:	unzip intltool mono-devel mono-extras tzdata libgdiplus-devel
-Requires:	mono mono-extras tzdata libgdiplus
+BuildRequires:	unzip mono-devel mono-extras
+Requires:	mono mono-extras
 %description
 NUnit is a testing framework for .NET applications.
 %prep

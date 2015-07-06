@@ -16,6 +16,7 @@ The libfm package contains a library and other files required by menu-cache-gen 
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	intltool glib-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.

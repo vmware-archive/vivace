@@ -9,16 +9,15 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
 Patch0:		libunique-1.1.6-upstream_fixes-1.patch
-BuildRequires:	autoconf automake intltool gtk2-devel glib-devel libX11-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel gobject-introspection
-#intltool glib-devel gtk2-devel menu-cache-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel libfm-devel
+BuildRequires:	autoconf automake gtk2-devel
 Requires:	gtk2
-#glib gtk2 menu-cache cairo pango gdk-pixbuf atk pixman harfbuzz libpng libXrender libfm
 %description
 The libunique package contains a library for writing single instance applications.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	gtk2-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.

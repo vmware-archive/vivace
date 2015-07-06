@@ -9,9 +9,9 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
 Source1:        %{name}.desktop
-BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel libjpeg-turbo-devel libpng-devel zlib-devel yasm-devel alsa-lib-devel fontconfig-devel freetype2-devel harfbuzz-devel cairo-devel libXt-devel libXext-devel libXrender-devel libX11-devel libffi pixman-devel glib-devel pango-devel gdk-pixbuf-devel atk-devel libSM-devel libICE-devel libXcomposite-devel libXfixes-devel libXdamage-devel
+BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils
-Requires:	gtk2 nspr nss icu libjpeg-turbo libpng zlib yasm alsa-lib freetype2 harfbuzz cairo libXt libXext libXrender libX11 libffi pixman glib pango gdk-pixbuf atk libSM libICE libXcomposite libXfixes libXdamage desktop-file-utils
+Requires:	gtk2 nspr nss icu zlib yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
 %description
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep

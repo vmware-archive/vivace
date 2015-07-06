@@ -8,13 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://upower.freedesktop.org/releases/%{name}-%{version}.tar.xz
-BuildRequires:	intltool dbus-glib-devel gobject-introspection python2-libs python2-devel polkit-devel systemd libusb-devel glib-devel
-Requires:	dbus-glib polkit libusb glib
+BuildRequires:	dbus-glib-devel gobject-introspection-devel gobject-introspection-python polkit-devel libusb-devel
+Requires:	dbus-glib polkit libusb
 %description
 The UPower package provides an interface to enumerating power devices, listening to device events and querying history and statistics.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	dbus-glib-devel gobject-introspection-devel polkit-devel libusb-devel
 %description	devel
 It contains the header files to create applications 
 %prep

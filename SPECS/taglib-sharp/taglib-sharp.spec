@@ -18,6 +18,7 @@ access to specific APIs for a given format.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	mono-devel
 %description	devel
 Multimedia metadata reading/writing library for popular formats
 %prep

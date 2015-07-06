@@ -8,8 +8,8 @@ Group:		Applications/Communications
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	openssl-devel glib-devel libX11-devel libXext-devel libXinerama-devel libXrender-devel libpng-devel libXrandr-devel gobject-introspection-python python2-devel alsa-lib-devel
-Requires:	glib libX11 libXext libXinerama libXrender alsa-lib libXrandr openssl
+BuildRequires:	openssl-devel glib-devel libXinerama-devel libpng-devel libXrandr-devel gobject-introspection-python python2-devel alsa-lib-devel
+Requires:	glib libXinerama alsa-lib libXrandr openssl
 %description
 rdesktop is an open source client for Windows Remote Desktop Services, capable of natively speaking Remote Desktop Protocol (RDP) in order to present the user's Windows desktop. rdesktop is known to work with Windows versions such as NT 4 Terminal Server, 2000, XP, 2003, 2003 R2, Vista, 2008, 7, 2008 R2, 2008 and 2012 R2.
 %prep

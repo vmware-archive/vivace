@@ -11,8 +11,8 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
 Source1:	lxdm.conf
 Source2:	default.png
 Source3:	greeter.ui
-BuildRequires:	intltool gtk2-devel gobject-introspection python2-libs python2-devel glib-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel libX11-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel librsvg-devel consolekit-devel Linux-PAM systemd libxcb-devel
-Requires:	gtk2 glib cairo pango gdk-pixbuf atk libX11 pixman libXrender libXext libpng harfbuzz librsvg consolekit Linux-PAM systemd libxcb
+BuildRequires:	gtk2-devel librsvg-devel consolekit-devel Linux-PAM systemd
+Requires:	gtk2 librsvg consolekit Linux-PAM systemd libxcb
 %description
 The LXDM is a lightweight Display Manager for the LXDE desktop. It can also be used as an alternative to other Display Managers such as GNOME's GDM or KDE's KDM.
 %prep

@@ -8,8 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libXext-devel libXt-devel libX11-devel libICE-devel libSM-devel libXau-devel
-Requires:	libXext libXt libX11 libICE libSM libXau
+BuildRequires:	libXext-devel libXt-devel libXau-devel
+Requires:	libXext libXt libXau
 Provides:	libxpm
 Provides:	pkgconfig(xpm)
 %description
@@ -17,6 +17,7 @@ The X11 libXpm runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXext-devel libXt-devel libXau-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

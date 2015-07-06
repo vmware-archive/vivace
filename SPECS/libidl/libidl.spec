@@ -15,6 +15,7 @@ The libIDL package contains libraries for Interface Definition Language files. T
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool glib-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

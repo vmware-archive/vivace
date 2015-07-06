@@ -8,8 +8,8 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://launchpad.net/cairo-dock-plug-ins/3.4/%{version}/+download/%{name}-%{version}.tar.gz
-BuildRequires:	cmake intltool util-macros libX11-devel libXext-devel libXcomposite-devel libXdamage-devel libXrender-devel libXfixes-devel cairo-devel dbus dbus-glib-devel libxml2-devel mesa-devel curl librsvg-devel glu-devel libXtst-devel libXrandr-devel libXinerama-devel gtk3-devel glib-devel pango-devel gdk-pixbuf-devel atk-devel libXi-devel cairo-dock-devel alsa-lib-devel ruby upower-devel python2-libs python2-devel libXxf86vm-devel vte-devel gnome-menus-devel
-Requires:	libX11 libXext libXcomposite libXdamage libXrender libXfixes cairo dbus dbus-glib libxml2 mesa curl librsvg glu libXtst libXrandr libXinerama gtk3 glib pango gdk-pixbuf atk libXi cairo-dock alsa-lib ruby upower libXxf86vm vte gnome-menus
+BuildRequires:	cmake libXcomposite-devel dbus-glib-devel libxml2-devel mesa-devel curl librsvg-devel glu-devel gtk3-devel  cairo-dock-devel alsa-lib-devel ruby upower-devel libXxf86vm-devel vte-devel gnome-menus-devel
+Requires:	libXcomposite dbus-glib libxml2 mesa curl librsvg glu gtk3 cairo-dock alsa-lib ruby upower libXxf86vm vte gnome-menus
 %description
 A pretty and convenient interface to your desktop: dock, panel, desklet.
 %prep

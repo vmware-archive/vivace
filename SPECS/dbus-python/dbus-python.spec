@@ -8,13 +8,14 @@ Group:		User Interface/Library
 Source0:	http://dbus.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	intltool dbus dbus-glib-devel glib-devel python2-devel python2-libs
-Requires:	dbus dbus-glib glib python2
+BuildRequires:	intltool dbus-glib-devel python2-devel python2-libs
+Requires:	dbus-glib python2
 %description
 D-Bus python bindings for use with python programs.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	dbus-glib-devel python2-devel python2-libs
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

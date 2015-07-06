@@ -8,14 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.freedesktop.org/pub/%{name}/%{version}/%{name}-%{version}.tar.xz
-BuildRequires:	pkg-config util-macros libXext-devel libXt-devel libX11-devel libICE-devel libSM-devel libXmu-devel libXpm-devel libdrm-devel libXdamage-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel systemd libpciaccess-devel libxcb-devel
-Requires:	libXext libXt libX11 libICE libSM libXmu libXpm libdrm libXdamage libXfixes libxshmfence libXxf86vm systemd libpciaccess libxcb
+BuildRequires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd 
+Requires:	libdrm libXdamage libxshmfence libXxf86vm systemd
 Provides:	pkgconfig(dri)
 %description
 Mesa is an OpenGL compatible 3D graphics library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd 
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

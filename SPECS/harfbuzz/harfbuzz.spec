@@ -17,6 +17,7 @@ The Harfbuzz package contains an OpenType text shaping engine.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel icu-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

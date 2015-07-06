@@ -8,14 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto libX11-devel libSM-devel libICE-devel
-Requires:	libX11 libSM libICE
+BuildRequires:	libX11-devel libSM-devel
+Requires:	libX11 libSM 
 Provides:	pkgconfig(xt)
 %description
 The X11 Toolkit Intrinsics library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libX11-devel libSM-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

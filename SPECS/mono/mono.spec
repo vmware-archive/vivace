@@ -17,8 +17,8 @@ Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.44.
 # You should not regenerate this unless you have a really, really, really good reason.
 Source1:	mono.snk
 Patch0:		mono-4.0.0-ignore-reference-assemblies.patch
-BuildRequires:	intltool gettext glib-devel tzdata libgdiplus-devel
-Requires:	gettext glib libgdiplus
+BuildRequires:	gettext tzdata libgdiplus-devel
+Requires:	gettext tzdata libgdiplus
 Requires:	libgdiplus
 Provides:	mono(Mono.Cairo)
 Provides:	mono(Mono.Posix)
@@ -67,6 +67,7 @@ Mono is an open source implementation of Microsoft's .NET Framework based on the
 Summary: Development tools for Mono
 Group: Development/Languages
 Requires: %{name} = %{version}-%{release}
+Requires:	gettext tzdata libgdiplus-devel
 
 %description devel
 This package completes the Mono developer toolchain with the mono profiler,

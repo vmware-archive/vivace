@@ -9,14 +9,15 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/pcmanfm/%{name}-%{version}.tar.xz
 Patch0:		host2guest_dnd_support.patch
-BuildRequires:	intltool glib-devel gtk2-devel menu-cache-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel
-Requires:	glib gtk2 menu-cache cairo pango gdk-pixbuf atk pixman harfbuzz libpng libXrender
+BuildRequires:	gtk2-devel menu-cache-devel
+Requires:	gtk2 menu-cache
 %description
 The libfm package contains a library used to develop file managers providing some file management utilities.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	gtk2-devel menu-cache-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.

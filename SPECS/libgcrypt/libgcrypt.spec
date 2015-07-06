@@ -15,6 +15,7 @@ The GNOME Keyring package contains a daemon that keeps passwords and other secre
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

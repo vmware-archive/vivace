@@ -8,14 +8,15 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	intltool glib-devel cairo-devel libpng-devel libtiff-devel libjpeg-turbo-devel libX11-devel freetype2-devel fontconfig-devel pixman-devel libXrender-devel libXext-devel harfbuzz-devel
-Requires:	glib cairo libpng libtiff libjpeg-turbo libX11 freetype2 fontconfig pixman libXrender libXext harfbuzz
+BuildRequires:	intltool cairo-devel libtiff-devel
+Requires:	cairo libtiff
 %description
 An Open Source implementation of the GDI+ API.
 
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool cairo-devel libtiff-devel
 %description	devel
 It contains the libraries and header files to create applications 
 

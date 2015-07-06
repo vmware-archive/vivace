@@ -20,6 +20,7 @@ the X protocol but which have traditionally been provided by Xlib.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libxcb-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

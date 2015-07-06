@@ -16,6 +16,7 @@ The Xorg Evdev Driver package contains Generic Linux input driver for the Xorg X
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libevdev-devel xorg-server-devel pixman-devel libpciaccess-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

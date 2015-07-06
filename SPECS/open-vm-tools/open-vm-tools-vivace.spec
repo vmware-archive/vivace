@@ -18,12 +18,11 @@ BuildRequires: 	libmspack
 BuildRequires:	Linux-PAM
 BuildRequires:	openssl-devel
 BuildRequires:	procps-ng-devel
-BuildRequires:	libX11-devel libXext-devel libXinerama-devel libXi-devel fontconfig-devel libXrender-devel freetype2-devel libXrandr-devel libXtst-devel libSM-devel libICE-devel libXcomposite-devel gtk2-devel cairo-devel cairomm-devel pango-devel pangomm-devel gdk-pixbuf-devel atk-devel atkmm-devel pixman-devel libpng-devel harfbuzz-devel gtkmm-devel fuse-devel
-Requires:	libX11 libXext libXinerama libXi libXrender freetype2 libXrandr libXtst libSM libICE libXcomposite gtk2 gtkmm fontconfig atkmm fuse 
+BuildRequires:	gtkmm-devel fuse-devel libXrandr-devel libXtst-devel
+Requires:	gtkmm fuse libXrandr libXtst
 Requires:	xerces-c
 Requires:	libdnet
 Requires:	libmspack
-Requires:	glib glibmm
 Requires:	xml-security-c
 Requires:	openssl
 %description
@@ -34,7 +33,6 @@ VmWare virtualization user mode tools
 %patch1 -p1
 %build
 sed -i 's#/var/run/vmblock#/run/vmblock#' lib/include/vmblock.h
-#sed -i 's#ifdef VMX86_DEVEL#if 1#' vmblock-fuse/os.h
 autoreconf -i
 export CFLAGS="%{optflags} -DVMX86_DEVEL=1"
 ./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static

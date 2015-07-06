@@ -9,8 +9,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:  libxml2-devel libxslt docbook-xml docbook-xsl intltool
-Requires:	libxml2 libxslt docbook-xml docbook-xsl
+BuildRequires:  libxslt docbook-xml docbook-xsl intltool
+Requires:	libxslt docbook-xml docbook-xsl
 
 %description
 ScrollKeeper is a cataloging system for documentation on open systems. It manages documentation metadata (as specified by the Open Source Metadata Framework(OMF)) and provides a simple API to allow help browsers to find, sort, and search the document catalog. It will also be able to communicate with catalog servers on the Net to search for documents which are not on the local system. 

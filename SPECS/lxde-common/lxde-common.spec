@@ -8,7 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-BuildRequires:	intltool consolekit-devel lxde-icon-theme lxsession openbox-devel 
+BuildRequires:	consolekit-devel lxde-icon-theme lxsession openbox-devel 
 Requires:	consolekit lxde-icon-theme lxsession openbox lxappearance xinit pcmanfm xcompmgr cairo-dock-plugins shared-mime-info
 %description
 The LXDE Common package provides a set of default configuration for LXDE.
