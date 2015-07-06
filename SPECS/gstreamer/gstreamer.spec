@@ -9,6 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.5.1.tar.xz
 BuildRequires:	glib-devel libxml2-devel
+BuildRequires:	gobject-introspection-devel gobject-introspection-python
 Requires:	glib libxml2
 Provides:	pkgconfig(gstreamer-1.0)
 Provides:	pkgconfig(gstreamer-base-1.0)
@@ -18,6 +19,7 @@ GStreamer is a streaming media framework that enables applications to share a co
 Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	glib-devel libxml2-devel
+Requires:	gobject-introspection-devel gobject-introspection-python
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -37,11 +39,10 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING NEWS README RELEASE TODO
-%{_bindir}/*
+%{_bindir}
 #%{_sysconfdir}/*
 %{_libdir}/*.so*
-#%{_libdir}/girepository-1.0/* 
-/usr/libexec/* 
+%{_libexecdir} 
 %{_libdir}/gstreamer-1.0/*.so
 #%{_datadir}/gir-1.0/*
 %exclude %{_libdir}/debug/
@@ -55,6 +56,7 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/gstreamer-1.0/*.so
 %{_libdir}/gstreamer-1.0/include*
 %{_libdir}/gstreamer-1.0/*.la
+%{_libdir}/girepository-1.0/* 
 %{_datadir}/*
 
 %changelog

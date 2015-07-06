@@ -2,7 +2,7 @@ Summary:	Abstract network code for X.
 Name:		xtrans
 Version:	1.3.5
 Release:	1
-License:	TODO
+License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.

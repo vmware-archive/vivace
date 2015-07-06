@@ -61,7 +61,7 @@ rm -rf %{buildroot}
 %{_libdir}/pkgconfig/*.pc
 %{_libdir}/gstreamer-1.0/*.so
 %{_libdir}/gstreamer-1.0/*.la
-#%{_libdir}/girepository-1.0/*.typelib
+%{_libdir}/girepository-1.0/*.typelib
 #%{_datadir}/gir-1.0/*.gir
 %{_datadir}/*
 

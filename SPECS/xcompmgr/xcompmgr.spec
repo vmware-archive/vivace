@@ -2,7 +2,7 @@ Summary:	X11 composite manager.
 Name:		xcompmgr
 Version:	1.1.7
 Release:	1
-License:	Copyright
+License:	Copyright only
 URL:		http://www.freedesktop.org
 Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
