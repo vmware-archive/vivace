@@ -77,6 +77,7 @@ touch --no-create %{_datadir}/icons/hicolor || :
 %{_datadir}/pixmaps
 %{_datadir}/man
 %{_datadir}/mime
+%{_datadir}/gir-1.0
 
 %files devel
 %defattr (-, root, root)
@@ -85,6 +86,7 @@ touch --no-create %{_datadir}/icons/hicolor || :
 %{_libdir}/lib%{name}*.so
 %{_libdir}/*.la
 %{_datadir}/gtk-doc/html/*%{name}*
+%{_libdir}/girepository-1.0
 
 %changelog
 *	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.13.92-1
