@@ -8,7 +8,7 @@ Group:		System/Libraries
 Source0:	http://ftp.acc.umu.se/pub/gnome/sources/%{name}/3.16/%{name}-%{version}.tar.xz
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel
+BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel
 Requires:	dbus glib libxml2 pango cairo pixman libpng libXrender libXext libX11 harfbuzz
 %description
 GDL is the Gnome Development/Docking Library.
@@ -46,6 +46,7 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 %{_includedir}/libgdl*
 %{_libdir}/pkgconfig/*.pc
+%{_libdir}/girepository-1.0
 %{_libdir}/*.so
 %{_datadir}
 
