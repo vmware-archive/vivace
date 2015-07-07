@@ -8,14 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.22/%{name}-%{version}.tar.xz
-BuildRequires:	glibmm atk-devel
-Requires:	glibmm libsigc++ atk 
+BuildRequires:	glibmm-devel atk-devel
+Requires:	glibmm atk 
 %description
 Atkmm is the official C++ interface for the ATK accessibility toolkit library.
 %package	devel
 Summary:	Header and development files for
 Requires:	%{name} = %{version}
-BuildRequires:	atk-devel
+BuildRequires:	atk-devel glibmm-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

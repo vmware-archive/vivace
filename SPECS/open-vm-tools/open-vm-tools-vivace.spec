@@ -10,7 +10,6 @@ Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
 Patch0:		open-vm-tools-strerror_r-fix.patch
 Patch1:		open-vm-tools-service-link.patch
-BuildRequires: 	glib-devel glibmm
 BuildRequires: 	xerces-c-devel
 BuildRequires: 	xml-security-c-devel
 BuildRequires: 	libdnet

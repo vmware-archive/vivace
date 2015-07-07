@@ -8,14 +8,14 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.36/%{name}-%{version}.tar.xz
-BuildRequires:	pango-devel glibmm cairomm-devel
+BuildRequires:	pango-devel glibmm-devel cairomm-devel
 Requires:	cairomm pango glibmm
 %description
 The Pangomm package provides a C++ interface to Pango.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	pango-devel glibmm cairomm-devel
+Requires:	pango-devel glibmm-devel cairomm-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
