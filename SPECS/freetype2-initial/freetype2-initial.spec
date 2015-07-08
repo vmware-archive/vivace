@@ -29,6 +29,7 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %{_datadir}/*
 %{_includedir}/*
 %changelog
