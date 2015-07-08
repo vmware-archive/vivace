@@ -31,6 +31,7 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %{_libexecdir}/*
 %exclude %{_libdir}/*.la
 %files devel

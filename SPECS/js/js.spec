@@ -37,6 +37,7 @@ find %{buildroot}/usr/include/js-17.0/            \
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*

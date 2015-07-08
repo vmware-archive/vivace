@@ -36,6 +36,7 @@ make DESTDIR=%{buildroot} install
 %{_localstatedir}/*
 /lib/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %{_libexecdir}/*
 %{_datadir}/*
 %files devel
