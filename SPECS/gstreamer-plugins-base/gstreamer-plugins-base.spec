@@ -8,8 +8,8 @@ Group:		Applications/Multimedia
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-%{version}.tar.xz
-BuildRequires:	gstreamer-devel pango-devel alsa-lib-devel
-Requires:	gstreamer pango alsa-lib
+BuildRequires:	gstreamer-devel pango-devel alsa-lib-devel libvorbis-devel
+Requires:	gstreamer pango alsa-lib libvorbis
 %description
 GStreamer is a streaming media framework, based on graphs of filters which
 operate on media data. Applications using this library can do anything
@@ -21,7 +21,7 @@ plug-ins.
 Summary:	GStreamer Plugin Library Headers
 Group: 		Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gstreamer-devel pango-devel alsa-lib-devel
+Requires:	gstreamer-devel pango-devel alsa-lib-devel libvorbis-devel
 %description	devel
 GStreamer Plugins Base library development and header files.
 %prep

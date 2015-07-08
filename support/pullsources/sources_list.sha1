@@ -94,6 +94,7 @@ gtksourceviewmm-3.12.0.tar.xz - 5dd03ed312f6e489ff70df22a39a24ca4896449e
 guile-1.8.8.tar.gz - 548d6927aeda332b117f8fc5e4e82c39a05704f9
 gvfs-1.22.4.tar.xz - ce5467a5610a1225a0481f9c3d6a286dec0be2af
 harfbuzz-0.9.40.tar.bz2 - b9f546e9625926e32fe4b6da045689b456e77c22
+hicolor-icon-theme-0.15.tar.xz - 368ecc47521e1a2f72cef0171bee02aae876ff53
 iceauth-1.0.7.tar.bz2 - 83d67e47167de52192c679a0f0a41f4ba51a5b94
 icu4c-55_1-src.tgz - 3bb301c11be0e239c653e8aa2925c53f6f4dc88d
 inputproto-2.3.1.tar.bz2 - 126b6ad57b5432e154485f900920765eae8fda45
@@ -123,6 +124,7 @@ libICE-1.0.9.tar.bz2 - 3c3a857a117ce48a1947a16860056e77cd494fdf
 libIDL-0.8.14.tar.bz2 - abedf091bef0c7e65162111baf068dcb739ffcd3
 libindicator-12.10.1.tar.gz - 25c8a0a150651ee6b2198df3f36fcbb49f0295c2
 libjpeg-turbo-1.4.0.tar.gz - a9ed7a99a6090e0848836c5df8e836f300a098b9
+libogg-1.3.2.tar.xz - 5e525ec6a4135066932935c01d2c309ea5009f8d
 libpciaccess-0.13.3.tar.bz2 - 74e16b6d9a1d9d28279754010d2c4c4636b72e35
 libpng-1.6.17.tar.xz - 6394f3c0847c3b9ea69f4f972dddae3786592050
 librsvg-2.40.9.tar.xz - aed7c0d4363096f3d306a933609a2464ad1dd23f
@@ -130,6 +132,7 @@ libSM-1.2.2.tar.bz2 - e6d5dab6828dfd296e564518d2ed0a349a25a714
 libunique-1.1.6.tar.bz2 - d44ad06503efaaa0c660c5f8a817e90fbe254d1f
 libusb-1.0.19.tar.bz2 - c5d14ced155233ceeb5107c7eb3b94b16649ae05
 libva-1.5.1.tar.bz2 - b315a86fcd3bd1e073e2c1b62416550885cd7420
+libvorbis-1.3.5.tar.xz - 7b4cdd4a73fadfed457ae40984cb0cc91146b300
 libwnck-2.30.7.tar.xz - 9283c0efe0c5c44135c9015cfbfd518a877e4d2e
 libX11-1.6.3.tar.bz2 - 6f2aadf8346ee00b7419bd338461c6986e274733
 libXau-1.0.8.tar.bz2 - d9512d6869e022d4e9c9d33f6d6199eda4ad096b
