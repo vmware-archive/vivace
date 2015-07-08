@@ -24,12 +24,10 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %doc COPYING AUTHORS README ChangeLog NEWS INSTALL 
-#%{_datadir}/omf/scrollkeeper
-#%{_sysconfdir}/
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 /usr/man
-#%{_mandir}
 %{_datadir}/
 /usr/etc
 /usr/var

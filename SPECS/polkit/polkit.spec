@@ -53,6 +53,7 @@ getent passwd polkitd > /dev/null || useradd -c "PolicyKit Daemon Owner" -d /etc
 %{_sysconfdir}/*
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 /lib/*
 %{_datadir}/*
 %files devel
