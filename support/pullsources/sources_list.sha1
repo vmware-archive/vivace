@@ -91,8 +91,10 @@ gstreamer-1.5.1.tar.xz - 018c05d5cf1d0ac8038ab0979afc0e8c576289b4
 gtk+-2.24.28.tar.xz - f3c2f1a3728ed51d08054f6b4c7384fbf99477c0
 gtk+-3.14.13.tar.xz - 422f344d01b6ab143db61a39f0e0a3bc3ae5337e
 gtkmm-2.24.4.tar.xz - e99866b0cb5a0d7387a7cef79253177310020b3d
+gtkmm-3.14.0.tar.xz - cc3948dcb9a83e4c55b0fa37535eb52d61531286  
 gtk-sharp-2.12.26.tar.gz - 2f5007362f374a5a967dc6b16cdaaf3921dad1fa
 gtksourceview-3.15.1.tar.xz - 065c17a9d0cad9d89c63d6136f8580a1108ec0e1
+gtkmm-3.14.0.tar.xz - 5dd03ed312f6e489ff70df22a39a24ca4896449e
 guile-1.8.8.tar.gz - 548d6927aeda332b117f8fc5e4e82c39a05704f9
 harfbuzz-0.9.40.tar.bz2 - b9f546e9625926e32fe4b6da045689b456e77c22
 iceauth-1.0.7.tar.bz2 - 83d67e47167de52192c679a0f0a41f4ba51a5b94
@@ -119,6 +121,7 @@ libgnome-2.32.1.tar.bz2 - a6bc277ff90ca2f83b91c5bc5222f03ab553a52b
 libgnomecanvas-2.30.3.tar.bz2 - a5b07f33c44c460434dd0dad457d2fffb8a1baf9
 libgnome-keyring-3.6.0.tar.xz - 0c7a991037efe5a2b827666671c5a9b3e30b6a7a
 libgnomeui-2.24.5.tar.bz2 - a89d88416403b20a958bd19257522cf7a75ea344
+libgtop-2.31.3.tar.xz - b68758a82862517efab46d0fed794740095e7a9d
 libICE-1.0.9.tar.bz2 - 3c3a857a117ce48a1947a16860056e77cd494fdf
 libIDL-0.8.14.tar.bz2 - abedf091bef0c7e65162111baf068dcb739ffcd3
 libindicator-12.10.1.tar.gz - 25c8a0a150651ee6b2198df3f36fcbb49f0295c2
@@ -179,6 +182,7 @@ mono-addins-1.1.tar.gz - dc3d494f484bfef0b7e7024939f18c7b4d7ee4db
 monodevelop-5.9.4.2.tar.bz2 - 604ee866fab54510c4724028d0f0404ae7da938f
 mozjs17.0.0.tar.gz - 7805174898c34e5d3c3b256117af9944ba825c89
 nasm-2.11.08.tar.xz - 6908296ac437b3ade79fadfaad0efcfd99582f70
+nemiver-0.9.5.tar.xz - b9b49dcee134739be2fa4016de39d4bfffcf0a27
 nuget-2.8.3+md58+dhx1.tar.bz2 - c6d090ad0ba4d35a02ec09a49cd24c531ea5ae70
 NUnit-2.6.3-src.zip - 3d8a4126edab1ce82f931c11b45c8607d2f90830
 openbox-3.5.2.tar.gz - 6573516107f8cdb83842aac25a430e3f9f966bad
@@ -215,6 +219,7 @@ util-macros-1.19.0.tar.bz2 - 00cfc636694000112924198e6b9e4d72f1601338
 videoproto-2.3.2.tar.bz2 - aa60e3b93c6a78ad03f1c502b910e7c45faaedbc
 vivace-release-0.1.tar.gz - 9f21859a9f98c11d4b15537d51d2c8a1e3802f07
 vte-0.28.2.tar.xz - b0af0701ef9d6c7ede9c578366b12a70ac47ab66
+vte-0.36.3.tar.xz - a7acc1594eb6fa249edccb059c21132b3aa2657b
 vui-0.1.tar.xz - a3f67d644ba34da375fdc1e3a6ed7c30b8f962f1
 x11perf-1.6.0.tar.bz2 - de4960357e077fddd3d3a33f72f579981efc7fa4
 xauth-1.0.9.tar.bz2 - 5d1f9f59aea271af8fc098cedef469f7a9337747
