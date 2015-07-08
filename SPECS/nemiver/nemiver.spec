@@ -74,5 +74,5 @@ update-mime-database %{_datadir}/mime &> /dev/null || :
 %{_includedir}/nemiver/
 
 %changelog
-*	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.13.92-1
+*	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.9.5-1
 -	initial version
