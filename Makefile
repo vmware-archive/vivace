@@ -35,3 +35,10 @@ sources-vivace:
 	 cd $(PHOTON_PULL_SOURCES_DIR) && \
 	 $(PHOTON_PULL_SOURCES) -c $(VIVACE_BINTRAY_CONFIG) -s $(VIVACE_SOURCES_LIST) $(PHOTON_SRCS_DIR)
 
+sha1:
+	$(eval SHA1_TOTAL = $(shell mktemp))
+	@cd $(PHOTON_SRCS_DIR) && \
+		sha1sum * | awk '{print $$2" - "$$1}' > $(SHA1_TOTAL)
+	@comm $(SHA1_TOTAL) $(PHOTON_SOURCES_LIST) -2 -3 > $(VIVACE_SOURCES_LIST)
+	@rm -f $(SHA1_TOTAL)
+
