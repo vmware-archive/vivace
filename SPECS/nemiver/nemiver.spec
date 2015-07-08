@@ -41,7 +41,7 @@ desktop-file-install 	--dir %{buildroot}%{_datadir}/applications	\
 			--delete-original	\
 			%{buildroot}/%{_datadir}/applications/%{name}.desktop
 mkdir -p %{buildroot}%{_datadir}/pixmaps
-ln -s icons/hicolor/32x32/apps/nemiver.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
+ln -s ../icons/hicolor/48x48/apps/nemiver.png %{buildroot}%{_datadir}/pixmaps/%{name}.png
 
 %clean
 rm -rf %{buildroot}
