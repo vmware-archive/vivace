@@ -48,14 +48,10 @@ rm -rf %{buildroot}
 
 %post
 update-mime-database %{_datadir}/mime &> /dev/null || :
-touch --no-create %{_datadir}/icons/hicolor || :
-%{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
 /sbin/ldconfig
 
 %postun
 update-mime-database %{_datadir}/mime &> /dev/null || :
-touch --no-create %{_datadir}/icons/hicolor || :
-%{_bindir}/gtk-update-icon-cache --quiet %{_datadir}/icons/hicolor || :
 /sbin/ldconfig
 
 
