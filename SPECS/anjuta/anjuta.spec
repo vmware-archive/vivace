@@ -48,10 +48,12 @@ rm -rf %{buildroot}
 
 %post
 update-mime-database %{_datadir}/mime &> /dev/null || :
+glib-compile-schemas /usr/share/glib-2.0/schemas
 /sbin/ldconfig
 
 %postun
 update-mime-database %{_datadir}/mime &> /dev/null || :
+glib-compile-schemas /usr/share/glib-2.0/schemas
 /sbin/ldconfig
 
 
