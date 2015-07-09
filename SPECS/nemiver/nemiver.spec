@@ -8,8 +8,8 @@ Group:		Development/Debuggers
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/0.9/%{name}-%{version}.tar.xz
-BuildRequires:	sqlite-autoconf gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel libXrender-devel libXrandr-devel systemd libgtop-devel alsa-lib-devel libgnome-keyring-devel boost python2-libs python2-devel harfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
-Requires:	libgnome glib  libXrender alsa-lib libgda vte290 libXrandr pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo libart_lgpl binutils gdl gtksourceviewmm gdb 
+BuildRequires:	sqlite-autoconf gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel systemd libgtop-devel alsa-lib-devel libgnome-keyring-devel boost python2-libs python2-devel harfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
+Requires:	libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo libart_lgpl binutils gdl gtksourceviewmm gdb 
 
 %description
 Nemiver is an on going effort to write an easy to use standalone C/C++ debugger that integrates well in the GNOME environment.
@@ -47,17 +47,17 @@ ln -s ../icons/hicolor/48x48/apps/nemiver.png %{buildroot}%{_datadir}/pixmaps/%{
 rm -rf %{buildroot}
 
 %post
-update-mime-database %{_datadir}/mime &> /dev/null || :
-/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+update-mime-database %{_datadir}/mime &> /dev/null 
+/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null 
 /sbin/ldconfig
 
 %postun
 /sbin/ldconfig
-update-mime-database %{_datadir}/mime &> /dev/null || :
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+update-mime-database %{_datadir}/mime &> /dev/null 
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null 
 
 %posttrans
-/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null 
 
 %files 
 %defattr(-,root,root)

@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-%{version}.tar.xz
 BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel
-Requires:	atk gdk-pixbuf pango libXinerama 
+Requires:	atk gdk-pixbuf pango libXinerama hicolor-icon-theme
 %description
 The GTK+ 2 package contains libraries used for creating graphical user interfaces for applications.
 %package	devel

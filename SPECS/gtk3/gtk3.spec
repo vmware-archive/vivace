@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.14/gtk+-%{version}.tar.xz
 BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel
 Requires:	glib-schemas
-Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk
+Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
 %description
 The GTK+ 3 package contains libraries used for creating graphical user interfaces for applications.
 %package	devel
