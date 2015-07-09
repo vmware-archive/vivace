@@ -8,7 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.bz2
-BuildRequires:	gtk2-devel pkg-config libxml2-devel gettext intltool ncurses-devel cyrus-sasl libgnome-keyring-devel nss-devel dbus GConf-devel perl python2-devel python2-devel libtool libstdc++-devel gtk-doc libSM-devel libXext-devel libX11-devel openssl-devel 
+BuildRequires:	gtk2-devel pkg-config libxml2-devel gettext intltool ncurses-devel hicolor-icon-theme cyrus-sasl libgnome-keyring-devel nss-devel dbus GConf-devel perl python2-devel python2-devel libtool libstdc++-devel gtk-doc libSM-devel libXext-devel libX11-devel openssl-devel 
 Requires:	ncurses GConf perl nss
 %description
 Pidgin is an instant messaging program which lets you log in to accounts on multiple chat networks simultaneously. 
@@ -51,10 +51,15 @@ rm -rf %{buildroot}
 
 %post
 update-mime-database %{_datadir}/mime &> /dev/null || :
+/bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+
+%posttrans
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 
 %postun
 update-mime-database %{_datadir}/mime &> /dev/null || :
+/usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files 
 %defattr(-,root,root)
