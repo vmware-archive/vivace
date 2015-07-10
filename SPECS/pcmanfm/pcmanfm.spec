@@ -32,8 +32,7 @@ sed -i 's/System;//' %{buildroot}/usr/share/applications/pcmanfm.desktop
 %defattr(-,root,root)
 %{_sysconfdir}/*
 %{_bindir}/*
-%{_libdir}/*
-%exclude %{_libdir}/debug
+%exclude %{_libdir}
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)

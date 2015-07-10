@@ -54,11 +54,16 @@ getent passwd polkitd > /dev/null || useradd -c "PolicyKit Daemon Owner" -d /etc
 %{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug
+%exclude %{_libdir}/*.la
+%exclude %{_libdir}/*.so
+%exclude %{_libdir}/debug
 /lib/*
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/*.la
+%{_libdir}/*.so
 %changelog
 *	Tue May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 0.112-1
 -	initial version

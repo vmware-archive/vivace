@@ -3,14 +3,14 @@
 
 Summary:	Package manager for NuGet repositories.
 Name:		nuget
-Version:	2.8.3
+Version:	2.8.1
 Release:	1
 License:	MIT
 URL:		http://nuget.org
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0: http://download.mono-project.com/sources/%{name}/%{name}-%{version}+md58+dhx1.tar.bz2
+Source0: 	http://download.mono-project.com/sources/%{name}/%{name}-%{version}+md54+dhx1.tar.gz
 Source1:	nuget-core.pc
 Source2:	nuget.sh
 Patch0:		nuget-fix_xdt_hintpath
@@ -19,8 +19,8 @@ Requires:	mono mono-extras
 %description
 Package manager for NuGet repositories.
 %prep
-%setup -qn nuget-git
-%patch0 -p1
+%setup -q
+#%patch0 -p1
 
 # fix compile with Mono4
 find . -name "*.sln" -print -exec sed -i 's/Format Version 10.00/Format Version 11.00/g' {} \;
