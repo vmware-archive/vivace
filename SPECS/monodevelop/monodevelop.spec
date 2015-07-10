@@ -1,6 +1,6 @@
 Summary:	IDE for Mono and GTK#
 Name:		monodevelop
-# It was downgraded from 5.9.2 because of regression.
+# It was downgraded from 5.9.4.2 because of regression.
 Version:	5.5.0.227
 Release:	1
 License:	GPLv2+

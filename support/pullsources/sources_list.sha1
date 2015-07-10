@@ -179,11 +179,11 @@ mkfontdir-1.0.7.tar.bz2 - 3c06dad8a5fbf7362b51fb7d6b1ab805eba40336
 mkfontscale-1.1.2.tar.bz2 - da32fe297732355eea71d4a94ed003be93d1eae7
 mono-4.0.1.44.tar.bz2 - dbdcfb62891f0b6229631887f201ee7fb3c0c3a0
 mono-addins-1.1.tar.gz - dc3d494f484bfef0b7e7024939f18c7b4d7ee4db
-monodevelop-5.9.4.2.tar.bz2 - 604ee866fab54510c4724028d0f0404ae7da938f
+monodevelop-5.5.0.227.tar.bz2 - 58ef250e999423b19e3716ed916db86dbd7a663c
 mozjs17.0.0.tar.gz - 7805174898c34e5d3c3b256117af9944ba825c89
 nasm-2.11.08.tar.xz - 6908296ac437b3ade79fadfaad0efcfd99582f70
 nemiver-0.9.5.tar.xz - b9b49dcee134739be2fa4016de39d4bfffcf0a27
-nuget-2.8.3+md58+dhx1.tar.bz2 - c6d090ad0ba4d35a02ec09a49cd24c531ea5ae70
+nuget-2.8.1+md54+dhx1.tar.gz - 7378764d4dae409a62748a289f92af59c111f8ee
 NUnit-2.6.3-src.zip - 3d8a4126edab1ce82f931c11b45c8607d2f90830
 openbox-3.5.2.tar.gz - 6573516107f8cdb83842aac25a430e3f9f966bad
 ORBit2-2.14.19.tar.bz2 - e7c26aa4b82c146b3ec08d490e3469b4913e4e2f
@@ -219,6 +219,7 @@ upower-0.9.23.tar.xz - 8fc30c2d53b15c0a4e7c1bc077a912bc1aeb6138
 util-macros-1.19.0.tar.bz2 - 00cfc636694000112924198e6b9e4d72f1601338
 videoproto-2.3.2.tar.bz2 - aa60e3b93c6a78ad03f1c502b910e7c45faaedbc
 vivace-release-0.1.tar.gz - 9f21859a9f98c11d4b15537d51d2c8a1e3802f07
+vlc-2.2.0.tar.xz - 11f0384980052c7ed73753af2073965f59b27cd2
 vte-0.28.2.tar.xz - b0af0701ef9d6c7ede9c578366b12a70ac47ab66
 vte-0.36.3.tar.xz - a7acc1594eb6fa249edccb059c21132b3aa2657b
 vui-0.1.tar.xz - a3f67d644ba34da375fdc1e3a6ed7c30b8f962f1
