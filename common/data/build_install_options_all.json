@@ -4,21 +4,67 @@
         "type" : "iso",
         "title" : "ISO Packages",
         "file" : "packages_iso.json",
-        "visible" : false
+        "visible" : false,
+        "include" : "none"
+    },
+    "micro_packages" : {
+        "order" : 1,
+        "type" : "micro",
+        "title" : "1. Photon Micro",
+        "file" : "packages_micro.json",
+        "visible" : true,
+        "include" : "none"
+
     },
     "minimal_packages" : {
-        "order" : 1,
+        "order" : 2,
         "type" : "minimal",
-        "title" : "1. Vivace Minimal",
+        "title" : "2. Photon Minimal",
         "file" : "packages_minimal.json",
-        "visible" : true
+        "visible" : true,
+        "include" : "none"
     },
     "full_packages" : {
-        "order" : 2,
+        "order" : 3,
         "type" : "full",
-        "title" : "2. Vivace Full",
+        "title" : "3. Photon Full",
         "file" : "packages_full.json",
-        "visible" : true
+        "visible" : true,
+        "include" : "minimal"
+    },
+
+
+    "minimal_packages2" : {
+        "order" : 4,
+        "type" : "minimal2",
+        "title" : "Vivace Minimal",
+        "file" : "packages_minimal2.json",
+        "visible" : false,
+        "include" : "none"
+    },
+    "full_packages2" : {
+        "order" : 5,
+        "type" : "full2",
+        "title" : "Vivace Full",
+        "file" : "packages_full.json",
+        "visible" : false,
+        "include" : "minimal2"
+    },
+    "vivace_minimal_packages" : {
+        "order" : 6,
+        "type" : "vivace_minimal",
+        "title" : "4. Vivace Minimal",
+        "file" : "packages_vivace_minimal.json",
+        "visible" : true,
+        "include" : "full2"
+    },
+    "vivace_full_packages" : {
+        "order" : 7,
+        "type" : "vivace_full",
+        "title" : "5. Vivace Full",
+        "file" : "packages_vivace_full.json",
+        "visible" : true,
+        "include" : "vivace_minimal"
     }
 }
 
