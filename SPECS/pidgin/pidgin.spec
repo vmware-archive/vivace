@@ -55,17 +55,24 @@ update-mime-database %{_datadir}/mime &> /dev/null
 
 %posttrans
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null 
+/sbin/ldconfig
 
 
 %postun
 update-mime-database %{_datadir}/mime &> /dev/null 
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null 
+/sbin/ldconfig
 
 %files 
 %defattr(-,root,root)
 %doc AUTHORS COPYING COPYRIGHT ChangeLog NEWS README doc/the_penguin.txt
 %{_bindir}
-%{_libdir}/%{name}/
+%{_libdir}
+%exclude %{_libdir}/debug
+%exclude %{_libdir}/*.la
+%exclude %{_libdir}/*.so
+%exclude %{_libdir}/*.so.0
+%exclude %{_libdir}/pkgconfig
 %dir %{_datadir}/appdata
 %{_datadir}/appdata/pidgin.appdata.xml
 %{_prefix}%{_sysconfdir}/gconf
@@ -78,9 +85,11 @@ update-mime-database %{_datadir}/mime &> /dev/null
 %files devel
 %defattr(-,root,root)
 %{_includedir}
-%{_libdir}/pkgconfig/%{name}.pc
+%{_libdir}/*.la
+%{_libdir}/*.so
+%{_libdir}/*.so.0
+%{_libdir}/pkgconfig
 %{_libdir}
-%exclude %{_libdir}/%{name}
 %{_datadir}/man
 %{_datadir}/purple
 %{_datadir}/locale
