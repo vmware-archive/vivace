@@ -21,10 +21,8 @@ Metapackage for Vivace User Interface.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/skel/.config
-find -type d -exec install -d {,%{buildroot}/etc/skel/.config/}{} \;
-find -type f -exec install -D -m 644 {,%{buildroot}/etc/skel/.config/}{} \;
+find -type d -exec install -d {,%{buildroot}/}{} \;
+find -type f -exec install -D -m 644 {,%{buildroot}/}{} \;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -37,3 +35,4 @@ cp -a /etc/skel/.config/pcmanfm /root/.config/
 
 %files
 %{_sysconfdir}/skel/.config/*
+%{_datadir}

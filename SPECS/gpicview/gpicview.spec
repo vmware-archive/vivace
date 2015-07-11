@@ -20,7 +20,8 @@ make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
 install -d -m 755 %{buildroot}/%{_datadir}/pixmaps
-ln -s %{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/%{name}.png
+mv %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/
+rm -rf %{buildroot}%{_datadir}/icons
 %files
 %defattr(-,root,root)
 %{_bindir}/*

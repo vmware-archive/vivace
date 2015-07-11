@@ -31,6 +31,8 @@ It contains the libraries and header files to create applications
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+mv %{buildroot}%{_datadir}/pixmaps/backgrounds %{buildroot}%{_datadir}/
+rm -rf %{buildroot}%{_datadir}/pixmaps/
 %files
 %defattr(-,root,root)
 %{_bindir}
