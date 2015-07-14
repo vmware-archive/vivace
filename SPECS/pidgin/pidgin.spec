@@ -89,7 +89,6 @@ update-mime-database %{_datadir}/mime &> /dev/null
 %{_libdir}/*.so
 %{_libdir}/*.so.0
 %{_libdir}/pkgconfig
-%{_libdir}
 %{_datadir}/man
 %{_datadir}/purple
 %{_datadir}/locale
