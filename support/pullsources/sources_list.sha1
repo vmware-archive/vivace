@@ -14,6 +14,10 @@ cairo-1.14.2.tar.xz - c8da68aa66ca0855b5d0ff552766d3e8679e1d24
 cairo-dock-3.4.0.tar.gz - 3273644aa4b848fda7a0c6825860930d61b48060
 cairo-dock-plugins-3.4.0.tar.gz - b603f96ba7c48eb0bc4248d8b344f6868ef509ed
 cairomm-1.10.0.tar.gz - f08bf8a331067f0d1e876523f07238fba6b26b99
+clutter-1.22.4.tar.xz - 1665008f6c44a19d6aab23aa73cb19f85cafdfd2
+clutter-gst-2.0.14.tar.xz - e0238f44046877116c7361eab255d775807365ac
+clutter-gtk-1.6.2.tar.xz - 99be07651b803ca0bb56a6bdd4a3882ca581877f
+cogl-1.20.0.tar.xz - 46a0bfca30c440ad4b6a7b07ed7aa3e643d57401
 compositeproto-0.4.2.tar.bz2 - aa7b5abcfd5bbfad7cb681ce89dc1d6e381e3044
 ConsoleKit-0.4.6.tar.xz - fabed310860c6eda2fe99218d534dc838a9aa226
 damageproto-1.2.1.tar.bz2 - bd0f0f4dc8f37eaabd9279d10fe2889710507358
@@ -73,7 +77,9 @@ gdl-3.16.0.tar.xz - bdbf9e4c754b6f3cad12f7027182751db591f1a5
 glib-2.44.1.tar.xz - 88176375f97ecd9ff45e7b5fd5ab80d4b7db6b34
 glproto-1.4.17.tar.bz2 - 20e061c463bed415051f0f89e968e331a2078551
 glu-9.0.0.tar.bz2 - c2814bbaf1e60e28a75ec80f4646047c0da742bd
+gmime-2.6.20.tar.xz - d290d628f26ef0a233781bf0793f12b1795d8536
 gnome-doc-utils-0.20.10.tar.xz - 8320a30e1b7239aa33ba276da046090407a93bbf
+gnome-icon-theme-3.12.0.tar.xz - cc0f0dc55db3c4ca7f2f34564402f712807f1342
 gnome-keyring-sharp-1.0.2.tar.gz - 36d8cc9e3a24288554132bf1d0385cd69f7d804b
 gnome-menus-3.6.0.tar.xz - 7f5aad7a68b2ff37bb355b98ead48f236b79e0e9
 gnome-mime-data-2.18.0.tar.bz2 - 9ce7b1a24a97f275f60b416fae82d81c1010cb65
@@ -82,7 +88,9 @@ gnome-vfs-2.24.4.tar.bz2 - 0dc634e7dd979fd218f378902c0ca1af80738961
 gpicview-0.2.4.tar.gz - 423143c850390db9784ad9812b9f929c18dd51ea
 grdesktop-0.23.tar.gz - 99f3110212a7594bd60c6f9d05bb8afb8e0588f1
 gsettings-desktop-schemas-3.16.1.tar.xz - b7b0cd597f41410b92c2b4c8fbb9a3b3c0ba2749
+gst-plugins-bad-1.5.1.tar.xz - 48975aca3cf0bc8a26b79491d70227afb8c72a16
 gst-plugins-base-1.5.1.tar.xz - fa6c377924fa6eed7f91a94a862a6f342c40a1f1
+gst-plugins-good-1.5.1.tar.xz - 9c57e0877f8e8232d39bb0da7930aca591f13f02
 gstreamer-1.5.1.tar.xz - 018c05d5cf1d0ac8038ab0979afc0e8c576289b4
 gtk+-2.24.28.tar.xz - f3c2f1a3728ed51d08054f6b4c7384fbf99477c0
 gtk+-3.14.13.tar.xz - 422f344d01b6ab143db61a39f0e0a3bc3ae5337e
@@ -96,6 +104,7 @@ gvfs-1.22.4.tar.xz - ce5467a5610a1225a0481f9c3d6a286dec0be2af
 harfbuzz-0.9.40.tar.bz2 - b9f546e9625926e32fe4b6da045689b456e77c22
 hicolor-icon-theme-0.15.tar.xz - 368ecc47521e1a2f72cef0171bee02aae876ff53
 iceauth-1.0.7.tar.bz2 - 83d67e47167de52192c679a0f0a41f4ba51a5b94
+icon-naming-utils-0.8.90.tar.bz2 - 4e8025f129f9e536eafff847f65e44ede3e5e7ef
 icu4c-55_1-src.tgz - 3bb301c11be0e239c653e8aa2925c53f6f4dc88d
 inputproto-2.3.1.tar.bz2 - 126b6ad57b5432e154485f900920765eae8fda45
 kbproto-1.0.6.tar.bz2 - a2cc82357c22a1f4d6243017982c32703c95575c
@@ -126,6 +135,7 @@ libindicator-12.10.1.tar.gz - 25c8a0a150651ee6b2198df3f36fcbb49f0295c2
 libjpeg-turbo-1.4.0.tar.gz - a9ed7a99a6090e0848836c5df8e836f300a098b9
 libogg-1.3.2.tar.xz - 5e525ec6a4135066932935c01d2c309ea5009f8d
 libpciaccess-0.13.3.tar.bz2 - 74e16b6d9a1d9d28279754010d2c4c4636b72e35
+libpeas-1.14.0.tar.xz - 18a85ab41f578997ff1e9860ce178d7c5116c616
 libpng-1.6.17.tar.xz - 6394f3c0847c3b9ea69f4f972dddae3786592050
 librsvg-2.40.9.tar.xz - aed7c0d4363096f3d306a933609a2464ad1dd23f
 libSM-1.2.2.tar.bz2 - e6d5dab6828dfd296e564518d2ed0a349a25a714
@@ -214,6 +224,8 @@ taglib-sharp-2.1.0.0.tar.gz - 352a0b15cc1371f1bf6e57f8e7f763c0b86213b6
 thunderbird-31.7.0.source.tar.bz2 - 90e18f8ecccdaf1ee39493223a7e3ad8b3b7bede
 tiff-4.0.3.tar.gz - 652e97b78f1444237a82cbcfe014310e776eb6f0
 tomboy-1.15.4.tar.xz - dcb2299ea29e1ff37edee4bdfd22bf437c06584d
+totem-3.10.1.tar.xz - ee3802de84ac2cf34b38f91ae6de59b0d17ff4dc
+totem-pl-parser-3.10.1.tar.xz - c351ad8b6cf69059f0426df0e79040393bc7f6ea
 twm-1.0.9.tar.bz2 - 09e8a8f0d1072e11eb0d6e354d75a555b9952755
 upower-0.9.23.tar.xz - 8fc30c2d53b15c0a4e7c1bc077a912bc1aeb6138
 util-macros-1.19.0.tar.bz2 - 00cfc636694000112924198e6b9e4d72f1601338
