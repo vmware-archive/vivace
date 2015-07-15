@@ -15,39 +15,39 @@
     "minimal" : {
         "title" : "2. Photon Minimal",
         "file" : "packages_minimal.json",
-        "visible" : true,
+        "visible" : false,
         "include" : "none"
     },
     "full" : {
         "title" : "3. Photon Full",
         "file" : "packages_full.json",
-        "visible" : true,
+        "visible" : false,
         "include" : "minimal"
     },
 
 
     "minimal2" : {
-        "title" : "Vivace Minimal",
+        "title" : "2. Photon Minimal",
         "file" : "packages_minimal2.json",
-        "visible" : false,
+        "visible" : true,
         "include" : "none"
     },
     "full2" : {
-        "title" : "Vivace Full",
+        "title" : "3. Photon Full",
         "file" : "packages_full.json",
-        "visible" : false,
+        "visible" : true,
         "include" : "minimal2"
     },
     "vivace_minimal" : {
         "title" : "4. Vivace Minimal",
         "file" : "packages_vivace_minimal.json",
-        "visible" : true,
+        "visible" : false,
         "include" : "minimal2"
     },
     "vivace_full" : {
         "title" : "5. Vivace Full",
         "file" : "packages_vivace_full.json",
-        "visible" : true,
+        "visible" : false,
         "include" : "vivace_minimal,full2"
     }
 }

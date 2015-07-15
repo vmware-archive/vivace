@@ -10,6 +10,7 @@ Distribution:	Photon
 Source0:	http://download.banshee.fm/%{name}/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	mono-devel
 Requires:	mono
+Provides:	pkgconfig(taglib-sharp)
 %description
 TagLib# is a metadata or "tag" reader and writer library that supports
 the most common movie and music formats, abstracting away format

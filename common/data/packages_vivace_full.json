@@ -4,7 +4,7 @@
 		"mono-addins", "gnome-sharp", "nuget", "dos2unix", "nunit", "monodevelop", "mono-devel", "pinta", "dbus-sharp", "dbus-sharp-glib",
 		"mono-extras", "gnome-doc-utils", "tomboy", "libogg", "libvorbis", "gstreamer", "gstreamer-plugins-base",
 		"banshee", "gdl", "libgda", "gtksourceview", "gtksourceviewmm", "nemiver", "libgtop", "vte290", "gtkmm3", "anjuta",
-		"gnome-keyring-sharp", "pidgin"
+		"gnome-keyring-sharp", "pidgin", "taglib-sharp"
 		]
 
 }
