@@ -65,14 +65,22 @@ Provides:	mono(WindowsBase)
 Mono is an open source implementation of Microsoft's .NET Framework based on the ECMA standards for C# and the Common Language Runtime.
 
 %package devel
-Summary: Development tools for Mono
+Summary: Package config and shared objects for Mono
 Group: Development/Languages
 Requires: %{name} = %{version}-%{release}
-Requires:	gettext tzdata libgdiplus-devel
+Requires: mono-tools = %{version}-%{release} libgdiplus-devel
 
 %description devel
 This package completes the Mono developer toolchain with the mono profiler,
 assembler and other various tools.
+
+%package tools
+Summary: Development tools for Mono
+Group: Development/Languages
+Requires: %{name} = %{version}-%{release}
+
+%description tools
+This package includes the development tools for building mono applications
 
 %package nunit
 Summary:	NUnit Testing Framework
@@ -283,7 +291,7 @@ rm -rf %{buildroot}%{_mandir}/man?/mono-configuration-crypto*
 %gac_dll System.Net.Http.WebRequest
 %gac_dll System.Threading.Tasks.Dataflow
 
-%files devel
+%files tools
 %{_sysconfdir}/pki/mono/
 %{_bindir}/mono-api-info
 %{_monodir}/4.5/mono-api-info.exe
@@ -327,6 +335,28 @@ rm -rf %{buildroot}%{_mandir}/man?/mono-configuration-crypto*
 %mono_bin cccheck
 %mono_bin crlupdate
 %mono_bin mdbrebase
+%{_monodir}/4.5/Microsoft.Common.tasks
+%{_monodir}/4.5/MSBuild/Microsoft.Build*
+%{_monodir}/4.5/Microsoft.Build.xsd
+%{_monodir}/4.5/Microsoft.CSharp.targets
+%{_monodir}/4.5/Microsoft.Common.targets
+%{_monodir}/4.5/Microsoft.VisualBasic.targets
+%{_monodir}/xbuild/
+%{_monodir}/xbuild-frameworks/
+%gac_dll Microsoft.Build
+%gac_dll Microsoft.Build.Engine
+%gac_dll Microsoft.Build.Framework
+%{_monogacdir}/Microsoft.Build.Tasks.Core
+%gac_dll Microsoft.Build.Tasks.v4.0
+%gac_dll Microsoft.Build.Utilities.v4.0
+%{_monogacdir}/Microsoft.Build.Utilities.Core
+%{_monogacdir}/Microsoft.Build.Tasks.v12.0
+%{_monogacdir}/Microsoft.Build.Utilities.v12.0
+%gac_dll Mono.XBuild.Tasks
+%gac_dll System.Windows
+%gac_dll System.Xml.Serialization
+
+%files devel
 %{_prefix}/lib/mono-source-libs/
 %{_bindir}/pedump
 %{_mandir}/man1/resgen.1.gz
@@ -355,26 +385,6 @@ rm -rf %{buildroot}%{_mandir}/man?/mono-configuration-crypto*
 %{_mandir}/man1/cccheck.1.gz
 %{_mandir}/man1/crlupdate.1.gz
 %gac_dll PEAPI
-%gac_dll Microsoft.Build
-%gac_dll Microsoft.Build.Engine
-%gac_dll Microsoft.Build.Framework
-%{_monogacdir}/Microsoft.Build.Tasks.Core
-%gac_dll Microsoft.Build.Tasks.v4.0
-%gac_dll Microsoft.Build.Utilities.v4.0
-%{_monogacdir}/Microsoft.Build.Utilities.Core
-%{_monogacdir}/Microsoft.Build.Tasks.v12.0
-%{_monogacdir}/Microsoft.Build.Utilities.v12.0
-%gac_dll Mono.XBuild.Tasks
-%gac_dll System.Windows
-%gac_dll System.Xml.Serialization
-%{_monodir}/4.5/Microsoft.Common.tasks
-%{_monodir}/4.5/MSBuild/Microsoft.Build*
-%{_monodir}/4.5/Microsoft.Build.xsd
-%{_monodir}/4.5/Microsoft.CSharp.targets
-%{_monodir}/4.5/Microsoft.Common.targets
-%{_monodir}/4.5/Microsoft.VisualBasic.targets
-%{_monodir}/xbuild/
-%{_monodir}/xbuild-frameworks/
 %{_libdir}/libikvm-native.so
 %{_libdir}/libmono-profiler-*.so
 %{_libdir}/libmono*-2.0.so
