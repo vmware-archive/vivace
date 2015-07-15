@@ -11,9 +11,7 @@ PHOTON_STAGE := $(VVC_SRCROOT)stage
 PHOTON_SPECS_DIR := $(VVC_SRCROOT)SPECS
 
 # Sources pulling
-PHOTON_SOURCES := sources sources-vivace
-VIVACE_BINTRAY_CONFIG := $(VVC_SRCROOT)support/pullsources/bintray.conf
-VIVACE_SOURCES_LIST := $(VVC_SRCROOT)support/pullsources/sources_list.sha1
+PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)photon/support/package-builder/pullsources.conf:$(VVC_SRCROOT)support/package-builder/pullsources.conf
 
 # package list to build
 PHOTON_PACKAGE_LIST := $(VVC_SRCROOT)support/package-builder/input.json
@@ -34,17 +32,4 @@ update-common-data: $(VVC_SRCROOT)photon/common/data/packages_minimal.json
 $(VVC_SRCROOT)photon/common/data/packages_minimal.json: ;
 
 include $(VVC_SRCROOT)photon/Makefile
-
-sources-vivace:
-	@echo "Pulling sources from bintray vivace..."
-	@$(MKDIR) -p $(PHOTON_SRCS_DIR) && \
-	 cd $(PHOTON_PULL_SOURCES_DIR) && \
-	 $(PHOTON_PULL_SOURCES) -c $(VIVACE_BINTRAY_CONFIG) -s $(VIVACE_SOURCES_LIST) $(PHOTON_SRCS_DIR)
-
-sha1:
-	$(eval SHA1_TOTAL = $(shell mktemp))
-	@cd $(PHOTON_SRCS_DIR) && \
-		sha1sum * | awk '{print $$2" - "$$1}' > $(SHA1_TOTAL)
-	@comm $(SHA1_TOTAL) $(PHOTON_SOURCES_LIST) -2 -3 > $(VIVACE_SOURCES_LIST)
-	@rm -f $(SHA1_TOTAL)
 
