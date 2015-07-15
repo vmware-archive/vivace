@@ -3,8 +3,7 @@
 ```
 git clone https://github.com/vmware/vivace.git
 cd vivace
-git submodule init
-git submodule update
+git submodule update --init
 ```
 
 ## How to build the ISO?
