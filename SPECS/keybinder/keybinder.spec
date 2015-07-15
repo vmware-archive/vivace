@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://pkgs.fedoraproject.org/repo/pkgs/%{name}/%{name}-%{version}.tar.gz/2a0aed62ba14d1bf5c79707e20cb4059/%{name}-%{version}.tar.gz
+%define sha1 keybinder=e4adddf8641241c08b594c465cee197f8de68bdd
 BuildRequires:	intltool gtk2-devel python2-libs python2-devel pygtk
 Requires:	pygtk
 %description

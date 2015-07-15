@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
+%define sha1 thunderbird=90e18f8ecccdaf1ee39493223a7e3ad8b3b7bede
 Source1:        %{name}.desktop
 BuildRequires:	gtk2-devel which unzip zip nspr nss-devel icu-devel yasm-devel alsa-lib-devel libffi libXcomposite-devel
 BuildRequires:	desktop-file-utils

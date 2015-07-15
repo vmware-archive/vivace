@@ -6,6 +6,7 @@ License:	LGPLv2.1+
 URL:		http://gnudatalanguage.sourceforge.net/
 Group:		System/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/cogl/1.20/%{name}-1.20.0.tar.xz
+%define sha1 cogl=46a0bfca30c440ad4b6a7b07ed7aa3e643d57401
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	gdk-pixbuf-devel mesa-devel pango-devel libXrandr-devel libXcomposite-devel

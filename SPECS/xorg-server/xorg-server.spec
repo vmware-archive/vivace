@@ -9,6 +9,7 @@ Group:		User Interface/X System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/xserver/%{name}-%{version}.tar.bz2
+%define sha1 xorg-server=490118810a54e91c8814245c99d6285caf4985dd
 BuildRequires:	xkeyboard-config xorg-fonts pixman-devel openssl-devel mesa-devel libxkbfile-devel libXfont-devel libepoxy-devel xcb-util-keysyms-devel
 Requires:	xkeyboard-config xorg-fonts pixman openssl mesa libxkbfile libXfont libepoxy xcb-util-keysyms
 %description

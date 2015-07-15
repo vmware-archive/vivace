@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXt=0111c316d83fb7e830c517128150094cb0a48ae7
 BuildRequires:	libX11-devel libSM-devel
 Requires:	libX11 libSM 
 Provides:	pkgconfig(xt)

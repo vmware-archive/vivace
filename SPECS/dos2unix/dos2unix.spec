@@ -8,6 +8,7 @@ Group:		Applications/Text
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://waterlan.home.xs4all.nl/dos2unix/%{name}-%{version}.tar.gz
+%define sha1 dos2unix=c16183dfb99526f9bc7c10806ef7ab6bd34db61e
 BuildRequires:	intltool gettext
 Requires:	gettext
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/libXext-1.3.3.tar.bz2
+%define sha1 libXext=43abab84101159563e68d9923353cc0b3af44f07
 BuildRequires:	libX11-devel
 Requires:	libX11
 Provides:	pkgconfig(xext)

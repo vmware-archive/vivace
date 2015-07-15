@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.freedesktop.org/pub/mesa/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 glu=c2814bbaf1e60e28a75ec80f4646047c0da742bd
 BuildRequires:	mesa-devel
 Requires:	mesa
 %description

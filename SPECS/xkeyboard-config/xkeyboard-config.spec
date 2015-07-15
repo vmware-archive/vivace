@@ -8,6 +8,7 @@ Group:		Development/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/data/%{name}-%{version}.tar.bz2
+%define sha1 xkeyboard-config=b37c42b26739bedb9716c60c92f721c1ad934116
 BuildRequires:	intltool libX11-devel  
 Requires:	libX11
 %description

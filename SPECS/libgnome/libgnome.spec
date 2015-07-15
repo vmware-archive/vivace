@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.32/%{name}-%{version}.tar.bz2
+%define sha1 libgnome=a6bc277ff90ca2f83b91c5bc5222f03ab553a52b
 Patch0:		libgnome-glib-2_36.patch
 BuildRequires:	libbonobo-devel gnome-vfs-devel
 Requires:	libbonobo gnome-vfs

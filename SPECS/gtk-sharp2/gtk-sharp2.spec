@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}12/gtk-sharp-%{version}.tar.gz
+%define sha1 gtk-sharp=2f5007362f374a5a967dc6b16cdaaf3921dad1fa
 BuildRequires:	gettext tzdata mono-devel libglade-devel
 Requires:	gettext mono libglade
 Requires:	perl-XML-LibXML

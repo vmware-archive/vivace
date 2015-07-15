@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.16/%{name}-%{version}.tar.xz
+%define sha1 gsettings-desktop-schemas=b7b0cd597f41410b92c2b4c8fbb9a3b3c0ba2749
 BuildRequires:	intltool glib-devel glib-schemas gobject-introspection-devel gobject-introspection-python
 Requires:	glib glib-schemas
 %description

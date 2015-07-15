@@ -8,6 +8,7 @@ Group:		Development/Languages/Mono
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.banshee.fm/%{name}/%{version}/%{name}-%{version}.tar.gz
+%define sha1 taglib-sharp=352a0b15cc1371f1bf6e57f8e7f763c0b86213b6
 BuildRequires:	mono-devel
 Requires:	mono
 Provides:	pkgconfig(taglib-sharp)

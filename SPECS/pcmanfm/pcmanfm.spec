@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/pcmanfm/%{name}-%{version}.tar.xz
+%define sha1 pcmanfm=0a195301de31c82f1c169e620be7cea8b91813b5
 BuildRequires:	libfm-devel
 Requires:	libfm
 %description

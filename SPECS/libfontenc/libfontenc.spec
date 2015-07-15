@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libfontenc=2beffa0e9260c479b49f90f789318c7f9db2d41d
 BuildRequires:	pkg-config proto zlib-devel
 Requires:	zlib
 Provides:	pkgconfig(fontenc)

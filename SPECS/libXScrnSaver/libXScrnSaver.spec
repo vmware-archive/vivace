@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXScrnSaver=7b8298eec371c33a71232e3653370a98f03c6c88
 BuildRequires:	proto libXext-devel
 Requires:	libXext
 %description

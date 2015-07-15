@@ -8,6 +8,7 @@ Group:		System/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.6/%{name}-%{version}.tar.xz
+%define sha1 clutter-gtk=99be07651b803ca0bb56a6bdd4a3882ca581877f
 BuildRequires:	gtk3-devel clutter-devel
 Requires:	gtk3 clutter
 

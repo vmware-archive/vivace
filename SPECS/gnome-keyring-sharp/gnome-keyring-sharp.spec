@@ -8,6 +8,7 @@ Group:		Development/Libraries/Other
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.go-mono.com/archive/%{name}/%{name}-%{version}.tar.gz
+%define sha1 gnome-keyring-sharp=36d8cc9e3a24288554132bf1d0385cd69f7d804b
 BuildRequires:	libtool gtk-sharp2-devel mono-devel libgnome-keyring-devel
 Requires:	libgnome-keyring gtk-sharp2
 %description

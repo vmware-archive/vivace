@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://invisible-island.net/%{name}/%{name}-%{version}.tgz
+%define sha1 xterm=6717a0f2ff445bb1f83cd92828b5f784a10023c3
 BuildRequires:	proto libXaw-devel libX11-devel libXt-devel libXmu-devel ncurses-devel
 Requires:	xorg-applications libXaw libX11 libXt libXmu ncurses
 %description

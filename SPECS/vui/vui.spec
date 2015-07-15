@@ -6,6 +6,7 @@ License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org
 Source:		%{name}-%{version}.tar.xz
+%define sha1 vui=b82907f114c8bd81e6b7676a56fbe9d9977494ea
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui

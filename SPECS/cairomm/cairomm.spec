@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://cairographics.org/releases/%{name}-%{version}.tar.gz
+%define sha1 cairomm=f08bf8a331067f0d1e876523f07238fba6b26b99
 BuildRequires:	cairo-devel libsigc++  
 Requires:	cairo libsigc++
 %description

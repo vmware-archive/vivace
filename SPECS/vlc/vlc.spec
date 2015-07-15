@@ -8,6 +8,7 @@ Group:		System Environment/Multimedia
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://mirror.os6.org/videolan/%{name}/%{version}/%{name}-%{version}.tar.xz
+%define sha1 vlc=11f0384980052c7ed73753af2073965f59b27cd2
 BuildRequires:	gstreamer-plugins-base-devel gtk2-devel lua-devel ncurses-devel libxml2-devel systemd libgcrypt-devel
 Requires:	gstreamer-plugins-base gtk2 lua ncurses libxml2 systemd libgcrypt
 %description

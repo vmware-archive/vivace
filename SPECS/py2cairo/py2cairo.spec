@@ -8,6 +8,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 URL:            http://cairographics.org
 Source0:        http://cairographics.org/releases/%{name}-%{version}.tar.bz2
+%define sha1 py2cairo=2efa8dfafbd6b8e492adaab07231556fec52d6eb
 BuildRequires: 	python2-devel
 BuildRequires: 	python2-libs
 BuildRequires:	cairo-devel

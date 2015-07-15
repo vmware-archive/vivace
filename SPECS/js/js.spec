@@ -8,6 +8,7 @@ Group:		Development/Languages
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.mozilla.org/pub/mozilla.org/%{name}/moz%{name}%{version}.tar.gz
+%define sha1 mozjs=7805174898c34e5d3c3b256117af9944ba825c89
 BuildRequires:	libffi nspr python2-libs python2-devel
 Requires:	libffi nspr python2
 %description

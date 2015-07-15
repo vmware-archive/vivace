@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.14/%{name}-%{version}.tar.bz2
+%define sha1 ORBit2=e7c26aa4b82c146b3ec08d490e3469b4913e4e2f
 BuildRequires:	libidl-devel
 Requires:	libidl
 %description

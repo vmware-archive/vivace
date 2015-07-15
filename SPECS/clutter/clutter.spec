@@ -8,6 +8,7 @@ Group:		System/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.22/%{name}-%{version}.tar.xz
+%define sha1 clutter=1665008f6c44a19d6aab23aa73cb19f85cafdfd2
 BuildRequires:	atk-devel json-glib-devel cogl-devel pango-devel libXcomposite-devel libXdamage-devel gdk-pixbuf-devel
 Requires:	atk json-glib cogl pango libXdamage libXcomposite gdk-pixbuf
 

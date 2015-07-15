@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.16/gtkmm-%{version}.tar.xz
+%define sha1 gtkmm=cc3948dcb9a83e4c55b0fa37535eb52d61531286
 BuildRequires:	pangomm-devel atkmm-devel gtk3-devel libxslt glibmm gdk-pixbuf-devel cairomm-devel
 Requires:	atkmm gtk3 pangomm gdk-pixbuf cairomm
 %description

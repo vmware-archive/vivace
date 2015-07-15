@@ -11,6 +11,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0: 	http://download.mono-project.com/sources/%{name}/%{name}-%{version}+md54+dhx1.tar.gz
+%define sha1 nuget=7378764d4dae409a62748a289f92af59c111f8ee
 Source1:	nuget-core.pc
 Source2:	nuget.sh
 Patch0:		nuget-fix_xdt_hintpath

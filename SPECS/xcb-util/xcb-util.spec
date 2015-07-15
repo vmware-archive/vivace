@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+%define sha1 xcb-util=7f2e9b7efcc2c34eb1d6ae312c3d73b075832e46
 BuildRequires:	libxcb-devel
 Requires:	libxcb
 %description

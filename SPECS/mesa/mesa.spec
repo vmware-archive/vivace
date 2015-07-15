@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.freedesktop.org/pub/%{name}/%{version}/%{name}-%{version}.tar.xz
+%define sha1 mesa=367f78c244a34eeb5e8fc4531228166ea1118165
 BuildRequires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd 
 Requires:	libdrm libXdamage libxshmfence libXxf86vm systemd
 Provides:	pkgconfig(dri)

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.xz
+%define sha1 desktop-file-utils=617f130091dbcc5e739d82ee48e2b3932da5957d
 BuildRequires:	intltool glib-devel
 Requires:	glib
 %description

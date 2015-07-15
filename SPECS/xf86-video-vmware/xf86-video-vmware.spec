@@ -9,6 +9,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
+%define sha1 xf86-video-vmware=3af1d56a9a75b5f6e10a78db2ce155ec65498802
 BuildRequires:	xorg-server-devel
 Requires:	xorg-server
 %description

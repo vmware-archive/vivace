@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.24/%{name}-%{version}.tar.xz
+%define sha1 gvfs=ce5467a5610a1225a0481f9c3d6a286dec0be2af
 BuildRequires:	intltool dbus-glib-devel fuse-devel libxml2-devel libarchive-devel libgcrypt-devel gtk3-devel
 Requires:	libxml2 dbus-glib fuse glib-schemas libarchive libgcrypt gtk3
 %description

@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/pcmanfm/libfm-%{version}.tar.xz
+%define sha1 libfm=c3f2f34086761d89d6aba549883610084ba00750
 BuildRequires:	intltool glib-devel
 Requires:	glib
 %description

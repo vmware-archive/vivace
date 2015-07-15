@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.32/%{name}-%{version}.tar.bz2
+%define sha1 libbonobo=c7650434a4f328eae6f38a29ee8dadd455f35f9c
 Patch0:		libbonobo-glib-2_36.patch	
 BuildRequires:	libart_lgpl-devel popt-devel ORBit2-devel
 Requires:	libart_lgpl popt ORBit2

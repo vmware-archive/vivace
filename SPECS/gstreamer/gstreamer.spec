@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-1.5.1.tar.xz
+%define sha1 gstreamer=018c05d5cf1d0ac8038ab0979afc0e8c576289b4
 BuildRequires:	glib-devel libxml2-devel
 BuildRequires:	gobject-introspection-devel gobject-introspection-python
 Requires:	glib libxml2

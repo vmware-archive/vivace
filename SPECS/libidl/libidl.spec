@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.14/libIDL-%{version}.tar.bz2
+%define sha1 libIDL=abedf091bef0c7e65162111baf068dcb739ffcd3
 BuildRequires:	intltool glib-devel
 Requires:	glib
 %description

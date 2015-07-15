@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.gz
+%define sha1 polkit=374397f1c32fa1290be0fce378fe9bab541ee4bf
 BuildRequires:	intltool glib-devel js-devel expat systemd
 Requires:	glib js expat shadow systemd
 %description

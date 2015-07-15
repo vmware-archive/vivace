@@ -9,6 +9,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://origin-download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 monodevelop=58ef250e999423b19e3716ed916db86dbd7a663c
 Patch0:		build_ikvm_with_default_framework.patch
 Patch1:		fix_autoreconf.patch
 Patch2:		update_templates_for_gtk-sharp_2.12.patch

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.osgeo.org/%{name}/tiff-%{version}.tar.gz
+%define sha1 tiff=652e97b78f1444237a82cbcfe014310e776eb6f0
 Patch0:		tiff-4.0.3-fixes-1.patch
 BuildRequires:	libjpeg-turbo-devel
 Requires:	libjpeg-turbo

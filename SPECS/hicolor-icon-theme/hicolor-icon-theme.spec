@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://icon-theme.freedesktop.org/releases/%{name}-%{version}.tar.xz
+%define sha1 hicolor-icon-theme=368ecc47521e1a2f72cef0171bee02aae876ff53
 BuildArch:	noarch
 %description
 The hicolor-icon-theme package contains a default fallback theme for implementations of the icon theme specification.

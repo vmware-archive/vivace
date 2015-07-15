@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://openbox.org/dist/%{name}/%{name}-%{version}.tar.gz
+%define sha1 openbox=6573516107f8cdb83842aac25a430e3f9f966bad
 BuildRequires:	gtk2-devel libXcursor-devel libxml2-devel
 Requires:	gtk2 libXcursor libxml2
 %description

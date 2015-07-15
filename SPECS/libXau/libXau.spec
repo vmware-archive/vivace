@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXau=d9512d6869e022d4e9c9d33f6d6199eda4ad096b
 BuildRequires:	proto
 Requires:	proto
 %description

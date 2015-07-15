@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 lxsession=00d45cccbdd6fb05c46998671a7c12123a0a2179
 BuildRequires:	libunique-devel polkit-devel dbus-glib-devel
 Requires:	libunique polkit dbus-glib
 %description

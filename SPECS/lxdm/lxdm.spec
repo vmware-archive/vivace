@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
+%define sha1 lxdm=0a91c906b3a0edd181fad74965b22ebaa9891798
 Source1:	lxdm.conf
 Source2:	default.png
 Source3:	greeter.ui

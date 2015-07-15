@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
+%define sha1 lxterminal=0c2269c43aa463e5dbf869d935745226b3c9943a
 BuildRequires:	vte-devel gtk2-devel ncurses-devel
 Requires:	vte gtk2 ncurses
 %description

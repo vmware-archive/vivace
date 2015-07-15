@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.24/%{name}-%{version}.tar.xz
+%define sha1 gtkmm=e99866b0cb5a0d7387a7cef79253177310020b3d
 BuildRequires:	pangomm-devel atkmm-devel gtk2-devel
 Requires:	atkmm gtk2 pangomm
 %description

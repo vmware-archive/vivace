@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.bz2
+%define sha1 pidgin=5e0062b81bdb01300804e12bc0b6a04a91984631
 BuildRequires:	gtk2-devel pkg-config libxml2-devel gettext intltool ncurses-devel cyrus-sasl libgnome-keyring-devel nss-devel dbus GConf-devel perl python2-devel libtool libstdc++-devel gtk-doc openssl-devel 
 Requires:	ncurses GConf perl nss gtk2 libxml2 openssl python2 libstdc++ libgnome-keyring
 %description

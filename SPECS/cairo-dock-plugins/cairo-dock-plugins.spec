@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://launchpad.net/cairo-dock-plug-ins/3.4/%{version}/+download/%{name}-%{version}.tar.gz
+%define sha1 cairo-dock-plugins=b603f96ba7c48eb0bc4248d8b344f6868ef509ed
 BuildRequires:	cmake libXcomposite-devel dbus-glib-devel libxml2-devel mesa-devel curl librsvg-devel glu-devel gtk3-devel  cairo-dock-devel alsa-lib-devel ruby upower-devel libXxf86vm-devel vte-devel gnome-menus-devel
 Requires:	libXcomposite dbus-glib libxml2 mesa curl librsvg glu gtk3 cairo-dock alsa-lib ruby upower libXxf86vm vte gnome-menus
 %description

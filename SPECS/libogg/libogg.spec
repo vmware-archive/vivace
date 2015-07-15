@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.xiph.org/releases/ogg/%{name}-%{version}.tar.xz
+%define sha1 libogg=5e525ec6a4135066932935c01d2c309ea5009f8d
 %description
 The libogg package contains the Ogg file structure. This is useful for creating (encoding) or playing (decoding) a single physical bit stream.
 %package	devel

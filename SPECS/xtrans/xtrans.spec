@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/xtrans-1.3.5.tar.bz2
+%define sha1 xtrans=2d3ae1839d841f568bc481c6116af7d2a9f9ba59
 BuildRequires:	pkg-config util-macros fontconfig-devel libxcb-devel
 Requires:	fontconfig libxcb
 %description

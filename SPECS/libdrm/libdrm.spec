@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://dri.freedesktop.org/libdrm/%{name}-%{version}.tar.bz2
+%define sha1 libdrm=fce70371540af0490541b05d96c6b6b43f1fab80
 BuildRequires:	libXmu-devel libXpm-devel libpciaccess-devel
 Requires:	libXmu libXpm libpciaccess
 Provides:	pkgconfig(libdrm)

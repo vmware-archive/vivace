@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/app/%{name}-%{version}.tar.bz2
+%define sha1 xclock=1b54b96e057469f90a00a9f1ca79ed056cbde271
 BuildRequires:	libXmu-devel libXaw-devel libXft-devel libxkbfile-devel libXt-devel
 Requires:	xorg-applications libXmu libXaw libXft libxkbfile libXt
 %description

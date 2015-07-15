@@ -6,6 +6,7 @@ License:	GPLv3
 URL:		https://launchpad.net/libindicator
 Group:		User Interface/Library
 Source0:	https://launchpad.net/%{name}/12.10/%{version}/+download/%{name}-%{version}.tar.gz
+%define sha1 libindicator=25c8a0a150651ee6b2198df3f36fcbb49f0295c2
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	gtk3-devel

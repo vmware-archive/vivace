@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.freedesktop.org/software/vaapi/releases/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 libva=b315a86fcd3bd1e073e2c1b62416550885cd7420
 BuildRequires:	mesa-devel
 Requires:	mesa
 %description

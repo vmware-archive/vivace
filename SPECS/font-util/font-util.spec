@@ -8,6 +8,7 @@ Group:		Development/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/font/font-util-1.3.1.tar.bz2
+%define sha1 font-util=0b16add3637c64b0bbaf1dd223b71b0421100c20
 %description
 The Xorg font utilities.
 %prep

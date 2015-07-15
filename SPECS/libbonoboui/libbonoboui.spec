@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+%define sha1 libbonoboui=9657e7194ef3f5782f183e021fdb4014531b6cd8
 BuildRequires:	libgnomecanvas-devel libgnome-devel
 Requires:	libgnomecanvas libgnome
 %description

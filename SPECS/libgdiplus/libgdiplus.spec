@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.gz
+%define sha1 libgdiplus=7f7d2b82c0d755bb854fd76d0d62120cdde35d8c
 BuildRequires:	intltool cairo-devel libtiff-devel
 Requires:	cairo libtiff
 %description

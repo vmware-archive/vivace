@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/vte/0.36/vte-%{version}.tar.xz
+%define sha1 vte=a7acc1594eb6fa249edccb059c21132b3aa2657b
 BuildRequires:	intltool gtk3-devel ncurses-devel
 Requires:	gtk3 ncurses
 %description

@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://freedesktop.org/~hadess/%{name}-%{version}.tar.xz
+%define sha1 shared-mime-info=f7a3881acca3df1d9757d670e99d2d56ac9f7bca
 BuildRequires:	intltool glib-devel libxml2-devel
 Requires:	gettext glib libxml2
 %description

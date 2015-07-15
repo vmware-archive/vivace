@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libxshmfence=a2ebe90e5595afca4db93a4359732af43b2b8c69
 BuildRequires:	pkg-config util-macros proto
 Provides:	pkgconfig(xshmfence)
 %description

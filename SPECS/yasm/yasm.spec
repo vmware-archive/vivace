@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.tortall.net/projects/%{name}/releases/%{name}-%{version}.tar.gz
+%define sha1 yasm=b7574e9f0826bedef975d64d3825f75fbaeef55e
 BuildRequires:	python2-devel python2-libs
 Requires:	python2
 %description

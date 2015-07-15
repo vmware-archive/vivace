@@ -8,6 +8,7 @@ Group:		Productivity/Multimedia/Sound/Players
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.6/%{name}-%{version}.tar.xz
+%define sha1 banshee=3182040b702c5ecea2d3c84ba5ac1f580a71be32
 Patch0:         banshee-2.6.2-gstreamer-port-to-1.0.patch
 BuildRequires:  gtk-sharp2-devel libtool gstreamer-devel
 BuildRequires:  which unzip gnome-sharp-devel tzdata mono-devel mono-extras mono-addins dbus-glib-devel gstreamer-devel gstreamer-plugins-base-devel gtk3-devel gtk2-devel

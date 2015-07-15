@@ -6,6 +6,7 @@ License:	LGPLv2.1+
 URL:		http://gnudatalanguage.sourceforge.net/
 Group:		System/Libraries
 Source0:	http://ftp.acc.umu.se/pub/gnome/sources/%{name}/3.16/%{name}-%{version}.tar.xz
+%define sha1 gdl=bdbf9e4c754b6f3cad12f7027182751db591f1a5
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel

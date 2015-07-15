@@ -8,6 +8,7 @@ Group:		Productivity/Multimedia/Video/Players
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        https://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
+%define sha1 totem=ee3802de84ac2cf34b38f91ae6de59b0d17ff4dc
 BuildRequires:  libtool gstreamer-devel clutter-devel gsettings-desktop-schemas-devel clutter-gst-devel clutter-gtk-devel gst-plugins-good-devel gst-plugins-bad-devel pygobject
 BuildRequires:  itstool unzip gnome-sharp-devel libxml2-devel dbus-glib-devel gstreamer-devel cairo-devel gstreamer-plugins-base-devel gtk3-devel libpeas-devel libxml2-python
 BuildRequires:  intltool >= 0.35.0 dbus-sharp-glib taglib-sharp-devel glib-devel gnome-icon-theme totem-pl-parser-devel

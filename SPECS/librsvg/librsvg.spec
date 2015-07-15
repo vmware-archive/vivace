@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.40/%{name}-%{version}.tar.xz
+%define sha1 librsvg=aed7c0d4363096f3d306a933609a2464ad1dd23f
 BuildRequires:	gdk-pixbuf-devel pango-devel libcroco-devel gobject-introspection-devel gobject-introspection-python
 Requires:	gdk-pixbuf pango libcroco gobject-introspection
 %description

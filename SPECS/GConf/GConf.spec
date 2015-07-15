@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.32/%{name}-%{version}.tar.xz
+%define sha1 GConf=340b3cb634ef64f0c31af9d971d4f3da95d1787c
 BuildRequires:	libxml2-devel dbus-glib-devel polkit-devel
 Requires:	libxml2 dbus-glib polkit
 %description

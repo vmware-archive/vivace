@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://anduin.linuxfromscratch.org/sources/BLFS/svn/c/ConsoleKit-%{version}.tar.xz
+%define sha1 ConsoleKit=fabed310860c6eda2fe99218d534dc838a9aa226
 BuildRequires:	dbus-glib-devel 
 BuildRequires:  polkit-devel libacl-devel libXrender-devel libXext-devel
 Requires:	dbus-glib polkit libacl libXrender libXext

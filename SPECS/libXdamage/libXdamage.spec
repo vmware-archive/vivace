@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXdamage=c3fc0f4b02dce2239bf46c82a5f06b06585720ae
 BuildRequires:	libXfixes-devel
 Requires:	libXfixes
 Provides:	pkgconfig(xdamage)

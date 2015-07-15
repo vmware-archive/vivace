@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXi=d206af66ca9472784a6f05e719121e4d21a1adb1
 BuildRequires:	libXfixes-devel
 Requires:	libXfixes
 Provides:	pkgconfig(xi)

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
+%define sha1 gpicview=423143c850390db9784ad9812b9f929c18dd51ea
 BuildRequires:	vte-devel
 Requires:	vte
 %description

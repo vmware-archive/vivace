@@ -8,6 +8,7 @@ Group:		System/GUI/GNOME
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.12/%{name}-%{version}.tar.xz
+%define sha1 gnome-icon-theme=cc0f0dc55db3c4ca7f2f34564402f712807f1342
 BuildRequires:	gtk2-devel intltool hicolor-icon-theme 
 Requires:	gtk2 hicolor-icon-theme 
 BuildArch:	noarch

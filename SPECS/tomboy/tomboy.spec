@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.gnome.com/sources/%{name}/1.15/%{name}-%{version}.tar.xz
+%define sha1 tomboy=dcb2299ea29e1ff37edee4bdfd22bf437c06584d
 BuildRequires:	mono-devel mono-extras gtk-sharp2-devel gnome-sharp-devel mono-addins desktop-file-utils gnome-doc-utils dbus-sharp dbus-sharp-glib gtk2-devel which
 Requires:	mono shared-mime-info gtk-sharp2 gnome-sharp mono-addins gnome-doc-utils dbus-sharp dbus-sharp-glib
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libpciaccess=74e16b6d9a1d9d28279754010d2c4c4636b72e35
 BuildRequires:	pkg-config util-macros 
 Provides:	pkgconfig(pciaccess)
 %description

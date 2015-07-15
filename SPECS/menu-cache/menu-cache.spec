@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 menu-cache=e7b3854109f9826472cf9795e924acebe5e27861
 BuildRequires:	libfm-extra-devel
 Requires:	libfm-extra
 %description

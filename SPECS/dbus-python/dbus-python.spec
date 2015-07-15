@@ -6,6 +6,7 @@ License:	MIT
 URL:		http://www.freedesktop.org/wiki/Software/DBusBindings/
 Group:		User Interface/Library
 Source0:	http://dbus.freedesktop.org/releases/%{name}/%{name}-%{version}.tar.gz
+%define sha1 dbus-python=7a00f7861d26683ab7e3f4418860bd426deed9b5
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	intltool dbus-glib-devel python2-devel python2-libs

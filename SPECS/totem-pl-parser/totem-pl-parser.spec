@@ -8,6 +8,7 @@ Group:		Productivity/Multimedia/Video/Players
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        https://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
+%define sha1 totem-pl-parser=c351ad8b6cf69059f0426df0e79040393bc7f6ea
 BuildRequires:  glib-devel libsoup-devel libxml2-devel intltool gmime-devel gmime gobject-introspection-devel gobject-introspection-python
 Requires:       libsoup glib gmime libxml2 gobject-introspection
 %description

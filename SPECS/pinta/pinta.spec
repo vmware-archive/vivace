@@ -8,6 +8,7 @@ Group:		Productivity/Graphics/Bitmap Editors
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:        https://github.com/PintaProject/Pinta/releases/download/1.6/pinta-1.6.zip
+%define sha1 pinta=d7f221791e8de9c25f86a8a29134f22d6bba8489
 BuildRequires:  unzip mono-devel >= 2.8 mono-addins 
 BuildRequires:  automake autoconf gtk-sharp2-devel
 Requires:	mono-addins

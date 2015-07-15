@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 lxappearance=b55485e14b5ef75403de917283258f1e6b0f06e7
 BuildRequires:	intltool gtk2-devel dbus-glib-devel
 Requires:	gtk2 dbus-glib
 %description

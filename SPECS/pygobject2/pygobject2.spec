@@ -10,6 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 URL:            ftp://ftp.gnome.org
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/pygobject/2.28/pygobject-%{version}.tar.xz
+%define sha1 pygobject=b1749ba806499f4c2780dbd1cbb363aaf1f41e78
 Patch0:		pygobject-2.28.6-fixes-1.patch
 BuildRequires: 	python2-devel
 BuildRequires: 	python2-libs

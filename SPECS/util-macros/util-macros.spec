@@ -9,6 +9,7 @@ BuildArchitectures: noarch
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/util/%{name}-%{version}.tar.bz2
+%define sha1 util-macros=00cfc636694000112924198e6b9e4d72f1601338
 %description
 The util-macros package contains the m4 macros used by all of the Xorg packages.
 %prep

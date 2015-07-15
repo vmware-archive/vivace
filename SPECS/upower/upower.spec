@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://upower.freedesktop.org/releases/%{name}-%{version}.tar.xz
+%define sha1 upower=8fc30c2d53b15c0a4e7c1bc077a912bc1aeb6138
 BuildRequires:	dbus-glib-devel gobject-introspection-devel gobject-introspection-python polkit-devel libusb-devel
 Requires:	dbus-glib polkit libusb
 %description

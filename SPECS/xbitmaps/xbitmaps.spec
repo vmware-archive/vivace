@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/data/%{name}-%{version}.tar.bz2
+%define sha1 xbitmaps=578afff7e4912192b524c25254cf7f54c16e57d8
 BuildArchitectures: noarch
 BuildRequires:	util-macros
 %description

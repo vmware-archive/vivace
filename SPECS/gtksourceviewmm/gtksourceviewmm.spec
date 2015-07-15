@@ -8,6 +8,7 @@ Group:		System/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.12/%{name}-%{version}.tar.xz
+%define sha1 gtksourceviewmm=5dd03ed312f6e489ff70df22a39a24ca4896449e
 BuildRequires:	intltool libxml2-devel gtksourceview-devel gtkmm3-devel cracklib-python
 Requires:	glibmm gobject-introspection gtksourceview gtkmm3 
 %description

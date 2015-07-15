@@ -8,6 +8,7 @@ Group:		System/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.0/%{name}-%{version}.tar.xz
+%define sha1 clutter-gst=e0238f44046877116c7361eab255d775807365ac
 BuildRequires:	gstreamer-plugins-base-devel clutter-devel
 Requires:	gstreamer-plugins-base clutter
 

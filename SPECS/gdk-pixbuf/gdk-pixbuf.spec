@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.31/%{name}-%{version}.tar.xz
+%define sha1 gdk-pixbuf=f2355fdc6ecabca3c48de33499bd8262c839e591
 BuildRequires:	libpng-devel libtiff-devel libX11-devel gobject-introspection-devel gobject-introspection-python gtk-doc
 Requires:	libpng libtiff libX11 gobject-introspection
 %description

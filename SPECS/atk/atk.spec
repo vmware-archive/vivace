@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.16/%{name}-%{version}.tar.xz
+%define sha1 atk=d097c6cec71ffede77be9f13f4ceee9880c0a5d7
 BuildRequires:	gobject-introspection-devel gobject-introspection-python
 Requires:	glib
 %description

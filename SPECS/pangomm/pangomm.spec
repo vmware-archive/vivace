@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.36/%{name}-%{version}.tar.xz
+%define sha1 pangomm=eb23bca29b2ea216b58f39292a9c5e5c293716c5
 BuildRequires:	pango-devel glibmm-devel cairomm-devel
 Requires:	cairomm pango glibmm
 %description

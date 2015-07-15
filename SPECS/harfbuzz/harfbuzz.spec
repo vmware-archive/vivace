@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/release/%{name}-%{version}.tar.bz2
+%define sha1 harfbuzz=b9f546e9625926e32fe4b6da045689b456e77c22
 BuildRequires:	glib-devel icu-devel freetype2-initial 
 # TODO: fix cycle deps harfbuff <-> fretype2
 AutoReq:	no

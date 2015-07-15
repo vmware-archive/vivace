@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.nasm.us/pub/nasm/releasebuilds/%{version}/%{name}-%{version}.tar.xz
+%define sha1 nasm=6908296ac437b3ade79fadfaad0efcfd99582f70
 %description
 NASM (Netwide Assembler) is an 80x86 assembler designed for portability and modularity. It includes a disassembler as well. 
 %prep

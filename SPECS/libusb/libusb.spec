@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	 http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 libusb=c5d14ced155233ceeb5107c7eb3b94b16649ae05
 BuildRequires:	systemd
 Requires:	systemd
 %description

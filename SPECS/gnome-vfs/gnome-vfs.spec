@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+%define sha1 gnome-vfs=0dc634e7dd979fd218f378902c0ca1af80738961
 Patch0:		gnome-vfs-2.24.1-disable-gnome-mime-data.patch
 Patch1:		gnome-vfs2-g_memmove-no-more.patch
 BuildRequires:	intltool libxml2-devel dbus-glib-devel GConf-devel bzip2-devel gtk-doc

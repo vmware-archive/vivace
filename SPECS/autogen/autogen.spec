@@ -8,6 +8,7 @@ Group:		Development/Tools/Building
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/%{name}/AutoGen/AutoGen-%{version}/%{name}-%{version}.tar.gz
+%define sha1 autogen=55c5e3c18c77a9de14cce8044f5848a614f4ed66
 BuildRequires:	libtool pkg-config libxml2-devel guile-devel libltdl-devel which 
 
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXfont=e63a354de5dc2d8cba08d50add1519471412a618
 BuildRequires:	libfontenc-devel freetype2-devel xtrans-devel
 Requires:	libfontenc freetype2
 %description

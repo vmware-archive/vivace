@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.30/%{name}-%{version}.tar.bz2
+%define sha1 libgnomecanvas=a5b07f33c44c460434dd0dad457d2fffb8a1baf9
 BuildRequires:	libart_lgpl-devel
 Requires:	libart_lgpl
 %description

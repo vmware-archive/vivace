@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 lxde-common=8ae027a26043620990a5c5d96a31e46b0ff669da
 BuildRequires:	consolekit-devel lxde-icon-theme lxsession openbox-devel 
 Requires:	consolekit lxde-icon-theme lxsession openbox lxappearance xinit pcmanfm xcompmgr cairo-dock-plugins shared-mime-info
 %description

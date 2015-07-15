@@ -11,6 +11,7 @@ Group:		Applications/Text
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://launchpad.net/nunitv2/trunk/%{version}/+download/NUnit-%{version}-src.zip
+%define sha1 NUnit=3d8a4126edab1ce82f931c11b45c8607d2f90830
 Source1:	nunit.pc
 Source2:	nunit-gui.sh
 Source3:	nunit-console.sh

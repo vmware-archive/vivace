@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXcomposite=75fd0b996e56e12db1d84e9b63549c5c3f2631ca
 BuildRequires:	libXfixes-devel
 Requires:	libXfixes
 %description

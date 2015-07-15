@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-%{version}.tar.xz
+%define sha1 gtk=f3c2f1a3728ed51d08054f6b4c7384fbf99477c0
 BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel
 Requires:	atk gdk-pixbuf pango libXinerama hicolor-icon-theme
 %description

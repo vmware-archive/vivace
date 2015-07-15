@@ -8,6 +8,7 @@ Group:		Development/Languages/Scheme
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
+%define sha1 guile=548d6927aeda332b117f8fc5e4e82c39a05704f9
 BuildRequires:	libtool libltdl-devel pkg-config libxml2-devel
 
 %description

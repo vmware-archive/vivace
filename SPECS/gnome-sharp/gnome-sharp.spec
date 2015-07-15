@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+%define sha1 gnome-sharp=d3c3e61e01b46a95f6f46dfa706f4af09f05bae2
 BuildRequires:	intltool gettext gtk-sharp2-devel libgnomeui-devel
 Requires:	gettext gtk-sharp2 libgnomeui
 %description

@@ -6,6 +6,7 @@ License:	LGPLv3 or LGPLv2 and GPLv3
 URL:		https://launchpad.net/libdbusmenu
 Group:		User Interface/Library
 Source0:	https://launchpad.net/%{name}/12.10/%{version}/+download/%{name}-%{version}.tar.gz
+%define sha1 libdbusmenu=067b77564f90633aa58494e54b99d733a21f3142
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	intltool gtk3-devel gnome-doc-utils json-glib-devel gtk2-devel

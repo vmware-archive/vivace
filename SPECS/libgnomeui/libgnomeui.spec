@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+%define sha1 libgnomeui=a89d88416403b20a958bd19257522cf7a75ea344
 BuildRequires:	libbonoboui-devel libgnome-keyring-devel
 Requires:	libbonoboui libgnome-keyring
 %description

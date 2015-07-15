@@ -6,6 +6,7 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML
 Source0:        http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/XML-LibXML-%{version}.tar.gz
+%define sha1 XML-LibXML=acba14e43f136c39eee5ea5475dbbb8f32903e52
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	perl libxml2-devel zlib-devel perl-XML-NamespaceSupport perl-XML-SAX

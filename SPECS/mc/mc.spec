@@ -8,6 +8,7 @@ Group:		System Environment/Shells
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.midnight-commander.org/downloads/%{name}-%{version}.tar.xz
+%define sha1 mc=ae64b22a213fac8b8231b5407b8aa312ca25c38f
 BuildRequires:	glib-devel pcre-devel ncurses-devel
 Requires:	glib pcre ncurses
 %description

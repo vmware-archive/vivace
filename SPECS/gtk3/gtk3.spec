@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.14/gtk+-%{version}.tar.xz
+%define sha1 gtk=422f344d01b6ab143db61a39f0e0a3bc3ae5337e
 BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel
 Requires:	glib-schemas
 Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme

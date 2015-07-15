@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 lxtask=c61192c8393dd827bd3abad69837d783cfb07d54
 BuildRequires:	intltool gtk2-devel
 Requires:	gtk2
 %description

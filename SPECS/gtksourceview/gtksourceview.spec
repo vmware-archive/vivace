@@ -8,6 +8,7 @@ Group:		System/GUI/GNOME
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
+%define sha1 gtksourceview=065c17a9d0cad9d89c63d6136f8580a1108ec0e1
 BuildRequires:	gobject-introspection-devel gobject-introspection-python intltool libxml2-devel glib-devel glibc-devel gtk2-devel gtk3-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libX11-devel libXrender-devel libXext-devel harfbuzz-devel python2-devel cracklib-python
 Requires:	atk gdk-pixbuf pango glib libX11 libXext libXinerama libXrender gobject-introspection pango cairo gdk-pixbuf atk pixman libpng libX11 libXrender libXext harfbuzz python2
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://cairographics.org/releases/%{name}-%{version}.tar.xz
+%define sha1 cairo=c8da68aa66ca0855b5d0ff552766d3e8679e1d24
 BuildRequires:	libpng-devel pixman-devel fontconfig-devel libXrender-devel libdrm-devel
 Requires:	libpng pixman fontconfig libXrender libdrm
 %description

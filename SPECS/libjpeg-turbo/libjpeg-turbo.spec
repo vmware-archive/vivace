@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+%define sha1 libjpeg-turbo=a9ed7a99a6090e0848836c5df8e836f300a098b9
 BuildRequires:	nasm
 %description
 libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG compression and decompression. libjpeg is a library that implements JPEG image encoding, decoding and transcoding.

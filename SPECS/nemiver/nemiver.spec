@@ -8,6 +8,7 @@ Group:		Development/Debuggers
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/0.9/%{name}-%{version}.tar.xz
+%define sha1 nemiver=b9b49dcee134739be2fa4016de39d4bfffcf0a27
 BuildRequires:	sqlite-autoconf gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel systemd libgtop-devel alsa-lib-devel libgnome-keyring-devel boost python2-libs python2-devel harfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
 Requires:	libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo libart_lgpl binutils gdl gtksourceviewmm gdb 
 

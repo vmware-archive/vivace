@@ -6,6 +6,7 @@ License:	LGPLv2.1+
 URL:		http://spruce.sourceforge.net/gmime/
 Group:		Productivity/Networking/Email/Utilities
 Source0:	https://download.gnome.org/sources/gmime/2.6/%{name}-%{version}.tar.xz
+%define sha1 gmime=d290d628f26ef0a233781bf0793f12b1795d8536
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	glib-devel libgpg-error

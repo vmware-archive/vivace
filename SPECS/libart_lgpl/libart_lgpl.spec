@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.3/%{name}-%{version}.tar.bz2
+%define sha1 libart_lgpl=dbac185c65696381ef188de1f98b348b530e22f9
 Patch0:		libart_lgpl-2.3.21-upstream_fixes-1.patch
 BuildRequires:	libglade-devel
 Requires:	libglade

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXdmcp=3c09eabb0617c275b5ab09fae021d279a4832cac
 BuildRequires:	proto
 Requires:	proto
 %description

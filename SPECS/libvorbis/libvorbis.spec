@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.xiph.org/releases/vorbis/%{name}-%{version}.tar.xz
+%define sha1 libvorbis=7b4cdd4a73fadfed457ae40984cb0cc91146b300
 BuildRequires:	libogg-devel
 Requires:	libogg
 %description

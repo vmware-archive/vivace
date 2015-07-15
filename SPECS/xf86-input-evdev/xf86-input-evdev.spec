@@ -9,6 +9,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
+%define sha1 xf86-input-evdev=347eae8cc6c2f3f84bac77ce0b06eef06f541fd3
 BuildRequires:	libevdev-devel xorg-server-devel pixman-devel libpciaccess-devel
 Requires:	libevdev xorg-server pixman libpciaccess
 %description

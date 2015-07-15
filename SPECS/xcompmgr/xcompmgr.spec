@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xorg.freedesktop.org/archive/individual/app/%{name}-%{version}.tar.bz2
+%define sha1 xcompmgr=5590d1bdd2669f083e4c2bb25edd89cce8abbd58
 BuildRequires:	libXcomposite-devel libXdamage-devel libXrender-devel 
 Requires:	libXcomposite libXdamage libXrender 
 %description

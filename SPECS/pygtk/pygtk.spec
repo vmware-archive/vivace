@@ -10,6 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 URL:            ftp://ftp.gnome.org
 Source0:        ftp://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+%define sha1 pygtk=344e6a32a5e8c7e0aaeb807e0636a163095231c2
 BuildRequires:	pygobject2 gtk2-devel py2cairo
 Requires:	gtk2 
 Requires:	pygobject2

@@ -9,6 +9,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
+%define sha1 xf86-input-vmmouse=0fa67d2ca9b2b26d32b93cc030fc3ea28964fe81
 Patch0:		xf86-input-vmmouse-13.0.0-build_fix-1.patch
 BuildRequires:	xorg-server-devel pixman-devel libpciaccess-devel
 Requires:	xorg-server pixman libpciaccess

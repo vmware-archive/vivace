@@ -8,6 +8,7 @@ Group:		Applications/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
+%define sha1 open-vm-tools=958c40c8038d52947680444f507f693825d358be
 Patch0:		open-vm-tools-strerror_r-fix.patch
 Patch1:		open-vm-tools-service-link.patch
 BuildRequires: 	xerces-c-devel

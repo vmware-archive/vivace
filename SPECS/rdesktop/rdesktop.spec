@@ -8,6 +8,7 @@ Group:		Applications/Communications
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+%define sha1 rdesktop=aa1e56043782e04a0121357b24874e3ad6ae7b1d
 BuildRequires:	openssl-devel glib-devel libXinerama-devel libpng-devel libXrandr-devel gobject-introspection-python python2-devel alsa-lib-devel
 Requires:	glib libXinerama alsa-lib libXrandr openssl
 %description

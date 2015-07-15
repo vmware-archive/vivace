@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libdmx=0eeac14a06cffb04a1c78793563f233a8f8b79be
 BuildRequires:	libXext-devel
 Requires:	libXext
 %description

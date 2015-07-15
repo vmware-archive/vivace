@@ -8,6 +8,7 @@ Group:		Applications/Multimedia
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-%{version}.tar.xz
+%define sha1 gst-plugins-base=fa6c377924fa6eed7f91a94a862a6f342c40a1f1
 BuildRequires:	gstreamer-devel pango-devel alsa-lib-devel libvorbis-devel
 Requires:	gstreamer pango alsa-lib libvorbis
 %description

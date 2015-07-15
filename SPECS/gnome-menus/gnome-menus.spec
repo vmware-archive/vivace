@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.6/%{name}-%{version}.tar.xz
+%define sha1 gnome-menus=7f5aad7a68b2ff37bb355b98ead48f236b79e0e9
 BuildRequires:	intltool glib-devel gobject-introspection-devel gobject-introspection-python
 Requires:	glib
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXfixes=e14fa072bd70b30eef47391cac637bdb4de9e8a3
 BuildRequires:	libXext-devel
 Requires:	libXext
 Provides:	pkgconfig(xfixes)

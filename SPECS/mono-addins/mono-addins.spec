@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.mono-project.com/sources/%{name}/%{name}-%{version}.tar.gz
+%define sha1 mono-addins=dc3d494f484bfef0b7e7024939f18c7b4d7ee4db
 Patch0:		mono-addins-1.0-libdir.patch
 BuildRequires:	gtk-sharp2-devel mono-devel
 Requires:	gtk-sharp2

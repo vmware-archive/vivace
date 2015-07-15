@@ -8,6 +8,7 @@ Group:		Development/Tools
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://tango.freedesktop.org/releases/%{name}-%{version}.tar.bz2
+%define sha1 icon-naming-utils=4e8025f129f9e536eafff847f65e44ede3e5e7ef
 BuildRequires:	perl-XML-LibXML-Simple 
 Requires:	pkg-config
 BuildArch:	noarch

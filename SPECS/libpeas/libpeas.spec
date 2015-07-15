@@ -8,6 +8,7 @@ Group:		System/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.14/%{name}-%{version}.tar.xz
+%define sha1 libpeas=18a85ab41f578997ff1e9860ce178d7c5116c616
 BuildRequires:	intltool gobject-introspection-devel gtk3-devel
 Requires:	gtk3 gobject-introspection
 %description

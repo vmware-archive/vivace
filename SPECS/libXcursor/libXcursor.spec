@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXcursor=89870756758439f9216ddf5f2d3dca56570fc6b7
 BuildRequires:	libXfixes-devel libXrender-devel
 Requires:	libXfixes libXrender
 %description

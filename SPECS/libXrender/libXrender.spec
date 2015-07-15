@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXrender=0f5c843410029944bd06e19366db4932cf5944fa
 BuildRequires:	libX11-devel
 Requires:	libX11
 Provides:	pkgconfig(xrender)

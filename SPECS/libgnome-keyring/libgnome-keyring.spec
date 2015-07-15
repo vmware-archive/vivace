@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.6/%{name}-%{version}.tar.xz
+%define sha1 libgnome-keyring=0c7a991037efe5a2b827666671c5a9b3e30b6a7a
 BuildRequires:	dbus-glib-devel libgcrypt-devel
 Requires:	dbus-glib libgcrypt
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.36/%{name}-%{version}.tar.xz
+%define sha1 pango=c6ba02ee8f9d8b22b7cfd74c4b6ae170bebc8d2b
 BuildRequires:	cairo-devel libXft-devel gobject-introspection-devel gobject-introspection-python
 Requires:	cairo libXft gobject-introspection
 %description

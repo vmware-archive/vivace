@@ -8,6 +8,7 @@ Group:		Development/Libraries/GNOME
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.31/%{name}-%{version}.tar.xz
+%define sha1 libgtop=b68758a82862517efab46d0fed794740095e7a9d
 BuildRequires:	glib-devel
 BuildRequires:	intltool
 BuildRequires:	pkg-config

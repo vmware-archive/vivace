@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/data/%{name}-%{version}.tar.bz2
+%define sha1 xcursor-themes=fb22702607810607ab1b9cde1c9a033430c5f037
 BuildRequires:	xorg-applications libXcursor-devel
 Requires:	libXcursor
 %description

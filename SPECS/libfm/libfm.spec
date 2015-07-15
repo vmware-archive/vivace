@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/pcmanfm/%{name}-%{version}.tar.xz
+%define sha1 libfm=c3f2f34086761d89d6aba549883610084ba00750
 Patch0:		host2guest_dnd_support.patch
 BuildRequires:	gtk2-devel menu-cache-devel
 Requires:	gtk2 menu-cache

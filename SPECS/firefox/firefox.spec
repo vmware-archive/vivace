@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
+%define sha1 firefox=20f52c37e099cb2b21f3a76c6e39fe698e1e79e8
 Source1:        %{name}.desktop
 BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils

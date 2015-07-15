@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.22/%{name}-%{version}.tar.xz
+%define sha1 atkmm=c3273aa7b84fb163b0ad5bd3ee26b9d1cd4976bb
 BuildRequires:	glibmm-devel atk-devel
 Requires:	glibmm atk 
 %description

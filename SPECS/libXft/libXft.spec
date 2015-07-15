@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXft=e025d790a7b6c4d283a78d8df06615cb10278e2d
 BuildRequires:	libXrender-devel fontconfig-devel
 Requires:	libXrender fontconfig
 %description

@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libICE=3c3a857a117ce48a1947a16860056e77cd494fdf
 BuildRequires:	xtrans-devel
 Requires:	proto
 Provides:	pkgconfig(ice)

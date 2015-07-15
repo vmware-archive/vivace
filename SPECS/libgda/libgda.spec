@@ -6,6 +6,7 @@ License:	LGPL
 URL:		http://www.gnome-db.org/
 Group:		Productivity/Databases/Clients
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/5.2/%{name}-%{version}.tar.xz
+%define sha1 libgda=9963fe39074f5ece1872387c955e1598f8b872af
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel itstool pango-devel libtool desktop-file-utils openssl-devel python2-devel cracklib-python python2-libs python2-tools python2 libgnome-keyring-devel gobject-introspection gobject-introspection-python gobject-introspection-devel autoconf libgcrypt-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel scrollkeeper libxslt ncurses-devel readline-devel groff libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel sqlite-autoconf 

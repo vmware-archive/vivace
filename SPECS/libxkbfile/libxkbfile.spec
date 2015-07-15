@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libxkbfile=05139829837c26e3a14a40a700f058c018bc71f5
 BuildRequires:	libX11-devel
 Requires:	libX11
 Provides:	pkgconfig(xkbfile)

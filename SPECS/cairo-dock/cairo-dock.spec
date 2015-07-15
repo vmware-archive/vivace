@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://launchpad.net/cairo-dock-core/3.4/%{version}/+download/%{name}-%{version}.tar.gz
+%define sha1 cairo-dock=3273644aa4b848fda7a0c6825860930d61b48060
 BuildRequires:	cmake dbus-glib-devel libXcomposite-devel libxml2-devel mesa-devel curl librsvg-devel glu-devel gtk3-devel
 Requires:	dbus-glib libxml2 mesa curl librsvg glu gtk3 gsettings-desktop-schemas
 Requires:	%{name}-libs = %{version}

@@ -8,6 +8,7 @@ Group:		Applications/Multimedia
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://gstreamer.freedesktop.org/src/%{name}/%{name}-%{version}.tar.xz
+%define sha1 gst-plugins-bad=48975aca3cf0bc8a26b79491d70227afb8c72a16
 BuildRequires:	gstreamer-plugins-base-devel 
 Requires:	gstreamer-plugins-base
 %description

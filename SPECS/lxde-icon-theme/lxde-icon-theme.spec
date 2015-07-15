@@ -9,6 +9,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
+%define sha1 lxde-icon-theme=643029acac6864ee04cf409af0c825085f545cec
 BuildRequires:	intltool
 Requires:	gtk2
 %description

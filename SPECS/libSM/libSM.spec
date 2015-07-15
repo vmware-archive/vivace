@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libSM=e6d5dab6828dfd296e564518d2ed0a349a25a714
 BuildRequires:	libICE-devel
 Requires:	libICE
 Provides:	pkgconfig(sm)

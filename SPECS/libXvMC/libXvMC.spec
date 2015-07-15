@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXvMC=6fc54831734e781b2848b6f7e3bcc4f752665f21
 BuildRequires:	libXv-devel
 Requires:	libXv
 %description

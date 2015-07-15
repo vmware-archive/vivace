@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXpm=77b95dd1c8cd9bc00b3b834b53d824409202acbb
 BuildRequires:	libXext-devel libXt-devel libXau-devel
 Requires:	libXext libXt libXau
 Provides:	libxpm
