@@ -17,7 +17,8 @@ The Shared Mime Info package contains a MIME database. This allows central updat
 %setup -q
 %build
 ./configure --prefix=%{_prefix}
-make %{?_smp_mflags}
+#make %{?_smp_mflags}
+make
 %install
 make DESTDIR=%{buildroot} install
 %files
