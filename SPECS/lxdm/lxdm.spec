@@ -13,7 +13,7 @@ Source1:	lxdm.conf
 Source2:	default.png
 Source3:	greeter.ui
 BuildRequires:	gtk2-devel librsvg-devel consolekit-devel Linux-PAM systemd
-Requires:	gtk2 librsvg consolekit Linux-PAM systemd libxcb
+Requires:	gtk2 librsvg consolekit Linux-PAM systemd libxcb which
 %description
 The LXDM is a lightweight Display Manager for the LXDE desktop. It can also be used as an alternative to other Display Managers such as GNOME's GDM or KDE's KDM.
 %prep
