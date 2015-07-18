@@ -20,7 +20,6 @@ Source1:	mono.snk
 Patch0:		mono-4.0.0-ignore-reference-assemblies.patch
 BuildRequires:	gettext tzdata libgdiplus-devel
 Requires:	gettext tzdata libgdiplus
-Requires:	libgdiplus
 Provides:	mono(Mono.Cairo)
 Provides:	mono(Mono.Posix)
 Provides:	mono(Mono.Security)

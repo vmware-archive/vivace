@@ -24,7 +24,7 @@ It contains the libraries and header files to create applications
 %setup -q 
 %build
 ./configure --prefix=%{_prefix}
-make %{?_smp_mflags}
+make 
 %install
 make DESTDIR=%{buildroot} install
 %files
