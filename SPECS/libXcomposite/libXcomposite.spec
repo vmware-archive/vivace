@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libXext-devel libXfixes-devel libX11-devel
-Requires:	libXext libXfixes libX11
+%define sha1 libXcomposite=75fd0b996e56e12db1d84e9b63549c5c3f2631ca
+BuildRequires:	libXfixes-devel
+Requires:	libXfixes
 %description
 The X11 Composite Extension library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXfixes-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

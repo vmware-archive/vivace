@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+%define sha1 xcb-util-renderutil=cb533b1d039f833f070e7d6398c221a31d30d5e2
 BuildRequires:	libxcb-devel xcb-util-devel
 Requires:	libxcb xcb-util
 %description
@@ -16,6 +17,7 @@ XCB util-renderutil module provides the following library:
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libxcb-devel xcb-util-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -8,8 +8,9 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/app/%{name}-%{version}.tar.bz2
-BuildRequires:	util-macros proto xorg-server-devel libX11-devel libXmu-devel libXaw-devel libXrender-devel libXft-devel libxkbfile-devel libXt-devel libSM-devel libICE-devel fontconfig-devel freetype2-devel libXext-devel
-Requires:	xorg-server libX11 libXmu libXaw libXrender libXft libxkbfile libXt libSM libICE fontconfig freetype2 libXext
+%define sha1 twm=09e8a8f0d1072e11eb0d6e354d75a555b9952755
+BuildRequires:	xorg-server-devel libXmu-devel libXaw-devel libXft-devel libxkbfile-devel libXt-devel
+Requires:	xorg-server libXmu libXaw libXft libxkbfile libXt
 %description
 The twm package contains a very minimal window manager.
 %prep

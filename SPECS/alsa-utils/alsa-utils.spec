@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://alsa.cybermirror.org/utils/%{name}-%{version}.tar.bz2
+%define sha1 alsa-utils=8b456e2d8adf538aef3fc2d24aae2377509f9544
 Patch0:		ens1371.patch
 BuildRequires:	alsa-lib-devel ncurses-devel
 Requires:	alsa-lib ncurses
@@ -29,7 +30,8 @@ alsactl -L store
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
-%{_lib}/*
+%exclude %{_libdir}/debug/
+/lib/*
 %{_sbindir}/*
 %{_datadir}/*
 %{_localstatedir}/*

@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool libxml2-devel glib-devel gtk2-devel python2-libs python2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel libgnomecanvas-devel libbonoboui-devel popt-devel libgnome-devel libbonobo-devel libSM-devel GConf-devel libart_lgpl-devel libICE-devel gnome-vfs-devel ORBit2-devel libgnome-keyring-devel libXinerama-devel dbus-glib-devel libglade-devel
-Requires:	libxml2 glib gtk2 python2 cairo pango gdk-pixbuf atk pixman libpng libXrender libX11 libXext harfbuzz libgnomecanvas libbonoboui popt libgnome libbonobo libSM libICE libgnome-keyring libXinerama
+%define sha1 libgnomeui=a89d88416403b20a958bd19257522cf7a75ea344
+BuildRequires:	libbonoboui-devel libgnome-keyring-devel
+Requires:	libbonoboui libgnome-keyring
 %description
 The libgnomeui package contains libgnomeui libraries.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libbonoboui-devel libgnome-keyring-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

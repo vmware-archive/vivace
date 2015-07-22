@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto libX11-devel libXext-devel
-Requires:	libX11 libXext
+%define sha1 libXinerama=6a3956d73f7457ef0b4db12806d99c6918e328e3
+BuildRequires:	libXext-devel
+Requires:	libXext
 %description
 The X11 libXi runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXext-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

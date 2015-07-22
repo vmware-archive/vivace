@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/freetype/freetype-%{version}.tar.bz2
+%define sha1 freetype=7b7460ef51a8fdb17baae53c6658fc1ad000a1c2
 BuildRequires:	zlib-devel
 Requires:	zlib
 %description
@@ -29,6 +30,7 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %{_datadir}/*
 %{_includedir}/*
 %changelog

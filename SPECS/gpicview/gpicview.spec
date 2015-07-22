@@ -8,8 +8,9 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.gz
-BuildRequires:	intltool vte-devel gtk2-devel gobject-introspection python2-libs python2-devel glib-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel libX11-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel libjpeg-turbo-devel
-Requires:	vte gtk2 glib cairo pango gdk-pixbuf atk libX11 pixman libXrender libXext libpng harfbuzz libjpeg-turbo
+%define sha1 gpicview=423143c850390db9784ad9812b9f929c18dd51ea
+BuildRequires:	vte-devel
+Requires:	vte
 %description
 The GPicView package contains a lightweight image viewer.
 %prep
@@ -19,6 +20,9 @@ The GPicView package contains a lightweight image viewer.
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+install -d -m 755 %{buildroot}/%{_datadir}/pixmaps
+mv %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/%{name}.png %{buildroot}/%{_datadir}/pixmaps/
+rm -rf %{buildroot}%{_datadir}/icons
 %files
 %defattr(-,root,root)
 %{_bindir}/*

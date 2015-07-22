@@ -1,3 +1,4 @@
+%global security_hardening nonow
 Summary:	The Xorg VMware Driver package contains the X.Org Video Driver for VMware SVGA virtual video cards. 
 Name:		xf86-video-vmware
 Version:	13.1.0
@@ -8,8 +9,9 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
-BuildRequires:	xorg-server-devel pixman-devel libpciaccess-devel libX11-devel libXext-devel libdrm-devel mesa-devel
-Requires:	xorg-server pixman libpciaccess libX11 libXext libdrm mesa
+%define sha1 xf86-video-vmware=3af1d56a9a75b5f6e10a78db2ce155ec65498802
+BuildRequires:	xorg-server-devel
+Requires:	xorg-server
 %description
 The Xorg VMware Driver package contains the X.Org Video Driver for VMware SVGA virtual video cards. 
 %prep

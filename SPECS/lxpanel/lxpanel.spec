@@ -8,16 +8,16 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-BuildRequires:	intltool lxmenu-data menu-cache-devel gtk2-devel libfm-devel libwnck-devel keybinder-devel libxml2-devel glib-devel libX11-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel
-#intltool glib-devel gtk2-devel menu-cache-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel libfm-devel
+%define sha1 lxpanel=bfaf34b2574b02b9703777904e658ed082cf17dd
+BuildRequires:	lxmenu-data menu-cache-devel gtk2-devel libfm-devel libwnck-devel keybinder-devel
 Requires:	lxmenu-data menu-cache gtk2 libfm libwnck keybinder
-#glib gtk2 menu-cache cairo pango gdk-pixbuf atk pixman harfbuzz libpng libXrender libfm
 %description
 The LXPanel package contains a lightweight X11 desktop panel.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	gtk2-devel libfm-devel libwnck-devel keybinder-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.

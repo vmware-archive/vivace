@@ -8,14 +8,16 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
-BuildRequires:	intltool libfm-extra-devel glib-devel
-Requires:	libfm-extra glib
+%define sha1 menu-cache=e7b3854109f9826472cf9795e924acebe5e27861
+BuildRequires:	libfm-extra-devel
+Requires:	libfm-extra
 %description
 The Menu Cache package contains a library for creating and utilizing caches to speed up the manipulation for freedesktop.org defined application menus.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	libfm-extra-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.
@@ -30,6 +32,7 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %{_libexecdir}/*
 %exclude %{_libdir}/*.la
 %files devel

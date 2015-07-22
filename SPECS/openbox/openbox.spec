@@ -8,13 +8,15 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://openbox.org/dist/%{name}/%{name}-%{version}.tar.gz
-BuildRequires:	intltool gtk2-devel glib-devel libX11-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libXrender-devel libXext-devel libpng-devel harfbuzz-devel libxml2-devel fontconfig-devel freetype2-devel harfbuzz-devel libSM-devel libXcursor-devel libXft-devel libXau-devel libICE-devel libXinerama-devel
-Requires:	gtk2 libxml2 fontconfig freetype2 harfbuzz libSM libXcursor libXft libXau libICE libXinerama
+%define sha1 openbox=6573516107f8cdb83842aac25a430e3f9f966bad
+BuildRequires:	gtk2-devel libXcursor-devel libxml2-devel
+Requires:	gtk2 libXcursor libxml2
 %description
 Openbox is a highly configurable desktop window manager with extensive standards support. It allows you to control almost every aspect of how you interact with your desktop.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	gtk2-devel libXcursor-devel libxml2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -34,6 +36,7 @@ make DESTDIR=%{buildroot} install
 %{_libexecdir}/*
 %{_libdir}/*
 %exclude %{_libdir}/*.la
+%exclude %{_libdir}/debug
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)

@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libX11-devel libXrender-devel libXext-devel
-Requires:	libX11 libXrender libXext
+%define sha1 libXrandr=00865ccefe1040e4d9866d878556710cdc4b2ae6
+BuildRequires:	libXrender-devel libXext-devel
+Requires:	libXrender libXext
 %description
 The X11 libXrandr library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXrender-devel libXext-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

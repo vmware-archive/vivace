@@ -8,6 +8,7 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://alsa.cybermirror.org/lib/%{name}-%{version}.tar.bz2
+%define sha1 alsa-lib=9b81d20417170db2a91452bfe537d0893ef4df89
 BuildRequires:	python2-devel python2-libs
 Requires:	python2
 %description

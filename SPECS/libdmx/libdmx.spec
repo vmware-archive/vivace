@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libX11-devel libXext-devel
-Requires:	libX11 libXext
+%define sha1 libdmx=0eeac14a06cffb04a1c78793563f233a8f8b79be
+BuildRequires:	libXext-devel
+Requires:	libXext
 %description
 The X11 Distributed Multihead X runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXext-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

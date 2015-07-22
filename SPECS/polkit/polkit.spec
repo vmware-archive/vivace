@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.gz
+%define sha1 polkit=374397f1c32fa1290be0fce378fe9bab541ee4bf
 BuildRequires:	intltool glib-devel js-devel expat systemd
 Requires:	glib js expat shadow systemd
 %description
@@ -16,6 +17,7 @@ Polkit is a toolkit for defining and handling authorizations. It is used for all
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	intltool glib-devel js-devel expat systemd
 %description 	devel
 Install this package if you want do compile applications using the polkit.
 %prep
@@ -46,25 +48,23 @@ EOF
 getent group polkitd > /dev/null || groupadd -fg 27 polkitd &&
 getent passwd polkitd > /dev/null || useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
         -g polkitd -s /bin/false polkitd
-cat > /etc/dbus-1/system-local.conf << "EOF"
-<!DOCTYPE busconfig PUBLIC
-"-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
-"http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
-<busconfig>
-    <!-- for some reason this isn't being set properly in Hardy 15 May, 2008 -->
-    <limit name="max_connections_per_user">256</limit>
-</busconfig>
-EOF
+
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*
 %{_bindir}/*
 %{_libdir}/*
-%{_lib}/*
+%exclude %{_libdir}/debug
+%exclude %{_libdir}/*.la
+%exclude %{_libdir}/*.so
+%exclude %{_libdir}/debug
+/lib/*
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/*.la
+%{_libdir}/*.so
 %changelog
 *	Tue May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 0.112-1
 -	initial version

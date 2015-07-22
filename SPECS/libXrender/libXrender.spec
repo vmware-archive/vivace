@@ -8,7 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libX11-devel
+%define sha1 libXrender=0f5c843410029944bd06e19366db4932cf5944fa
+BuildRequires:	libX11-devel
 Requires:	libX11
 Provides:	pkgconfig(xrender)
 %description
@@ -16,6 +17,7 @@ The X11 Renderer library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libX11-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

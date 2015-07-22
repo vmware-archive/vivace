@@ -8,15 +8,16 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.14/gtk+-%{version}.tar.xz
-BuildRequires:	glib-devel
-BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel libX11-devel libXext-devel libXinerama-devel cairo-devel libXrender-devel fontconfig-devel pixman-devel libpng-devel harfbuzz-devel freetype2-devel gobject-introspection-devel gobject-introspection-python python2-devel python2-libs libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel
-Requires:	glib
-Requires:	atk gdk-pixbuf pango libX11 libXext libXinerama libXrender gobject-introspection libXi libXfixes at-spi2-atk
+%define sha1 gtk=422f344d01b6ab143db61a39f0e0a3bc3ae5337e
+BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel
+Requires:	glib-schemas
+Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
 %description
 The GTK+ 3 package contains libraries used for creating graphical user interfaces for applications.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel gobject-introspection-devel gobject-introspection-python libXi-devel libXfixes-devel at-spi2-atk-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

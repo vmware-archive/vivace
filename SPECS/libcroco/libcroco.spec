@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/0.6/%{name}-%{version}.tar.xz
+%define sha1 libcroco=23a5c33a2a86d5e46173234f5fa88ac1e15de035
 BuildRequires:	glib-devel libxml2-devel
 Requires:	glib libxml2
 %description
@@ -15,6 +16,7 @@ The libcroco package contains a standalone CSS2 parsing and manipulation library
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel libxml2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

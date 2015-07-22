@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.16/%{name}-%{version}.tar.xz
+%define sha1 at-spi2-core=efff62fb8cb8f629d5cdb2fca3e249fa69a12899
 BuildRequires:	intltool glib-devel dbus libX11-devel libXtst-devel libXext-devel libXi-devel
 Requires:	dbus glib libX11 libXtst libXext libXi
 %description

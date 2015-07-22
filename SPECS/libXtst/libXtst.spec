@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libX11-devel libXext-devel libXfixes-devel libXi-devel
-Requires:	libX11 libXext libXfixes libXi
+%define sha1 libXtst=7fd92a3c865c3c5e1cc724646babc3e1cdc799bc
+BuildRequires:	libXi-devel
+Requires:	libXi
 %description
 The X11 libXtst runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXi-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

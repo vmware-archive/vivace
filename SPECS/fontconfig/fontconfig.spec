@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/fontconfig/release/%{name}-%{version}.tar.bz2
+%define sha1 fontconfig=08565feea5a4e6375f9d8a7435dac04e52620ff2
 BuildRequires:	expat freetype2-devel
 Requires:	expat freetype2
 %description
@@ -15,6 +16,7 @@ The Fontconfig package contains a library and support programs used for configur
 %package	devel
 Summary:	Header and development files for fontconfig
 Requires:	%{name} = %{version}
+Requires:	expat freetype2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

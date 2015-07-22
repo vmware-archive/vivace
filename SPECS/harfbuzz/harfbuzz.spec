@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/release/%{name}-%{version}.tar.bz2
+%define sha1 harfbuzz=b9f546e9625926e32fe4b6da045689b456e77c22
 BuildRequires:	glib-devel icu-devel freetype2-initial 
 # TODO: fix cycle deps harfbuff <-> fretype2
 AutoReq:	no
@@ -17,6 +18,7 @@ The Harfbuzz package contains an OpenType text shaping engine.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel icu-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

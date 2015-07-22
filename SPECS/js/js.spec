@@ -8,10 +8,9 @@ Group:		Development/Languages
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.mozilla.org/pub/mozilla.org/%{name}/moz%{name}%{version}.tar.gz
+%define sha1 mozjs=7805174898c34e5d3c3b256117af9944ba825c89
 BuildRequires:	libffi nspr python2-libs python2-devel
-#intltool glib-devel gtk2-devel menu-cache-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel libfm-devel
 Requires:	libffi nspr python2
-#glib gtk2 menu-cache cairo pango gdk-pixbuf atk pixman harfbuzz libpng libXrender libfm
 %description
 JS is Mozilla's JavaScript engine written in C/C++.
 %package 	devel
@@ -39,6 +38,7 @@ find %{buildroot}/usr/include/js-17.0/            \
 %defattr(-,root,root)
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*

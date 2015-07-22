@@ -8,10 +8,12 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+%define sha1 libxcb=8343b417d7eeb2a2c6b6c4a87a03a4fd0fc65c46
 BuildRequires:	python2-devel
 BuildRequires:	python2-libs
-BuildRequires:	libXau libXau-devel xcb-proto
-BuildRequires:	libXdmcp
+BuildRequires:	libXau-devel xcb-proto
+BuildRequires:	libXdmcp-devel
+Requires:	libXdmcp
 Requires:	libXau
 Provides:	pkgconfig(x11-xcb)
 %description
@@ -19,6 +21,7 @@ The libxcb package provides an interface to the X Window System protocol, which 
 %package	devel
 Summary:	Header and development files for libxcb
 Requires:	%{name} = %{version}
+Requires:	libXau-devel xcb-proto libXdmcp-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -5,6 +5,7 @@ Release:	1
 License:	BSD
 URL:		http://downloads.sourceforge.net/infozip
 Source0:	http://downloads.sourceforge.net/infozip/zip30.tar.gz
+%define sha1 zip=c9f4099ecf2772b53c2dd4a8e508064ce015d182
 Group:		SystemUtilities
 Vendor:		VMware, Inc.
 Distribution: Photon

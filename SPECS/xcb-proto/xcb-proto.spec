@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+%define sha1 xcb-proto=608bd60663e223464d38acec0183ddb827776401
 BuildRequires:	python2-devel
 BuildRequires:	python2-libs
 Requires:	python2

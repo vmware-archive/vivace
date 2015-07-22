@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+%define sha1 libXau=d9512d6869e022d4e9c9d33f6d6199eda4ad096b
 BuildRequires:	proto
 Requires:	proto
 %description
@@ -15,6 +16,7 @@ The libXau package contains a library implementing the X11 Authorization Protoco
 %package	devel
 Summary:	Header and development files for libXau
 Requires:	%{name} = %{version}
+Requires:	proto
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

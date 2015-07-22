@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto libXext-devel libX11-devel
-Requires:	libX11
+%define sha1 libXScrnSaver=7b8298eec371c33a71232e3653370a98f03c6c88
+BuildRequires:	proto libXext-devel
+Requires:	libXext
 %description
 The X11 Screen Saver runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	proto libXext-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

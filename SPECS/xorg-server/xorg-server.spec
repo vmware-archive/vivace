@@ -1,3 +1,4 @@
+%global security_hardening nonow
 Summary:	The Xorg Server
 Name:		xorg-server
 Version:	1.17.1
@@ -8,13 +9,15 @@ Group:		User Interface/X System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/xserver/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto xkeyboard-config xorg-fonts pixman-devel openssl-devel libdrm-devel libX11-devel libxshmfence-devel mesa-devel libXext-devel libXdmcp-devel xtrans libxkbfile-devel libXfont-devel libpciaccess-devel libepoxy-devel libXau-devel libXdamage-devel libXfixes-devel libXxf86vm-devel xcb-util-keysyms-devel libxcb-devel
-Requires:	xkeyboard-config xorg-fonts pixman openssl libdrm libX11 libxshmfence mesa libXext libXdmcp libxkbfile libXfont libpciaccess libepoxy libXau libXdamage libXfixes libXxf86vm xcb-util-keysyms libxcb
+%define sha1 xorg-server=490118810a54e91c8814245c99d6285caf4985dd
+BuildRequires:	xkeyboard-config xorg-fonts pixman-devel openssl-devel mesa-devel libxkbfile-devel libXfont-devel libepoxy-devel xcb-util-keysyms-devel
+Requires:	xkeyboard-config xorg-fonts pixman openssl mesa libxkbfile libXfont libepoxy xcb-util-keysyms
 %description
 The Xorg Server is the core of the X Window system.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	pixman-devel openssl-devel mesa-devel libxkbfile-devel libXfont-devel libepoxy-devel xcb-util-keysyms-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

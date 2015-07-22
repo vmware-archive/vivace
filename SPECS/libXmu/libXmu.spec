@@ -8,14 +8,16 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libXext-devel libXt-devel libX11-devel libICE-devel libSM-devel
-Requires:	libXext libXt libX11 libICE libSM
+%define sha1 libXmu=7e6aeef726743d21aa272c424e7d7996e92599eb
+BuildRequires:	libXext-devel libXt-devel
+Requires:	libXext libXt
 Provides:	pkgconfig(xmu)
 %description
 The X11 libXmu runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXext-devel libXt-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

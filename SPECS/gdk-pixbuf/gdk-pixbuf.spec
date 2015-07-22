@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.31/%{name}-%{version}.tar.xz
-BuildRequires:	glib-devel libjpeg-turbo-devel libpng-devel libtiff-devel libX11-devel gobject-introspection-devel gobject-introspection-python gtk-doc python2-devel python2-libs
-Requires:	glib libjpeg-turbo libpng libtiff libX11 gobject-introspection
+%define sha1 gdk-pixbuf=f2355fdc6ecabca3c48de33499bd8262c839e591
+BuildRequires:	libpng-devel libtiff-devel libX11-devel gobject-introspection-devel gobject-introspection-python gtk-doc
+Requires:	libpng libtiff libX11 gobject-introspection
 %description
 The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation. It is used by GTK+ 2 and GTK+ 3 to load and manipulate images.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libpng-devel libtiff-devel libX11-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

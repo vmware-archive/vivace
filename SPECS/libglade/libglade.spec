@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.6/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool libxml2-devel glib-devel gtk2-devel python2-libs python2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel
-Requires:	libxml2 glib gtk2 python2 cairo pango gdk-pixbuf atk pixman libpng libXrender libX11 libXext harfbuzz
+%define sha1 libglade=8465851733b8a0efbe57c43efc0f140d8e2d2edb
+BuildRequires:	intltool gtk2-devel python2-libs python2-devel libxml2-devel
+Requires:	gtk2 python2 libxml2
 %description
 The libglade package contains libglade libraries. These are useful for loading Glade interface files in a program at runtime.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	intltool gtk2-devel python2-libs python2-devel libxml2-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

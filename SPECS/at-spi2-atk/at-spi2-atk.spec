@@ -8,8 +8,9 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.16/%{name}-%{version}.tar.xz
+%define sha1 at-spi2-atk=b3b8db5f1482b3fba2ed4a9528a7eac98515b607
 BuildRequires:	at-spi2-core-devel atk-devel glib-devel libX11-devel
-Requires:	at-spi2-core atk glib libX11
+Requires:	at-spi2-core atk glib glib-schemas libX11
 %description
 The At-Spi2 Atk package contains a library that bridges ATK to At-Spi2 D-Bus service.
 %package	devel

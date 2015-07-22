@@ -8,6 +8,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
+%define sha1 xcb-util-wm=7006c52b961c123355320bfc30477cdf90c8bbb7
 BuildRequires:	libxcb-devel xcb-util-devel
 Requires:	libxcb xcb-util
 %description
@@ -17,6 +18,7 @@ XCB util-wm module provides the following library:
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libxcb-devel xcb-util-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

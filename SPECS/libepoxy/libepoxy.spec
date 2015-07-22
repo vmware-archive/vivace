@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://crux.nu/files/%{name}-%{version}.tar.gz
-BuildRequires:	pkg-config util-macros mesa-devel libX11-devel python2-devel python2-libs
-Requires:	mesa libX11
+%define sha1 libepoxy=e700520711b9e4fa07c286aa36e431d8ad4133f5
+BuildRequires:	mesa-devel python2-devel python2-libs
+Requires:	mesa
 %description
 libepoxy is a library for handling OpenGL function pointer management.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	mesa-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

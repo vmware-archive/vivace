@@ -1,0 +1,20 @@
+Index: monodevelop/external/ikvm/reflect/IKVM.Reflection.csproj
+===================================================================
+--- monodevelop.orig/external/ikvm/reflect/IKVM.Reflection.csproj	2014-10-09 14:08:16.156563706 +0100
++++ monodevelop/external/ikvm/reflect/IKVM.Reflection.csproj	2014-10-09 14:26:42.844581749 +0100
+@@ -10,7 +10,7 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>IKVM.Reflection</RootNamespace>
+     <AssemblyName>IKVM.Reflection</AssemblyName>
+-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
++    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <TargetFrameworkSubset>
+     </TargetFrameworkSubset>
+@@ -146,4 +146,4 @@
+   <Target Name="AfterBuild">
+   </Target>
+   -->
+-</Project>
+\ No newline at end of file
++</Project>

@@ -1,0 +1,11 @@
+diff -Naur libfm-1.2.3/src/gtk/fm-dnd-dest.c libfm-1.2.3_/src/gtk/fm-dnd-dest.c
+--- libfm-1.2.3/src/gtk/fm-dnd-dest.c	2014-10-14 09:29:21.000000000 -0700
++++ libfm-1.2.3_/src/gtk/fm-dnd-dest.c	2015-07-03 21:40:37.221418208 -0700
+@@ -984,6 +984,7 @@
+             /* retrieve the source files */
+             gtk_drag_get_data(dd->widget, drag_context, target, time(NULL));
+             dd->waiting_data = TRUE;
++	    action = drag_context->suggested_action;
+         }
+     }
+     else /* we have got drag source files */

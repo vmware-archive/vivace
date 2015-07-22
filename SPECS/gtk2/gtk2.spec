@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-%{version}.tar.xz
-BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel glib-devel libX11-devel libXext-devel libXinerama-devel cairo-devel libXrender-devel fontconfig-devel pixman-devel libpng-devel harfbuzz-devel freetype2-devel gobject-introspection-devel gobject-introspection-python python2-devel python2-libs
-Requires:	atk gdk-pixbuf pango glib libX11 libXext libXinerama libXrender gobject-introspection
+%define sha1 gtk=f3c2f1a3728ed51d08054f6b4c7384fbf99477c0
+BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel
+Requires:	atk gdk-pixbuf pango libXinerama hicolor-icon-theme
 %description
 The GTK+ 2 package contains libraries used for creating graphical user interfaces for applications.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

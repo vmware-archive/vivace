@@ -8,14 +8,16 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libXext-devel libX11-devel
-Requires:	libXt libX11
+%define sha1 libXfixes=e14fa072bd70b30eef47391cac637bdb4de9e8a3
+BuildRequires:	libXext-devel
+Requires:	libXext
 Provides:	pkgconfig(xfixes)
 %description
 The X11 Xfixes extension.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXext-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

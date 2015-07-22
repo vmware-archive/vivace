@@ -8,14 +8,16 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.32/%{name}-%{version}.tar.bz2
+%define sha1 libgnome=a6bc277ff90ca2f83b91c5bc5222f03ab553a52b
 Patch0:		libgnome-glib-2_36.patch
-BuildRequires:	intltool libxml2-devel glib-devel gtk2-devel python2-libs python2-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel libglade-devel libart_lgpl-devel fontconfig-devel freetype2-devel libXinerama-devel libbonobo-devel GConf-devel gnome-vfs-devel popt-devel ORBit2-devel dbus-glib-devel
-Requires:	libxml2 glib gtk2 python2 cairo pango gdk-pixbuf atk pixman libpng libXrender libX11 libXext harfbuzz libglade libart_lgpl fontconfig freetype2 libXinerama libbonobo GConf gnome-vfs popt ORBit2 dbus-glib
+BuildRequires:	libbonobo-devel gnome-vfs-devel
+Requires:	libbonobo gnome-vfs
 %description
 The libgnome package contains the libgnome library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libbonobo-devel gnome-vfs-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -30,6 +32,8 @@ It contains the libraries and header files to create applications
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
+mv %{buildroot}%{_datadir}/pixmaps/backgrounds %{buildroot}%{_datadir}/
+rm -rf %{buildroot}%{_datadir}/pixmaps/
 %files
 %defattr(-,root,root)
 %{_bindir}

@@ -6,6 +6,7 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML-NamespaceSupport
 Source0:        http://search.cpan.org/CPAN/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-%{version}.tar.gz
+%define sha1 XML-NamespaceSupport=a948c02de081542f4d30e0efabc2929754b62a3b
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildRequires:	perl libxml2-devel zlib-devel

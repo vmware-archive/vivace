@@ -8,7 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto libX11-devel
+%define sha1 libxkbfile=05139829837c26e3a14a40a700f058c018bc71f5
+BuildRequires:	libX11-devel
 Requires:	libX11
 Provides:	pkgconfig(xkbfile)
 %description
@@ -16,6 +17,7 @@ The X11 libxkbfile runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libX11-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -8,6 +8,7 @@ Group:		Development/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://cairographics.org/releases/%{name}-%{version}.tar.gz
+%define sha1 pixman=8791343cbf6d99451f4d08e8209d6ac11bf96df2
 Provides:	pkgconfig(pixman-1)
 %description
 The Pixman package contains a library that provides low-level pixel manipulation features such as image compositing and trapezoid rasterization. 

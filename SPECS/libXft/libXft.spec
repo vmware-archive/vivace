@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros proto libX11-devel libXrender-devel freetype2-devel fontconfig-devel harfbuzz-devel glib-devel
-Requires:	libX11 libXrender freetype2 fontconfig harfbuzz glib
+%define sha1 libXft=e025d790a7b6c4d283a78d8df06615cb10278e2d
+BuildRequires:	libXrender-devel fontconfig-devel
+Requires:	libXrender fontconfig
 %description
 The X11 Xft runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXrender-devel fontconfig-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

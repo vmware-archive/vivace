@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://download.icu-project.org/files/%{name}4c/%{version}/%{name}4c-55_1-src.tgz
+%define sha1 icu=3bb301c11be0e239c653e8aa2925c53f6f4dc88d
 %description
 The International Components for Unicode (ICU) package is a mature, widely used set of C/C++ libraries providing Unicode and Globalization support for software applications.
 %package	devel

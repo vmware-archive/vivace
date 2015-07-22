@@ -8,6 +8,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/pcmanfm/libfm-%{version}.tar.xz
+%define sha1 libfm=c3f2f34086761d89d6aba549883610084ba00750
 BuildRequires:	intltool glib-devel
 Requires:	glib
 %description
@@ -16,6 +17,7 @@ The libfm package contains a library and other files required by menu-cache-gen 
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	intltool glib-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.
@@ -33,6 +35,7 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/*.la
+%exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*

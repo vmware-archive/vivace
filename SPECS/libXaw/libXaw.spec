@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-BuildRequires:	pkg-config util-macros libXext-devel libXt-devel libX11-devel libICE-devel libSM-devel libXmu-devel libXpm-devel
-Requires:	libXt libX11 libICE libSM libXmu libXpm
+%define sha1 libXaw=6919476379accaf21f2331004e5cfa7939a6786b
+BuildRequires:	libXmu-devel libXpm-devel
+Requires:	libXmu libXpm
 %description
 The Athena Widget based on Xt library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	libXmu-devel libXpm-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

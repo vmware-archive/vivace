@@ -6,11 +6,12 @@ License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org
 Source:		%{name}-%{version}.tar.xz
+%define sha1 vui=b82907f114c8bd81e6b7676a56fbe9d9977494ea
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
-Requires:	lxde-common alsa-utils lxterminal firefox thunderbird
+Requires:	lxde-common lxdm alsa-utils lxterminal firefox thunderbird gpicview grdesktop lxtask nemiver anjuta pidgin monodevelop pinta tomboy gpicview hicolor-icon-theme banshee gtkmm gvfs
 
 %description
 Metapackage for Vivace User Interface.
@@ -21,14 +22,18 @@ Metapackage for Vivace User Interface.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/root/.config
-find -type d -exec install -d {,%{buildroot}/root/.config/}{} \;
-find -type f -exec install -D -m 644 {,%{buildroot}/root/.config/}{} \;
+find -type d -exec install -d {,%{buildroot}/}{} \;
+find -type f -exec install -D -m 644 {,%{buildroot}/}{} \;
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+#copy skel to root home folder
+mkdir -p /root/.config
+cp -a /etc/skel/.config/cairo-dock /root/.config/ 
+cp -a /etc/skel/.config/pcmanfm /root/.config/
+
 %files
-%defattr(-,root,root,-)
-/root/.config
+%{_sysconfdir}/skel/.config/*
+%{_datadir}

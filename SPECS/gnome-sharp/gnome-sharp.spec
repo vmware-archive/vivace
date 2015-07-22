@@ -8,10 +8,17 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
-BuildRequires:	intltool gettext glib-devel tzdata mono-devel gtk2-devel libglade-devel pango-devel libxml2-devel atk-devel cairo-devel gdk-pixbuf-devel pixman-devel libpng-devel libXrender-devel libX11-devel libXext-devel harfbuzz-devel gtk-sharp2 libgnomeui-devel libgnomecanvas-devel libgnome-devel libart_lgpl-devel gnome-vfs-devel popt-devel libbonobo-devel libbonoboui-devel libSM-devel libXinerama-devel dbus-glib-devel libICE-devel
-Requires:	gettext glib mono-core gtk2 libglade pango libxml2 atk cairo gtk-sharp2 libgnomeui libgnomecanvas libgnome libart_lgpl gnome-vfs libSM libICE
+%define sha1 gnome-sharp=d3c3e61e01b46a95f6f46dfa706f4af09f05bae2
+BuildRequires:	intltool gettext gtk-sharp2-devel libgnomeui-devel
+Requires:	gettext gtk-sharp2 libgnomeui
 %description
 GTK+ and GNOME bindings for Mono.
+%package	devel
+Summary:	Header and development files
+Requires:	%{name} = %{version}
+Requires:	intltool gettext gtk-sharp2-devel libgnomeui-devel
+%description	devel
+It contains the libraries and header files to create applications 
 %prep
 %setup -q
 %build
@@ -23,7 +30,14 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_bindir}
 %{_libdir}
-%{_datadir}/*
+%exclude %{_libdir}/*.la
+%exclude %{_libdir}/*.a
+%{_datadir}
+%exclude %{_libdir}/debug/
+%files devel
+%defattr(-,root,root)
+%{_libdir}/*.la
+%{_libdir}/*.a
 %changelog
 *	Thu Jun 4 2015 Alexey Makhalov <amakhalov@vmware.com> 2.24.2-1
 -	initial version

@@ -8,10 +8,11 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
+%define sha1 firefox=20f52c37e099cb2b21f3a76c6e39fe698e1e79e8
 Source1:        %{name}.desktop
-BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel libjpeg-turbo-devel libpng-devel zlib-devel yasm-devel alsa-lib-devel fontconfig-devel freetype2-devel harfbuzz-devel cairo-devel libXt-devel libXext-devel libXrender-devel libX11-devel libffi pixman-devel glib-devel pango-devel gdk-pixbuf-devel atk-devel libSM-devel libICE-devel libXcomposite-devel libXfixes-devel libXdamage-devel
+BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils
-Requires:	gtk2 nspr nss icu libjpeg-turbo libpng zlib yasm alsa-lib freetype2 harfbuzz cairo libXt libXext libXrender libX11 libffi pixman glib pango gdk-pixbuf atk libSM libICE libXcomposite libXfixes libXdamage desktop-file-utils
+Requires:	gtk2 nspr nss icu zlib yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
 %description
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep
@@ -87,7 +88,8 @@ ac_add_options --with-system-zlib
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
-make %{?_smp_mflags} -f client.mk
+# Firefox build is multithreaded by itself
+make -f client.mk
 %install
 make -f client.mk DESTDIR=%{buildroot} install INSTALL_SDK=
 desktop-file-install \

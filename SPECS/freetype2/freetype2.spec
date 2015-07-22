@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/freetype/freetype-%{version}.tar.bz2
-BuildRequires:	zlib-devel glib-devel freetype2-initial harfbuzz-devel
-Requires:	zlib glib icu harfbuzz
+%define sha1 freetype=7b7460ef51a8fdb17baae53c6658fc1ad000a1c2
+BuildRequires:	zlib-devel freetype2-initial harfbuzz-devel
+Requires:	zlib icu harfbuzz
 %description
 The FreeType2 package contains a library which allows applications to properly render TrueType fonts.
 %package	devel
 Summary:	Header and development files for freetype2
 Requires:	%{name} = %{version}
+Requires:	zlib-devel harfbuzz-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

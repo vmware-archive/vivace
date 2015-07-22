@@ -8,6 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	 http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 libusb=c5d14ced155233ceeb5107c7eb3b94b16649ae05
 BuildRequires:	systemd
 Requires:	systemd
 %description
@@ -28,6 +29,7 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*
+%exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*

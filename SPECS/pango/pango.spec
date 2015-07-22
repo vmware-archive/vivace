@@ -8,13 +8,15 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.36/%{name}-%{version}.tar.xz
-BuildRequires:	fontconfig-devel freetype2-devel glib-devel harfbuzz-devel cairo-devel pixman-devel libXft-devel libpng-devel libX11-devel libXrender-devel libXext-devel gobject-introspection-devel gobject-introspection-python python2-devel python2-libs
-Requires:	fontconfig freetype2 cairo pixman libXft libpng libX11 libXrender libXext
+%define sha1 pango=c6ba02ee8f9d8b22b7cfd74c4b6ae170bebc8d2b
+BuildRequires:	cairo-devel libXft-devel gobject-introspection-devel gobject-introspection-python
+Requires:	cairo libXft gobject-introspection
 %description
 Pango is a library for laying out and rendering of text, with an emphasis on internationalization. It can be used anywhere that text layout is needed, though most of the work on Pango so far has been done in the context of the GTK+ widget toolkit.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	cairo-devel libXft-devel gobject-introspection-devel gobject-introspection-python
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

@@ -6,6 +6,7 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML
 Source0:        http://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/XML-LibXML-Simple-%{version}.tar.gz
+%define sha1 XML-LibXML-Simple=4dd4c82fb70662458523a1218165d18ceafc8252
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildArch:      noarch

@@ -10,14 +10,26 @@ PHOTON_STAGE := $(VVC_SRCROOT)stage
 # specs dir to use
 PHOTON_SPECS_DIR := $(VVC_SRCROOT)SPECS
 
-# bintray config for sources pulling
-PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)support/pullsources/bintray.conf
+# Sources pulling
+PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)photon/support/package-builder/pullsources.conf:$(VVC_SRCROOT)support/package-builder/pullsources.conf
+
+# package list to build
+PHOTON_PACKAGE_LIST := $(VVC_SRCROOT)support/package-builder/input.json
 
 # package list to create iso
 PHOTON_INSTALLER_PACKAGE_LIST := $(VVC_SRCROOT)installer/package_list.json
 
+PHOTON_DATA_DIR := $(VVC_SRCROOT)common/data
 
-$(VVC_SRCROOT)/photon/Makefile: ;
+THREADS=4
 
-include $(VVC_SRCROOT)/photon/Makefile
+$(VVC_SRCROOT)photon/Makefile:  update-common-data
+	@:
+
+update-common-data: $(VVC_SRCROOT)photon/common/data/packages_minimal.json
+	@cd $(PHOTON_DATA_DIR) && ./update_packages_minimal.sh
+
+$(VVC_SRCROOT)photon/common/data/packages_minimal.json: ;
+
+include $(VVC_SRCROOT)photon/Makefile
 

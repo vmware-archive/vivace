@@ -6,6 +6,7 @@ License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML-SAX-Base
 Source0:        http://search.cpan.org/CPAN/authors/id/G/GR/GRANTM/XML-SAX-Base-%{version}.tar.gz
+%define sha1 XML-SAX-Base=5ae6a06e465daa65e1a69d1a6977299084fe9aef
 Vendor:		VMware, Inc.
 Distribution:	Photon
 BuildArch:      noarch

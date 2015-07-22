@@ -8,16 +8,16 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.30/%{name}-%{version}.tar.xz
-BuildRequires:	intltool gtk2-devel glib-devel gdk-pixbuf-devel cairo-devel libX11-devel pango-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel harfbuzz-devel
-#intltool glib-devel gtk2-devel menu-cache-devel cairo-devel pango-devel gdk-pixbuf-devel atk-devel pixman-devel harfbuzz-devel libpng-devel libXrender-devel libXext-devel libX11-devel libfm-devel
+%define sha1 libwnck=9283c0efe0c5c44135c9015cfbfd518a877e4d2e
+BuildRequires:	gtk2-devel
 Requires:	gtk2
-#glib gtk2 menu-cache cairo pango gdk-pixbuf atk pixman harfbuzz libpng libXrender libfm
 %description
 The libwnck package contains a Window Navigator Construction Kit.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
+Requires:	gtk2-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.
