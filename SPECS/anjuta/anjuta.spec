@@ -1,16 +1,16 @@
 Summary:	GNOME Integrated Development Environment
 Name:		anjuta
-Version:	3.13.92
+Version:	3.14.0
 Release:	1
 License:	GPL
 URL:		http://anjuta.org/
 Group:		Development/Tools
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	https://download.gnome.org/sources/%{name}/3.13/%{name}-%{version}.tar.xz
-%define sha1 anjuta=f4ccd6dfd7197af8023e764dc2ae89889d41b8d3
-BuildRequires:	libtool pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus gtk2-devel libgnome glib-devel libX11-devel libXext-devel libXinerama-devel gtk3-devel libXrender-devel libpng-devel libXrandr-devel systemd alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel libxml2-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel
-Requires:	libgnome glib gnome-vfs libX11 libXext libXinerama libXrender alsa-lib libgda libXrandr pixman openssl gtk2 gtk3 libgnomeui python2 harfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring libxml2 cairo pango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview
+Source0:	https://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
+%define sha1 anjuta=d7988414cdd52675a973744a60346e541555d3d0
+BuildRequires:	libtool autogen autoconf automake pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus libgnome glib-devel libX11-devel libXext-devel libwnck-devel gobject-introspection-devel libXinerama-devel vte290-devel gtk3-devel libXrender-devel libpng-devel libXrandr-devel gnome-icon-theme gnome-doc-utils apr apr-util systemd alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel gnome-vfs-devel libxml2-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel libunique-devel libxslt shared-mime-info at-spi2-core-devel
+Requires:	libgnome glib gnome-vfs libX11 libXext libXinerama libXrender libglade alsa-lib libgda libXrandr pixman gnome-vfs openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring gobject-introspection libxml2 cairo pango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview vte290 libwnck libunique autoconf at-spi2-core
 %description
 Anjuta DevStudio is a versatile Integrated Development Environment (IDE)
 on GNOME Desktop Environment and features a number of advanced
@@ -29,9 +29,10 @@ Libraries, header files and API docs for developing Anjuta plugins
 
 %prep
 %setup -q 
+
 %build
 ./configure 	--prefix=%{_prefix} \
-		--disable-static 
+				--disable-static 
 
 make %{?_smp_mflags}
 %install
@@ -90,3 +91,5 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 %changelog
 *	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.13.92-1
 -	initial version
+* 	Fri Jul	24 2015	Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.14.0-1
+-	Added more build dependencies and updated the version 
