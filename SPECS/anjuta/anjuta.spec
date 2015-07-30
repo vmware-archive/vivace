@@ -9,8 +9,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
 %define sha1 anjuta=d7988414cdd52675a973744a60346e541555d3d0
-BuildRequires:	libtool autogen autoconf automake pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus libgnome glib-devel libX11-devel libXext-devel libwnck-devel gobject-introspection-devel libXinerama-devel vte290-devel gtk3-devel libXrender-devel libpng-devel libXrandr-devel gnome-icon-theme gnome-doc-utils apr apr-util systemd alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel gnome-vfs-devel libxml2-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel libunique-devel libxslt shared-mime-info at-spi2-core-devel
-Requires:	libgnome glib gnome-vfs libX11 libXext libXinerama libXrender libglade alsa-lib libgda libXrandr pixman gnome-vfs openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring gobject-introspection libxml2 cairo pango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview vte290 libwnck libunique autoconf at-spi2-core
+BuildRequires:	libtool autogen autoconf automake pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus libgnome glib-devel libX11-devel libXext-devel libwnck-devel gobject-introspection-devel libXinerama-devel vte290-devel libXrender-devel libpng-devel libXrandr-devel gnome-icon-theme gnome-doc-utils apr apr-util systemd alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel gnome-vfs-devel libxml2-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel libunique-devel libxslt shared-mime-info at-spi2-core-devel dconf-devel
+Requires:	libgnome glib gnome-vfs libX11 libXext libXinerama libXrender libglade alsa-lib libgda libXrandr pixman gnome-vfs openssl libgnomeui python2 harfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring gobject-introspection libxml2 cairo pango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview vte290 libwnck libunique autoconf at-spi2-core dconf
 %description
 Anjuta DevStudio is a versatile Integrated Development Environment (IDE)
 on GNOME Desktop Environment and features a number of advanced
@@ -22,7 +22,7 @@ version controls, integrated GUI designing and other tools.
 Summary: Libraries and include files for Anjuta plugins development
 Group:   Development/Libraries
 Requires: %{name} = %{version}
-Requires: libgnomeui-devel, libglade-devel, pkg-config 
+Requires: libgnomeui-devel, libglade-devel, pkg-config dconf-devel
 
 %description devel
 Libraries, header files and API docs for developing Anjuta plugins
@@ -89,7 +89,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 %{_libdir}/girepository-1.0
 
 %changelog
-*	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.13.92-1
--	initial version
 * 	Fri Jul	24 2015	Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.14.0-1
--	Added more build dependencies and updated the version 
+-	Added more build dependencies and updated the version
+*	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.13.92-1
+-	initial version 
