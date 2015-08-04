@@ -1,11 +1,12 @@
 %global security_hardening nonow
-Summary:	Multimedia metadata reading/writing library for popular formats
+
+Summary:	X.Org Video Driver for Intel integrated video cards
 Name:		xf86-video-intel
 Version:	2.99.917 
 Release:	1
 License:	MIT 
 URL:		http://www.x.org/wiki/IntelGraphicsDriver/
-Group:		Development/Languages/Mono
+Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/xf86-video-intel-2.99.917.tar.bz2

@@ -74,6 +74,7 @@ rm -rf %{buildroot}
 %{_prefix}%{_sysconfdir}/libgda-5.0/*
 %{_bindir}/*
 %{_datadir}/libgda-5.0
+%exclude %{_datadir}/libgda-5.0/sqlite_*.xml
 %{_datadir}/appdata
 %{_datadir}/help
 %{_datadir}/icons

@@ -6,7 +6,7 @@
 		"libXfont", "libxkbfile", "libSM", "libXt", "libXfixes", "libXxf86vm", "libXcursor", "libXi", "libXinerama", "libXv",
 		"libXdamage", "libXmu", "libXtst", "libXpm", "libXaw", "libdrm", "mesa", "libepoxy", "xorg-applications", "xcursor-themes",
 		"xorg-fonts", "xorg-server", "xf86-video-vmware", "xterm", "xf86-input-vmmouse", "libXft", "twm", "libevdev", "xf86-input-evdev",
-		"xf86-video-fbdev", "xclock", "xinit", "unzip", "gettext", "flex", "libxslt", "docbook-xml", "mercurial", "docbook-xsl",
+		"xf86-video-fbdev", "xf86-video-intel", "xf86-video-ati","xf86-video-nouveau", "xclock", "xinit", "unzip", "gettext", "flex", "libxslt", "docbook-xml", "mercurial", "docbook-xsl",
 		"gtk-doc", "libjpeg-turbo", "libtiff", "gobject-introspection", "atk", "gdk-pixbuf", "cairo", "pango", "gtk2", "libglade",
 		"libart_lgpl", "libgnomecanvas", "libXcomposite", "alsa-lib", "desktop-file-utils", "zip", "which", "thunderbird", "libgpg-error",
 		"libgcrypt", "dbus-glib", "libgnome-keyring", "libidl", "ORBit2", "libbonobo", "js", "polkit", "perl", "libunique", "libfm-extra",
