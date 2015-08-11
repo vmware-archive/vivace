@@ -7,7 +7,7 @@ URL:		http://gnome.org
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.24/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.18/%{name}-%{version}.tar.bz2
 %define sha1 gnome-mime-data=9ce7b1a24a97f275f60b416fae82d81c1010cb65
 BuildArch:	noarch
 BuildRequires:	intltool libxml2-devel

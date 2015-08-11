@@ -10,6 +10,7 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://github.com/downloads/mono/%{name}/%{name}-%{version}.tar.gz
+#Source0:	https://github.com/mono/%{name}/archive/v%{version}.tar.gz
 %define sha1 dbus-sharp-glib=8025011a735e7b01488722f8134e65bf7a762fb6
 BuildRequires:	intltool gettext glib-devel tzdata mono-devel mono-extras dbus-sharp
 Requires:	gettext glib mono dbus-sharp
