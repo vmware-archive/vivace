@@ -51,12 +51,13 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/dbus-1
 %{_datadir}/bash-completion
 %{_datadir}/locale
+%{_libdir}
+%exclude %{_libdir}/debug
 
 %files devel
 %defattr(-, root, root)
 %doc %{_datadir}/gtk-doc/html/dconf/
 %{_includedir}
-%{_libdir}
 %dir %{_datadir}/vala
 %dir %{_datadir}/vala/vapi
 %{_datadir}/vala/vapi/dconf.*

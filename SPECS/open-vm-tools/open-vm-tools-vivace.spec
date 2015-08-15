@@ -1,16 +1,15 @@
 Summary:	Usermode tools for VmWare virts
 Name:		open-vm-tools-vivace
-Version:	9.10.0
+Version:	10.0.0
 Release:	1
 License:	LGPLv2+
 URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
 Group:		Applications/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools/stable-9.10.0/open-vm-tools-%{version}.tar.gz
-%define sha1 open-vm-tools=958c40c8038d52947680444f507f693825d358be
-Patch0:		open-vm-tools-strerror_r-fix.patch
-Patch1:		open-vm-tools-service-link.patch
+Source0:    http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools-10.0.0.tar.gz
+%define sha1 open-vm-tools=1658ab1b73438e746bb6f11f16fe570eaf753747
+Patch0:		open-vm-tools-service-link.patch
 BuildRequires: 	xerces-c-devel
 BuildRequires: 	xml-security-c-devel
 BuildRequires: 	libdnet
@@ -30,12 +29,12 @@ VmWare virtualization user mode tools
 %prep
 %setup -qn open-vm-tools-%{version}
 %patch0 -p1
-%patch1 -p1
 %build
 sed -i 's#/var/run/vmblock#/run/vmblock#' lib/include/vmblock.h
+touch ChangeLog
 autoreconf -i
 export CFLAGS="%{optflags} -DVMX86_DEVEL=1"
-./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static
+sh ./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static
 make %{?_smp_mflags}
 %install
 
@@ -119,6 +118,8 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %{_sbindir}/*
 
 %changelog
+*       Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-1
+-       Update version to 10.0.0.
 *	Tue Apr 21 2015 Divya Thaluru <dthaluru@vmware.com> 9.10.0-2
 	Added open-vm-tools-stderr_r-fix upstream patch and removed glibc patch.
 *	Thu Nov 06 2014 Sharath George <sharathg@vmware.com> 9.10.0-1
