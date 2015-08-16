@@ -38,17 +38,11 @@
         "visible" : true,
         "include" : "minimal2"
     },
-    "vivace_minimal" : {
-        "title" : "4. Vivace Minimal",
-        "file" : "packages_vivace_minimal.json",
-        "visible" : false,
-        "include" : "minimal2"
-    },
     "vivace_full" : {
-        "title" : "5. Vivace Full",
+        "title" : "4. Vivace Full",
         "file" : "packages_vivace_full.json",
         "visible" : false,
-        "include" : "vivace_minimal,full2"
+        "include" : "full2"
     }
 }
 

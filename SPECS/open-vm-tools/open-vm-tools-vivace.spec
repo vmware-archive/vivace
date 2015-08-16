@@ -1,7 +1,7 @@
 Summary:	Usermode tools for VmWare virts
-Name:		open-vm-tools-vivace
+Name:		open-vm-tools
 Version:	10.0.0
-Release:	1
+Release:	256.vvc
 License:	LGPLv2+
 URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
 Group:		Applications/System
@@ -118,7 +118,7 @@ rm -f %{buildroot}/sbin/mount.vmhgfs
 %{_sbindir}/*
 
 %changelog
-*       Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-1
+*       Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-256
 -       Update version to 10.0.0.
 *	Tue Apr 21 2015 Divya Thaluru <dthaluru@vmware.com> 9.10.0-2
 	Added open-vm-tools-stderr_r-fix upstream patch and removed glibc patch.
