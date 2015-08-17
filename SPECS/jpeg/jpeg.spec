@@ -20,8 +20,6 @@ It contains the libraries and header files to create applications
 %prep
 %setup -q 
 %build
-#sed -i -e '/^docdir/     s:$:/libjpeg-turbo-1.4.0:' \
-#       -e '/^exampledir/ s:$:/libjpeg-turbo-1.4.0:' Makefile.in &&
 ./configure --prefix=%{_prefix} --disable-static \
             --mandir=/usr/share/man \
 		    --with-jpeg8     
