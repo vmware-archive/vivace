@@ -3,26 +3,26 @@
         "title" : "ISO Packages",
         "file" : "packages_iso.json",
         "visible" : false,
-        "include" : "none"
+        "include" : []
     },
     "micro" : {
         "title" : "1. Photon Micro",
         "file" : "packages_micro.json",
         "visible" : true,
-        "include" : "none"
+        "include" : []
 
     },
     "minimal" : {
         "title" : "2. Photon Minimal",
         "file" : "packages_minimal.json",
         "visible" : false,
-        "include" : "none"
+        "include" : []
     },
     "full" : {
         "title" : "3. Photon Full",
         "file" : "packages_full.json",
         "visible" : false,
-        "include" : "minimal"
+        "include" : ["minimal"]
     },
 
 
@@ -30,19 +30,19 @@
         "title" : "2. Photon Minimal",
         "file" : "packages_minimal2.json",
         "visible" : true,
-        "include" : "none"
+        "include" : []
     },
     "full2" : {
         "title" : "3. Photon Full",
         "file" : "packages_full.json",
         "visible" : true,
-        "include" : "minimal2"
+        "include" : ["minimal2"]
     },
     "vivace_full" : {
         "title" : "4. Vivace Full",
         "file" : "packages_vivace_full.json",
         "visible" : false,
-        "include" : "full2"
+        "include" : ["full2"]
     }
 }
 
