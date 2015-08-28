@@ -11,7 +11,7 @@ Source0:	http://alsa.cybermirror.org/utils/%{name}-%{version}.tar.bz2
 %define sha1 alsa-utils=8b456e2d8adf538aef3fc2d24aae2377509f9544
 Patch0:		ens1371.patch
 BuildRequires:	alsa-lib-devel ncurses-devel
-Requires:	alsa-lib ncurses
+Requires:	linux-sound alsa-lib ncurses
 %description
 The ALSA Utilities package contains various utilities which are useful for controlling your sound card.
 %prep

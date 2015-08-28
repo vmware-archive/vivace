@@ -23,11 +23,8 @@ PHOTON_DATA_DIR := $(VVC_SRCROOT)common/data
 
 THREADS=4
 
-$(VVC_SRCROOT)photon/Makefile:  update-common-data
+$(VVC_SRCROOT)photon/Makefile:
 	@:
-
-update-common-data: $(VVC_SRCROOT)photon/common/data/packages_minimal.json
-	@cd $(PHOTON_DATA_DIR) && ./update_packages_minimal.sh
 
 $(VVC_SRCROOT)photon/common/data/packages_minimal.json: ;
 
