@@ -24,6 +24,7 @@ Create the file "/etc/yum.repos.d/vivace.repo" with the following contents.
 [vivace]
 name=VMware Vivace 0.1(x86_64)
 baseurl=https://vmware.bintray.com/vivace_release_0.1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY
 gpgcheck=0
 enabled=1
 skip_if_unavailable=True
