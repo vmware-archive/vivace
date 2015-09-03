@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/2.30/%{name}-%{version}.tar.xz
 %define sha1 libwnck=9283c0efe0c5c44135c9015cfbfd518a877e4d2e
-BuildRequires:	gtk2-devel
+BuildRequires:	gtk2-devel intltool 
 Requires:	gtk2
 %description
 The libwnck package contains a Window Navigator Construction Kit.

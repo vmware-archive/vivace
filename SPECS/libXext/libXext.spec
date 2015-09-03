@@ -2,7 +2,7 @@ Summary:	library for common extensions to the X11 protocol.
 Name:		libXext
 Version:	1.3.3
 Release:	1
-License:	TODO
+License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.

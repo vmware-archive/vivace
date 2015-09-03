@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/0.9/%{name}-%{version}.tar.xz
 %define sha1 nemiver=b9b49dcee134739be2fa4016de39d4bfffcf0a27
 BuildRequires:	sqlite-autoconf gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel systemd libgtop-devel alsa-lib-devel libgnome-keyring-devel boost python2-libs python2-devel harfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
-Requires:	libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo libart_lgpl binutils gdl gtksourceviewmm gdb 
+Requires:	libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo libart_lgpl binutils gdl gtksourceviewmm gdb libgtop
 
 %description
 Nemiver is an on going effort to write an easy to use standalone C/C++ debugger that integrates well in the GNOME environment.
@@ -19,7 +19,7 @@ Nemiver is an on going effort to write an easy to use standalone C/C++ debugger 
 Summary: Development files for Nemiver
 Group:   Development/Libraries
 Requires: %{name} = %{version}
-Requires: libgnomeui-devel, libglade-devel, pkg-config boost gnome-vfs libxml2 glibmm
+Requires: libgnomeui-devel, libglade-devel, pkg-config boost gnome-vfs libxml2 glibmm libgtop-devel
 
 %description devel
 Nemiver is an on going effort to write an easy to use standalone C/C++ debugger that integrates well in the GNOME environment.

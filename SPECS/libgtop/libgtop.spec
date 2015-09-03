@@ -13,6 +13,7 @@ BuildRequires:	glib-devel
 BuildRequires:	intltool
 BuildRequires:	pkg-config
 BuildRequires:	libX11-devel
+Requires:	texinfo
 
 %description
 LibGTop is a library to get system specific data such as CPU and Memory Usage and information about running Processes.Even if LibGTop is a part of the GNOME desktop environment, the main interface of LibGTop is totally independent from any particular desktop environment, so you can also use it as a standalone library in any piece of GPLed software.

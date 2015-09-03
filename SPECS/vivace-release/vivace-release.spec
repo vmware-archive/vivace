@@ -6,7 +6,7 @@ License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org
 Source:		%{name}-%{version}.tar.gz
-%define sha1 vivace-release=4abfdf94c13c1875cd46d252c4a0e2157ceae9c7
+%define sha1 vivace-release=49e53759974b5f99cc142e6c64db630ebd60d116
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vivace-release
@@ -36,5 +36,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir /etc/yum.repos.d
 %config(noreplace) /etc/yum.repos.d/vivace.repo
-%config(noreplace) /etc/yum.repos.d/photon-iso.repo
-%config(noreplace) /etc/yum.repos.d/photon-extras.repo
+%config(noreplace) /etc/yum.repos.d/vivace-iso.repo
