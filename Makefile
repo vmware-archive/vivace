@@ -23,13 +23,8 @@ PHOTON_DATA_DIR := $(VVC_SRCROOT)common/data
 
 THREADS=4
 
-$(VVC_SRCROOT)photon/Makefile: open-vm-tools-renaming
+$(VVC_SRCROOT)photon/Makefile: 
 	@:
-
-open-vm-tools-renaming:
-	@if [ -f $(PHOTON_SPECS_DIR)/PHOTON_SPECS/open-vm-tools/open-vm-tools.spec ]; then \
-		mv $(PHOTON_SPECS_DIR)/PHOTON_SPECS/open-vm-tools/open-vm-tools.spec $(PHOTON_SPECS_DIR)/PHOTON_SPECS/open-vm-tools/open-vm-tools.oldspec; \
-	fi
 
 $(VVC_SRCROOT)photon/common/data/packages_minimal.json: ;
 
