@@ -1,0 +1,14 @@
+--- a/Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp
++++ b/Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp
+@@ -43,6 +43,7 @@
+ 
+ #if OS(LINUX)
+ #include <sys/prctl.h>
++#include <sys/socket.h>
+ #endif
+ 
+ #ifdef SOCK_SEQPACKET
+-- 
+1.7.10.4
+
+

@@ -1,0 +1,12 @@
+--- a/Source/ThirdParty/ANGLE/src/compiler/glslang.y	2015-10-05 04:01:32.073914076 -0700
++++ b/Source/ThirdParty/ANGLE/src/compiler/glslang.y	2015-10-05 04:04:07.423916525 -0700
+@@ -32,7 +32,7 @@
+ %expect 1 /* One shift reduce conflict because of if | else */
+ %pure-parser
+ %parse-param {TParseContext* context}
+-
++%lex-param { YYLEX_PARAM }
+ %union {
+     struct {
+         TSourceLoc line;
+
