@@ -30,7 +30,10 @@ Install this package if you want do compile applications using this package.
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
-find %{buildroot}/usr/include/js-17.0/            \
+mv %{buildroot}/usr/lib/pkgconfig/mozjs-..pc %{buildroot}/usr/lib/pkgconfig/mozjs-17.0.pc
+mv %{buildroot}/usr/lib/libmozjs-..a %{buildroot}/usr/lib/libmozjs-17.0.a 
+#mv %{buildroot}/usr/include/js-17.0 %{buildroot}/usr/include/js-.
+find %{buildroot}/usr/include/                    \
      %{buildroot}/usr/lib/libmozjs-17.0.a         \
      %{buildroot}/usr/lib/pkgconfig/mozjs-17.0.pc \
      -type f -exec chmod -v 644 {} \;
@@ -41,7 +44,7 @@ find %{buildroot}/usr/include/js-17.0/            \
 %exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
-%{_includedir}/*
+%{_includedir}/js-.
 %changelog
 *	Tue May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 17.0.0-1
 -	initial version

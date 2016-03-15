@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:        http://sourceforge.net/projects/%{name}/files/%{name}/%{version}/%{name}-%{version}.tar.gz
 %define sha1 scrollkeeper=0462799a2d96f46dec76f2fd057e2dfe8d7cb94d
 
-BuildRequires:  libxslt docbook-xml docbook-xsl intltool
+BuildRequires:  libxslt-devel docbook-xml docbook-xsl intltool
 Requires:	libxslt docbook-xml docbook-xsl
 
 %description

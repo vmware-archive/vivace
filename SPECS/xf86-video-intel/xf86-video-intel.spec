@@ -10,6 +10,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/xf86-video-intel-2.99.917.tar.bz2
+Patch0:		fix_stat_header.patch
 %define sha1 xf86-video-intel=9af9ded7a29026c211e5eb50a547e3e33976301d
 BuildRequires:	libxcb-devel libdrm-devel xorg-server-devel pixman-devel
 Requires:	libxcb libdrm xorg-server pixman
@@ -19,9 +20,10 @@ The Xorg Intel Driver package contains the X.Org Video Driver for Intel integrat
 
 %prep
 %setup -q 
-
+%patch0	-p1
 %build
-./configure $XORG_CONFIG --prefix=%{_prefix} --enable-kms-only --enable-uxa &&
+./configure $XORG_CONFIG --prefix=%{_prefix} --enable-kms-only --enable-uxa --disable-selective-werror 
+#sed -i "s#\#include <errno.h>#\#include <errno.h>\n\#include <sys/types.h>\n\#include <sys/stat.h>#g" src/uxa/intel_driver.c
 make
 
 %install

@@ -1,6 +1,6 @@
 Summary:	gtkmm is the official C++ interface for the popular GUI library GTK+. 
 Name:		gtkmm3
-Version:	3.14.0
+Version:	3.19.6
 Release:	1
 License:	LGPLv2+
 URL:		http://www.gtkmm.org
@@ -8,7 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtkmm/3.16/gtkmm-%{version}.tar.xz
-%define sha1 gtkmm=cc3948dcb9a83e4c55b0fa37535eb52d61531286
+%define sha1 gtkmm=74c436dbad3bfb68beb599d00526316cc08c3da4
 BuildRequires:	pangomm-devel atkmm-devel gtk3-devel libxslt glibmm gdk-pixbuf-devel cairomm-devel
 Requires:	atkmm gtk3 pangomm gdk-pixbuf cairomm
 %description
@@ -62,5 +62,7 @@ rm -rf %buildroot
 %{_datadir}
 
 %changelog
+*	Fri Mar 04 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.6-1
+-	Updated to version 3.19.6
 *	Mon Jul 06 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.14.0-1
 -	initial version

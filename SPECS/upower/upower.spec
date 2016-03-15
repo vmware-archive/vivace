@@ -10,16 +10,16 @@ Distribution:	Photon
 Source0:	http://upower.freedesktop.org/releases/%{name}-%{version}.tar.xz
 %define sha1 upower=8fc30c2d53b15c0a4e7c1bc077a912bc1aeb6138
 BuildRequires:	dbus-glib-devel gobject-introspection-devel gobject-introspection-python polkit-devel libusb-devel
-#BuildRequires:	libgudev-devel
+BuildRequires:	libgudev-devel
 Requires:	dbus-glib polkit libusb
-#Requires:	libgudev
+Requires:	libgudev
 %description
 The UPower package provides an interface to enumerating power devices, listening to device events and querying history and statistics.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	dbus-glib-devel gobject-introspection-devel polkit-devel libusb-devel
-#Requires:	libgudev-devel
+Requires:	libgudev-devel
 %description	devel
 It contains the header files to create applications 
 %prep
