@@ -1,0 +1,12 @@
+diff -Naur a/src/uxa/intel_driver.c b/src/uxa/intel_driver.c
+--- a/src/uxa/intel_driver.c	2014-12-09 12:43:22.000000000 -0800
++++ b/src/uxa/intel_driver.c	2016-03-01 16:25:03.786494897 -0800
+@@ -44,7 +44,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <errno.h>
+-
++#include <sys/stat.h>
+ #include "xorg-server.h"
+ #include "xf86.h"
+ #include "xf86_OSproc.h"

@@ -29,7 +29,7 @@ make %{?_smp_mflags}
 
 %install
 make pure_install DESTDIR=%{buildroot}
-rm %{buildroot}%{perl_vendorlib}/x86_64-linux/auto/XML/SAX/.packlist
+#rm %{buildroot}%{perl_vendorlib}/x86_64-linux/auto/XML/SAX/.packlist
 find %{buildroot} -name 'perllocal.pod' -delete
 
 %check

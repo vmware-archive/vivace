@@ -1,6 +1,6 @@
 Summary:	GtkSourceView is a text widget that extends the standard GTK+ text widget GtkTextView.
 Name:		gtksourceview
-Version:	3.15.1
+Version:	3.19.4
 Release:	1
 License:	LGPL-2.1+
 URL:		https://wiki.gnome.org/Projects/GtkSourceView
@@ -8,7 +8,7 @@ Group:		System/GUI/GNOME
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
-%define sha1 gtksourceview=065c17a9d0cad9d89c63d6136f8580a1108ec0e1
+%define sha1 gtksourceview=c21504eb566d954c27520902a3350dea3aecf510
 BuildRequires:	gobject-introspection-devel gobject-introspection-python intltool libxml2-devel glib-devel glibc-devel gtk2-devel gtk3-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libX11-devel libXrender-devel libXext-devel harfbuzz-devel python2-devel cracklib-python
 Requires:	atk gdk-pixbuf pango glib libX11 libXext libXinerama libXrender gobject-introspection pango cairo gdk-pixbuf atk pixman libpng libX11 libXrender libXext harfbuzz python2
 %description
@@ -52,5 +52,7 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/gtk-doc/html/gtksourceview-3.0/
 
 %changelog
+*	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.4-1
+-	Updated to version 3.19.4
 *	Tue Jun 30 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.15.1-1
 -	initial version

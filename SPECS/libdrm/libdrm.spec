@@ -1,14 +1,14 @@
 Summary:	user space library for accessing the DRM.
 Name:		libdrm
-Version:	2.4.61
+Version:	2.4.67
 Release:	1
 License:	MIT
 URL:		http://dri.freedesktop.org/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://dri.freedesktop.org/libdrm/%{name}-%{version}.tar.bz2
-%define sha1 libdrm=fce70371540af0490541b05d96c6b6b43f1fab80
+Source0:	http://dri.freedesktop.org/libdrm/%{name}-%{version}.tar.gz
+%define sha1 libdrm=5edaccfeb268a4cba0e5e94fcd786fd9b6f93d3d
 BuildRequires:	libXmu-devel libXpm-devel libpciaccess-devel
 Requires:	libXmu libXpm libpciaccess
 Provides:	pkgconfig(libdrm)
@@ -37,5 +37,7 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_includedir}/*
 %changelog
+*	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.4-1
+-	Updated to version 3.19.4
 *	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 2.4.61-1
 -	initial version

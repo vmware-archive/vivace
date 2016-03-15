@@ -11,7 +11,7 @@ Source0:	http://anduin.linuxfromscratch.org/sources/BLFS/svn/c/ConsoleKit-%{vers
 %define sha1 ConsoleKit=fabed310860c6eda2fe99218d534dc838a9aa226
 BuildRequires:	dbus-glib-devel 
 BuildRequires:  polkit-devel libacl-devel libXrender-devel libXext-devel
-Requires:	dbus-glib polkit libacl libXrender libXext
+Requires:	dbus-glib polkit libacl libXrender libXext dbus-devel
 %description
 The ConsoleKit package is a framework for keeping track of the various users, sessions, and seats present on a system. It provides a mechanism for software to react to changes of any of these items or of any of the metadata associated with them.
 %package 	devel

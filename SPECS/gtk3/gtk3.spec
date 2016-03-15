@@ -1,16 +1,16 @@
 Summary:	GUI library.
 Name:		gtk3
-Version:	3.14.13
+Version:	3.19.11
 Release:	1
 License:	LGPLv2+
 URL:		http://www.gtk.org
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.14/gtk+-%{version}.tar.xz
-%define sha1 gtk=422f344d01b6ab143db61a39f0e0a3bc3ae5337e
-BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel
-Requires:	glib-schemas
+Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.19/gtk+-%{version}.tar.xz
+%define sha1 gtk=f62e53e7f487f85a95d99fc2e43056722f9519cf
+BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel libepoxy-devel
+Requires:	glib-schemas libepoxy
 Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
 %description
 The GTK+ 3 package contains libraries used for creating graphical user interfaces for applications.
@@ -36,9 +36,13 @@ cat > %{buildroot}/etc/gtk-3.0/settings.ini << "EOF"
 gtk-theme-name = Clearwaita
 gtk-fallback-icon-theme = elementary
 EOF
+mv %{buildroot}%{_bindir}/gtk-update-icon-cache %{buildroot}%{_bindir}/gtk-update-icon-cache-3.0
+
 %post
 gtk-query-immodules-3.0 --update-cache
 glib-compile-schemas /usr/share/glib-2.0/schemas
+gtk-update-icon-cache-3.0 
+
 %files
 %defattr(-,root,root)
 %{_bindir}/*
@@ -52,6 +56,8 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 %{_datadir}/locale/*
 %{_datadir}/man/*
 %{_datadir}/themes/*
+%{_datadir}/gettext/*
+
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
@@ -60,6 +66,9 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 %{_datadir}/gir-1.0/*
 %{_datadir}/gtk-3.0/*
 %{_datadir}/gtk-doc/*
+
 %changelog
+*	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.11-1
+-	Updated to version 3.19.11
 *	Wed May 27 2015 Alexey Makhalov <amakhalov@vmware.com> 3.14.13-1
 -	initial version

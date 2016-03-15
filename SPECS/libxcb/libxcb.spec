@@ -13,6 +13,7 @@ BuildRequires:	python2-devel
 BuildRequires:	python2-libs
 BuildRequires:	libXau-devel xcb-proto
 BuildRequires:	libXdmcp-devel
+BuildRequires:  python-xml
 Requires:	libXdmcp
 Requires:	libXau
 Provides:	pkgconfig(x11-xcb)
@@ -31,6 +32,8 @@ sed -i "s/pthread-stubs//" configure
 ./configure --prefix=%{_prefix} \
             --enable-xinput \
 	    --docdir=%{_datadir}/doc/libxcb-1.11
+
+sed -i "s#from xml.etree.cElementTree import \*#from xml.etree.ElementTree import ElementTree#g" src/c_client.py
 make %{?_smp_mflags}
 %check
 make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}

@@ -1,6 +1,6 @@
 Summary:	library for laying out and rendering of text.
 Name:		pango
-Version:	1.36.8
+Version:	1.38.1
 Release:	1
 License:	LGPLv2+
 URL:		http://www.pango.org
@@ -8,7 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.36/%{name}-%{version}.tar.xz
-%define sha1 pango=c6ba02ee8f9d8b22b7cfd74c4b6ae170bebc8d2b
+%define sha1 pango=13fc65cdd50d0a79d35f9d33a8d36144d091a533
 BuildRequires:	cairo-devel libXft-devel gobject-introspection-devel gobject-introspection-python
 Requires:	cairo libXft gobject-introspection
 %description
@@ -40,5 +40,7 @@ pango-querymodules --update-cache
 %{_libdir}/*.la
 %{_datadir}/*
 %changelog
+*	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.38.1-1
+-	Updated to version 1.38.1
 *	Thu May 21 2015 Alexey Makhalov <amakhalov@vmware.com> 1.36.8-1
 -	initial version

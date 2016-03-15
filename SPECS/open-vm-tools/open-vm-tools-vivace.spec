@@ -17,8 +17,8 @@ BuildRequires: 	libmspack
 BuildRequires:	Linux-PAM
 BuildRequires:	openssl-devel
 BuildRequires:	procps-ng-devel
-BuildRequires:	gtkmm-devel fuse-devel libXrandr-devel libXtst-devel
-Requires:	gtkmm fuse libXrandr libXtst
+BuildRequires:	gtkmm3-devel fuse-devel libXrandr-devel libXtst-devel
+Requires:	gtkmm3 fuse libXrandr libXtst
 Requires:	xerces-c
 Requires:	libdnet
 Requires:	libmspack

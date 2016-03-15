@@ -1,0 +1,31 @@
+diff -Naur a/hw/xfree86/sdksyms.sh b/hw/xfree86/sdksyms.sh
+--- a/hw/xfree86/sdksyms.sh	2014-11-16 21:51:18.000000000 -0800
++++ b/hw/xfree86/sdksyms.sh	2016-03-01 15:28:43.539002735 -0800
+@@ -349,15 +349,24 @@
+ /^extern[ 	]/  {
+     if (sdk) {
+ 	n = 3;
+-
++        # skip line numbers GCC 5 adds before __attribute__
++        while ($n == "" || $0 ~ /^# [0-9]+ "/) {
++        getline;
++        n = 1;
++        }
+ 	# skip attribute, if any
+ 	while ($n ~ /^(__attribute__|__global)/ ||
+ 	    # skip modifiers, if any
+ 	    $n ~ /^\*?(unsigned|const|volatile|struct|_X_EXPORT)$/ ||
+ 	    # skip pointer
+-	    $n ~ /^[a-zA-Z0-9_]*\*$/)
++	    $n ~ /^[a-zA-Z0-9_]*\*$/) {
+ 	    n++;
+-
++            # skip line numbers GCC 5 adds after __attribute__
++            while ($n == "" || $0 ~ /^# [0-9]+ "/) {
++            getline;
++            n = 1;
++            }
++            }
+ 	# type specifier may not be set, as in
+ 	#   extern _X_EXPORT unsigned name(...)
+ 	if ($n !~ /[^a-zA-Z0-9_]/)

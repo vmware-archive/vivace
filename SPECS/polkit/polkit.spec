@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.gz
 %define sha1 polkit=374397f1c32fa1290be0fce378fe9bab541ee4bf
-BuildRequires:	intltool glib-devel js-devel expat systemd
+BuildRequires:	intltool glib-devel js-devel expat systemd js gcc libtool
 Requires:	glib js expat shadow systemd
 %description
 Polkit is a toolkit for defining and handling authorizations. It is used for allowing unprivileged processes to communicate with privileged processes.
@@ -24,12 +24,14 @@ Install this package if you want do compile applications using the polkit.
 %setup -q
 %build
 # current configure uses old auto tools
+#autoreconf -vif
 ./configure --prefix=%{_prefix} \
 	    --sysconfdir=%{_sysconfdir} \
 	    --localstatedir=%{_localstatedir} \
 	    --disable-static \
 	    --enable-libsystemd-login=no \
-	    --with-authfw=shadow
+	    --with-authfw=shadow \
+		--with-mozjs=mozjs-17.0
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

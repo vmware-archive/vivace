@@ -1,0 +1,60 @@
+diff -Naur OriginalPackages/libgksu-2.0.12/configure.ac libgksu-2.0.12/configure.ac
+--- a/configure.ac	2009-08-16 14:30:58.000000000 -0700
++++ b/configure.ac	2016-02-29 17:52:47.513838142 -0800
+@@ -40,8 +40,12 @@
+ AC_PATH_PROG(GCONFTOOL, gconftool-2)
+ AM_GCONF_SOURCE_2
+ 
+++PKG_CHECK_MODULES(GLIB, [glib-2.0])
+++PKG_CHECK_MODULES(GTK, [gtk+-2.0])
+ PKG_CHECK_MODULES(LIBGKSU, [gtk+-2.0 >= 2.4.0, gconf-2.0, libstartup-notification-1.0, gnome-keyring-1, libgtop-2.0])
+ PKG_CHECK_MODULES(GKSU_PROPERTIES, [gtk+-2.0 >= 2.12, gconf-2.0])
+++PKG_CHECK_MODULES(LIBGKSUUI, [gtk+-2.0, gconf-2.0, x11])
+++PKG_CHECK_MODULES(TEST_GKSUUI, [glib-2.0, x11])
+ 
+ # Checks for library functions.
+ ALL_LINGUAS="ca cs da de es eu fr hu it ko lt pl pt_BR ro ru sk sv nb nl th zh_CN"
+diff -Naur OriginalPackages/libgksu-2.0.12/libgksu/Makefile.am libgksu-2.0.12/libgksu/Makefile.am
+--- a/libgksu/Makefile.am	2009-08-16 14:20:16.000000000 -0700
++++ b/libgksu/Makefile.am	2016-02-29 18:01:46.786803779 -0800
+@@ -26,14 +26,15 @@
+ pkgconfigdir = ${libdir}/pkgconfig
+ pkgconfig_DATA = libgksu2.pc
+ 
+-pkglibdir = ${libdir}/${PACKAGE}
+-pkglib_PROGRAMS = gksu-run-helper
+-gksu_run_helper_LDFLAGS = `pkg-config --libs glib-2.0`
++pkglibexecdir = ${libdir}/${PACKAGE}
++pkglibexec_PROGRAMS = gksu-run-helper
++gksu_run_helper_LDFLAGS = 
++gksu_run_helper_LDADD = $(GLIB_LIBS)
+ gksu_run_helper_SOURCES = gksu-run-helper.c
+ 
+ noinst_PROGRAMS = test-gksu
+ test_gksu_SOURCES = test-gksu.c
+-test_gksu_LDADD = libgksu2.la
+-test_gksu_LDFLAGS = `pkg-config --libs glib-2.0`
++test_gksu_LDADD = libgksu2.la $(GTK_LIBS)
++test_gksu_LDFLAGS = 
+ 
+ EXTRA_DIST = libgksu.ver
+diff -Naur OriginalPackages/libgksu-2.0.12/libgksuui/Makefile.am libgksu-2.0.12/libgksuui/Makefile.am
+--- a/libgksuui/Makefile.am	2008-05-09 10:39:54.000000000 -0700
++++ b/libgksuui/Makefile.am	2016-02-29 18:00:26.529664738 -0800
+@@ -4,12 +4,12 @@
+ 
+ noinst_LTLIBRARIES = libgksuui1.0.la
+ libgksuui1_0_la_SOURCES = gksuui-dialog.c
+-libgksuui1_0_la_LDFLAGS = -Wl,-O1 `pkg-config --libs gtk+-2.0 gconf-2.0`
+-
++libgksuui1_0_la_LDFLAGS = -Wl,-O1 
++libgksuui1_0_la_LIBADD = $(LIBGKSUUI_LIBS) -lm
+ noinst_HEADERS = defines.h gksuui.h gksuui-dialog.h
+ includedir = ${prefix}/include/$(PACKAGE)
+ 
+ noinst_PROGRAMS = test-gksuui
+ test_gksuui_SOURCES = test-gksuui.c
+-test_gksuui_LDADD = libgksuui1.0.la
+-test_gksuui_LDFLAGS = `pkg-config --libs glib-2.0`
++test_gksuui_LDADD = libgksuui1.0.la $(TEST_GKSUUI) -lm
++test_gksuui_LDFLAGS =
