@@ -2,7 +2,6 @@
 
 Vivace is a desktop environment for PhotonOS. It is a set of extra RPMs like xorg-server, lxde, firefox...
 
-
 ## Source code
 ```
 git clone https://github.com/vmware/vivace.git
@@ -35,4 +34,3 @@ Vivace provides RPM meta package with dependencies on all the Vivace's RPMs.
 ```
 tdnf install vui
 ```
-
