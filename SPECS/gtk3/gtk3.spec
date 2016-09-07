@@ -1,6 +1,6 @@
 Summary:	GUI library.
 Name:		gtk3
-Version:	3.19.11
+Version:	3.20.8 
 Release:	1
 License:	LGPLv2+
 URL:		http://www.gtk.org
@@ -8,7 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.19/gtk+-%{version}.tar.xz
-%define sha1 gtk=f62e53e7f487f85a95d99fc2e43056722f9519cf
+%define sha1 gtk=53fcb97b219de6ef349db7dfcb9415e94de35222
 BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel libepoxy-devel
 Requires:	glib-schemas libepoxy
 Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
@@ -68,6 +68,8 @@ gtk-update-icon-cache-3.0
 %{_datadir}/gtk-doc/*
 
 %changelog
+*	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.20.8-1
+-	Updated to version 3.20.8
 *	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.11-1
 -	Updated to version 3.19.11
 *	Wed May 27 2015 Alexey Makhalov <amakhalov@vmware.com> 3.14.13-1

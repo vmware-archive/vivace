@@ -1,14 +1,14 @@
 Summary:	gtkmm is the official C++ interface for the popular GUI library GTK+. 
 Name:		gtkmm
-Version:	2.99.1
+Version:	2.24.4
 Release:	1
 License:	LGPLv2+
 URL:		http://www.gtkmm.org
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.99/%{name}-%{version}.tar.gz
-%define sha1 gtkmm=3f8bba7960e278fb7e05c44b159928d950105a07
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.99/%{name}-%{version}.tar.xz
+%define sha1 gtkmm=e99866b0cb5a0d7387a7cef79253177310020b3d
 BuildRequires:	pangomm-devel atkmm-devel gtk2-devel gtk3-devel
 Requires:	atkmm gtk2 pangomm gtk3
 %description
@@ -26,7 +26,7 @@ It contains the libraries and header files to create gtkmm applications.
 %setup -q -n gtkmm-%{version}
 
 %build
-./configure --prefix=%{_prefix} --enable-static --enable-shared
+CXXFLAGS="-g -O2 -std=c++11" ./configure --prefix=%{_prefix} --enable-static --enable-shared
 make %{?_smp_mflags}
 
 %install
@@ -54,7 +54,9 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/pkgconfig/*.pc
 %{_datarootdir}/devhelp/books/gtkmm-2.4/gtkmm-2.4.devhelp2
 %changelog
+*	Fri Aug 26 2016	Harish Udaiya Kumar <hudgeaiyakumar@vmware.com> 2.24.4-1
+-	Falling back to 2.24.4 due to build issues with newer versions
 *	Fri Mar 04 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 2.99.1-1
--	Updated to version 2.99.8
+-	Updated to version 2.99.1
 *	Tue Jun 16 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 2.24.4-1
 -	initial version

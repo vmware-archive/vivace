@@ -1,14 +1,14 @@
 Summary:	Lightweight display manager
 Name:		lxdm
-Version:	0.5.0
-Release:	2
+Version:	0.5.3
+Release:	1
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
-%define sha1 lxdm=0a91c906b3a0edd181fad74965b22ebaa9891798
+%define sha1 lxdm=8c4f7439fa7b56a97e8b19dc62af02a88ae12b45
 Source1:	lxdm.conf
 Source2:	default.png
 Source3:	greeter.ui
@@ -55,6 +55,7 @@ EOF
 sed -i 's/ --exit-with-session//' %{buildroot}/etc/lxdm/Xsession
 
 %post
+ln -sf /lib/systemd/system/graphical.target /lib/systemd/system/default.target
 systemctl enable lxdm
 
 %preun
@@ -70,6 +71,8 @@ systemctl disable lxdm
 %{_datadir}/*
 %exclude %{_datadir}/lxdm/themes/Industrial/
 %changelog
+* 	Fri Aug 26 2016	Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.5.3-1
+-	Upgraded to version 0.5.3
 *	Fri Jun 12 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.5.0-2
 -	Excluded the Industrial theme and added our custom theme as a dependency. 
 *	Fri Jun 12 2015 Alexey Makhalov <amakhalov@vmware.com> 0.5.0-1
