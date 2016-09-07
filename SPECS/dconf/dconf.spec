@@ -1,7 +1,7 @@
 Summary:	A low-level configuration system
 Name:		dconf
 Version:	0.15.0
-Release:	1%{?dist}
+Release:	1
 License: 	LGPLv2.1+
 URL:		https://wiki.gnome.org/action/show/Projects/dconf
 Source0: 	http://download.gnome.org/sources/dconf/0.15/%{name}-%{version}.tar.xz

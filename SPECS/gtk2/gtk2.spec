@@ -1,6 +1,6 @@
 Summary:	GUI library.
 Name:		gtk2
-Version:	2.24.28
+Version:	2.24.30
 Release:	1
 License:	LGPLv2+
 URL:		http://www.gtk.org
@@ -8,7 +8,7 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/2.24/gtk+-%{version}.tar.xz
-%define sha1 gtk=f3c2f1a3728ed51d08054f6b4c7384fbf99477c0
+%define sha1 gtk=aa5bc6dca583cf2bff137606dc2014f6ea559da7
 BuildRequires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel
 Requires:	atk gdk-pixbuf pango libXinerama hicolor-icon-theme
 %description
@@ -47,5 +47,7 @@ gtk-query-immodules-2.0 --update-cache
 %{_libdir}/*.la
 %{_datadir}/*
 %changelog
+*	Mon Aug 30 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 2.24.30-1
+-	Upgraded to version 2.24.30 
 *	Thu May 21 2015 Alexey Makhalov <amakhalov@vmware.com> 2.24.28-1
 -	initial version
