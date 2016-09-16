@@ -23,7 +23,6 @@ The Xorg Intel Driver package contains the X.Org Video Driver for Intel integrat
 %patch0	-p1
 %build
 ./configure $XORG_CONFIG --prefix=%{_prefix} --enable-kms-only --enable-uxa --disable-selective-werror 
-#sed -i "s#\#include <errno.h>#\#include <errno.h>\n\#include <sys/types.h>\n\#include <sys/stat.h>#g" src/uxa/intel_driver.c
 make
 
 %install
@@ -36,6 +35,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_libdir}/*
 %{_datadir}/*
+%exclude /usr/lib/debug
 /usr/libexec
 
 %changelog

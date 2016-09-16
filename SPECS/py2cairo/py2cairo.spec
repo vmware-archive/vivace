@@ -34,6 +34,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_libdir}/*
 %{_includedir}/*
+%exclude /usr/lib/debug
 
 %changelog
 *	Fri May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 1.10.0-1
