@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	http://cairographics.org/releases/%{name}-%{version}.tar.gz
 %define sha1 cairomm=5a09a3f604cec2ddb4dfcace28dbe74a53585585
 BuildRequires:	cairo-devel libsigc++  
-Requires:	cairo libsigc++
+Requires:	cairo libsigc++ >= 2.8.0
 %description
 cairomm is a C++ wrapper for the cairo graphics library. It offers all the power of cairo with an interface familiar to C++ developers, including use of the Standard Template Library where it makes sense.
 %package	devel

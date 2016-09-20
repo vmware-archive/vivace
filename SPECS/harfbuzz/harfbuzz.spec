@@ -12,7 +12,8 @@ Source0:	http://www.freedesktop.org/software/%{name}/release/%{name}-%{version}.
 BuildRequires:	glib-devel icu-devel freetype2-initial 
 # TODO: fix cycle deps harfbuff <-> fretype2
 AutoReq:	no
-Requires:	glib icu
+Requires:	glib >= 2.48.2
+Requires:   icu
 %description
 The Harfbuzz package contains an OpenType text shaping engine.
 %package	devel

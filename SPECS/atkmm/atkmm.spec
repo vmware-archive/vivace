@@ -10,7 +10,8 @@ Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/2.24/%{name}-%{version}.tar.xz
 %define sha1 atkmm=e18e2145622d1ae9b32d0425aec1b4b74aeb1336
 BuildRequires:	glibmm-devel atk-devel
-Requires:	glibmm atk 
+Requires:	glibmm >= 2.48.1
+Requires:   atk
 %description
 Atkmm is the official C++ interface for the ATK accessibility toolkit library.
 %package	devel

@@ -1,12 +1,12 @@
 Summary:	Vivace release files
 Name:		vivace-release
-Version:	0.1
+Version:	0.2
 Release:	1
 License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org
-Source:		%{name}-%{version}.tar.gz
-%define sha1 vivace-release=49e53759974b5f99cc142e6c64db630ebd60d116
+Source:		%{name}-%{version}.tar.xz
+%define sha1 vivace-release=ba6541bbb76b9ebc274111da4aaff41ecf668d58
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vivace-release
