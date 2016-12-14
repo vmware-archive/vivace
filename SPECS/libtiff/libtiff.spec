@@ -10,8 +10,8 @@ Distribution:	Photon
 Source0:	http://download.osgeo.org/%{name}/tiff-%{version}.tar.gz
 %define sha1 tiff=652e97b78f1444237a82cbcfe014310e776eb6f0
 Patch0:		tiff-4.0.3-fixes-1.patch
-BuildRequires:	libjpeg-turbo-devel
-Requires:	libjpeg-turbo
+BuildRequires:	jpeg-devel
+Requires:	jpeg
 %description
 The LibTIFF package contains the TIFF libraries and associated utilities. The libraries are used by many programs for reading and writing TIFF files and the utilities are used for general work with TIFF files.
 %package	devel
