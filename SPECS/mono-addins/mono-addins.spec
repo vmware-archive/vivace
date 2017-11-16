@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	Open source implementation of Microsoft's .NET Framework.
 Name:		mono-addins
 Version:	1.1

@@ -7,8 +7,8 @@ URL:		http://www.mono-project.com/
 Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://download.mono-project.com/sources/webkit-sharp/webkit-sharp-0.3.tar.bz2
-%define sha1 gtk=c3a5d219da2e70a37c34b981064a63dbdbd91e1c
+Source0:	http://download.mono-project.com/sources/webkit-sharp/webkit-sharp-0.3.tar.gz
+%define sha1 webkit-sharp=cbf77978fc16df95bdfdd926d219929fd519125f
 BuildRequires:	automake gtk-sharp2 mono-devel mono-addins libwebkit-devel
 Requires:	libwebkit
 %description

@@ -1,17 +1,19 @@
+%global debug_package %{nil}
 Summary:	Stand-alone mail/news client.
 Name:		thunderbird
 Version:	31.7.0
-Release:	1
+Release:	2	
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/thunderbird
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
-Patch0:		gcc-5-compilation-fix.patch
+Patch0:         fix_icu_vernum.patch
+Patch1:         build-with-gcc6.patch
 %define sha1 thunderbird=90e18f8ecccdaf1ee39493223a7e3ad8b3b7bede
 Source1:        %{name}.desktop
-BuildRequires:	gtk2-devel which unzip zip nspr nss-devel icu-devel yasm-devel alsa-lib-devel libffi libXcomposite-devel
+BuildRequires:	gtk2-devel which unzip zip nspr-devel nss nss-libs nss-devel icu-devel yasm-devel alsa-lib-devel libffi libXcomposite-devel autoconf213
 BuildRequires:	desktop-file-utils
 Requires:	gtk2 nspr nss icu yasm alsa-lib libXcomposite desktop-file-utils
 %description
@@ -19,6 +21,7 @@ Thunderbird is a stand-alone mail/news client based on the Mozilla codebase. It 
 %prep
 %setup -q -n comm-esr31
 %patch0	-p1
+%patch1	-p1
 %build
 cat > mozconfig << "EOF"
 # If you have a multicore machine, all cores will be used by default.
@@ -98,7 +101,9 @@ cd mozilla/media/webrtc/trunk/webrtc/modules/video_coding/codecs/vp8 &&
       -e 's/\[PLANE_/\[VPX_PLANE_/' \
       -i  vp8_impl.cc               &&
 cd -
-
+export AUTOCONF=/usr/bin/autoconf2.13 &&
+export CFLAGS+='-fpermissive' &&
+export CXXFLAGS+='-fpermissive' &&
 make %{?_smp_mflags} -f client.mk
 %install
 make -f client.mk DESTDIR=%{buildroot} install INSTALL_SDK=
@@ -131,5 +136,7 @@ update-desktop-database &> /dev/null || :
 %{_datadir}/applications/
 #%{_datadir}/icons/
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 31.7.0-2
+-	Added patches to build with Photon 2.0
 *	Tue Jun 2 2015 Alexey Makhalov <amakhalov@vmware.com> 31.7.0-1
 -	initial version

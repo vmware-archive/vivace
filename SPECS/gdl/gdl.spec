@@ -1,7 +1,7 @@
 Summary:	GDL is the Gnome Development/Docking Library.
 Name:		gdl
 Version:	3.16.0
-Release:	1
+Release:	2	
 License:	LGPLv2.1+
 URL:		http://gnudatalanguage.sourceforge.net/
 Group:		System/Libraries
@@ -9,8 +9,8 @@ Source0:	http://ftp.acc.umu.se/pub/gnome/sources/%{name}/3.16/%{name}-%{version}
 %define sha1 gdl=bdbf9e4c754b6f3cad12f7027182751db591f1a5
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel pango-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel
-Requires:	dbus glib libxml2 pango cairo pixman libpng libXrender libXext libX11 harfbuzz
+BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel xpango-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel xharfbuzz-devel
+Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 xharfbuzz
 %description
 GDL is the Gnome Development/Docking Library.
 %package	devel
@@ -52,5 +52,7 @@ rm -rf %{buildroot}
 %{_datadir}
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.16.0-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.16.0-1
 -	Initial build. First version

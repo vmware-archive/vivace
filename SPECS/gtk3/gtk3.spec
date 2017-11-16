@@ -1,23 +1,23 @@
 Summary:	GUI library.
 Name:		gtk3
 Version:	3.20.8 
-Release:	1
+Release:	2	
 License:	LGPLv2+
 URL:		http://www.gtk.org
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/gtk+/3.19/gtk+-%{version}.tar.xz
-%define sha1 gtk=53fcb97b219de6ef349db7dfcb9415e94de35222
+%define sha1 gtk+-3=53fcb97b219de6ef349db7dfcb9415e94de35222
 BuildRequires:	libXi-devel libXfixes-devel at-spi2-atk-devel gtk2-devel libepoxy-devel
 Requires:	glib-schemas libepoxy
-Requires:	atk gdk-pixbuf pango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
+Requires:	atk gdk-pixbuf xpango gobject-introspection libXi libXfixes at-spi2-atk hicolor-icon-theme
 %description
 The GTK+ 3 package contains libraries used for creating graphical user interfaces for applications.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	atk-devel gdk-pixbuf-devel pango-devel libXinerama-devel gobject-introspection-devel gobject-introspection-python libXi-devel libXfixes-devel at-spi2-atk-devel
+Requires:	atk-devel gdk-pixbuf-devel xpango-devel libXinerama-devel gobject-introspection-devel gobject-introspection-python libXi-devel libXfixes-devel at-spi2-atk-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -68,6 +68,8 @@ gtk-update-icon-cache-3.0
 %{_datadir}/gtk-doc/*
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.20.8-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.20.8-1
 -	Updated to version 3.20.8
 *	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.19.11-1

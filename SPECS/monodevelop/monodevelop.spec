@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	IDE for Mono and GTK#
 Name:		monodevelop
 # It was downgraded from 5.9.4.2 because of regression.

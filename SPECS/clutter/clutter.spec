@@ -1,7 +1,7 @@
 Summary:	Clutter is a toolkit for creating compelling, dynamic, and portable graphical user interfaces
 Name:		clutter 
 Version:	1.22.4
-Release:	1
+Release:        2	
 License:	LGPLv2.1+
 URL:		https://blogs.gnome.org/clutter/
 Group:		System/Libraries
@@ -9,8 +9,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.22/%{name}-%{version}.tar.xz
 %define sha1 clutter=1665008f6c44a19d6aab23aa73cb19f85cafdfd2
-BuildRequires:	atk-devel json-glib-devel cogl-devel pango-devel libXcomposite-devel libXdamage-devel gdk-pixbuf-devel
-Requires:	atk json-glib cogl pango libXdamage libXcomposite gdk-pixbuf
+BuildRequires:	atk-devel json-glib-devel cogl-devel xpango-devel libXcomposite-devel libXdamage-devel gdk-pixbuf-devel
+Requires:	atk json-glib cogl xpango libXdamage libXcomposite gdk-pixbuf
 
 %description
 Clutter is a toolkit for creating compelling, dynamic, and portable graphical user interfaces. Clutter is free software, developed by the GNOME community.
@@ -19,7 +19,7 @@ Clutter is a toolkit for creating compelling, dynamic, and portable graphical us
 Summary: Development files for clutter
 Group:   Development/Libraries
 Requires: %{name} = %{version}
-Requires: cairo-devel gtk2-devel pango-devel atk-devel libX11-devel libXext-devel libXcomposite-devel libXdamage-devel gdk-pixbuf-devel cogl-devel json-glib-devel
+Requires: xcairo-devel gtk2-devel xpango-devel atk-devel libX11-devel libXext-devel libXcomposite-devel libXdamage-devel gdk-pixbuf-devel cogl-devel json-glib-devel
 
 %description devel
 Clutter is a toolkit for creating compelling, dynamic, and portable graphical user interfaces. Clutter is free software, developed by the GNOME community.
@@ -64,5 +64,7 @@ rm -rf %{buildroot}
 %exclude %{_datadir}/gtk-doc 
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.22.4-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Fri Jul 10 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.22.4-1
 -	initial version

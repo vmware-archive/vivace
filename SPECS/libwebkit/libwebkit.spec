@@ -1,7 +1,7 @@
 Summary:	A full-featured port of the WebKit rendering engine.
 Name:		libwebkit
 Version:	1.9.92
-Release:	1
+Release:	2	
 License:	LGPLv2+
 URL:		http://webkitgtk.org/
 Group:		Development/Libraries
@@ -21,11 +21,11 @@ BuildRequires:  gperf
 BuildRequires:  libjpeg-turbo-devel
 BuildRequires:  libsoup-devel libX11-devel
 BuildRequires:  libxslt libXcomposite-devel
-BuildRequires:  sqlite-autoconf
+BuildRequires:  sqlite
 Requires:	gstreamer-plugins-base
 Requires:	libsoup
 Requires:	libjpeg-turbo
-Requires:	sqlite-autoconf 
+Requires:	sqlite
 Requires:	gtk3
 Requires:	libxslt
 Requires:	gtk2
@@ -98,5 +98,7 @@ rm -rf %{buildroot}
 %{_datadir}/gtk-doc
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.9.92-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Thu Oct 01 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.9.92-1
 -	initial version

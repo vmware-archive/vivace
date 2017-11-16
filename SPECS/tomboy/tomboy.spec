@@ -1,6 +1,6 @@
 Summary:	Note-taking application
 Name:		tomboy
-Version:	1.15.4
+Version:	1.15.9
 Release:	1
 License:	LGPLv2+ and GPLv2+ and MIT
 URL:		http://projects.gnome.com/tomboy
@@ -8,8 +8,9 @@ Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.15/%{name}-%{version}.tar.xz
-%define sha1 tomboy=dcb2299ea29e1ff37edee4bdfd22bf437c06584d
-BuildRequires:	mono-devel mono-extras gtk-sharp2-devel gnome-sharp-devel mono-addins desktop-file-utils gnome-doc-utils dbus-sharp dbus-sharp-glib gtk2-devel which libxml2-python
+%define sha1 tomboy=acab8348220cc7d6f7b20754770a974c0a3ee448
+Patch0:		tomboy-tls-fix.patch
+BuildRequires:	itstool mono-devel mono-extras gtk-sharp2-devel gnome-sharp-devel mono-addins desktop-file-utils gnome-doc-utils dbus-sharp dbus-sharp-glib gtk2-devel which libxml2-python
 Requires:	mono shared-mime-info gtk-sharp2 gnome-sharp mono-addins gnome-doc-utils dbus-sharp dbus-sharp-glib
 %description
 Tomboy is a desktop note-taking application which is simple and easy to use.
@@ -23,23 +24,18 @@ Requires:	gtk2-devel
 It contains the header files to create applications 
 %prep
 %setup -q
-
+%patch0 -p1
 # Delete shipped *.dll files
 find -name '*.dll' -exec rm -f {} \;
 
 %build
-# Mono 4
-sed -i configure configure.in \
-	    -e "s#gmcs#mcs#g" \
-	    -e "s#Mono 2.0#Mono 4.5#g" \
-	    -e "s#mono/2.0#mono/4.5#g"
-
 ./configure --prefix=%{_prefix} \
             --disable-scrollkeeper \
-	    --disable-static \
+	    --disable-update-mimedb \
+	    --disable-schemas-install\
 	    --sysconfdir=%{_sysconfdir}
 mkdir bin
-make %{?_smp_mflags}
+make
 
 %install
 #make GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR=%{buildroot} install INSTALL="install -p"
@@ -129,5 +125,7 @@ update-mime-database %{_datadir}/mime >/dev/null
 %defattr(-,root,root)
 %{_libdir}/pkgconfig
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.15.9-2
+-	Upgraded to version 1.15.9 & build on Photon 2.0
 *	Tue Jun 23 2015 Alexey Makhalov <amakhalov@vmware.com> 1.15.4-1
 -	initial version

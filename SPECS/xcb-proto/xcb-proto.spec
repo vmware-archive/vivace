@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	provides the XML-XCB protocol descriptions.
 Name:		xcb-proto
 Version:	1.11

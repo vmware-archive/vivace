@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	The XKeyboardConfig package contains the keyboard configuration database for the X Window System.
 Name:		xkeyboard-config
 Version:	2.14

@@ -35,6 +35,7 @@ make DESTDIR=%{buildroot} GETTEXT_PACKAGE=libwnck-1 install
 %{_bindir}/*
 %{_libdir}/*
 %{_datadir}/*
+%exclude %{_libdir}/debug
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
