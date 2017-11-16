@@ -1,7 +1,7 @@
 Summary:	Mesa is an OpenGL compatible 3D graphics library.
 Name:		mesa
 Version:	11.1.2
-Release:	1
+Release:	2	
 License:	MIT
 URL:		http://www.mesa3d.org/
 Group:		System Environment/Libraries
@@ -9,15 +9,15 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.freedesktop.org/pub/%{name}/%{version}/%{name}-%{version}.tar.gz
 %define sha1 mesa=a9600ccb8350ef490f1d3c3fa9d93bcb347b87b7
-BuildRequires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd 
-Requires:	libdrm libXdamage libxshmfence libXxf86vm systemd
+BuildRequires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd-devel 
+Requires:	libdrm libXdamage libxshmfence libXxf86vm systemd systemd-devel
 Provides:	pkgconfig(dri)
 %description
 Mesa is an OpenGL compatible 3D graphics library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd 
+Requires:	libdrm-devel libXdamage-devel libxshmfence-devel libXxf86vm-devel systemd-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -51,6 +51,8 @@ make DESTDIR=%{buildroot} install
 %{_includedir}/*
 %{_libdir}/*.la
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 11.1.2-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 11.1.2-1
 -	Updated to version 11.1.2
 *	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 10.5.5-1

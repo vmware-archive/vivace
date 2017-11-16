@@ -1,7 +1,7 @@
 Summary:	Usermode tools for VmWare virts
 Name:		open-vm-tools-vivace
 Version:	10.0.5
-Release:	1
+Release:	2	
 License:	LGPLv2+
 URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
 Group:		Applications/System
@@ -9,20 +9,24 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:    http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools-%{version}.tar.gz
 %define sha1 open-vm-tools=9d29a17cce539b032317d0a8c55977666daa137e
-Patch0:			open-vm-tools-service-link.patch
+Patch0:		Fix-build-failure-with-GCC-6.patch
+Patch1:		include-sys-macros-directly.patch
 BuildRequires: 	xerces-c-devel
 BuildRequires: 	xml-security-c-devel
-BuildRequires: 	libdnet
-BuildRequires: 	libmspack
-BuildRequires:	Linux-PAM
+BuildRequires: 	libdnet-devel
+BuildRequires: 	libmspack-devel
+BuildRequires:	Linux-PAM-devel
 BuildRequires:	openssl-devel
 BuildRequires:	procps-ng-devel
 BuildRequires:	gtk2-devel
+BuildRequires:  systemd-devel
 BuildRequires:	gtkmm-devel
 BuildRequires:	gtkmm3-devel fuse-devel libXrandr-devel libXtst-devel
 Requires:		gtkmm3 gtkmm fuse libXrandr libXtst
 Requires:		xerces-c
+Requires:		systemd
 Requires:		libdnet
+Requires:		Linux-PAM
 Requires:		libmspack
 Requires:		xml-security-c
 Requires:		openssl
@@ -33,6 +37,7 @@ VmWare virtualization user mode tools
 %prep
 %setup -qn open-vm-tools-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 sed -i 's#/var/run/vmblock#/run/vmblock#' lib/include/vmblock.h
@@ -157,6 +162,8 @@ fi
 %{_sbindir}/*
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 10.0.5-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Fri Aug 26 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 10.0.5-1
 -	Upgraded to version 10.0.5, using the original naming conventions for release.
 	Updated the spec to match Photon version. 

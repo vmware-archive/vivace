@@ -1,16 +1,17 @@
 Summary:	Libgda is a (relatively small) database access library. 
 Name:		libgda
 Version:	5.2.4
-Release:	1
+Release:	2	
 License:	LGPL
 URL:		http://www.gnome-db.org/
 Group:		Productivity/Databases/Clients
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/5.2/%{name}-%{version}.tar.xz
 %define sha1 libgda=9963fe39074f5ece1872387c955e1598f8b872af
+
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel itstool pango-devel libtool desktop-file-utils openssl-devel python2-devel cracklib-python python2-libs python2-tools python2 libgnome-keyring-devel gobject-introspection gobject-introspection-python gobject-introspection-devel autoconf libgcrypt-devel cairo-devel gdk-pixbuf-devel atk-devel pixman-devel scrollkeeper libxslt ncurses-devel readline-devel groff libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel sqlite-autoconf 
-Requires:	dbus glib libxml2 pango cairo pixman libpng libXrender libXext libX11 harfbuzz gobject-introspection
+BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel itstool xpango-devel libtool desktop-file-utils openssl-devel python2-devel cracklib-python python2-libs python2-tools python2 libgnome-keyring-devel gobject-introspection gobject-introspection-python gobject-introspection-devel autoconf libgcrypt-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel scrollkeeper libxslt ncurses-devel readline-devel groff libpng-devel libXrender-devel libXext-devel libX11-devel xharfbuzz-devel sqlite 
+Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 xharfbuzz gobject-introspection
 %description
 The GNOME-DB aims to provide a free unified data access architecture. GNOME-DB is useful for any application that accesses persistent data (not only databases, but data), since it now contains a pretty good data management API.
 %package devel
@@ -109,5 +110,7 @@ rm -rf %{buildroot}
 %{_datadir}/libgda-5.0/sqlite_*.xml
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 5.2.4-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Tue Jun 30 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 5.2.4-1
 -	Initial build. First version

@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 Summary:	redglass and whiteglass animated cursor themes.
 Name:		xcursor-themes
 Version:	1.0.4

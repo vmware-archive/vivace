@@ -1,0 +1,26 @@
+diff --git b/Tomboy/Addins/WebSyncService/Api/AnonymousConnection.cs a/Tomboy/Addins/WebSyncService/Api/AnonymousConnection.cs
+index 0e7dc84..7c377e2 100644
+--- b/Tomboy/Addins/WebSyncService/Api/AnonymousConnection.cs
++++ a/Tomboy/Addins/WebSyncService/Api/AnonymousConnection.cs
+@@ -67,8 +67,6 @@ namespace Tomboy.WebSync.Api
+ 			string responseData = string.Empty;
+ 			HttpWebRequest webRequest;
+ 
+-			ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+-
+ 			ServicePointManager.CertificatePolicy = new CertificateManager ();
+ 
+ 			try {
+diff --git b/Tomboy/Addins/WebSyncService/Api/OAuth.cs a/Tomboy/Addins/WebSyncService/Api/OAuth.cs
+index f30f1dc..6f24953 100644
+--- b/Tomboy/Addins/WebSyncService/Api/OAuth.cs
++++ a/Tomboy/Addins/WebSyncService/Api/OAuth.cs
+@@ -231,8 +231,6 @@ namespace Tomboy.WebSync.Api
+ 		{
+ 			var responseData = string.Empty;
+ 
+-			ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+-
+ 			ServicePointManager.CertificatePolicy = new CertificateManager ();
+ 
+ 			// TODO: Set UserAgent, Timeout, KeepAlive, Proxy?

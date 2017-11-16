@@ -1,0 +1,20 @@
+--- a/lib/wiper/wiperPosix.c	2017-11-10 20:51:48.763301050 +0000
++++ b/lib/wipre/wiperPosix.c	2017-11-10 20:53:38.219336586 +0000
+@@ -30,6 +30,9 @@
+ #include <stdio.h>
+ #include <sys/stat.h>
+ #if defined(__linux__) || defined(sun)
++# if defined(__linux__)
++#  include <sys/sysmacros.h>
++# endif
+ # include <sys/vfs.h>
+ #elif defined(__FreeBSD__) || defined(__APPLE__)
+ # include <sys/param.h>
+@@ -44,7 +47,6 @@
+ 
+ #include "vmware.h"
+ #include "wiper.h"
+-#include "util.h"
+ #include "str.h"
+ #include "strutil.h"
+ #include "fileIO.h"

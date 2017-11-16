@@ -1,7 +1,7 @@
 Summary:	toolkit for defining and handling authorizations.
 Name:		polkit
 Version:	0.112
-Release:	1
+Release:	2	
 License:	LGPLv2+
 URL:		http://www.freedesktop.org/software/polkit
 Group:		User Interface/Desktops
@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://www.freedesktop.org/software/%{name}/releases/%{name}-%{version}.tar.gz
 %define sha1 polkit=374397f1c32fa1290be0fce378fe9bab541ee4bf
-BuildRequires:	intltool glib-devel js-devel expat systemd js gcc libtool
+BuildRequires:	intltool glib-devel js-devel expat-devel systemd-devel js gcc libtool shadow 
 Requires:	glib js expat shadow systemd
 %description
 Polkit is a toolkit for defining and handling authorizations. It is used for allowing unprivileged processes to communicate with privileged processes.
@@ -17,7 +17,7 @@ Polkit is a toolkit for defining and handling authorizations. It is used for all
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
-Requires:	intltool glib-devel js-devel expat systemd
+Requires:	intltool glib-devel js-devel expat-devel systemd-devel
 %description 	devel
 Install this package if you want do compile applications using the polkit.
 %prep
@@ -68,5 +68,7 @@ getent passwd polkitd > /dev/null || useradd -c "PolicyKit Daemon Owner" -d /etc
 %{_libdir}/*.la
 %{_libdir}/*.so
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.112-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Tue May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 0.112-1
 -	initial version

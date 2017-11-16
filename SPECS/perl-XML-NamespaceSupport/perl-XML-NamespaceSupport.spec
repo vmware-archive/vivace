@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:        XML::NamespaceSupport module
 Name:           perl-XML-NamespaceSupport
 Version:        1.11

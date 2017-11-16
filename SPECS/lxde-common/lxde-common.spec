@@ -1,7 +1,8 @@
+%global debug_package %{nil}
 Summary:	default configuration for LXDE.
 Name:		lxde-common
 Version:	0.99.0
-Release:	1
+Release:	2	
 License:	LGPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		User Interface/Desktops
@@ -9,7 +10,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 %define sha1 lxde-common=8ae027a26043620990a5c5d96a31e46b0ff669da
-BuildRequires:	consolekit-devel lxde-icon-theme lxsession openbox-devel 
+BuildRequires:	consolekit-devel lxde-icon-theme lxsession openbox-devel intltool
 Requires:	consolekit lxde-icon-theme lxsession openbox lxappearance xinit pcmanfm xcompmgr cairo-dock-plugins shared-mime-info
 %description
 The LXDE Common package provides a set of default configuration for LXDE.
@@ -45,5 +46,7 @@ cp /etc/skel/.xinitrc /root
 %{_bindir}/*
 %{_datadir}/*
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.99.0-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Tue May 26 2015 Alexey Makhalov <amakhalov@vmware.com> 0.99.0-1
 -	initial version

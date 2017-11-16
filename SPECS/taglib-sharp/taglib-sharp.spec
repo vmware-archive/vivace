@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	Multimedia metadata reading/writing library for popular formats
 Name:		taglib-sharp
 Version:	2.1.0.0

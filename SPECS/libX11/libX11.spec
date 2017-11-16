@@ -1,7 +1,7 @@
 Summary:	Core X11 protocol client library.
 Name:		libX11
 Version:	1.6.3
-Release:	1
+Release:	2	
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries
@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/libX11-1.6.3.tar.bz2
 %define sha1 libX11=6f2aadf8346ee00b7419bd338461c6986e274733
 BuildRequires:	xtrans-devel
-Requires:	fontconfig libxcb
+Requires:	xfontconfig libxcb
 Provides:	pkgconfig(x11)
 %description
 Core X11 protocol client library.
@@ -40,5 +40,7 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/*.la
 %{_datadir}/*
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.6.3-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 1.6.3-1
 -	initial version

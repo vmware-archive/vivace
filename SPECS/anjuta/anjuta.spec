@@ -1,18 +1,19 @@
 Summary:	GNOME Integrated Development Environment
 Name:		anjuta
 Version:	3.18.2
-Release:	1
+Release:	2	
 License:	GPL
 URL:		http://anjuta.org/
 Group:		Development/Tools
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.10/%{name}-%{version}.tar.xz
+
 Patch0:		anjuta-3.14.0-build-crash-fix.patch 
 %define sha1 anjuta=0272069f0bed336528903542b1ad52497427d65d
 
-BuildRequires:	libtool autogen autoconf automake pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus libgnome glib-devel libX11-devel libXext-devel libwnck-devel gtk3-devel gobject-introspection-devel libXinerama-devel vte290-devel libXrender-devel libpng-devel libXrandr-devel gnome-icon-theme gnome-doc-utils apr apr-util systemd alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel gnome-vfs-devel libxml2-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel cairo-devel pango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel libunique-devel libxslt shared-mime-info at-spi2-core-devel dconf-devel sqlite-autoconf glibc-devel ncurses-devel libcroco-devel librsvg-devel libogg-devel libvorbis-devel libltdl-devel gvfs gda-sqlite
-Requires:	libgnome glib gnome-vfs autogen libX11 libXext libXinerama libXrender libglade alsa-lib libgda libXrandr pixman gnome-vfs openssl libgnomeui python2 harfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring gobject-introspection libxml2 cairo pango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview vte290 libwnck libunique autoconf at-spi2-core dconf sqlite-autoconf glibc ncurses gtk3 libcroco librsvg libogg libltdl libvorbis gvfs gda-sqlite dbus make automake
+BuildRequires:	libtool autogen autoconf automake pkg-config ORBit2-devel desktop-file-utils intltool libgnomeui-devel libgnome-devel dbus libgnome glib-devel libX11-devel libXext-devel libwnck-devel gtk3-devel gobject-introspection-devel libXinerama-devel vte290-devel libXrender-devel libpng-devel libXrandr-devel gnome-icon-theme gnome-doc-utils apr apr-util systemd-devel alsa-lib-devel gdk-pixbuf-devel libgnome-keyring-devel gnome-vfs-devel libxml2-devel python2-libs python2-devel xharfbuzz-devel itstool pixman-devel xcairo-devel xpango-devel atk-devel GConf-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview-devel libunique-devel libxslt shared-mime-info at-spi2-core-devel dconf-devel sqlite glibc-devel ncurses-devel libcroco-devel librsvg-devel libogg-devel libvorbis-devel libltdl-devel gvfs gda-sqlite
+Requires:	libgnome glib gnome-vfs autogen libX11 libXext libXinerama libXrender libglade alsa-lib libgda libXrandr pixman gnome-vfs openssl libgnomeui python2 xharfbuzz libgnomecanvas gdk-pixbuf libgnome-keyring gobject-introspection libxml2 xcairo xpango atk GConf popt libbonobo libart_lgpl binutils gdl gtksourceview vte290 libwnck libunique autoconf at-spi2-core dconf sqlite glibc ncurses gtk3 libcroco librsvg libogg libltdl libvorbis gvfs gda-sqlite dbus make automake
 
 %description
 Anjuta DevStudio is a versatile Integrated Development Environment (IDE)
@@ -25,7 +26,7 @@ version controls, integrated GUI designing and other tools.
 Summary: Libraries and include files for Anjuta plugins development
 Group:   Development/Libraries
 Requires: %{name} = %{version}
-Requires: libgnomeui-devel, libglade-devel, pkg-config dconf-devel sqlite-autoconf glibc-devel ncurses-devel gtk3-devel libcroco-devel libvorbis-devel libltdl-devel gvfs gda-sqlite libgda-devel
+Requires: libgnomeui-devel, libglade-devel, pkg-config dconf-devel sqlite glibc-devel ncurses-devel gtk3-devel libcroco-devel libvorbis-devel libltdl-devel gvfs gda-sqlite libgda-devel
 
 %description devel
 Libraries, header files and API docs for developing Anjuta plugins
@@ -92,6 +93,8 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 %{_libdir}/girepository-1.0
 
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.18.2-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Fri Aug 26 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.18.2-1
 -	Upgraded to version 3.18.2
 * 	Fri Jul	24 2015	Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.14.0-1

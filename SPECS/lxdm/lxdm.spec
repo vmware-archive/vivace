@@ -1,7 +1,7 @@
 Summary:	Lightweight display manager
 Name:		lxdm
 Version:	0.5.3
-Release:	1
+Release:	2	
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries
@@ -12,7 +12,7 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.xz
 Source1:	lxdm.conf
 Source2:	default.png
 Source3:	greeter.ui
-BuildRequires:	gtk2-devel librsvg-devel consolekit-devel Linux-PAM systemd
+BuildRequires:	intltool gtk2-devel librsvg-devel consolekit-devel Linux-PAM-devel systemd-devel
 Requires:	lxdm-themes gtk2 librsvg consolekit Linux-PAM systemd libxcb which
 %description
 The LXDM is a lightweight Display Manager for the LXDE desktop. It can also be used as an alternative to other Display Managers such as GNOME's GDM or KDE's KDM.
@@ -65,12 +65,16 @@ systemctl disable lxdm
 %defattr(-,root,root)
 %{_bindir}/*
 %{_sysconfdir}/*
-/lib/*
 %{_libexecdir}/*
+/lib/*
+%{_libdir}/*
 %{_sbindir}/*
 %{_datadir}/*
 %exclude %{_datadir}/lxdm/themes/Industrial/
+%exclude %{_libdir}/debug
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.5.3-2
+-	Updated build requires & requires to build with Photon 2.0
 * 	Fri Aug 26 2016	Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.5.3-1
 -	Upgraded to version 0.5.3
 *	Fri Jun 12 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.5.0-2

@@ -1,22 +1,27 @@
+%global debug_package %{nil}
 Summary:	Firefox is a stand-alone browser based on the Mozilla codebase.
 Name:		firefox
-Version:	38.0.1
+Version:	41.0
 Release:	1
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/firefox
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.bz2
-%define sha1 firefox=20f52c37e099cb2b21f3a76c6e39fe698e1e79e8
+Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.xz
+%define sha1 firefox=0ce7a5ccdf671a6c98eaac07d06d49a895a99449
 Source1:        %{name}.desktop
-BuildRequires:	gtk2-devel which python2-devel python2-libs unzip zip nspr nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
+Patch0:		fix_icu_vernum_firefox.patch
+Patch1:		firefox-build-with-gcc6.patch
+BuildRequires:	GConf-devel libevent-devel GConf autoconf213 gtk2-devel which python2-devel python2-libs unzip zip nspr-devel nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils
-Requires:	gtk2 nspr nss icu zlib yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
+Requires:	gtk2 nspr nss icu libevent zlib GConf yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
 %description
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep
 %setup -q -n mozilla-release
+%patch0 -p1
+%patch1 -p1
 %build
 cat > mozconfig << "EOF"
 # If you have a multicore machine, all cores will be used by default.
@@ -37,9 +42,9 @@ ac_add_options --disable-libnotify
 
 # GStreamer is necessary for H.264 video playback in HTML5 Video Player;
 # to be enabled, also remember to set "media.gstreamer.enabled" to "true"
-# in about:config. If you have GStreamer 0.x.y, comment out this line:
+# in about:config. If you have GStreamer 1.x.y, comment out this line and
+# uncomment the following one:
 ac_add_options --disable-gstreamer
-# or uncomment this line, if you have GStreamer 1.x.y
 #ac_add_options --enable-gstreamer=1.0
 
 # Uncomment these lines if you have installed optional dependencies:
@@ -51,9 +56,7 @@ ac_add_options --disable-pulseaudio
 
 # Comment out following options if you have not installed
 # recommended dependencies:
-#ac_add_options --enable-system-sqlite
-#ac_add_options --with-system-libevent
-#ac_add_options --with-system-libvpx
+ac_add_options --with-system-libevent
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
 ac_add_options --with-system-icu
@@ -75,7 +78,9 @@ ac_add_options --enable-official-branding
 ac_add_options --enable-safe-browsing
 ac_add_options --enable-url-classifier
 
-ac_add_options --enable-system-cairo
+# From firefox-40, using system cairo causes firefox to crash
+# frequently when it is doing background rendering in a tab.
+#ac_add_options --enable-system-cairo
 ac_add_options --enable-system-ffi
 ac_add_options --enable-system-pixman
 
@@ -83,12 +88,12 @@ ac_add_options --with-pthreads
 
 ac_add_options --with-system-bz2
 ac_add_options --with-system-jpeg
-#ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
 # Firefox build is multithreaded by itself
+export AUTOCONF=/usr/bin/autoconf2.13 &&
 make -f client.mk
 %install
 make -f client.mk DESTDIR=%{buildroot} install INSTALL_SDK=
@@ -129,5 +134,7 @@ fi
 %{_datadir}/applications/
 %{_datadir}/icons/
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 41.0-1
+-	Upgraded to version 41.0
 *	Thu May 28 2015 Alexey Makhalov <amakhalov@vmware.com> 38.0.1-1
 -	initial version

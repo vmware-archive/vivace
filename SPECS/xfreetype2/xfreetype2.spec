@@ -1,5 +1,5 @@
 Summary:	contains functions for rendering various font types, such as TrueType and Type1.
-Name:		freetype2
+Name:		xfreetype2
 Version:	2.5.5
 Release:	1
 License:	(FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
@@ -9,14 +9,14 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/freetype/freetype-%{version}.tar.bz2
 %define sha1 freetype=7b7460ef51a8fdb17baae53c6658fc1ad000a1c2
-BuildRequires:	zlib-devel freetype2-initial harfbuzz-devel
-Requires:	zlib icu harfbuzz
+BuildRequires:	zlib-devel freetype2-initial xharfbuzz-devel
+Requires:	zlib icu xharfbuzz
 %description
 The FreeType2 package contains a library which allows applications to properly render TrueType fonts.
 %package	devel
 Summary:	Header and development files for freetype2
 Requires:	%{name} = %{version}
-Requires:	zlib-devel harfbuzz-devel
+Requires:	zlib-devel xharfbuzz-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

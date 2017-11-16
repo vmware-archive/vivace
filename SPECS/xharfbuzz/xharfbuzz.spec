@@ -1,19 +1,19 @@
 Summary:	OpenType text shaping engine.
-Name:		harfbuzz
-Version:	0.9.40
+Name:		xharfbuzz
+Version:	1.6.3
 Release:	1
 License:	MIT
 URL:		http://www.freedesktop.org
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://www.freedesktop.org/software/%{name}/release/%{name}-%{version}.tar.bz2
-%define sha1 harfbuzz=b9f546e9625926e32fe4b6da045689b456e77c22
+Source0:	http://www.freedesktop.org/software/harfbuzz/release/harfbuzz-%{version}.tar.bz2
+%define sha1 harfbuzz=11b89febd6fd7225358cd2386b0f9d4e685c10e7
 BuildRequires:	glib-devel icu-devel freetype2-initial 
 # TODO: fix cycle deps harfbuff <-> fretype2
 AutoReq:	no
 Requires:	glib >= 2.48.2
-Requires:   icu
+Requires:       icu
 %description
 The Harfbuzz package contains an OpenType text shaping engine.
 %package	devel
@@ -23,7 +23,7 @@ Requires:	glib-devel icu-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
-%setup -q 
+%setup -qn harfbuzz-%{version} 
 %build
 ./configure --prefix=%{_prefix} --with-gobject
 make %{?_smp_mflags}

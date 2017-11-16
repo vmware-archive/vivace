@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 %define _monodir %{_prefix}/lib/mono
 %define _monogacdir %{_monodir}/gac
 

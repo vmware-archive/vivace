@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 Summary:	Remote Desktop Protocol client. 
 Name:		rdesktop
 Version:	1.8.3

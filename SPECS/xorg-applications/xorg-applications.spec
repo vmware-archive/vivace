@@ -1,7 +1,7 @@
 Summary:	The Xorg applications.
 Name:		xorg-applications
 Version:	7.7
-Release:	1
+Release:	2	
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System
@@ -83,8 +83,8 @@ Source36:	http://ftp.x.org/pub/individual/app/xwininfo-1.1.3.tar.bz2
 %define sha1 xwininfo=179253e6b8266bc3e3b6496964077c9cdcb2dcba
 Source37:	http://ftp.x.org/pub/individual/app/xwud-1.0.4.tar.bz2
 %define sha1 xwud=786cd4b18bf576fae3ffd417545b1394b27c7f06
-BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel freetype2-devel libXau-devel
-Requires:	libpng mesa xcb-util libfontenc libXfont libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv freetype2 libXau
+BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel xfreetype2-devel libXau-devel
+Requires:	libpng mesa xcb-util libfontenc libXfont libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv xfreetype2 libXau
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations. 
 %prep
@@ -123,5 +123,7 @@ done
 %exclude %{_libdir}/debug/
 %exclude %{_prefix}/src/
 %changelog
+*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 7.7-2
+-	Updated build requires & requires to build with Photon 2.0
 *	Wed May 20 2015 Alexey Makhalov <amakhalov@vmware.com> 7.7-1
 -	initial version
