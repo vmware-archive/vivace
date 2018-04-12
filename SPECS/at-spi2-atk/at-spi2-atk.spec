@@ -16,6 +16,7 @@ The At-Spi2 Atk package contains a library that bridges ATK to At-Spi2 D-Bus ser
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	at-spi2-core-devel atk-devel glib-devel libX11-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep

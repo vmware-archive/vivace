@@ -32,11 +32,13 @@ make DESTDIR=%{buildroot} install
 %exclude %{_libdir}/debug/
 %exclude %{_libdir}/*.a
 %exclude %{_libdir}/*.la
+%exclude %{_libdir}/pkgconfig/*.pc
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.a
 %{_libdir}/*.la
+%{_libdir}/pkgconfig/*.pc
 %changelog
 *	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.5.1-2
 -	Updated build requires & requires to build with Photon 2.0

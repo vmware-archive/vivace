@@ -18,14 +18,14 @@ BuildRequires:  gcc gtk-doc
 BuildRequires:  ruby bash 
 BuildRequires:  gobject-introspection-devel
 BuildRequires:  gperf
-BuildRequires:  libjpeg-turbo-devel
+BuildRequires:  libjpeg-turbo-devel icu-devel
 BuildRequires:  libsoup-devel libX11-devel
-BuildRequires:  libxslt libXcomposite-devel
-BuildRequires:  sqlite
-Requires:	gstreamer-plugins-base
+BuildRequires:  libxslt-devel libXcomposite-devel
+BuildRequires:  sqlite-devel
+Requires:	gstreamer-plugins-base icu
 Requires:	libsoup
 Requires:	libjpeg-turbo
-Requires:	sqlite
+Requires:	sqlite-libs
 Requires:	gtk3
 Requires:	libxslt
 Requires:	gtk2

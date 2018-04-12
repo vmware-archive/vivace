@@ -23,7 +23,7 @@ It contains the libraries and header files to create applications
 %setup -q
 %build
 sed -i '/DG_DISABLE_DEPRECATED/d' glade/Makefile.in
-./configure --prefix=%{_prefix} --disable-static
+%configure --disable-static
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

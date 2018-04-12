@@ -16,6 +16,7 @@ The At-Spi2 Core package is a part of the GNOME Accessibility Project. It provid
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
+Requires:	glib-devel dbus-devel libX11-devel libXtst-devel libXext-devel libXi-devel
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
@@ -35,10 +36,12 @@ make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}
 %{_libexecdir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/*.pc
 %files devel
 %defattr(-,root,root)
 %{_datadir}/*
 %{_includedir}/*
+%{_libdir}/pkgconfig/*.pc
 %changelog
 *	Wed May 27 2015 Alexey Makhalov <amakhalov@vmware.com> 2.16.0-1
 -	initial version

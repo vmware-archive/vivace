@@ -106,7 +106,7 @@ for pkg in `ls` ; do
 	    sed -e 's/\$(CPP) \$(DEFS)/$(CPP) -P $(DEFS)/' -i man/Makefile.in
 	  ;;
 	esac
-	./configure --prefix=%{_prefix}
+	%configure
 	make %{?_smp_mflags}
 	popd
 done

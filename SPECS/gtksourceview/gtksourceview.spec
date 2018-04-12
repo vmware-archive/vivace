@@ -9,8 +9,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://download.gnome.org/sources/%{name}/3.15/%{name}-%{version}.tar.xz
 %define sha1 gtksourceview=c21504eb566d954c27520902a3350dea3aecf510
-BuildRequires:	gobject-introspection-devel gobject-introspection-python intltool libxml2-devel glib-devel glibc-devel gtk2-devel gtk3-devel xpango-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libX11-devel libXrender-devel libXext-devel xharfbuzz-devel python2-devel cracklib-python
-Requires:	atk gdk-pixbuf xpango glib libX11 libXext libXinerama libXrender gobject-introspection xpango xcairo gdk-pixbuf atk pixman libpng libX11 libXrender libXext xharfbuzz python2
+BuildRequires:	gobject-introspection-devel gobject-introspection-python intltool libxml2-devel glib-devel glibc-devel gtk2-devel gtk3-devel xpango-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libX11-devel libXrender-devel libXext-devel harfbuzz-devel python2-devel cracklib-python
+Requires:	atk gdk-pixbuf xpango glib libX11 libXext libXinerama libXrender gobject-introspection xpango xcairo gdk-pixbuf atk pixman libpng libX11 libXrender libXext harfbuzz python2
 %description
 GtkSourceView is a portable C library that extends the standard GTK+ framework for multiline text editing with support for configurable syntax highlighting, unlimited undo/redo, search and replace, a completion framework, printing and other features typical of a source code editor. 
 %package	devel

@@ -25,6 +25,7 @@ library.
 %setup -q
 %build
 ./configure --prefix=%{_prefix} \
+	    --disable-static \
             --disable-lua
 make %{?_smp_mflags}
 %install
@@ -32,6 +33,7 @@ make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*
+%exclude %{_libdir}/debug/
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)

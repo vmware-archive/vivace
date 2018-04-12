@@ -26,7 +26,7 @@ Python bindings for GLib and GObject.
 %setup -q -n pygobject-%{version}
 %patch0 -p1
 %build
-./configure --prefix=%{_prefix} --disable-cairo --without-cairo --disable-introspection
+%configure --disable-cairo --without-cairo --disable-introspection
 make
 
 %install

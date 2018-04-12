@@ -1,0 +1,40 @@
+From 0fb5d13b678e57ba29bcd324fd5a55c4edb9fcb6 Mon Sep 17 00:00:00 2001
+From: Tarell Ware <TarellWare@gmx.com>
+Date: Fri, 13 Jan 2017 10:07:07 -0600
+Subject: [PATCH] Force GCC to emit memset() before construction chain.
+
+https://gcc.gnu.org/gcc-6/porting_to.html
+
+"An object's constructor begins the lifetime of a new object
+at the relevant memory location, so any stores to that memory
+location which happen before the constructor are considered
+'dead stores' and so can be optimized away."
+
+We can force GCC to allow these stores by tagging the code
+called by operator new with "no-lifetime-dse".
+
+This is important for firefox because large parts of its shell
+objects fail to initialize pointers and other POD members in
+their constructors. Normally one would provide initializers
+for these members, but firefox avoids this by zero'ing the
+memory returned by operator new.
+---
+ layout/base/nsIPresShell.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/layout/base/nsIPresShell.h b/layout/base/nsIPresShell.h
+index aff1ac818..a219baac7 100644
+--- a/layout/base/nsIPresShell.h
++++ b/layout/base/nsIPresShell.h
+@@ -224,7 +224,7 @@ public:
+    * to the same aSize value.  AllocateFrame returns zero-filled memory.
+    * AllocateFrame is infallible and will abort on out-of-memory.
+    */
+-  void* AllocateFrame(nsQueryFrame::FrameIID aID, size_t aSize)
++  void* __attribute__((optimize("no-lifetime-dse"))) AllocateFrame(nsQueryFrame::FrameIID aID, size_t aSize)
+   {
+     void* result = mFrameArena.AllocateByFrameID(aID, aSize);
+     RecordAlloc(result);
+-- 
+2.11.0
+

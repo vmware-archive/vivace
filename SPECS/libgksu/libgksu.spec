@@ -10,9 +10,9 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://people.debian.org/~kov/gksu/libgksu-2.0.12.tar.gz
 Patch0:		autoreconf-fix.patch
-%define sha1 libgksu=d895618aba15804bc9f163c3aad29c3243432132
-BuildRequires:	libgtop-devel gtk2-devel libgnome-keyring-devel GConf-devel startup-notification-devel gtk-doc 
-Requires:	gtk2 libgtop libgnome-keyring GConf startup-notification    
+%define sha1 libgksu=81a541ccfe9ea278dd3e2a80b3287f02f6eb88f8
+BuildRequires:	libgtop-devel gtk2-devel libgnome-keyring-devel GConf-devel startup-notification-devel gtk-doc intltool
+Requires:	gtk2 libgtop libgnome-keyring GConf startup-notification 
 %description
 GKSu is a library that provides a Gtk+ frontend to su and sudo. It supports login shells and preserving environment when acting as a su frontend.
 
@@ -33,6 +33,7 @@ autoreconf -vif
 	    --disable-static \
 		--disable-option-checking
 sed -i 's#        if test -z \"$(DES#\tif test -z \"$(DES#g' Makefile
+sed -i '/@INTLTOOL_SCHEMAS_RULE@/d' Makefile
 make
 %install
 make DESTDIR=%{buildroot} install

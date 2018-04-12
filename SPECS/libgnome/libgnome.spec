@@ -24,10 +24,8 @@ It contains the libraries and header files to create applications
 %setup -q
 %patch0 -p0
 %build
-./configure --prefix=%{_prefix} \
-            --sysconfdir=/etc/gnome/2.30.2 \
+%configure  --sysconfdir=/etc/gnome/2.30.2 \
             --localstatedir=/var/lib       \
-	    --mandir=%{_prefix}/share/man  \
 	    --disable-canberra
 make %{?_smp_mflags}
 %install

@@ -10,7 +10,8 @@ Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/app/%{name}-%{version}.tar.bz2
 %define sha1 xinit=de3469080d73ced1f7d7a1803e813bc6ea352072
 BuildRequires:	libX11-devel
-Requires:	libX11 twm xclock xterm xf86-input-evdev xf86-video-intel xf86-input-vmmouse xf86-video-vmware xf86-video-fbdev
+#Requires:	libX11 twm xclock xterm xf86-input-evdev xf86-video-intel xf86-input-vmmouse xf86-video-vmware xf86-video-fbdev
+Requires:	libX11 twm xclock xterm xf86-input-evdev xf86-video-fbdev
 %description
 The xinit package contains a usable script to start the xserver.
 %prep

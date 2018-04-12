@@ -89,7 +89,7 @@ The Xorg font packages provide needed fonts to the Xorg applications.
 %build
 for pkg in `ls` ; do
 	pushd $pkg
-	./configure --prefix=%{_prefix}
+	%configure
 	make %{?_smp_mflags}
 	popd
 done

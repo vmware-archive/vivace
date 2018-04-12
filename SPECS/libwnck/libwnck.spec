@@ -24,8 +24,7 @@ library.
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} \
-            --disable-static \
+%configure  --disable-static \
 	    --program-suffix=-1
 make %{?_smp_mflags} GETTEXT_PACKAGE=libwnck-1
 %install

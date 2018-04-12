@@ -17,8 +17,7 @@ ZThe GNOME MIME Data package contains the base set of file types and application
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} \
-            --sysconfdir=/etc/gnome/2.30.2
+%configure --sysconfdir=/etc/gnome/2.30.2
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

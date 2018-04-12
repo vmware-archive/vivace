@@ -22,8 +22,7 @@ Include Files and Libraries for Development
 %prep
 %setup -q 
 %build
-./configure --prefix=%{_prefix}	\
-	    --disable-static
+%configure --disable-static
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

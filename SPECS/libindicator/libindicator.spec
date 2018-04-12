@@ -24,11 +24,15 @@ It contains the libraries and header files to create applications
 %setup -q
 %build
 export CFLAGS="%{optflags} -Wno-error=deprecated-declarations"
+sed -i '/^]$/d' configure
 ./configure --prefix=%{_prefix}                 \
             --sysconfdir=%{_sysconfdir}         \
             --disable-static			\
 	    --with-gtk=3
-
+sed -i 's/lglib-2.0-lm/lglib-2.0 -lm/g' Makefile
+sed -i 's/lglib-2.0-lm/lglib-2.0 -lm/g' libindicator/Makefile
+sed -i 's/lglib-2.0-lm/lglib-2.0 -lm/g' tests/Makefile
+sed -i 's/lglib-2.0-lm/lglib-2.0 -lm/g' tools/Makefile
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

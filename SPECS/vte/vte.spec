@@ -22,8 +22,7 @@ It contains the header files to create applications
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} \
-            --libexecdir=%{_libdir}/vte \
+%configure  --libexecdir=%{_libdir}/vte \
 	    --disable-static
 make %{?_smp_mflags}
 %install

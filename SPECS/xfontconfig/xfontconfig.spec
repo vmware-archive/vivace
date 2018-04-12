@@ -34,6 +34,8 @@ make %{?_smp_mflags}
 make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}
 %install
 make DESTDIR=%{buildroot} install
+find %{buildroot} -name '*.la' -delete
+find %{buildroot} -name '*.a' -delete
 %files
 %defattr(-,root,root)
 %{_prefix}/*
@@ -42,9 +44,11 @@ make DESTDIR=%{buildroot} install
 %exclude %{_libdir}/debug/
 %exclude %{_includedir}/
 %exclude %{_prefix}/src/
+%exclude %{_libdir}/pkgconfig/*.pc
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/*.pc
 %changelog
 *	Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 2.11.1-1
 -	initial version

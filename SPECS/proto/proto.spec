@@ -71,7 +71,7 @@ The Xorg protocol headers provide the header files required to build the system,
 %build
 for pkg in `ls` ; do
 	pushd $pkg
-	./configure --prefix=%{_prefix}
+	%configure
 	popd
 done
 %install

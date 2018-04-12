@@ -1,14 +1,14 @@
 Summary:	ALSA library.
 Name:		alsa-lib
-Version:	1.0.29
+Version:	1.1.5
 Release:	1
 License:	LGPLv2+
 URL:		http://alsa-project.org
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://alsa.cybermirror.org/lib/%{name}-%{version}.tar.bz2
-%define sha1 alsa-lib=9b81d20417170db2a91452bfe537d0893ef4df89
+Source0:	ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.5.tar.bz2
+%define sha1 alsa-lib=636ac0b2b759108ca9b0f4efa1c3e8650cf9c9f6
 BuildRequires:	python2-devel python2-libs
 Requires:	python2
 %description

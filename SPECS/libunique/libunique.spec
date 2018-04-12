@@ -28,8 +28,7 @@ library.
 %build
 # current configure uses old auto tools
 autoreconf --install
-./configure --prefix=%{_prefix} \
-	    --disable-static \
+%configure  --disable-static \
 	    --disable-dbus
 make %{?_smp_mflags}
 %install

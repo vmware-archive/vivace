@@ -10,8 +10,8 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/5.2/%{name}-%{version}.t
 
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel itstool xpango-devel libtool desktop-file-utils openssl-devel python2-devel cracklib-python python2-libs python2-tools python2 libgnome-keyring-devel gobject-introspection gobject-introspection-python gobject-introspection-devel autoconf libgcrypt-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel scrollkeeper libxslt ncurses-devel readline-devel groff libpng-devel libXrender-devel libXext-devel libX11-devel xharfbuzz-devel sqlite 
-Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 xharfbuzz gobject-introspection
+BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel libxml2-devel itstool xpango-devel libtool desktop-file-utils openssl-devel python2-devel cracklib-python python2-libs python2-tools python2 libgnome-keyring-devel gobject-introspection gobject-introspection-python gobject-introspection-devel autoconf libgcrypt-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel scrollkeeper libxslt ncurses-devel readline-devel groff libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel sqlite 
+Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 harfbuzz gobject-introspection
 %description
 The GNOME-DB aims to provide a free unified data access architecture. GNOME-DB is useful for any application that accesses persistent data (not only databases, but data), since it now contains a pretty good data management API.
 %package devel

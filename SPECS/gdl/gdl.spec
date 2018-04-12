@@ -9,8 +9,8 @@ Source0:	http://ftp.acc.umu.se/pub/gnome/sources/%{name}/3.16/%{name}-%{version}
 %define sha1 gdl=bdbf9e4c754b6f3cad12f7027182751db591f1a5
 Vendor:		VMware, Inc.
 Distribution:	Photon
-BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel xpango-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel xharfbuzz-devel
-Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 xharfbuzz
+BuildRequires:	gtk2-devel gtk3-devel intltool glib-devel cracklib-python libxml2-devel xpango-devel xcairo-devel gdk-pixbuf-devel atk-devel pixman-devel libpng-devel libXrender-devel libXext-devel libX11-devel harfbuzz-devel
+Requires:	dbus glib libxml2 xpango xcairo pixman libpng libXrender libXext libX11 harfbuzz
 %description
 GDL is the Gnome Development/Docking Library.
 %package	devel

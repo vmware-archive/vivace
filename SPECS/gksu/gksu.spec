@@ -22,8 +22,7 @@ gksu is a library and application used to ask the user for passwords to run prog
 %prep
 %setup -q 
 %build
-./configure --prefix=%{_prefix}	\
-	    --disable-static \
+%configure --disable-static \
 		--enable-nautilus-extension=no
 make %{?_smp_mflags}
 %install

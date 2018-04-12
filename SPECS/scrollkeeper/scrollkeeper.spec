@@ -18,8 +18,7 @@ ScrollKeeper is a cataloging system for documentation on open systems. It manage
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} \
-            --sysconfdir=%{_sysconfdir}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install 
@@ -29,10 +28,10 @@ make DESTDIR=%{buildroot} install
 %{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug
-/usr/man
-%{_datadir}/
-%{_sysconfdir}/
-/usr/var
+%{_mandir}/*
+%{_datadir}/*
+%{_sysconfdir}/*
+%{_localstatedir}/*
 
 %changelog
 *	Mon Jun 29 2015 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 0.3.14-1

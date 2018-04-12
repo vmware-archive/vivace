@@ -1,7 +1,7 @@
 Summary:	dock, panel, desklet.
 Name:		cairo-dock
 Version:	3.4.0
-Release:`	2	
+Release:	2	
 License:	LGPLv2+
 URL:		http://glx-dock.org/
 Group:		User Interface/Desktops

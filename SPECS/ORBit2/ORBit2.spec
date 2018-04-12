@@ -22,9 +22,7 @@ It contains the libraries and header files to create applications
 %prep
 %setup -q
 %build
-#ac_cv_cflags_gcc_option__Werror_implicit_function_declaration=no
-./configure --prefix=%{_prefix} \
-            --sysconfdir=/etc/gnome/2.30.2
+%configure --sysconfdir=/etc/gnome/2.30.2
 sed 's/-DG_DISABLE_DEPRECATED//' -i linc2/src/Makefile
 make %{?_smp_mflags}
 %install

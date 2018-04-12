@@ -9,15 +9,15 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://downloads.sourceforge.net/lxde/%{name}-%{version}.tar.xz
 %define sha1 lxpanel=bfaf34b2574b02b9703777904e658ed082cf17dd
-BuildRequires:	lxmenu-data menu-cache-devel gtk2-devel libfm-devel libwnck-devel keybinder-devel
-Requires:	lxmenu-data menu-cache gtk2 libfm libwnck keybinder
+BuildRequires:	lxmenu-data menu-cache-devel gtk2-devel libfm-devel libwnck-devel keybinder-devel libxml2-devel
+Requires:	lxmenu-data menu-cache gtk2 libfm libwnck keybinder libxml2
 %description
 The LXPanel package contains a lightweight X11 desktop panel.
 %package 	devel
 Group:          Development/Libraries
 Summary:        Headers and static lib for application development
 Requires:	%{name} = %{version}
-Requires:	gtk2-devel libfm-devel libwnck-devel keybinder-devel
+Requires:	gtk2-devel libfm-devel libwnck-devel keybinder-devel libxml2-devel
 %description 	devel
 Install this package if you want do compile applications using the pcre
 library.
@@ -33,6 +33,7 @@ make DESTDIR=%{buildroot} install
 %{_sysconfdir}/*
 %{_bindir}/*
 %{_libdir}/*
+%exclude %{_libdir}/debug/
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)

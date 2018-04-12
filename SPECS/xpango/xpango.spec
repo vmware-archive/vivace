@@ -9,8 +9,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pango/1.36/pango-%{version}.tar.xz
 %define sha1 pango=59dcae113b6504e16647e966d88a588285e7132b
-BuildRequires:	xcairo-devel libXft-devel xharfbuzz-devel xharfbuzz gobject-introspection-devel gobject-introspection-python xfontconfig-devel xfreetype2-devel xfontconfig
-Requires:	xcairo xfreetype2 xharfbuzz libXft gobject-introspection xfontconfig
+BuildRequires:	xcairo-devel libXft-devel harfbuzz-devel gobject-introspection-devel gobject-introspection-python xfontconfig-devel xfreetype2-devel xfontconfig
+Requires:	xcairo xfreetype2 harfbuzz libXft gobject-introspection xfontconfig
 %description
 Pango is a library for laying out and rendering of text, with an emphasis on internationalization. It can be used anywhere that text layout is needed, though most of the work on Pango so far has been done in the context of the GTK+ widget toolkit.
 %package	devel 

@@ -1,27 +1,31 @@
-%global debug_package %{nil}
+#%global debug_package %{nil}
 Summary:	Firefox is a stand-alone browser based on the Mozilla codebase.
 Name:		firefox
-Version:	41.0
+Version:	51.0.1
 Release:	1
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/firefox
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	https://ftp.mozilla.org/pub/mozilla.org/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.xz
-%define sha1 firefox=0ce7a5ccdf671a6c98eaac07d06d49a895a99449
+Source0:	https://ftp.mozilla.org/pub/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.xz
+%define sha1 firefox=b73255fd4f90fd0c1b107b566679da2df3f31cf1
 Source1:        %{name}.desktop
-Patch0:		fix_icu_vernum_firefox.patch
-Patch1:		firefox-build-with-gcc6.patch
+Patch0:         Build-Skia-NEON-code-on-arm64.patch
+#Patch1:         Disable-gcc-lifetime-dead-store-elimination-for-operator-new.patch
+#Patch0:		fix_icu_vernum_firefox.patch
+#Patch1:		firefox-build-with-gcc6.patch
+#Patch2:		aarch64-no-static-sizes.patch
 BuildRequires:	GConf-devel libevent-devel GConf autoconf213 gtk2-devel which python2-devel python2-libs unzip zip nspr-devel nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils
 Requires:	gtk2 nspr nss icu libevent zlib GConf yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
 %description
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep
-%setup -q -n mozilla-release
+%setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
+#%patch2 -p0
 %build
 cat > mozconfig << "EOF"
 # If you have a multicore machine, all cores will be used by default.
@@ -37,15 +41,8 @@ ac_add_options --disable-dbus
 # this line
 ac_add_options --disable-necko-wifi
 
-# If you have installed libnotify comment out this line:
-ac_add_options --disable-libnotify
-
-# GStreamer is necessary for H.264 video playback in HTML5 Video Player;
-# to be enabled, also remember to set "media.gstreamer.enabled" to "true"
-# in about:config. If you have GStreamer 1.x.y, comment out this line and
-# uncomment the following one:
-ac_add_options --disable-gstreamer
-#ac_add_options --enable-gstreamer=1.0
+# Uncomment this option if you wish to build with gtk+-2
+ac_add_options --enable-default-toolkit=cairo-gtk2
 
 # Uncomment these lines if you have installed optional dependencies:
 #ac_add_options --enable-system-hunspell
@@ -53,10 +50,23 @@ ac_add_options --disable-gstreamer
 
 # Comment out following option if you have PulseAudio installed
 ac_add_options --disable-pulseaudio
+#ac_add_options --enable-alsa
+
+
+# If you have installed GConf, comment out this line
+ac_add_options --disable-gconf
+
+# Stylo is the new CSS code, including the rust 'style'
+# package. It is enabled by default but requires clang.
+# Uncomment this if you do not wish to use stylo.
+#ac_add_options --disable-stylo
 
 # Comment out following options if you have not installed
 # recommended dependencies:
+# configure: error: System SQLite library is not compiled with SQLITE_SECURE_DELETE. 
+#ac_add_options --enable-system-sqlite
 ac_add_options --with-system-libevent
+#ac_add_options --with-system-libvpx
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
 ac_add_options --with-system-icu
@@ -69,17 +79,21 @@ ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --disable-tests
 
-ac_add_options --enable-optimize
-ac_add_options --enable-strip
-ac_add_options --enable-install-strip
+ac_add_options --disable-strip
+ac_add_options --disable-install-strip
 
 ac_add_options --enable-gio
 ac_add_options --enable-official-branding
 ac_add_options --enable-safe-browsing
 ac_add_options --enable-url-classifier
 
+# Optimization for size is broken with gcc7 and gcc6 for aarch64
+# Build with gcc>=5 requires -fno-lifetime-dse
+ac_add_options --enable-optimize="-O2 -fno-lifetime-dse"
+
 # From firefox-40, using system cairo causes firefox to crash
 # frequently when it is doing background rendering in a tab.
+# This appears to again work in firefox-56
 #ac_add_options --enable-system-cairo
 ac_add_options --enable-system-ffi
 ac_add_options --enable-system-pixman
@@ -88,10 +102,14 @@ ac_add_options --with-pthreads
 
 ac_add_options --with-system-bz2
 ac_add_options --with-system-jpeg
+# configure: error: System PNG library is not compiled with APNG. 
+#ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
+# libevent changed macros names in v 2.1
+sed -i 's/_EVENT_SIZEOF/EVENT__SIZEOF/' ipc/chromium/src/base/message_pump_libevent.cc
 # Firefox build is multithreaded by itself
 export AUTOCONF=/usr/bin/autoconf2.13 &&
 make -f client.mk

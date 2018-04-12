@@ -11,8 +11,8 @@ Source0:	https://download.gnome.org/sources/%{name}/0.9/%{name}-%{version}.tar.x
 
 Patch0:		nemiver_fix_bool_conversion.patch
 %define sha1 nemiver=72e305179b541e7c3209fae5f8c59a39a2644e90
-BuildRequires:	sqlite-devel gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel systemd-devel libgtop-devel alsa-lib-devel libgnome-keyring-devel boost-devel python2-libs python2-devel xharfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
-Requires:	sqlite libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 xharfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo systemd libart_lgpl binutils gdl gtksourceviewmm gdb libgtop boost
+BuildRequires:	sqlite-devel gnome-vfs-devel pkg-config perl desktop-file-utils libgnomeui-devel gdb libgnome-devel gettext dbus libgnome glib-devel gtk3-devel systemd-devel libgtop-devel alsa-lib-devel libgnome-keyring-devel boost-devel python2-libs python2-devel harfbuzz-devel itstool pixman-devel GConf-devel vte290-devel popt-devel libbonobo-devel libart_lgpl-devel libbonoboui-devel scrollkeeper libglade-devel perl pcre-devel binutils-devel gdl-devel libgda-devel gtksourceview gtksourceviewmm-devel 
+Requires:	sqlite libgnome glib  alsa-lib libgda vte290 pixman openssl gtk3 libgnomeui python2 harfbuzz libgnomecanvas libgnome-keyring GConf popt libbonobo systemd libart_lgpl binutils gdl gtksourceviewmm gdb libgtop boost
 
 %description
 Nemiver is an on going effort to write an easy to use standalone C/C++ debugger that integrates well in the GNOME environment.

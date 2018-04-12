@@ -16,7 +16,7 @@ The xbitmaps package contains bitmap images used by multiple applications for X.
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 %install
 make DESTDIR=%{buildroot} install
 %files

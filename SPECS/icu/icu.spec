@@ -29,10 +29,12 @@ make DESTDIR=%{buildroot} install
 %{_sbindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/*.pc
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_datadir}/*
+%{_libdir}/pkgconfig/*.pc
 %changelog
 *	Fri May 22 2015 Alexey Makhalov <amakhalov@vmware.com> 55.1-1
 -	initial version

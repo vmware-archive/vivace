@@ -22,7 +22,7 @@ Python bindings for GTK.
 %setup -q
 
 %build
-./configure --prefix=%{_prefix}
+%configure
 make
 
 %install

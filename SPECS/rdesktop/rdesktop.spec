@@ -17,8 +17,7 @@ rdesktop is an open source client for Windows Remote Desktop Services, capable o
 %prep
 %setup -q 
 %build
-./configure 	--prefix=%{_prefix} \
-		--disable-credssp \
+%configure 	--disable-credssp \
 		--disable-smartcard
 make %{?_smp_mflags}
 %install

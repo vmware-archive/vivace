@@ -6,7 +6,7 @@ License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org
 Source:		%{name}-%{version}.tar.xz
-%define sha1 vivace-release=ba6541bbb76b9ebc274111da4aaff41ecf668d58
+%define sha1 vivace-release=74c54070f45cb689e0d62ac00859a831196476f8
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vivace-release
