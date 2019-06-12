@@ -1,7 +1,7 @@
 Summary:	X11 libXv runtime library.
 Name:		libXv
 Version:	1.0.10
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

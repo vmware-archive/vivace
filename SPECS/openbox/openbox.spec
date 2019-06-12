@@ -1,7 +1,7 @@
 Summary:	highly configurable desktop window manager.
 Name:		openbox
 Version:	3.5.2
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://openbox.org
 Group:		User Interface/Desktops

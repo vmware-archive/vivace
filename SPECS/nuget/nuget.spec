@@ -4,7 +4,7 @@
 Summary:	Package manager for NuGet repositories.
 Name:		nuget
 Version:	2.8.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://nuget.org
 Group:		Applications/Internet

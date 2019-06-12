@@ -1,7 +1,7 @@
 Summary:	GStreamer streaming media framework plug-ins
 Name:		gstreamer-plugins-base
 Version:	1.5.1
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://gstreamer.freedesktop.org/
 Group:		Applications/Multimedia

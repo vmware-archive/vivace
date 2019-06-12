@@ -1,7 +1,7 @@
 Summary:	MIME database
 Name:		shared-mime-info
 Version:	1.4
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://freedesktop.org
 Group:		Applications/Internet

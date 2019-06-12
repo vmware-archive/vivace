@@ -1,7 +1,7 @@
 Summary:	Lightweight task manager
 Name:		lxtask
 Version:	0.1.6
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries

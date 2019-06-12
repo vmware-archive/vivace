@@ -1,7 +1,7 @@
 Summary:	LXDE Terminal Emulator
 Name:		lxterminal
 Version:	0.2.0
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries

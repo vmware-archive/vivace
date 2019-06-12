@@ -1,7 +1,7 @@
 Summary:	GUI library.
 Name:		gtk2
 Version:	2.24.30
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://www.gtk.org
 Group:		System Environment/Libraries

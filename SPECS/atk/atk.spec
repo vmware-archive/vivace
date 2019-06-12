@@ -1,7 +1,7 @@
 Summary:	Accessibility interfaces to have full access to view and control running applications.
 Name:		atk
 Version:	2.16.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Group:		System Environment/Libraries

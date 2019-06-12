@@ -1,7 +1,7 @@
 Summary:	Nemiver graphical debugger
 Name:		nemiver
 Version:	0.9.6
-Release:	1
+Release:	1%{?dist}
 License:	GPL
 URL:		https://wiki.gnome.org/Apps/Nemiver/
 Group:		Development/Debuggers

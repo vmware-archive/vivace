@@ -3,7 +3,7 @@
 Summary:	X.Org Video Driver for Intel integrated video cards
 Name:		xf86-video-intel
 Version:	2.99.917 
-Release:	1
+Release:	1%{?dist}
 License:	MIT 
 URL:		http://www.x.org/wiki/IntelGraphicsDriver/
 Group:		Development/Libraries

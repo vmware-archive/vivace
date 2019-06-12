@@ -1,7 +1,7 @@
 Summary:	Atkmm is the official C++ interface for the ATK accessibility toolkit library. 
 Name:		atkmm
 Version:	2.24.2
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	The Pixman package contains a library that provides low-level pixel manipulation features such as image compositing and trapezoid rasterization. 
 Name:		pixman
 Version:	0.32.6
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://cairographics.org/
 Group:		Development/System

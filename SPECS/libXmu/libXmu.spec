@@ -1,7 +1,7 @@
 Summary:	X11 libXmu runtime library.
 Name:		libXmu
 Version:	1.1.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

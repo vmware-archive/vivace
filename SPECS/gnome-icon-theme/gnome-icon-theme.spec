@@ -1,7 +1,7 @@
 Summary:	The GNOME Icon Theme package contains an assortment of non-scalable icons of different sizes and themes. 
 Name:		gnome-icon-theme
 Version:	3.12.0
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://gnome-look.org
 Group:		System/GUI/GNOME

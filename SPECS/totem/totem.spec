@@ -1,7 +1,7 @@
 Summary:	A video playback application designed to work with GNOME 3.
 Name:           totem
 Version:        3.10.1
-Release:       	2 
+Release:       	2%{?dist}
 License:        GPLV2+
 Url:		https://wiki.gnome.org/Apps/Videos
 Group:		Productivity/Multimedia/Video/Players

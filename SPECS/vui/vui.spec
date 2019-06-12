@@ -1,7 +1,7 @@
 Summary:	Metapackage for Vivace User Interface
 Name:		vui
 Version:	0.1
-Release:	1
+Release:	1%{?dist}
 License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org

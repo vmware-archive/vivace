@@ -1,7 +1,7 @@
 Summary:	Text file format converters.
 Name:		dos2unix
 Version:	7.2.2
-Release:	1
+Release:	1%{?dist}
 License:	BSD
 URL:		http://waterlan.home.xs4all.nl/dos2unix.html
 Group:		Applications/Text

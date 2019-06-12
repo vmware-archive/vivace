@@ -1,7 +1,7 @@
 Summary:	library and tools used to manipulate SVG images.
 Name:		librsvg
 Version:	2.40.9
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org/
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	X11 Composite Extension library.
 Name:		libXcomposite
 Version:	0.4.4
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	X11 Xfont runtime library.
 Name:		libXfont
 Version:	1.5.1
-Release:	2	
+Release:	2%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

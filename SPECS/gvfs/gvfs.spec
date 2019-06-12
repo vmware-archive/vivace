@@ -1,7 +1,7 @@
 Summary:	Userspace Virtual File System
 Name:		gvfs
 Version:	1.22.4
-Release:	1
+Release:	1%{?dist}
 License:	GPLv3 and LGPLv2+ and BSD and MPLv2.0
 URL:		http://gnome.org
 Group:		System Environment/Libraries

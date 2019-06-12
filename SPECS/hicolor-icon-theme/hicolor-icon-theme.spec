@@ -1,7 +1,7 @@
 Summary:	hicolor icon theme.
 Name:		hicolor-icon-theme
 Version:	0.15
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://icon-theme.freedesktop.org/wiki/HicolorTheme
 Group:		User Interface/Desktops

@@ -1,7 +1,7 @@
 Summary:	library and support programs used for configuring and customizing font access.
 Name:		xfontconfig
 Version:	2.11.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT and Public Domain and UCD
 URL:		http://fontconfig.org/
 Group:		System Environment/Libraries

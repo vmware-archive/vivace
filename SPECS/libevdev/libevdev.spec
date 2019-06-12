@@ -1,7 +1,7 @@
 Summary:	The Libevdev package contains common functions for Xorg input drivers.
 Name:		libevdev
 Version:	1.4.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.freedesktop.org/
 Group:		Development/Libraries

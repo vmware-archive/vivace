@@ -1,7 +1,7 @@
 Summary:	Vivace release files
 Name:		vivace-release
 Version:	0.2
-Release:	1
+Release:	1%{?dist}
 License:	Apache License
 Group:		System Environment/Base
 URL:		http://photon.org

@@ -1,7 +1,7 @@
 Summary:	The libfm package contains a library used to develop file managers providing some file management utilities.
 Name:		libfm
 Version:	1.2.3
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://downloads.sourceforge.net/pcmanfm
 Group:		User Interface/Desktops

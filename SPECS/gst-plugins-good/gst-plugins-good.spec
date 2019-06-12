@@ -1,7 +1,7 @@
 Summary:	The GStreamer Good Plug-ins is a set of plug-ins considered by the GStreamer developers to have good quality code, correct functionality
 Name:		gst-plugins-good
 Version:	1.5.1 
-Release:	1
+Release:	1%{?dist}
 License:	LGPL
 URL:		http://gstreamer.freedesktop.org/
 Group:		Applications/Multimedia

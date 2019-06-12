@@ -3,7 +3,7 @@
 Summary:	C# bindings for dbus-glib
 Name:		dbus-sharp-glib
 Version:	0.5
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://mono.github.com/dbus-sharp-glib/
 Group:		User Interface/Desktops

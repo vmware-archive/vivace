@@ -1,7 +1,7 @@
 Summary:	library for laying out and rendering of text.
 Name:		xpango
 Version:	1.40.13
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.pango.org
 Group:		System Environment/Libraries

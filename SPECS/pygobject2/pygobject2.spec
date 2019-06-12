@@ -2,7 +2,7 @@
 
 Name:           pygobject2
 Version:        2.28.6
-Release:	1
+Release:	1%{?dist}
 Summary:        Python Bindings for GObject
 Group:          Development/Languages
 License:        LGPLv2+

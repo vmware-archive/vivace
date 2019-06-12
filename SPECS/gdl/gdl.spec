@@ -1,7 +1,7 @@
 Summary:	GDL is the Gnome Development/Docking Library.
 Name:		gdl
 Version:	3.16.0
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2.1+
 URL:		http://gnudatalanguage.sourceforge.net/
 Group:		System/Libraries

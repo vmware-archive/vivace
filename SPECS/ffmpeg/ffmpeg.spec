@@ -1,7 +1,7 @@
 Summary:	FFmpeg is a solution to record, convert and stream audio and video
 Name:		ffmpeg
 Version:	3.4
-Release:	2
+Release:	2%{?dist}
 License:	GPLv2
 URL:		http://ffmpeg.org
 Group:		System Environment/Multimedia

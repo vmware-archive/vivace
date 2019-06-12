@@ -1,7 +1,7 @@
 Summary:	Clutter is a toolkit for creating compelling, dynamic, and portable graphical user interfaces
 Name:		clutter 
 Version:	1.22.4
-Release:        2	
+Release:        2%{?dist}
 License:	LGPLv2.1+
 URL:		https://blogs.gnome.org/clutter/
 Group:		System/Libraries

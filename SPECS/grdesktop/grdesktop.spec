@@ -1,7 +1,7 @@
 Summary:	grdesktop is a GNOME frontend, for the remote desktop client (rdesktop).
 Name:		grdesktop
 Version:	0.23
-Release:	1
+Release:	1%{?dist}
 License:	GPL
 URL:		http://www.nongnu.org/grdesktop/index.html
 Group:		Applications/Communications

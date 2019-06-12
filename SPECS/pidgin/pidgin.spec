@@ -1,7 +1,7 @@
 Summary:	An instant messaging program
 Name:		pidgin 
 Version:	2.10.11
-Release:	1
+Release:	1%{?dist}
 License:	GPL
 URL:		http://anjuta.org/
 Group:		Applications/Internet

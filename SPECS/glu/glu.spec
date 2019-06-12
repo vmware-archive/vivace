@@ -1,7 +1,7 @@
 Summary:	Mesa OpenGL Utility library.
 Name:		glu
 Version:	9.0.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.mesa3d.org/
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	bitmap images for X applications.
 Name:		xbitmaps
 Version:	1.1.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

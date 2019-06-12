@@ -1,7 +1,7 @@
 Summary:	GNOME Menus
 Name:		gnome-menus
 Version:	3.6.0
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

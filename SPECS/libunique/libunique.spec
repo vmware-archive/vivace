@@ -1,7 +1,7 @@
 Summary:	library for writing single instance applications.
 Name:		libunique
 Version:	1.1.6
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Group:		User Interface/Desktops

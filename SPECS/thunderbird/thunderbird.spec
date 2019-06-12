@@ -2,7 +2,7 @@
 Summary:	Stand-alone mail/news client.
 Name:		thunderbird
 Version:	31.7.0
-Release:	2	
+Release:	2%{?dist}
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/thunderbird
 Group:		Applications/Internet

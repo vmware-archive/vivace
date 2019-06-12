@@ -1,7 +1,7 @@
 Summary:	The gtksourceviewmm application is a C++ wrapper for the gtksourceview widget library. 
 Name:		gtksourceviewmm
 Version:	3.18.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPL-2.1+
 URL:		https://developer.gnome.org/gtksourceviewmm/stable/
 Group:		System/Libraries

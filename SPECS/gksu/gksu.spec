@@ -1,7 +1,7 @@
 Summary:	gksu is a library and application used to ask the user for passwords to run programs as root. 
 Name:		gksu 
 Version:	2.0.2
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://www.nongnu.org/gksu/
 Group:		System Environment/Libraries

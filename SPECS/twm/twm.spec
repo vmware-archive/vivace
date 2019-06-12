@@ -1,7 +1,7 @@
 Summary:	A very minimal window manager.
 Name:		twm
 Version:	1.0.9
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

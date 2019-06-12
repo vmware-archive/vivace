@@ -1,7 +1,7 @@
 Summary:	libglade libraries
 Name:		libglade
 Version:	2.6.4
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

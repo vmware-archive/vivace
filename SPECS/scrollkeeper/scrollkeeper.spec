@@ -1,7 +1,7 @@
 Summary:	A cataloging system for documentation on open systems
 Name:           scrollkeeper
 Version:        0.3.14
-Release:        1
+Release:        1%{?dist}
 License:        LGPL
 Url:		http://scrollkeeper.sourceforge.net/index.shtml
 Group:		System Environment/Base

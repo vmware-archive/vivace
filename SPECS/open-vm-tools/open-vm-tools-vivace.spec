@@ -1,7 +1,7 @@
 Summary:	Usermode tools for VmWare virts
 Name:		open-vm-tools-vivace
 Version:	10.0.5
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
 Group:		Applications/System

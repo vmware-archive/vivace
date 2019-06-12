@@ -1,7 +1,7 @@
 Summary:	Lightweight image viewer
 Name:		gpicview
 Version:	0.2.4
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries

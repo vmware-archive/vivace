@@ -1,7 +1,7 @@
 Summary:	configuration database system used by many GNOME applications
 Name:		GConf
 Version:	3.2.5
-Release:        2
+Release:        2%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries
@@ -18,12 +18,11 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	libxml2-devel dbus-glib-devel polkit-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} \
-            --sysconfdir=/etc \
+%configure \
             --libexecdir=/usr/lib/GConf \
 	    --disable-orbit \
 	    --enable-defaults-service \

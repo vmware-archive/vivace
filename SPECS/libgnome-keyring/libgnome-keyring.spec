@@ -1,7 +1,7 @@
 Summary:	GNOME keyring library 
 Name:		libgnome-keyring
 Version:	3.6.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

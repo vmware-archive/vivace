@@ -1,7 +1,7 @@
 Summary:	Lightweight display manager
 Name:		lxdm
 Version:	0.5.3
-Release:	2	
+Release:	2%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		System Environment/Libraries

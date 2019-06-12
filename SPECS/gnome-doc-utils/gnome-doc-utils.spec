@@ -1,7 +1,7 @@
 Summary:	The GNOME Doc Utils
 Name:		gnome-doc-utils
 Version:	0.20.10
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+ and GPLv2+ and GFDL
 URL:		http://gnome.org
 Group:		System Environment/Tools

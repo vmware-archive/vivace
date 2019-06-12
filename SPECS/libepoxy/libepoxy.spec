@@ -1,7 +1,7 @@
 Summary:	library for handling OpenGL function pointer management.
 Name:		libepoxy
 Version:	1.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://crux.nu/
 Group:		System Environment/Libraries

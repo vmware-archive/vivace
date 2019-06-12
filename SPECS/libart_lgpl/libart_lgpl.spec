@@ -1,7 +1,7 @@
 Summary:	The libart is high-performance 2D graphics library
 Name:		libart_lgpl
 Version:	2.3.21
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

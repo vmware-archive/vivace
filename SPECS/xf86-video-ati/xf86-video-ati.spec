@@ -2,7 +2,7 @@
 Summary:	X.Org Video Driver for ATI Radeon video cards
 Name:		xf86-video-ati
 Version:	7.5.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT 
 URL:		http://www.x.org/wiki/radeon/
 Group:		Development/Libraries

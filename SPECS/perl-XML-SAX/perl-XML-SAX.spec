@@ -1,7 +1,7 @@
 Summary:        XML::SAX module
 Name:           perl-XML-SAX
 Version:        0.99
-Release:        1
+Release:        1%{?dist}
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML-SAX

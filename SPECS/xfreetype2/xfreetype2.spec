@@ -1,7 +1,7 @@
 Summary:	contains functions for rendering various font types, such as TrueType and Type1.
 Name:		xfreetype2
 Version:	2.7.1
-Release:	1
+Release:	1%{?dist}
 License:	(FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
 URL:		http://www.freetype.org/
 Group:		System Environment/Libraries

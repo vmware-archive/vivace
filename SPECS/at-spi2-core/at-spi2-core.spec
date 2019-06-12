@@ -1,7 +1,7 @@
 Summary:	Service Provider Interface for the Assistive Technologies.
 Name:		at-spi2-core
 Version:	2.16.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
 Group:		System Environment/Libraries

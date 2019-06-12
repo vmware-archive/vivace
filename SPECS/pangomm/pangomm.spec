@@ -1,7 +1,7 @@
 Summary:	The Pangomm package provides a C++ interface to Pango. 
 Name:		pangomm
 Version:	2.40.1
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://www.pango.org
 Group:		System Environment/Libraries

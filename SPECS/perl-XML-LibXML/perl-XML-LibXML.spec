@@ -1,7 +1,7 @@
 Summary:        XML::LibXML module
 Name:           perl-XML-LibXML
 Version:        2.0121
-Release:        1
+Release:        1%{?dist}
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML

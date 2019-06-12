@@ -1,7 +1,7 @@
 Summary:	The Desktop File Utils package contains command line utilities for working with Desktop entries
 Name:		desktop-file-utils
 Version:	0.22
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://freedesktop.org
 Group:		System Environment/Libraries

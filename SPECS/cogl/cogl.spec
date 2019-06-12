@@ -1,7 +1,7 @@
 Summary:	Cogl is a modern 3D graphics API.
 Name:		cogl
 Version:	1.20.0
-Release: 	2	
+Release: 	2%{?dist}
 License:	LGPLv2.1+
 URL:		http://gnudatalanguage.sourceforge.net/
 Group:		System/Libraries

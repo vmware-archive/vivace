@@ -1,7 +1,7 @@
 Summary:	X11 Xrender runtime library.
 Name:		libXrender
 Version:	0.9.8
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

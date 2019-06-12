@@ -1,7 +1,7 @@
 Summary:	The Clutter Gtk package is a library providing facilities to integrate Clutter into GTK+ applications. 
 Name:		clutter-gtk 
 Version:	1.6.2 
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2.1+
 URL:		https://blogs.gnome.org/clutter/
 Group:		System/Libraries

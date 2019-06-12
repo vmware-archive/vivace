@@ -2,7 +2,7 @@
 Summary:	redglass and whiteglass animated cursor themes.
 Name:		xcursor-themes
 Version:	1.0.4
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

@@ -1,7 +1,7 @@
 Summary:	The libgnomeui package contains GNOME library
 Name:		libgnome
 Version:	2.32.1
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

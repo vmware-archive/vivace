@@ -1,7 +1,7 @@
 Summary:	The xinit package contains a usable script to start the xserver.
 Name:		xinit
 Version:	1.3.4
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

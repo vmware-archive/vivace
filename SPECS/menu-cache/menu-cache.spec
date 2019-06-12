@@ -1,7 +1,7 @@
 Summary:	Libraries for application menus caching.
 Name:		menu-cache
 Version:	1.0.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		User Interface/Desktops

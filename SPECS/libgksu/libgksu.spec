@@ -2,7 +2,7 @@
 Summary:	GKSu is a library that provides a Gtk+ frontend to su and sudo. It supports login shells and preserving environment when acting as a su frontend. 
 Name:		libgksu 
 Version:	2.0.12
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://www.nongnu.org/gksu/
 Group:		System Environment/Libraries

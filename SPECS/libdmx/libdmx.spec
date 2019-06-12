@@ -1,7 +1,7 @@
 Summary:	X11 DMX runtime library.
 Name:		libdmx
 Version:	1.1.3
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

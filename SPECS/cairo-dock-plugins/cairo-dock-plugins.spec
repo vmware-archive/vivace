@@ -1,7 +1,7 @@
 Summary:	Plugins set for cairo-dock.
 Name:		cairo-dock-plugins
 Version:	3.4.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://glx-dock.org/
 Group:		User Interface/Desktops

@@ -1,7 +1,7 @@
 Summary:	X11 font utilities.
 Name:		font-util
 Version:	1.3.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System

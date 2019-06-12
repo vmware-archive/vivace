@@ -1,7 +1,7 @@
 Summary:	provides extension libraries on top of libxcb.
 Name:		xcb-util-renderutil
 Version:	0.3.9
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://xcb.freedesktop.org/
 Group:		Development/Libraries

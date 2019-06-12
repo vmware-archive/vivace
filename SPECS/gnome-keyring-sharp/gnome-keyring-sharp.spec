@@ -1,7 +1,7 @@
 Summary:	Managed Implementation of libgnome-keyring
 Name:		gnome-keyring-sharp
 Version:	1.0.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.mono-project.com/docs/tools+libraries/libraries/
 Group:		Development/Libraries/Other

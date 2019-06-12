@@ -1,7 +1,7 @@
 Summary:	GUI library.
 Name:		gtk3
 Version:	3.20.8 
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://www.gtk.org
 Group:		System Environment/Libraries

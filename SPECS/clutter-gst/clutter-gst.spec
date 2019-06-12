@@ -1,7 +1,7 @@
 Summary:	The Clutter Gst is an integration library for using GStreamer with Clutter.
 Name:		clutter-gst 
 Version:	2.0.14 
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2.1+
 URL:		https://blogs.gnome.org/clutter/
 Group:		System/Libraries

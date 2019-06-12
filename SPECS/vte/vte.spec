@@ -1,7 +1,7 @@
 Summary:	Terminal Emulator Widget
 Name:		vte
 Version:	0.28.2
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Group:		System Environment/Libraries

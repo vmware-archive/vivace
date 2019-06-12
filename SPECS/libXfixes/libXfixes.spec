@@ -1,7 +1,7 @@
 Summary:	X11 XFIXES extension.
 Name:		libXfixes
 Version:	5.0.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

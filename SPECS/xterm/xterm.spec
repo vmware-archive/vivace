@@ -1,7 +1,7 @@
 Summary:	Xterm is a terminal emulator for the X Window System. 
 Name:		xterm
 Version:	318
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://invisible-island.net/
 Group:		Development/Libraries

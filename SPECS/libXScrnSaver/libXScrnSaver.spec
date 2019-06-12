@@ -1,7 +1,7 @@
 Summary:	X11 Screen Saver runtime library.
 Name:		libXScrnSaver
 Version:	1.2.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

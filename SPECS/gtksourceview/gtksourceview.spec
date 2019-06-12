@@ -1,7 +1,7 @@
 Summary:	GtkSourceView is a text widget that extends the standard GTK+ text widget GtkTextView.
 Name:		gtksourceview
 Version:	3.19.4
-Release:	2	
+Release:	2%{?dist}
 License:	LGPL-2.1+
 URL:		https://wiki.gnome.org/Projects/GtkSourceView
 Group:		System/GUI/GNOME

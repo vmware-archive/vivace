@@ -1,7 +1,7 @@
 Summary:	Customized theme for LXDM. 
 Name:		lxdm-themes
 Version:	1
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://gnome-look.org
 Group:		System/GUI/GNOME

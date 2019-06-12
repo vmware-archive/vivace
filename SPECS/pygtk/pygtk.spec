@@ -2,7 +2,7 @@
 
 Name:           pygtk
 Version:        2.24.0
-Release:	1
+Release:	1%{?dist}
 Summary:        Python Bindings for GTK
 Group:          Development/Languages
 License:        LGPLv2+

@@ -1,7 +1,7 @@
 Summary:	m4 macros used by all of the Xorg packages.
 Name:		util-macros
 Version:	1.19.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System

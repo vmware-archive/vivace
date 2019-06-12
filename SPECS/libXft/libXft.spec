@@ -1,7 +1,7 @@
 Summary:	X11 Xft runtime library.
 Name:		libXft
 Version:	2.3.2
-Release:	2	
+Release:	2%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	The libgnomeui package contains GNOME canvas library
 Name:		libgnomecanvas
 Version:	2.30.3
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

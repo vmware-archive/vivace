@@ -1,6 +1,6 @@
 Name:           py2cairo
 Version:        1.10.0
-Release:	1
+Release:	1%{?dist}
 Summary:        Python Bindings for Cairo
 Group:          Development/Languages
 License:        LGPLv2+

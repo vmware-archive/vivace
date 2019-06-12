@@ -2,7 +2,7 @@
 Summary:	provides the XML-XCB protocol descriptions.
 Name:		xcb-proto
 Version:	1.11
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://xcb.freedesktop.org/
 Group:		Development/Libraries

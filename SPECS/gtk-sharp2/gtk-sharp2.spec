@@ -1,7 +1,7 @@
 Summary:	GTK+ and GNOME bindings for Mono
 Name:		gtk-sharp2
 Version:	2.12.26
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://www.monodevelop.com
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	X11 Authorization Protocol library.
 Name:		libXau
 Version:	1.0.8
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

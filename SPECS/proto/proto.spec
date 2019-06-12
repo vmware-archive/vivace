@@ -1,7 +1,7 @@
 Summary:	The Xorg protocol headers.
 Name:		proto
 Version:	7.7
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System

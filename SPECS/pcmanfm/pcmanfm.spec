@@ -1,7 +1,7 @@
 Summary:	PCManFM file manager.
 Name:		pcmanfm
 Version:	1.2.3
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://downloads.sourceforge.net/pcmanfm
 Group:		User Interface/Desktops

@@ -1,7 +1,7 @@
 Summary:	Yasm assembler.
 Name:		yasm
 Version:	1.3.0
-Release:	1
+Release:	1%{?dist}
 License:	BSD
 URL:		http://www.tortall.net/projects/yasm
 Group:		Applications/Internet

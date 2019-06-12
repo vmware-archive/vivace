@@ -1,7 +1,7 @@
 Summary:	The Xorg applications.
 Name:		xorg-applications
 Version:	7.7
-Release:	2	
+Release:	2%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System

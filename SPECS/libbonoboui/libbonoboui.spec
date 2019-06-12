@@ -1,7 +1,7 @@
 Summary:	The Bonobo User Interface library
 Name:		libbonoboui
 Version:	2.24.5
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

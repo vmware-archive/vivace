@@ -1,7 +1,7 @@
 Summary:	Cairo is a 2D graphics library with support for multiple output devices.
 Name:		xcairo
 Version:	1.14.2
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2 or MPLv1.1
 URL:		http://cairographics.org
 Group:		System Environment/Libraries

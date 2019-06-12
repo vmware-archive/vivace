@@ -1,7 +1,7 @@
 Summary:	Window Navigator Construction Kit.
 Name:		libwnck
 Version:	2.30.7
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gnome.org
 Group:		User Interface/Desktops

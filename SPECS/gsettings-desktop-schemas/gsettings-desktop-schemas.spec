@@ -2,7 +2,7 @@
 Summary:	collection of GSettings schemas
 Name:		gsettings-desktop-schemas
 Version:	3.16.1
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	Utilities for parsing and creating messages using the Multipurpose Internet Mail Extension (MIME)
 Name:		gmime
 Version:	2.6.20
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2.1+
 URL:		http://spruce.sourceforge.net/gmime/
 Group:		Productivity/Networking/Email/Utilities

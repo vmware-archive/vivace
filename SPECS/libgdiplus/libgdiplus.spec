@@ -1,7 +1,7 @@
 Summary:	An Open Source implementation of the GDI+ API.
 Name:		libgdiplus
 Version:	3.12
-Release:	2	
+Release:	2%{?dist}
 License:	MIT
 URL:		http://www.mono-project.com
 Group:		Applications/Internet

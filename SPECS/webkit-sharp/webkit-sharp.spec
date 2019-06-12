@@ -1,7 +1,7 @@
 Summary:	A fast, high-quality web browser engine.
 Name:		webkit-sharp
 Version:	0.3
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.mono-project.com/
 Group:		Development/Libraries

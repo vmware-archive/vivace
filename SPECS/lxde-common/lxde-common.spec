@@ -2,7 +2,7 @@
 Summary:	default configuration for LXDE.
 Name:		lxde-common
 Version:	0.99.0
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		User Interface/Desktops

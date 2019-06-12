@@ -1,7 +1,7 @@
 Summary:	A streaming media framework 
 Name:		gstreamer
 Version:	1.5.1
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gstreamer.freedesktop.org/
 Group:		System Environment/Libraries

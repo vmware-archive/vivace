@@ -1,7 +1,7 @@
 Summary:	Library for encoding video streams into the H.264/MPEG-4 AVC format
 Name:		x264
 Version:	20170822
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2
 URL:		http://www.videolan.org/vlc
 Group:		System Environment/Multimedia

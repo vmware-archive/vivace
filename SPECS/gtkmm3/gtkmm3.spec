@@ -1,7 +1,7 @@
 Summary:	gtkmm is the official C++ interface for the popular GUI library GTK+. 
 Name:		gtkmm3
 Version:	3.19.6
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://www.gtkmm.org
 Group:		System Environment/Libraries

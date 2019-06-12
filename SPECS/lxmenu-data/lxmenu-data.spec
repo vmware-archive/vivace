@@ -1,7 +1,7 @@
 Summary:	The LXMenu Data package provides files required to build freedesktop.org menu spec-compliant desktop menus for LXDE. 
 Name:		lxmenu-data
 Version:	0.1.4
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv3
 URL:		http://downloads.sourceforge.net/lxde
 BuildArchitectures: noarch

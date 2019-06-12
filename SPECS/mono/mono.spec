@@ -1,7 +1,7 @@
 Summary:	Open source implementation of Microsoft's .NET Framework.
 Name:		mono
 Version:	4.0.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.mono-project.com
 Group:		Applications/Internet

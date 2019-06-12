@@ -1,7 +1,7 @@
 Summary:	The LXDE Icon Theme package contains nuoveXT 2.2 Icon Theme for LXDE.
 Name:		lxde-icon-theme
 Version:	0.5.1
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv3
 URL:		http://downloads.sourceforge.net/lxde
 BuildArchitectures: noarch

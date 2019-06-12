@@ -5,7 +5,7 @@
 Summary:	Unit test framework for .NET applications.
 Name:		nunit
 Version:	2.6.3
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.nunit.org/
 Group:		Applications/Text

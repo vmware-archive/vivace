@@ -1,7 +1,7 @@
 Summary:	Note-taking application
 Name:		tomboy
 Version:	1.15.9
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+ and GPLv2+ and MIT
 URL:		http://projects.gnome.com/tomboy
 Group:		User Interface/Desktops

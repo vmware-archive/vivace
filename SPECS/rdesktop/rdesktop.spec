@@ -2,7 +2,7 @@
 Summary:	Remote Desktop Protocol client. 
 Name:		rdesktop
 Version:	1.8.3
-Release:	1
+Release:	1%{?dist}
 License:	GPLv3
 URL:		http://www.rdesktop.org/
 Group:		Applications/Communications

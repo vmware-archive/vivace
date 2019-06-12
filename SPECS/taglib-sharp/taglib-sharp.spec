@@ -2,7 +2,7 @@
 Summary:	Multimedia metadata reading/writing library for popular formats
 Name:		taglib-sharp
 Version:	2.1.0.0
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		https://www.novell.com/products/linuxpackages/opensuse11.1/taglib-sharp.html
 Group:		Development/Languages/Mono

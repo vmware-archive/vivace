@@ -1,7 +1,7 @@
 Summary:	Libgda is a (relatively small) database access library. 
 Name:		libgda
 Version:	5.2.4
-Release:	2	
+Release:	2%{?dist}
 License:	LGPL
 URL:		http://www.gnome-db.org/
 Group:		Productivity/Databases/Clients

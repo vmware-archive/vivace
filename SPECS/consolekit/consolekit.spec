@@ -1,7 +1,7 @@
 Summary:	system daemon for tracking users and sessions.
 Name:		consolekit
 Version:	0.4.6
-Release:	2	
+Release:	2%{?dist}
 License:	GPLv2+
 URL:		http://www.freedesktop.org/wiki/Software/ConsoleKit
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	The GStreamer Bad Plug-ins package contains a set a set of plug-ins that aren't up to par compared to the rest
 Name:		gst-plugins-bad
 Version:	1.5.1 
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2
 URL:		http://gstreamer.freedesktop.org/
 Group:		Applications/Multimedia

@@ -1,7 +1,7 @@
 Summary:	The startup-notification package contains startup-notification libraries. 
 Name:		startup-notification 
 Version:	0.12
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		https://www.freedesktop.org/wiki/Software/startup-notification/
 Group:		System Environment/Libraries

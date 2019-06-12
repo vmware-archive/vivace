@@ -2,7 +2,7 @@
 Summary:	Generic Linux input driver for the Xorg X server.
 Name:		xf86-input-evdev
 Version:	2.9.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

@@ -2,7 +2,7 @@
 Summary:	VMMouse input driver for the Xorg X server.
 Name:		xf86-input-vmmouse
 Version:	13.0.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

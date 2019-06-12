@@ -1,7 +1,7 @@
 Summary:	Dbus bindings for python
 Name:		dbus-python
 Version:	1.2.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.freedesktop.org/wiki/Software/DBusBindings/
 Group:		User Interface/Library

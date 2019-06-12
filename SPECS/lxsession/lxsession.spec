@@ -1,7 +1,7 @@
 Summary:	default session manager for LXDE.
 Name:		lxsession
 Version:	0.5.2
-Release:	2	
+Release:	2%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		User Interface/Desktops

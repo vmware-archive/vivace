@@ -1,7 +1,7 @@
 Summary:	Common code for indicator-applet
 Name:		libdbusmenu
 Version:	12.10.2
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv3 or LGPLv2 and GPLv3
 URL:		https://launchpad.net/libdbusmenu
 Group:		User Interface/Library

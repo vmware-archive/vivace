@@ -1,7 +1,7 @@
 Summary:	X11 SM runtime library.
 Name:		libSM
 Version:	1.2.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

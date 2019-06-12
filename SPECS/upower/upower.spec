@@ -1,7 +1,7 @@
 Summary:	Power Management
 Name:		upower
 Version:	0.9.23
-Release:	2	
+Release:	2%{?dist}
 License:	GPLv2+
 URL:		http://upower.freedesktop.org
 Group:		System Environment/Libraries

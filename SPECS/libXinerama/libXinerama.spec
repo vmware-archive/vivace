@@ -1,7 +1,7 @@
 Summary:	X11 libXinerama runtime library.
 Name:		libXinerama
 Version:	1.1.3
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

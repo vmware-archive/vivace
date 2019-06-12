@@ -1,7 +1,7 @@
 Summary:	High-performance CORBA Object Request Broker
 Name:		ORBit2
 Version:	2.14.19
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

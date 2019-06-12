@@ -2,7 +2,7 @@
 Summary:	Pinta is a free, open source drawing/editing program modeled after Paint.NET
 Name:           pinta
 Version:        1.6
-Release:        1
+Release:        1%{?dist}
 License:        MIT/X11
 Url:		http://pinta-project.com/
 Group:		Productivity/Graphics/Bitmap Editors

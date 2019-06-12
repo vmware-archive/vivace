@@ -1,7 +1,7 @@
 Summary:	Mesa is an OpenGL compatible 3D graphics library.
 Name:		mesa
 Version:	17.2.6
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.mesa3d.org/
 Group:		System Environment/Libraries

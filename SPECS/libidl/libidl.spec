@@ -1,7 +1,7 @@
 Summary:	libraries for Interface Definition Language files
 Name:		libidl
 Version:	0.8.14
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2+
 URL:		http://gnome.org
 Group:		System Environment/Libraries

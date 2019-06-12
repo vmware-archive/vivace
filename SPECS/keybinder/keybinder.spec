@@ -1,7 +1,7 @@
 Summary:	X keyboard shortcuts.
 Name:		keybinder
 Version:	0.3.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://kaizer.se/wiki/keybinder
 Group:		User Interface/Desktops

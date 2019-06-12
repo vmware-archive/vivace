@@ -1,7 +1,7 @@
 Summary:	A full-featured port of the WebKit rendering engine.
 Name:		libwebkit
 Version:	1.9.92
-Release:	2	
+Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://webkitgtk.org/
 Group:		Development/Libraries

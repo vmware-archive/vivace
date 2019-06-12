@@ -1,7 +1,7 @@
 Summary:	Shared functions for Ayatana indicators
 Name:		libindicator
 Version:	12.10.1
-Release:	1
+Release:	1%{?dist}
 License:	GPLv3
 URL:		https://launchpad.net/libindicator
 Group:		User Interface/Library

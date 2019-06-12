@@ -2,7 +2,7 @@
 Summary:	Firefox is a stand-alone browser based on the Mozilla codebase.
 Name:		firefox
 Version:	51.0.1
-Release:	1
+Release:	1%{?dist}
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/firefox
 Group:		Applications/Internet

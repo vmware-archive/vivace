@@ -2,7 +2,7 @@
 Summary:	The Xorg VMware Driver package contains the X.Org Video Driver for VMware SVGA virtual video cards. 
 Name:		xf86-video-vmware
 Version:	13.1.0
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

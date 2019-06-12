@@ -1,7 +1,7 @@
 Summary:	CSS2 parsing and manipulation library.
 Name:		libcroco
 Version:	0.6.8
-Release:	1
+Release:	1%{?dist}
 License:	LGPLv2
 URL:		http://www.gnome.org/
 Group:		System Environment/Libraries

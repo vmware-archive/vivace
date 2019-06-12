@@ -1,7 +1,7 @@
 Summary:	LibGTop is a library to get system specific data about running Processes.
 Name:		libgtop
 Version:	2.31.3
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		https://developer.gnome.org/libgtop/stable/
 Group:		Development/Libraries/GNOME

@@ -1,7 +1,7 @@
 Summary:	The xclock package contains a simple clock application which is used in the default xinit configuration.
 Name:		xclock
 Version:	1.0.7
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/Libraries

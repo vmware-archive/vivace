@@ -1,7 +1,7 @@
 Summary:	OGG library.
 Name:		libogg
 Version:	1.3.2
-Release:	1
+Release:	1%{?dist}
 License:	BSD
 URL:		http://www.xiph.org/
 Group:		System Environment/Libraries

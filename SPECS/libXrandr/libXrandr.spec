@@ -1,7 +1,7 @@
 Summary:	X11 Xrandr runtime library.
 Name:		libXrandr
 Version:	1.4.2
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

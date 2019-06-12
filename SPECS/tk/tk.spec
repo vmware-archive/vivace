@@ -1,7 +1,7 @@
 Summary:	A TCL GUI Toolkit. 
 Name:		tk
 Version:	8.6.5
-Release:	1
+Release:	1%{?dist}
 License:	BSD
 URL:		https://www.tcl.tk/
 Group:		System Environment/Libraries

@@ -1,7 +1,7 @@
 Summary:	user space library for accessing the DRM.
 Name:		libdrm
 Version:	2.4.88
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://dri.freedesktop.org/
 Group:		System Environment/Libraries

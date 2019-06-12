@@ -1,7 +1,7 @@
 Summary:	cairomm is a C++ wrapper for the cairo graphics library. It offers all the power of cairo with an interface familiar to C++ developers, including use of the Standard Template Library where it makes sense.
 Name:		cairomm
 Version:	1.12.0
-Release:        2	
+Release:        2%{?dist}
 License:	LGPLv2 or MPLv1.1
 URL:		http://cairographics.org
 Group:		System Environment/Libraries

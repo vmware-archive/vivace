@@ -1,7 +1,7 @@
 Summary:	VLC media player
 Name:		vlc
 Version:	2.2.8
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2
 URL:		http://www.videolan.org/vlc
 Group:		System Environment/Multimedia

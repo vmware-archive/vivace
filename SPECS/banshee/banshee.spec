@@ -1,7 +1,7 @@
 Summary:	A media playback and management application
 Name:           banshee
 Version:        2.6.2
-Release:        2 
+Release:        2%{?dist}
 License:        MIT/X11
 Url:		http://banshee.fm/
 Group:		Productivity/Multimedia/Sound/Players

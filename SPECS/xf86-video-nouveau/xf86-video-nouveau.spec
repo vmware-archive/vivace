@@ -2,7 +2,7 @@
 Summary:	X.Org Video Driver for NVidia Cards
 Name:		xf86-video-nouveau
 Version:	1.0.11
-Release:	1
+Release:	1%{?dist}
 License:	MIT 
 URL:		http://www.x.org/wiki/radeon/
 Group:		Development/Libraries

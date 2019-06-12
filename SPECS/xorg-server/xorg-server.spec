@@ -2,7 +2,7 @@
 Summary:	The Xorg Server
 Name:		xorg-server
 Version:	1.17.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		User Interface/X System

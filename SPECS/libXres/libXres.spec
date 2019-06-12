@@ -1,7 +1,7 @@
 Summary:	X11 libXres runtime library.
 Name:		libXres
 Version:	1.0.7
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries

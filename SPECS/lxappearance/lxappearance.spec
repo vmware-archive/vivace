@@ -1,7 +1,7 @@
 Summary:	desktop-independent theme switcher for GTK+.
 Name:		lxappearance
 Version:	0.6.1
-Release:	1
+Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://downloads.sourceforge.net/lxde
 Group:		User Interface/Desktops

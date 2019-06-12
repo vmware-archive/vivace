@@ -3,7 +3,7 @@
 Summary:	C# bindings for dbus
 Name:		dbus-sharp
 Version:	0.7
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://mono.github.com/dbus-sharp/
 Group:		User Interface/Desktops

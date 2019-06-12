@@ -1,7 +1,7 @@
 Summary:        XML::SAX::Base module
 Name:           perl-XML-SAX-Base
 Version:        1.08
-Release:        1
+Release:        1%{?dist}
 License:        GPL+ or Artistic
 Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/XML-SAX-Base

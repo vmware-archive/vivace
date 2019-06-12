@@ -2,7 +2,7 @@
 Summary:	The XKeyboardConfig package contains the keyboard configuration database for the X Window System.
 Name:		xkeyboard-config
 Version:	2.14
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System

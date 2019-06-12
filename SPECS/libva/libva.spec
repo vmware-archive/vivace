@@ -1,7 +1,7 @@
 Summary:	provides access to hardware accelerated video processing. 
 Name:		libva
 Version:	1.5.1
-Release:	1
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.freedesktop.org/
 Group:		Development/Libraries

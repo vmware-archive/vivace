@@ -1,7 +1,7 @@
 Summary:	The Totem PL Parser package contains a simple GObject-based library used to parse a host of playlist formats, as well as save those. 
 Name:           totem-pl-parser
 Version:        3.10.1
-Release:        1
+Release:        1%{?dist}
 License:        GPLv2
 Url:		https://developer.gnome.org/totem-pl-parser/stable/
 Group:		Productivity/Multimedia/Video/Players
