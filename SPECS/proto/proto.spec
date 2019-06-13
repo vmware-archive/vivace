@@ -1,11 +1,11 @@
 Summary:	The Xorg protocol headers.
 Name:		proto
 Version:	7.7
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System
-BuildArchitectures: noarch
+BuildArch:      noarch
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/proto/bigreqsproto-1.1.2.tar.bz2
@@ -32,8 +32,8 @@ Source10:	http://ftp.x.org/pub/individual/proto/kbproto-1.0.6.tar.bz2
 %define sha1 kbproto=a2cc82357c22a1f4d6243017982c32703c95575c
 Source11:	http://ftp.x.org/pub/individual/proto/presentproto-1.0.tar.bz2
 %define sha1 presentproto=432371cdc464881029c3f39f9bf81cc80a484e54
-Source12:	http://ftp.x.org/pub/individual/proto/randrproto-1.4.1.tar.bz2
-%define sha1 randrproto=7cd1daf5c56336079303d675b5a6788c90204016
+Source12:	http://ftp.x.org/pub/individual/proto/randrproto-1.5.0.tar.bz2
+%define sha1 randrproto=bc420745dc4af011988e9dcabdadf8829cbc2374
 Source13:	http://ftp.x.org/pub/individual/proto/recordproto-1.14.2.tar.bz2
 %define sha1 recordproto=1f48c4b0004d8b133efd0498e8d88d68d3b9199c
 Source14:	http://ftp.x.org/pub/individual/proto/renderproto-0.11.1.tar.bz2
@@ -58,8 +58,8 @@ Source23:	http://ftp.x.org/pub/individual/proto/xf86vidmodeproto-2.3.1.tar.bz2
 %define sha1 xf86vidmodeproto=11d54c3210887631ea71e8f8030a77692e964fc4
 Source24:	http://ftp.x.org/pub/individual/proto/xineramaproto-1.2.1.tar.bz2
 %define sha1 xineramaproto=818bffc16139d6e3de4344c83f00c495d3536753
-Source25:	http://ftp.x.org/pub/individual/proto/xproto-7.0.27.tar.bz2
-%define sha1 xproto=b34e7438623c8016cc8338549e5fcc29e2f64034
+Source25:	http://ftp.x.org/pub/individual/proto/xproto-7.0.31.tar.bz2
+%define sha1 xproto=779fa333c5522cca40ca810c25a8fa60b6ccedfb
 BuildRequires:	pkg-config
 BuildRequires:	util-macros
 Provides:	pkgconfig(xproto)
@@ -84,5 +84,7 @@ done
 %defattr(-,root,root)
 %{_prefix}/*
 %changelog
-*	Fri May 15 2015 Alexey Makhalov <amakhalov@vmware.com> 7.7-1
--	initial version
+* Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 7.7-2
+- Updated xproto, randrproto
+* Fri May 15 2015 Alexey Makhalov <amakhalov@vmware.com> 7.7-1
+- initial version

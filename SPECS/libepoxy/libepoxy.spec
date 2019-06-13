@@ -1,16 +1,16 @@
 Summary:	library for handling OpenGL function pointer management.
 Name:		libepoxy
-Version:	1.2
+Version:	1.4.0
 Release:	1%{?dist}
 License:	MIT
 URL:		http://crux.nu/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	ftp://crux.nu/files/%{name}-%{version}.tar.gz
-%define sha1 libepoxy=e700520711b9e4fa07c286aa36e431d8ad4133f5
-BuildRequires:	mesa-devel python2-devel python2-libs python-xml
-Requires:	mesa python2
+Source0:	https://github.com/anholt/libepoxy/releases/download/v1.4/%{name}-%{version}.tar.xz
+%define sha1 libepoxy=e390e2b1e20938be0cfb171afa51116663e8db26
+BuildRequires:	mesa-devel
+Requires:	mesa
 %description
 libepoxy is a library for handling OpenGL function pointer management.
 %package	devel
@@ -18,11 +18,11 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	mesa-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
-%setup -q 
+%setup -q
 %build
-./autogen.sh --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %check
 make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}
@@ -38,5 +38,7 @@ make DESTDIR=%{buildroot} install
 %{_includedir}/*
 %{_libdir}/*.la
 %changelog
-*	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.2-1
--	initial version
+* Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 1.4.0-1
+- Version update
+* Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.2-1
+- Initial version

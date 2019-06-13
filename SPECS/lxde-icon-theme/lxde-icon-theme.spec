@@ -4,7 +4,7 @@ Version:	0.5.1
 Release:	1%{?dist}
 License:	LGPLv3
 URL:		http://downloads.sourceforge.net/lxde
-BuildArchitectures: noarch
+BuildArch:      noarch
 Group:		User Interface/Desktops
 Vendor:		VMware, Inc.
 Distribution:	Photon
@@ -17,7 +17,7 @@ The LXDE Icon Theme package contains nuoveXT 2.2 Icon Theme for LXDE.
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix} --sysconfdir=%{_sysconfdir}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install

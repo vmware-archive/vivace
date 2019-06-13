@@ -81,7 +81,7 @@ Source35:	http://ftp.x.org/pub/individual/font/font-winitzki-cyrillic-1.0.3.tar.
 %define sha1 font-winitzki-cyrillic-1.0.3.tar.bz2=29249b49eac7e3f32d7a1a93808fcfd9d399011c
 Source36:	http://ftp.x.org/pub/individual/font/font-xfree86-type1-1.0.4.tar.bz2
 %define sha1 font-xfree86-type1-1.0.4.tar.bz2=1381f274a178cbd08627560e17a4a8f6653be3f7
-BuildRequires:	pkg-config util-macros xcursor-themes xorg-applications libXfont-devel font-util
+BuildRequires:	pkg-config util-macros xcursor-themes xorg-applications libXfont2-devel font-util
 %description
 The Xorg font packages provide needed fonts to the Xorg applications.
 %prep

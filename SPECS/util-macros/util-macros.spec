@@ -5,7 +5,7 @@ Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		Development/System
-BuildArchitectures: noarch
+BuildArch:      noarch
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/util/%{name}-%{version}.tar.bz2
@@ -15,7 +15,7 @@ The util-macros package contains the m4 macros used by all of the Xorg packages.
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 %install
 make DESTDIR=%{buildroot} install
 %files

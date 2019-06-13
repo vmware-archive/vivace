@@ -1,54 +1,79 @@
-Summary:	library and support programs used for configuring and customizing font access.
+Summary:	library for configuring and customizing font access.
 Name:		xfontconfig
-Version:	2.11.1
+Version:	2.13.1
 Release:	1%{?dist}
-License:	MIT and Public Domain and UCD
-URL:		http://fontconfig.org/
+License:	BSD/GPL
+URL:		https://www.freedesktop.org/wiki/Software/fontconfig/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://www.freedesktop.org/software/fontconfig/release/fontconfig-%{version}.tar.bz2
-%define sha1 fontconfig=08565feea5a4e6375f9d8a7435dac04e52620ff2
-Patch0:         handle_glibc_update.patch
-BuildRequires:	expat-devel xfreetype2-devel
-Requires:	expat expat-devel xfreetype2
+Source0:	https://www.freedesktop.org/software/fontconfig/release/fontconfig-%{version}.tar.gz
+%define sha1 fontconfig=e073e1d23d9d6e83a8d2d6eafa5905a541b77975
+BuildRequires:	xfreetype2-devel
+BuildRequires:	libxml2
+BuildRequires:	expat-devel
+BuildRequires:	gperf
+Requires:	xfreetype2
+Requires:	expat
+Provides:	pkgconfig(fontconfig)
+Obsoletes:	fontconfig
 %description
-The Fontconfig package contains a library and support programs used for configuring and customizing font access.
+Fontconfig can discover new fonts when installed automatically, removing a common source of configuration problems, perform font name substitution, so that appropriate alternative fonts can be selected if fonts are missing, identify the set of fonts required to completely cover a set of languages.
+
 %package	devel
-Summary:	Header and development files for fontconfig
-Requires:	%{name} = %{version}
-Requires:	expat-devel xfreetype2-devel
+Summary:	Header and development files
+Requires:	%{name} = %{version}-%{release}
+Requires:	expat-devel
+Requires:	xfreetype2-devel
+Obsoletes:	fontconfig-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
+
 %prep
 %setup -qn fontconfig-%{version}
-%patch0 -p1
+
 %build
-./configure --prefix=%{_prefix} \
-            --sysconfdir=%{_sysconfdir} \
-	    --localstatedir=%{_localstatedir} \
-	    --disable-docs       \
-	    --docdir=%{_datadir}/fontconfig-2.11.1
+%configure \
+	--docdir=/usr/share/doc/%{name}-%{version} \
+	--disable-static
 make %{?_smp_mflags}
-%check
-make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}
+
 %install
 make DESTDIR=%{buildroot} install
 find %{buildroot} -name '*.la' -delete
-find %{buildroot} -name '*.a' -delete
+
+%check
+make -k check
+
+%post
+/sbin/ldconfig
+
+%postun
+/sbin/ldconfig
+
 %files
 %defattr(-,root,root)
-%{_prefix}/*
-%{_sysconfdir}/*
-%{_var}/*
-%exclude %{_libdir}/debug/
-%exclude %{_includedir}/
-%exclude %{_prefix}/src/
-%exclude %{_libdir}/pkgconfig/*.pc
+%{_bindir}/*
+%{_libdir}/*.so*
+%{_datadir}/*
+%{_mandir}/man1/*
+%{_mandir}/man5/*
+%config(noreplace) %{_sysconfdir}/fonts/*
+%{_defaultdocdir}/%{name}-%{version}/*
+
 %files devel
 %defattr(-,root,root)
-%{_includedir}/*
-%{_libdir}/pkgconfig/*.pc
+%{_libdir}/libfontconfig.so
+%{_includedir}/fontconfig/*
+%{_libdir}/pkgconfig/*
+%{_mandir}/man3/*
+
 %changelog
-*	Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 2.11.1-1
--	initial version
+*   Wed Sep 12 2018 Sujay G <gsujay@vmware.com> 2.13.1-1
+-   Bump version to 2.13.1
+*   Thu Aug 03 2017 Chang Lee <changlee@vmware.com> 2.12.1-3
+-   Add a patch for run-test. This issue was introduced by freetype 2.7.1
+*   Fri Apr 14 2017 Alexey Makhalov <amakhalov@vmware.com> 2.12.1-2
+-   Requires expat-devel
+*   Fri Nov 11 2016 Dheeraj Shetty <dheerajs@vmware.com> 2.12.1-1
+-   Initial version

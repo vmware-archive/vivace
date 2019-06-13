@@ -7,9 +7,7 @@ URL:		http://www.x.org/
 Group:		Development/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.x.org/pub/individual/app/bdftopcf-1.0.5.tar.bz2
-%define sha1 bdftopcf=93fca9876367b0950b57680237a7dfc1a520ffac 
-Source1:	http://ftp.x.org/pub/individual/app/iceauth-1.0.7.tar.bz2
+Source0:	http://ftp.x.org/pub/individual/app/iceauth-1.0.7.tar.bz2
 %define sha1 iceauth=83d67e47167de52192c679a0f0a41f4ba51a5b94 
 Source2:	http://ftp.x.org/pub/individual/app/luit-1.1.1.tar.bz2
 %define sha1 luit=3130c14d7267cecce0ba2280643844b48cca49b0 
@@ -83,12 +81,12 @@ Source36:	http://ftp.x.org/pub/individual/app/xwininfo-1.1.3.tar.bz2
 %define sha1 xwininfo=179253e6b8266bc3e3b6496964077c9cdcb2dcba
 Source37:	http://ftp.x.org/pub/individual/app/xwud-1.0.4.tar.bz2
 %define sha1 xwud=786cd4b18bf576fae3ffd417545b1394b27c7f06
-BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel xfreetype2-devel libXau-devel
-Requires:	libpng mesa xcb-util libfontenc libXfont libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv xfreetype2 libXau
+BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libfontenc-devel libXfont2-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel xfreetype2-devel libXau-devel
+Requires:	libpng mesa xcb-util libfontenc libXfont2 libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv xfreetype2 libXau
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations. 
 %prep
-%setup -q -c %{name}-%{version} -a0 -a1 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37
+%setup -q -c %{name}-%{version} -a0 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37
 %build
 for pkg in `ls` ; do
 	pushd $pkg
