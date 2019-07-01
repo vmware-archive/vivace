@@ -30,7 +30,7 @@ sed -i '/unistd/a #include <sys/sysmacros.h>' hw/xfree86/common/xf86Xinput.c
 sed -i '/stat\.h/a #include <sys/sysmacros.h>' hw/xfree86/os-support/linux/lnx_init.c
 sed -i '/stat\.h/a #include <sys/sysmacros.h>' hw/xfree86/xorg-wrapper.c
 
-./configure --prefix=%{_prefix}		 \
+%configure \
 		--enable-glamor          \
 		--enable-install-setuid  \
 		--enable-suid-wrapper    \
@@ -48,13 +48,18 @@ EOF
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*
-%{_prefix}/*
-%{_localstatedir}/*
+%{_bindir}/*
+%{_libdir}/*
+%{_libexecdir}/*
+%{_datadir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig
 %exclude %{_prefix}/src/
+%{_localstatedir}/*
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig
 %changelog
 * Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 1.19.1-1
 - Version update

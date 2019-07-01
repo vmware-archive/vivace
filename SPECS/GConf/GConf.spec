@@ -10,7 +10,7 @@ Distribution:	Photon
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/3.2/%{name}-%{version}.tar.xz
 %define sha1 GConf=340b3cb634ef64f0c31af9d971d4f3da95d1787c
 BuildRequires:	intltool shadow libxml2-devel dbus-glib-devel polkit-devel
-Requires:	libxml2 dbus-glib polkit dbus-devel
+Requires:	libxml2 dbus-glib polkit
 %description
 The GConf package contains a configuration database system used by many GNOME applications.
 %package	devel
@@ -45,10 +45,12 @@ fi
 %{_sysconfdir}
 %{_libdir}
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %{_datadir}
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %changelog
 *	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 3.2.5-2
 -	Updated build requires

@@ -10,7 +10,6 @@ Vendor:		VMware, Inc.
 Distribution: 	Photon
 Source0:	http://ftp.gnu.org/gnu/autoconf/autoconf-%{version}.tar.gz
 %define sha1 autoconf=e4826c8bd85325067818f19b2b2ad2b625da66fc
-Patch0:		autoconf-make-check.patch
 Patch1:		autoconf-2.13-consolidated_fixes-1.patch
 BuildRequires:	m4
 Requires:	m4
@@ -22,13 +21,11 @@ The package contains programs for producing shell scripts that can
 automatically configure source code.
 %prep
 %setup -qn autoconf-%{version}
-#%patch0 -p1
 %patch1 -p1
 %build
 mv -v autoconf.texi autoconf213.texi
 rm -v autoconf.info
-./configure \
-	--prefix=%{_prefix} \
+%configure \
 	--disable-silent-rules \
 	--program-suffix=2.13
 make %{?_smp_mflags}

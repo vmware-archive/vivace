@@ -42,9 +42,11 @@ gtk-query-immodules-2.0 --update-cache
 %{_libdir}/*
 %exclude %{_libdir}/debug/
 %exclude %{_libdir}/*.la
+%exclude %{_libdir}/pkgconfig
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig
 %{_libdir}/*.la
 %{_datadir}/*
 %changelog

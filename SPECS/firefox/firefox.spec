@@ -63,7 +63,7 @@ ac_add_options --disable-gconf
 
 # Comment out following options if you have not installed
 # recommended dependencies:
-# configure: error: System SQLite library is not compiled with SQLITE_SECURE_DELETE. 
+# configure: error: System SQLite library is not compiled with SQLITE_SECURE_DELETE.
 #ac_add_options --enable-system-sqlite
 ac_add_options --with-system-libevent
 #ac_add_options --with-system-libvpx
@@ -102,7 +102,7 @@ ac_add_options --with-pthreads
 
 ac_add_options --with-system-bz2
 ac_add_options --with-system-jpeg
-# configure: error: System PNG library is not compiled with APNG. 
+# configure: error: System PNG library is not compiled with APNG.
 #ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 
@@ -110,6 +110,10 @@ mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/firefox-build-dir
 EOF
 # libevent changed macros names in v 2.1
 sed -i 's/_EVENT_SIZEOF/EVENT__SIZEOF/' ipc/chromium/src/base/message_pump_libevent.cc
+
+#make some fixes required by glibc-2.28:
+sed -i '/unistd/a #include <sys/sysmacros.h>' xpcom/io/nsLocalFileUnix.cpp
+
 # Firefox build is multithreaded by itself
 export AUTOCONF=/usr/bin/autoconf2.13 &&
 make -f client.mk
@@ -152,7 +156,9 @@ fi
 %{_datadir}/applications/
 %{_datadir}/icons/
 %changelog
-*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 41.0-1
--	Upgraded to version 41.0
-*	Thu May 28 2015 Alexey Makhalov <amakhalov@vmware.com> 38.0.1-1
--	initial version
+* Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 51.0.1-1
+- Version update
+* Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 41.0-1
+- Upgraded to version 41.0
+* Thu May 28 2015 Alexey Makhalov <amakhalov@vmware.com> 38.0.1-1
+- initial version

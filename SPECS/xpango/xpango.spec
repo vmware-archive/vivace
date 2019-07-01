@@ -33,11 +33,13 @@ pango-querymodules --update-cache
 %{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %exclude %{_libdir}/*.la
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.la
+%{_libdir}/pkgconfig
 %{_datadir}/*
 %changelog
 *	Thu Mar 03 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.38.1-1
