@@ -1,7 +1,7 @@
 Summary:	Core X11 protocol client library.
 Name:		libX11
 Version:	1.6.3
-Release:	2%{?dist}
+Release:	3%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries
@@ -19,11 +19,11 @@ Summary:	Header and development files for libX11
 Requires:	%{name} = %{version}
 Requires:	xtrans-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
-%setup -q 
+%setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
@@ -31,16 +31,23 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %exclude %{_libdir}/*.a
 %exclude %{_libdir}/*.la
+%{_datadir}/X11/
+%{_mandir}/man5/
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.a
 %{_libdir}/*.la
-%{_datadir}/*
+ %{_libdir}/pkgconfig/
+%{_docdir}/
+%{_mandir}/man3/
 %changelog
-*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.6.3-2
--	Updated build requires & requires to build with Photon 2.0
-*	Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 1.6.3-1
--	initial version
+* Wed Jul 03 2019 Alexey Makhalov <amakhalov@vmware.com> 1.6.3-3
+- Locale support
+* Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 1.6.3-2
+- Updated build requires & requires to build with Photon 2.0
+* Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 1.6.3-1
+- initial version

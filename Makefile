@@ -12,10 +12,11 @@ PHOTON_SPECS_DIR := $(VVC_SRCROOT)SPECS
 
 # Sources pulling
 #PHOTON_BINTRAY_CONFIG := $(VVC_SRCROOT)photon/support/package-builder/bintray.conf:$(VVC_SRCROOT)support/package-builder/pullsources.conf
-PHOTON_PULLSOURCES_CONFIG := $(VVC_SRCROOT)photon/support/package-builder/bintray.conf:$(VVC_SRCROOT)support/package-builder/pullsources.conf
+PHOTON_PULLSOURCES_CONFIG := $(VVC_SRCROOT)support/package-builder/pullsources.conf
 #PHOTON_PULLSOURCES_CONFIG=$(VVC_SRCROOT)support/package-builder/pullsources.conf
 
-#THREADS=4
+THREADS=4
+LOGLEVEL=debug
 
 $(VVC_SRCROOT)photon/Makefile: 
 	@:

@@ -1,6 +1,6 @@
 Summary:	GUI library.
 Name:		gtk3
-Version:	3.20.8 
+Version:	3.20.8
 Release:	2%{?dist}
 License:	LGPLv2+
 URL:		http://www.gtk.org
@@ -19,11 +19,11 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	atk-devel gdk-pixbuf-devel xpango-devel libXinerama-devel gobject-introspection-devel gobject-introspection-python libXi-devel libXfixes-devel at-spi2-atk-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
 %setup -q -n gtk+-%{version}
 %build
-./configure --prefix=%{_prefix} --sysconfdir=%{_sysconfdir} \
+%configure \
             --enable-gtk2-dependency \
             --enable-broadway-backend \
 	    --enable-x11-backend      \
@@ -41,7 +41,7 @@ mv %{buildroot}%{_bindir}/gtk-update-icon-cache %{buildroot}%{_bindir}/gtk-updat
 %post
 gtk-query-immodules-3.0 --update-cache
 glib-compile-schemas /usr/share/glib-2.0/schemas
-gtk-update-icon-cache-3.0 
+gtk-update-icon-cache-3.0
 
 %files
 %defattr(-,root,root)
@@ -49,6 +49,7 @@ gtk-update-icon-cache-3.0
 %{_sysconfdir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %exclude %{_libdir}/*.la
 %{_datadir}/applications/*
 %{_datadir}/glib-2.0/*
@@ -62,6 +63,7 @@ gtk-update-icon-cache-3.0
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.la
+%{_libdir}/pkgconfig/
 %{_datadir}/aclocal/*
 %{_datadir}/gir-1.0/*
 %{_datadir}/gtk-3.0/*

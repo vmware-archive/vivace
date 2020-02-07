@@ -18,26 +18,28 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	at-spi2-core-devel atk-devel glib-devel libX11-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
 %setup -q
 %build
 # --enable-vala
-./configure --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
 %check
 make -k check |& tee %{_specdir}/%{name}-check-log || %{nocheck}
-%post
-glib-compile-schemas /usr/share/glib-2.0/schemas
+#%post
+#glib-compile-schemas /usr/share/glib-2.0/schemas
 %files
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %changelog
 *	Wed May 27 2015 Alexey Makhalov <amakhalov@vmware.com> 2.16.0-1
 -	initial version
