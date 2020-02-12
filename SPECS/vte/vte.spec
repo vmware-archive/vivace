@@ -32,10 +32,12 @@ make DESTDIR=%{buildroot} install
 %{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %changelog
 *	Mon Jun 1 2015 Alexey Makhalov <amakhalov@vmware.com> 0.28.2-1
 -	initial version
