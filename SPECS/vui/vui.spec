@@ -11,8 +11,8 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
-#Requires: 	linux-drivers-gpu lxde-common thunderbird firefox pygtk gtksourceviewmm lxdm alsa-utils lxterminal gpicview grdesktop lxtask gpicview hicolor-icon-theme gvfs open-vm-tools-vivace 
-Requires: 	linux-drivers-gpu lxde-common pygtk gtksourceviewmm lxdm alsa-utils lxterminal gpicview grdesktop lxtask gpicview hicolor-icon-theme gvfs 
+#Requires: 	thunderbird open-vm-tools-vivace
+Requires: 	linux-drivers-gpu firefox gtksourceviewmm alsa-utils gpicview grdesktop gpicview hicolor-icon-theme
 %description
 Metapackage for Vivace User Interface.
 
@@ -31,9 +31,12 @@ rm -rf $RPM_BUILD_ROOT
 %post
 #copy skel to root home folder
 mkdir -p /root/.config
-cp -a /etc/skel/.config/cairo-dock /root/.config/ 
 cp -a /etc/skel/.config/pcmanfm /root/.config/
 
 %files
 %{_sysconfdir}/skel/.config/*
 %{_datadir}
+
+%changelog
+*	Tue May 26 2015 Alexey Makhalov <amakhalov@vmware.com> 0.1-1
+-	initial version
