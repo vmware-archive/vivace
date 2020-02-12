@@ -12,7 +12,7 @@ Distribution:	Photon
 Provides:	vui
 BuildArch:	noarch
 #Requires: 	thunderbird open-vm-tools-vivace
-Requires: 	linux-drivers-gpu firefox gtksourceviewmm alsa-utils gpicview grdesktop gpicview hicolor-icon-theme
+Requires: 	linux-drivers-gpu firefox alsa-utils gpicview openbox
 %description
 Metapackage for Vivace User Interface.
 
