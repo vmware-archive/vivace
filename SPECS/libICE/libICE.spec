@@ -9,7 +9,7 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
 %define sha1 libICE=3c3a857a117ce48a1947a16860056e77cd494fdf
-BuildRequires:	xtrans-devel
+BuildRequires:	xtrans
 Requires:	proto
 Provides:	pkgconfig(ice)
 %description
@@ -17,7 +17,7 @@ The X11 Inter-Client Exchange runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	xtrans-devel
+Requires:	xtrans
 %description	devel
 It contains the libraries and header files to create applications 
 %prep
