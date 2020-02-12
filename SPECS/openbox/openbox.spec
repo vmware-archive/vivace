@@ -37,11 +37,13 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/*
 %exclude %{_libdir}/*.la
 %exclude %{_libdir}/debug
+%exclude %{_libdir}/pkgconfig/
 %{_datadir}/*
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.la
+%{_libdir}/pkgconfig/
 %changelog
 *	Tue May 26 2015 Alexey Makhalov <amakhalov@vmware.com> 3.5.2-1
 -	initial version
