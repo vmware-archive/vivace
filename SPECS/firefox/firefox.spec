@@ -1,7 +1,7 @@
 #%global debug_package %{nil}
 Summary:	Firefox is a stand-alone browser based on the Mozilla codebase.
 Name:		firefox
-Version:	69.0.1
+Version:	51.0.1
 Release:	1%{?dist}
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/firefox
@@ -9,9 +9,9 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/%{name}/releases/%{version}/source/%{name}-%{version}.source.tar.xz
-%define sha1 firefox=3c693918d85e789944e6fe59fe76c34115cae906
+%define sha1 firefox=b73255fd4f90fd0c1b107b566679da2df3f31cf1
 Source1:        %{name}.desktop
-#Patch0:         Build-Skia-NEON-code-on-arm64.patch
+Patch0:         Build-Skia-NEON-code-on-arm64.patch
 #Patch1:         Disable-gcc-lifetime-dead-store-elimination-for-operator-new.patch
 #Patch0:		fix_icu_vernum_firefox.patch
 #Patch1:		firefox-build-with-gcc6.patch
@@ -23,7 +23,7 @@ Requires:	gtk2 nspr nss icu libevent zlib GConf yasm alsa-lib libXt libffi libXc
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
 #%patch1 -p1
 #%patch2 -p0
 %build
@@ -34,7 +34,7 @@ cat > mozconfig << "EOF"
 #mk_add_options MOZ_MAKE_FLAGS="-j1"
 
 # If you have installed DBus-Glib comment out this line:
-#ac_add_options --disable-dbus
+ac_add_options --disable-dbus
 
 # If you have installed dbus-glib, and you have installed (or will install)
 # wireless-tools, and you wish to use geolocation web services, comment out
@@ -42,7 +42,7 @@ cat > mozconfig << "EOF"
 ac_add_options --disable-necko-wifi
 
 # Uncomment this option if you wish to build with gtk+-2
-#ac_add_options --enable-default-toolkit=cairo-gtk2
+ac_add_options --enable-default-toolkit=cairo-gtk2
 
 # Uncomment these lines if you have installed optional dependencies:
 #ac_add_options --enable-system-hunspell
@@ -82,15 +82,14 @@ ac_add_options --disable-tests
 ac_add_options --disable-strip
 ac_add_options --disable-install-strip
 
-#ac_add_options --enable-gio
+ac_add_options --enable-gio
 ac_add_options --enable-official-branding
-#ac_add_options --enable-safe-browsing
-#ac_add_options --enable-url-classifier
+ac_add_options --enable-safe-browsing
+ac_add_options --enable-url-classifier
 
 # Optimization for size is broken with gcc7 and gcc6 for aarch64
 # Build with gcc>=5 requires -fno-lifetime-dse
-#ac_add_options --enable-optimize="-O2 -fno-lifetime-dse"
-ac_add_options --enable-optimize
+ac_add_options --enable-optimize="-O2 -fno-lifetime-dse"
 
 # From firefox-40, using system cairo causes firefox to crash
 # frequently when it is doing background rendering in a tab.
@@ -117,10 +116,7 @@ sed -i '/unistd/a #include <sys/sysmacros.h>' xpcom/io/nsLocalFileUnix.cpp
 
 # Firefox build is multithreaded by itself
 export AUTOCONF=/usr/bin/autoconf2.13 &&
-export CC=gcc CXX=g++ &&
-export MOZBUILD_STATE_PATH=${PWD}/mozbuild &&
-./mach build
-
+make -f client.mk
 %install
 make -f client.mk DESTDIR=%{buildroot} install INSTALL_SDK=
 desktop-file-install \
@@ -160,8 +156,6 @@ fi
 %{_datadir}/applications/
 %{_datadir}/icons/
 %changelog
-* Wed Oct 16 2019 Alexey Makhalov <amakhalov@vmware.com> 69.0.1-1
-- Version update
 * Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 51.0.1-1
 - Version update
 * Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 41.0-1
