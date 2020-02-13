@@ -7,7 +7,9 @@ URL:		http://www.x.org/
 Group:		Development/System
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.x.org/pub/individual/app/iceauth-1.0.7.tar.bz2
+Source0:	http://ftp.x.org/pub/individual/app/bdftopcf-1.1.tar.bz2
+%define sha1 bdftopcf=48a783337a5aa49ebc102c9788ff0f43ea35c5c4
+Source1:	http://ftp.x.org/pub/individual/app/iceauth-1.0.7.tar.bz2
 %define sha1 iceauth=83d67e47167de52192c679a0f0a41f4ba51a5b94 
 Source2:	http://ftp.x.org/pub/individual/app/luit-1.1.1.tar.bz2
 %define sha1 luit=3130c14d7267cecce0ba2280643844b48cca49b0 
@@ -86,7 +88,7 @@ Requires:	libpng mesa xcb-util libfontenc libXfont2 libxkbfile libX11 libXt libX
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations. 
 %prep
-%setup -q -c %{name}-%{version} -a0 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37
+%setup -q -c %{name}-%{version} -a0 -a1 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35 -a36 -a37
 %build
 for pkg in `ls` ; do
 	pushd $pkg
