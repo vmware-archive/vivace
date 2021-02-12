@@ -9,11 +9,11 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 %define sha1 libxcb=8343b417d7eeb2a2c6b6c4a87a03a4fd0fc65c46
-BuildRequires:	python2-devel
-BuildRequires:	python2-libs
+BuildRequires:	python3-devel
+BuildRequires:	python3-libs
 BuildRequires:	libXau-devel xcb-proto
 BuildRequires:	libXdmcp-devel
-BuildRequires:  python-xml
+BuildRequires:  python3-xml
 Requires:	libXdmcp
 Requires:	libXau
 Provides:	pkgconfig(x11-xcb)

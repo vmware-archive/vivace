@@ -16,7 +16,7 @@ Patch0:         Build-Skia-NEON-code-on-arm64.patch
 #Patch0:		fix_icu_vernum_firefox.patch
 #Patch1:		firefox-build-with-gcc6.patch
 #Patch2:		aarch64-no-static-sizes.patch
-BuildRequires:	GConf-devel libevent-devel GConf autoconf213 gtk2-devel which python2-devel python2-libs unzip zip nspr-devel nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
+BuildRequires:	GConf-devel libevent-devel GConf autoconf213 gtk2-devel which python3-devel python3-libs unzip zip nspr-devel nss-devel icu-devel zlib-devel yasm-devel alsa-lib-devel libXt-devel libffi libXcomposite-devel libXfixes-devel libXdamage-devel
 BuildRequires:	desktop-file-utils
 Requires:	gtk2 nspr nss icu libevent zlib GConf yasm alsa-lib libXt libffi libXcomposite libXfixes libXdamage desktop-file-utils
 %description
