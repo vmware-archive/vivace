@@ -1,24 +1,24 @@
 %global security_hardening nonow
 Summary:	The Xorg Server
 Name:		xorg-server
-Version:	1.19.1
-Release:	2%{?dist}
+Version:	1.20.13
+Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		User Interface/X System
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://ftp.x.org/pub/individual/xserver/%{name}-%{version}.tar.bz2
-%define sha1 xorg-server=13c81e0ebb6ac1359a611d0503805c6dc0315477
-Source1:	10-evdev.conf
-BuildRequires:	xkeyboard-config xorg-fonts pixman-devel openssl-devel mesa-devel libxkbfile-devel libXfont2-devel libepoxy-devel xcb-util-keysyms-devel expat-devel
-Requires:	xkeyboard-config xorg-fonts pixman openssl mesa libxkbfile libXfont2 libepoxy xcb-util-keysyms expat
+Source0:	http://ftp.x.org/pub/individual/xserver/%{name}-%{version}.tar.xz
+%define sha1 xorg-server=4a846a4affeb3863e23c1d57a3b1bca4374a2ddb
+BuildRequires:	xkeyboard-config xorg-fonts pixman-devel openssl-devel mesa-devel libxkbfile-devel libepoxy-devel xcb-util-keysyms-devel expat-devel libXfont2-devel
+Requires:	xkeyboard-config xorg-fonts pixman openssl mesa libxkbfile libepoxy xcb-util-keysyms expat libXfont2
+
 %description
 The Xorg Server is the core of the X Window system.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	pixman-devel openssl-devel mesa-devel libxkbfile-devel libXfont2-devel libepoxy-devel xcb-util-keysyms-devel
+Requires:	pixman-devel openssl-devel mesa-devel libxkbfile-devel libepoxy-devel xcb-util-keysyms-devel libXfont2-devel
 %description	devel
 It contains the libraries and header files to create applications
 
@@ -46,7 +46,6 @@ cat >> %{buildroot}/etc/sysconfig/createfiles << "EOF"
 /tmp/.ICE-unix dir 1777 root root
 /tmp/.X11-unix dir 1777 root root
 EOF
-cp %{SOURCE1} %{buildroot}/usr/share/X11/xorg.conf.d/
 %files
 %defattr(-,root,root)
 %{_sysconfdir}/*
@@ -63,6 +62,8 @@ cp %{SOURCE1} %{buildroot}/usr/share/X11/xorg.conf.d/
 %{_includedir}/*
 %{_libdir}/pkgconfig
 %changelog
+* Wed Aug 04 2021 Alexey Makhalov <amakhalov@vmware.com> 1.20.13-1
+- Version update
 * Thu Feb 13 2020 Alexey Makhalov <amakhalov@vmware.com> 1.19.1-2
 - Added 10-evdev.conf conf file.
 * Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 1.19.1-1

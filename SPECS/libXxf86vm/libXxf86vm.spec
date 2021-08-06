@@ -19,11 +19,11 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	libXext-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
-%setup -q 
+%setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
@@ -31,14 +31,16 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %exclude %{_libdir}/*.a
 %exclude %{_libdir}/*.la
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %{_libdir}/*.a
 %{_libdir}/*.la
 %{_datadir}/*
 %changelog
-*	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.1.4-1
--	initial version
+* Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.1.4-1
+- initial version

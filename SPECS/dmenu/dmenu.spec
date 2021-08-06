@@ -1,14 +1,14 @@
 Summary:	dmenu is a dynamic menu for X, originally designed for dwm.
 Name:		dmenu
-Version:	4.9
+Version:	5.0
 Release:	1%{?dist}
 License:	MIT/X
 URL:		https://tools.suckless.org/dmenu/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	https://dl.suckless.org/tools/dmenu-4.9.tar.gz
-%define sha1 dmenu=73d1a9a844e8f285fc315ea4ee5b95da2b0bc8f4
+Source0:	https://dl.suckless.org/tools/dmenu-%{version}.tar.gz
+%define sha1 dmenu=6d48d324e0100f3e0c7c3ed5104dbe3ebcaeaef4
 BuildRequires:	libXinerama-devel libXft-devel xfontconfig-devel libX11-devel
 Requires:	dwm libXinerama libXft xfontconfig libX11
 %description
@@ -25,5 +25,7 @@ make DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
 %{_bindir}/*
 %{_datadir}/*
 %changelog
+* Wed Aug 04 2021 Alexey Makhalov <amakhalov@vmware.com> 5.0-1
+- Version update
 * Tue Jul 02 2019 Alexey Makhalov <amakhalov@vmware.com> 4.9-1
 - initial version

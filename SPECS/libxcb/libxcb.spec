@@ -1,14 +1,14 @@
 Summary:	Interface to the X Window System protocol.
 Name:		libxcb
-Version:	1.11
+Version:	1.14
 Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
 Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-%define sha1 libxcb=8343b417d7eeb2a2c6b6c4a87a03a4fd0fc65c46
+Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.xz
+%define sha1 libxcb=e218be6043162d2f758643dbda8caccd53107388
 BuildRequires:	python3-devel
 BuildRequires:	python3-libs
 BuildRequires:	libXau-devel xcb-proto
@@ -24,13 +24,12 @@ Summary:	Header and development files for libxcb
 Requires:	%{name} = %{version}
 Requires:	libXau-devel xcb-proto libXdmcp-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
 %setup -q
 %build
 sed -i "s/pthread-stubs//" configure
-./configure --prefix=%{_prefix} \
-            --enable-xinput \
+%configure  --enable-xinput \
 	    --docdir=%{_datadir}/doc/libxcb-1.11
 
 sed -i "s#from xml.etree.cElementTree import \*#from xml.etree.ElementTree import ElementTree#g" src/c_client.py
@@ -45,10 +44,14 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %files devel
 %defattr(-,root,root)
 %{_datadir}/*
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %changelog
-*	Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 1.11-1
--	initial version
+* Tue Aug 03 2021 Alexey Makhalov <amakhalov@vmware.com> 1.14-1
+- Version update
+* Mon May 18 2015 Alexey Makhalov <amakhalov@vmware.com> 1.11-1
+- initial version

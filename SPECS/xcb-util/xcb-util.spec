@@ -23,11 +23,11 @@ Summary:	Header and development files
 Requires:	%{name} = %{version}
 Requires:	libxcb-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
@@ -35,13 +35,15 @@ make DESTDIR=%{buildroot} install
 %defattr(-,root,root)
 %{_libdir}/*
 %exclude %{_libdir}/debug/
+%exclude %{_libdir}/pkgconfig/
 %exclude %{_libdir}/*.a
 %exclude %{_libdir}/*.la
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
+%{_libdir}/pkgconfig/
 %{_libdir}/*.a
 %{_libdir}/*.la
 %changelog
-*	Fri May 15 2015 Alexey Makhalov <amakhalov@vmware.com> 0.4.0-1
--	initial version
+* Fri May 15 2015 Alexey Makhalov <amakhalov@vmware.com> 0.4.0-1
+- initial version

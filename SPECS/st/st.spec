@@ -1,14 +1,14 @@
 Summary:	st is a simple terminal implementation for X.
 Name:		st
-Version:	0.8.2
+Version:	0.8.4
 Release:	1%{?dist}
 License:	MIT/X
 URL:		https://st.suckless.org/
 Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	https://dl.suckless.org/st/st-0.8.2.tar.gz
-%define sha1 st=1093714e46adf3f02f9ae9922c49d8ff63b83128
+Source0:	https://dl.suckless.org/st/st-%{version}.tar.gz
+%define sha1 st=eee1b7d271ef7bdceaa8d36c30f0c468c3647f94
 BuildRequires:	libX11-devel libXft-devel xfontconfig-devel
 Requires:	libX11 libXft xfontconfig
 %description
@@ -25,5 +25,7 @@ make DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
 %{_bindir}/*
 %{_datadir}/*
 %changelog
+* Wed Aug 04 2021 Alexey Makhalov <amakhalov@vmware.com> 0.8.4-1
+- Version update
 * Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 0.8.2-1
 - initial version

@@ -6,15 +6,13 @@ Vivace is a desktop environment for PhotonOS. It is a set of extra RPMs like xor
 ```
 git clone https://github.com/vmware/vivace.git
 cd vivace
-git submodule update --init
-cd photon
-ln -s ../../vivace/SPECS SPECS/VIVACE
+ln -s <path to photon repo> photon
 
 ```
 
 ## Build
 ```
-make CONF=../config.json packages
+./photon/build.py -t vui
 ```
 
 ## Pre-built Vivace binaries

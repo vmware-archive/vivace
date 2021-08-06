@@ -1,6 +1,6 @@
 Summary:	X11 libxshmfence runtime library.
 Name:		libxshmfence
-Version:	1.2
+Version:	1.3
 Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
@@ -8,9 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-%define sha1 libxshmfence=a2ebe90e5595afca4db93a4359732af43b2b8c69
-Patch0:         memfd_create.patch
-BuildRequires:	pkg-config util-macros proto
+%define sha1 libxshmfence=3472218fc0e8ee8183533d22dbcd4bbe90bf3ab8
+BuildRequires:	pkg-config util-macros xorgproto
 Provides:	pkgconfig(xshmfence)
 %description
 The X11 Shared Memory fences library.
@@ -18,13 +17,12 @@ The X11 Shared Memory fences library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	pkg-config util-macros proto
+Requires:	pkg-config util-macros xorgproto
 %description	devel
 It contains the libraries and header files to create applications
 
 %prep
 %setup -q
-%patch0 -p1
 %build
 autoreconf -fiv
 %configure
@@ -43,5 +41,7 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/*.a
 %{_libdir}/*.la
 %changelog
-*	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.2-1
--	initial version
+* Tue Aug 03 2021 Alexey Makhalov <amakhalov@vmware.com> 1.3-1
+- Version update
+* Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.2-1
+- initial version

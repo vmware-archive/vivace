@@ -1,6 +1,6 @@
 Summary:	X11 Fontenc runtime library.
 Name:		libfontenc
-Version:	1.1.2
+Version:	1.1.4
 Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
@@ -8,8 +8,8 @@ Group:		System Environment/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-%define sha1 libfontenc=2beffa0e9260c479b49f90f789318c7f9db2d41d
-BuildRequires:	pkg-config proto zlib-devel
+%define sha1 libfontenc=d4f232b0b07487b984e13422ce4130b61a8b9edb
+BuildRequires:	pkg-config xorgproto zlib-devel
 Requires:	zlib
 Provides:	pkgconfig(fontenc)
 %description
@@ -17,11 +17,11 @@ The X11 Fontenc runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	proto zlib-devel
+Requires:	xorgproto zlib-devel
 %description	devel
-It contains the libraries and header files to create applications 
+It contains the libraries and header files to create applications
 %prep
-%setup -q 
+%setup -q
 %build
 %configure
 make %{?_smp_mflags}
@@ -39,5 +39,7 @@ make DESTDIR=%{buildroot} install
 %{_libdir}/*.a
 %{_libdir}/*.la
 %changelog
-*	Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.1.2-1
--	initial version
+* Tue Aug 03 2021 Alexey Makhalov <amakhalov@vmware.com> 1.1.4-1
+- Version update
+* Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.1.2-1
+- initial version

@@ -1,22 +1,19 @@
-Summary:	X11 libXinerama runtime library.
-Name:		libXinerama
-Version:	1.1.4
+Summary:	Multitouch Protocol Translation Library
+Name:		mtdev
+Version:	1.1.6
 Release:	1%{?dist}
 License:	MIT
-URL:		http://www.x.org/
-Group:		System Environment/Libraries
+URL:		http://www.freedesktop.org/
+Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
-%define sha1 libXinerama=34a1d9908ffbd46805d2357c6b05f5e341a8dc7c
-BuildRequires:	libXext-devel
-Requires:	libXext
+Source0:	https://bitmath.org/code/%{name}/%{name}-%{version}.tar.bz2
+%define sha1 mtdev=1459f8b977b615c8e569b53ba119c980af2fa688
 %description
-The X11 libXi runtime library.
+Multitouch Protocol Translation Library which is used to transform all variants of kernel MT (Multitouch) events to the slotted type B protocol. 
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	libXext-devel
 %description	devel
 It contains the libraries and header files to create applications
 %prep
@@ -28,20 +25,16 @@ make %{?_smp_mflags}
 make DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
+%{_bindir}/*
 %{_libdir}/*
 %exclude %{_libdir}/debug/
 %exclude %{_libdir}/pkgconfig/
-%exclude %{_libdir}/*.a
 %exclude %{_libdir}/*.la
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/pkgconfig/
-%{_libdir}/*.a
 %{_libdir}/*.la
-%{_datadir}/*
 %changelog
-* Tue Aug 03 2021 Alexey Makhalov <amakhalov@vmware.com> 1.1.4-1
-- Version update
-* Tue May 19 2015 Alexey Makhalov <amakhalov@vmware.com> 1.1.3-1
+* Wed Aug 04 2021 Alexey Makhalov <amakhalov@vmware.com> 1.1.6-1
 - initial version

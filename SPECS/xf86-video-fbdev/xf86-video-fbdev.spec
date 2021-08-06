@@ -1,7 +1,7 @@
 %global security_hardening nonow
 Summary:	X.Org Video Driver for framebuffer devices.
 Name:		xf86-video-fbdev
-Version:	0.4.4
+Version:	0.5.0
 Release:	1%{?dist}
 License:	MIT
 URL:		http://www.x.org/
@@ -9,7 +9,7 @@ Group:		Development/Libraries
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	http://ftp.x.org/pub/individual/driver/%{name}-%{version}.tar.bz2
-%define sha1 xf86-video-fbdev=237ea14a55ca4012d6ce18fbfdc697d48d5838a2
+%define sha1 xf86-video-fbdev=8d79ec615cb54436ff96dc94b74775db6dc47aff
 BuildRequires:	xorg-server-devel pixman-devel libpciaccess-devel
 Requires:	xorg-server pixman libpciaccess
 %description
@@ -17,7 +17,7 @@ The Xorg Fbdev Driver package contains the X.Org Video Driver for framebuffer de
 %prep
 %setup -q
 %build
-./configure --prefix=%{_prefix}
+%configure
 make %{?_smp_mflags}
 %install
 make DESTDIR=%{buildroot} install
@@ -28,5 +28,7 @@ make DESTDIR=%{buildroot} install
 %{_datadir}/*
 %exclude %{_prefix}/src/
 %changelog
-*	Thu May 21 2015 Alexey Makhalov <amakhalov@vmware.com> 0.4.4-1
--	initial version
+* Wed Aug 04 2021 Alexey Makhalov <amakhalov@vmware.com> 0.5.0-1
+- Version update
+* Thu May 21 2015 Alexey Makhalov <amakhalov@vmware.com> 0.4.4-1
+- initial version
