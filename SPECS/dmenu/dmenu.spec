@@ -9,17 +9,17 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://dl.suckless.org/tools/dmenu-%{version}.tar.gz
 %define sha1 dmenu=6d48d324e0100f3e0c7c3ed5104dbe3ebcaeaef4
-BuildRequires:	libXinerama-devel libXft-devel xfontconfig-devel libX11-devel
-Requires:	dwm libXinerama libXft xfontconfig libX11
+BuildRequires:	libXinerama-devel libXft-devel
+Requires:	dwm libXinerama libXft
 %description
 dmenu is a dynamic menu for X, originally designed for dwm.
 It manages large numbers of user-defined menu items efficiently.
 %prep
-%setup -q
+%autosetup
 %build
 make %{?_smp_mflags} CC=gcc
 %install
-make DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
+make %{?_smp_mflags} DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
 %files
 %defattr(-,root,root)
 %{_bindir}/*

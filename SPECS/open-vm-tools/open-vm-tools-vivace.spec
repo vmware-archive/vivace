@@ -1,140 +1,117 @@
-Summary:	Usermode tools for VmWare virts
-Name:		open-vm-tools-vivace
-Version:	10.0.5
-Release:	2%{?dist}
-License:	LGPLv2+
-URL:		https://github.com/vmware/open-vm-tools/archive/stable-9.10.x.zip
-Group:		Applications/System
-Vendor:		VMware, Inc.
-Distribution:	Photon
-Source0:    http://downloads.sourceforge.net/project/open-vm-tools/open-vm-tools-%{version}.tar.gz
-%define sha1 open-vm-tools=9d29a17cce539b032317d0a8c55977666daa137e
-Patch0:		Fix-build-failure-with-GCC-6.patch
-Patch1:		include-sys-macros-directly.patch
-BuildRequires: 	xerces-c-devel
-BuildRequires: 	xml-security-c-devel
-BuildRequires: 	libdnet-devel
-BuildRequires: 	libmspack-devel
-BuildRequires:	Linux-PAM-devel
-BuildRequires:	openssl-devel
-BuildRequires:	procps-ng-devel
-BuildRequires:	gtk2-devel
-BuildRequires:  systemd-devel
-BuildRequires:	gtkmm-devel
-BuildRequires:	gtkmm3-devel fuse-devel libXrandr-devel libXtst-devel
-Requires:		gtkmm3 gtkmm fuse libXrandr libXtst
-Requires:		xerces-c
-Requires:		systemd
-Requires:		libdnet
-Requires:		Linux-PAM
-Requires:		libmspack
-Requires:		xml-security-c
-Requires:		openssl
-Requires:		gtk2
-Obsoletes:		open-vm-tools
+%global gosc_scripts gosc-scripts
+%define gosc_ver 1.3.2
+
+Summary:        Usermode tools for VmWare virts
+Name:           open-vm-tools-vivace
+Version:        11.3.0
+Release:        1%{?dist}
+License:        LGPLv2+
+URL:            https://github.com/vmware/open-vm-tools
+Group:          Applications/System
+Vendor:         VMware, Inc.
+Distribution:   Photon
+
+Source0:        https://github.com/vmware/open-vm-tools/archive/open-vm-tools-stable-%{version}.tar.gz
+%define sha1 open-vm-tools=94e744c4b4c2f64cafb41a1b1ca4860f8d76272a
+Source1:        https://gitlab.eng.vmware.com/photon-gosc/gosc-scripts/-/archive/%{gosc_ver}/gosc-scripts-%{gosc_ver}.tar.gz
+%define sha1 %{gosc_scripts}-%{gosc_ver}=eb90b74e9282bc5b80f1f8ae358cb7e9bfdda4cb
+Source2:        vmtoolsd.service
+Source3:        vgauthd.service
+
+# If patch is taken from open-vm-tools repo, prefix it with 'ovt-'
+# If patch is taken from gosc-scripts repo, prefix it with 'gosc-'
+Patch0:     ovt-linux-deployment.patch
+
+BuildRequires:  glib-devel
+BuildRequires:  libxml2-devel
+BuildRequires:  xmlsec1-devel
+BuildRequires:  libltdl-devel
+BuildRequires:  libmspack-devel
+BuildRequires:  Linux-PAM-devel
+BuildRequires:  openssl-devel
+BuildRequires:  procps-ng-devel
+BuildRequires:  fuse-devel
+BuildRequires:  systemd
+BuildRequires:  rpcsvc-proto-devel
+BuildRequires:  libtirpc-devel
+
+Requires:       fuse
+Requires:       libmspack
+Requires:       glib
+Requires:       openssl
+Requires:       libstdc++
+Requires:       libtirpc
+Requires:       xmlsec1 >= 1.2.30
+Requires:       which
+
+BuildRequires:	gtk3-devel libXrandr-devel libXtst-devel gdk-pixbuf-xlib-devel
+Requires:	gtk3 libXrandr libXtst gdk-pixbuf-xlib
+Obsoletes:      open-vm-tools
+
+%if "%{_arch}" == "x86_64"
+Requires:  systemd
+%endif
+
+%if "%{_arch}" == "aarch64"
+Requires: systemd >= 239-23
+%endif
+
 %description
 VmWare virtualization user mode tools
+
+%package        devel
+Summary:        Header and development files for open-vm-tools
+Requires:       %{name} = %{version}-%{release}
+
+%description    devel
+It contains the libraries and header files to create applications.
+
+%package        sdmp
+Summary:        Service Discovery plugin for open-vm-tools
+Requires:       %{name} = %{version}-%{release}
+
+%description    sdmp
+The "open-vm-tools-sdmp" package contains a plugin for Service Discovery.
+
 %prep
-%setup -qn open-vm-tools-%{version}
-%patch0 -p1
-%patch1 -p1
+%autosetup -n open-vm-tools-stable-%{version} -a0 -a1 -p1
 
 %build
-sed -i 's#/var/run/vmblock#/run/vmblock#' lib/include/vmblock.h
-touch ChangeLog
+cd open-vm-tools
 autoreconf -i
-export CFLAGS="%{optflags} -DVMX86_DEVEL=1"
-export CXXFLAGS="-g -O2 -std=c++11 -Dvmblock_fuse"
-sh ./configure --prefix=/usr --sysconfdir=/etc --without-kernel-modules --without-icu --disable-static 
+%configure --enable-photon-gosc \
+           --without-kernel-modules \
+	   --without-gtkmm3 \
+           --without-icu \
+           --disable-static \
+           --with-tirpc \
+           --enable-servicediscovery
+
 make %{?_smp_mflags}
+
 %install
 #collecting hacks to manually drop the vmhgfs module
 install -vdm 755 %{buildroot}/lib/systemd/system
+install -vdm 755 %{buildroot}/usr/share/open-vm-tools/
+cp -r %{gosc_scripts} %{buildroot}/usr/share/open-vm-tools/
+install -p -m 644 %{SOURCE2} %{buildroot}/lib/systemd/system
+install -p -m 644 %{SOURCE3} %{buildroot}/lib/systemd/system
 
-#stuff to enable vmtoolsd service
-cat >> %{buildroot}/lib/systemd/system/vmtoolsd.service <<-EOF
-[Unit]
-Description=Service for virtual machines hosted on VMware
-Documentation=http://open-vm-tools.sourceforge.net/about.php
-ConditionVirtualization=vmware
-Requires=vgauthd.service
-After=cloud-final.service
-
-[Service]
-ExecStart=/usr/bin/vmtoolsd
-TimeoutStopSec=5
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-# vmware-vmblock-fuse service
-cat >> %{buildroot}/lib/systemd/system/vmware-vmblock-fuse.service <<-EOF
-[Unit]
-Description=Open Virtual Machine Tools (vmware-vmblock-fuse)
-ConditionVirtualization=vmware
-
-[Service]
-Type=simple
-ExecStartPre=/usr/bin/mkdir -p /run/vmblock-fuse
-ExecStart=/usr/bin/vmware-vmblock-fuse -d -f -o subtype=vmware-vmblock,default_permissions,allow_other /run/vmblock-fuse
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-
-# Mount shared folders
-cat >> %{buildroot}/lib/systemd/system/mnt-hgfs.mount <<-EOF
-[Unit]
-Description=Load VMware shared folders
-ConditionPathExists=.host:/
-ConditionVirtualization=vmware
-
-[Mount]
-What=.host:/
-Where=/mnt/hgfs/
-Type=vmhgfs
-Options=defaults,noatime
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-#vgauthd service
-cat >> %{buildroot}/lib/systemd/system/vgauthd.service <<-EOF
-[Unit]
-Description=VGAuth Service for open-vm-tools
-Documentation=http://github.com/vmware/open-vm-tools
-ConditionVirtualization=vmware
-PartOf=vmtoolsd.service
-
-[Service]
-ExecStart=/usr/bin/VGAuthService ls -s
-TimeoutStopSec=5
-
-[Install]
-RequiredBy=vmtoolsd.service
-EOF
-
-make DESTDIR=%{buildroot} install
+cd open-vm-tools
+make DESTDIR=%{buildroot} install %{?_smp_mflags}
 rm -f %{buildroot}/sbin/mount.vmhgfs
 chmod -x %{buildroot}/etc/pam.d/vmtoolsd
+find %{buildroot}/usr/lib/ -name '*.la' -delete
 
-# Move vm-support to /usr/bin
-mv %{buildroot}%{_sysconfdir}/vmware-tools/vm-support %{buildroot}%{_bindir}
+%check
+make %{?_smp_mflags} check
 
 %post
 /sbin/ldconfig
-systemctl enable vmware-vmblock-fuse.service
-%systemd_post vgauthd.service vmtoolsd.service vmware-vmblock-fuse.service mnt-hgfs.mount
-/bin/systemctl enable mnt-hgfs.mount
-/sbin/depmod
+%systemd_post vgauthd.service vmtoolsd.service
 
 %preun
-%systemd_preun vmtoolsd.service vgauthd.service vmware-vmblock-fuse.service mnt-hgfs.mount
-/bin/systemctl disable mnt-hgfs.mount
-
+%systemd_preun vmtoolsd.service vgauthd.service
 # Tell VMware that open-vm-tools is being uninstalled
 if [ "$1" = "0" -a                      \
      -e %{_bindir}/vmware-checkvm -a    \
@@ -143,33 +120,202 @@ if [ "$1" = "0" -a                      \
    %{_bindir}/vmware-rpctool 'tools.set.version 0' &> /dev/null || /bin/true
 fi
 
-%postun	
+%postun
 /sbin/ldconfig
-%systemd_postun_with_restart vmtoolsd.service vgauthd.service vmware-vmblock-fuse.service mnt-hgfs.mount
+%systemd_postun_with_restart vmtoolsd.service vgauthd.service
 
-%files 
+%files
 %defattr(-,root,root)
-%{_libdir}/open-vm-tools/plugins/*
-%{_libdir}/*.so
+%dir %{_libdir}/open-vm-tools
+%dir %{_libdir}/open-vm-tools/plugins
+%dir %{_libdir}/open-vm-tools/plugins/common
+%dir %{_libdir}/open-vm-tools/plugins/vmsvc
+%{_libdir}/open-vm-tools/plugins/vmsvc/libdeployPkgPlugin.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libguestInfo.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libpowerOps.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libresolutionKMS.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libtimeSync.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libvmbackup.so
+%{_libdir}/open-vm-tools/plugins/common/libhgfsServer.so
+%{_libdir}/open-vm-tools/plugins/common/libvix.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libappInfo.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libgdp.so
+%{_libdir}/open-vm-tools/plugins/vmsvc/libguestStore.so
+%{_libdir}/open-vm-tools/plugins/vmusr/libdesktopEvents.so
+%{_libdir}/open-vm-tools/plugins/vmusr/libresolutionSet.so
+%{_libdir}/udev/rules.d/99-vmware-scsi-udev.rules
 %{_libdir}/*.so.*
-%{_libdir}/*.la
-%{_libdir}/pkgconfig/*.pc
-%{_includedir}/*
 %{_bindir}/*
 %{_sysconfdir}/*
 %{_datadir}/*
 /lib/*
 %{_sbindir}/*
 
+%files devel
+%defattr(-,root,root)
+%{_libdir}/pkgconfig/*.pc
+%{_includedir}/*
+%{_libdir}/*.so
+
+%files sdmp
+%defattr(-,root,root)
+%{_libdir}/open-vm-tools/plugins/vmsvc/libserviceDiscovery.so
+%{_libdir}/open-vm-tools/serviceDiscovery/scripts/get-versions.sh
+%{_libdir}/open-vm-tools/serviceDiscovery/scripts/get-connection-info.sh
+%{_libdir}/open-vm-tools/serviceDiscovery/scripts/get-listening-process-info.sh
+%{_libdir}/open-vm-tools/serviceDiscovery/scripts/get-listening-process-perf-metrics.sh
+
 %changelog
-*	Wed Nov 15 2017 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 10.0.5-2
--	Updated build requires & requires to build with Photon 2.0
-*	Fri Aug 26 2016 Harish Udaiya Kumar <hudaiyakumar@vmware.com> 10.0.5-1
--	Upgraded to version 10.0.5, using the original naming conventions for release.
-	Updated the spec to match Photon version. 
-*   Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-256
+*   Tue Jun 22 2021 Shreenidhi Shedi <sshedi@vmware.com> 11.3.0-1
+-   Upgrade to version 11.3.0
+*   Sat Jan 16 2021 Shreenidhi Shedi <sshedi@vmware.com> 11.2.5-1
+-   Upgrade to version 11.2.5 & enabled sdmp plugin support
+*   Mon Nov 09 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.2.0-1
+-   Upgrade to version 11.2.0
+*   Thu Nov 05 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.1.5-5
+-   GOSC - add users section of cloud config yaml only if password field is present
+*   Mon Oct 12 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.1.5-4
+-   Fixed systemd in `Requires` section
+-   Updated gosc to 1.3.1 & following are new changes in gosc
+-   Explicitly make fqdn empty to change hostname
+-   Fixed DHCP setting logic while creating network file
+-   Enclose permission within single quotes
+-   Use `passwd` command to set root password in gosc-scripts as `openssl passwd` crashes in fips mode.
+*   Tue Sep 29 2020 Satya Naga Vasamsetty <svasamsetty@vmware.com> 11.1.5-3
+-   openssl 1.1.1
+*   Tue Sep 08 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.1.5-2
+-   Updated gosc-scripts version to 1.3
+-   Do 'cloud-init clean -ls' before calling init
+-   gosc scripts location changed to /usr/share/open-vm-tools/gosc-scripts/
+-   Use 'hashed_passwd' & 'lock_passwd' instead of 'passwd' & 'lock-passwd'
+*   Fri Aug 28 2020 Gerrit Photon <photon-checkins@vmware.com> 11.1.5-1
+-   Automatic Version Bump
+*   Wed Aug 12 2020 Oliver Kurth <okurth@vmware.com>
+-   remove xerces and xml-security dependencies
+*   Thu Jul 09 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.1.0-1
+-   Upgrade to version 11.1.0
+-   Added gosc DEFAULT-RUN-POST-CUST-SCRIPT changes
+*   Thu Mar 12 2020 Shreenidhi Shedi <sshedi@vmware.com> 11.0.5-1
+-   Upgrade version to 11.0.5
+*   Mon Mar 09 2020 Shreenidhi Shedi <sshedi@vmware.com> 10.3.10-9
+-   Fix gosc script vmtoolsd path - revisited
+*   Thu Feb 20 2020 Keerthana K <keerthanak@vmware.com> 10.3.10-8
+-   Fix gosc script vmtoolsd path.
+*   Wed Dec 18 2019 Shreyas B. <shreyasb@vmware.com> 10.3.10-7
+-   Start vmtoolsd after dbus service.
+*   Thu Oct 31 2019 Keerthana K <keerthanak@vmware.com> 10.3.10-6
+-   Check enable-custom-script only when there is custom script added in spec.
+*   Mon Oct 21 2019 Keerthana K <keerthanak@vmware.com> 10.3.10-5
+-   Remove the /etc/security directory from the guest vm-support bundle.
+*   Wed Oct 16 2019 Keerthana K <keerthanak@vmware.com> 10.3.10-4
+-   Change to Stop customization unless the custom script is explictly enabled by tools config.
+*   Fri Oct 11 2019 Anish Swaminathan <anishs@vmware.com> 10.3.10-3
+-   Update memory leak fix patch to include
+-   https://github.com/vmware/open-vm-tools/commit/26b9edbeb79d1c67b9ae73a0c97c48999c1fb503
+*   Thu Sep 19 2019 Keerthana K <keerthanak@vmware.com> 10.3.10-2
+-   Fix memory leak issues in vix.
+-   Added enable-custom-scripts parsing code in GOSC scripts.
+*   Wed May 08 2019 Ankit Jain <ankitja@vmware.com> 10.3.10-1
+-   Updating version to 10.3.10
+*   Wed Mar 27 2019 Anish Swaminathan <anishs@vmware.com> 10.3.0-4
+-   Start vmtoolsd before cloud-init
+*   Tue Jan 29 2019 Tapas Kundu <tkundu@vmware.com> 10.3.0-3
+-   Fix to remove all files associated with open-vm-tools on uninstallation.
+*   Mon Oct 22 2018 Ajay Kaher <akaher@vmware.com> 10.3.0-2
+-   Adding BuildArch
+*   Tue Sep 25 2018 Alexey Makhalov <amakhalov@vmware.com> 10.3.0-1
+-   Version update. Use rpcsvc-proto, libtirpc, xmlsec1
+*   Tue Jul 10 2018 Keerthana K <keerthanak@vmware.com> 10.2.0-4
+-   Fix for post custom script failure.
+*   Mon Apr 09 2018 Srivatsa S. Bhat <srivatsa@csail.mit.edu> 10.2.0-3
+-   Revert regex changes to gosc scripts.
+*   Wed Mar 21 2018 Anish Swaminathan <anishs@vmware.com> 10.2.0-2
+-   Fix gosc patch to call customization
+*   Wed Jan 24 2018 Kumar Kaushik <kaushikk@vmware.com> 10.2.0-1
+-   Updating version to 10.2.0.
+*   Tue Aug 22 2017 Kumar Kaushik <kaushikk@vmware.com> 10.1.10-1
+-   Updating version to 10.1.10, removing upstream patches.
+*   Fri Jun 23 2017 Xiaolin Li <xiaolinl@vmware.com> 10.1.5-6
+-   Add libdnet-devel and libmspack-devel to BuildRequires, add devel package.
+*   Mon Jun 05 2017 Bo Gan <ganb@vmware.com> 10.1.5-5
+-   Fix dependency
+*   Thu Apr 20 2017 Kumar Kaushik <kaushikk@vmware.com> 10.1.5-4
+-   Timezone customization, PR # 1684889
+*   Fri Apr 07 2017 Kumar Kaushik <kaushikk@vmware.com> 10.1.5-3
+-   Applying tmp race condition patch, PR #1733669
+*   Fri Mar 24 2017 Alexey Makhalov <amakhalov@vmware.com> 10.1.5-2
+-   Added *-sysmacros.patch to fix build issue with glibc-2.25
+*   Fri Mar 03 2017 Kumar Kaushik <kaushikk@vmware.com> 10.1.5-1
+-   Updating version to 10.1.5
+*   Wed Dec 07 2016 Xiaolin Li <xiaolinl@vmware.com> 10.1.0-2
+-   BuildRequires Linux-PAM-devel
+*   Mon Nov 21 2016 Kumar Kaushik <kaushikk@vmware.com> 10.1.0-1
+-   Updating version to 10.1.0
+*   Wed Oct 05 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-14
+-   Adding proper entry to /etc/hosts for IPv6.
+*   Tue Oct 04 2016 ChangLee <changLee@vmware.com> 10.0.5-13
+-   Modified %check
+*   Thu Jun 23 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-12
+-   Avoiding recustomization of hostname, bug#1678537.
+*   Mon Jun 13 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-11
+-   Adding IPv6 Support for VCHA in customization.
+*   Tue May 24 2016 Priyesh Padmavilasom <ppadmavilasom@vmware.com> 10.0.5-10
+-   GA - Bump release of all rpms
+*   Wed May 04 2016 Anish Swaminathan <anishs@vmware.com> 10.0.5-9
+-   Edit scriptlets.
+*   Fri Apr 29 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-8
+-   Combining all GOSC scripts patches and fixing bug#1648133.
+*   Tue Apr 19 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-7
+-   Fixing libDeploy not to overwrite for SRM cust needs.
+*   Tue Mar 29 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-6
+-   Replacing timedatectl with systemd patch..
+*   Fri Mar 25 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-5
+-   Time data ctl fix for ignoring message print in stderr.
+*   Tue Feb 09 2016 Mahmoud Bassiouny <mbassiouny@vmware.com> 10.0.5-4
+-   Preserve network onboot config.
+*   Wed Feb 03 2016 Anish Swaminathan <anishs@vmware.com> 10.0.5-3
+-   Add vgauthd service.
+*   Tue Feb 02 2016 Kumar Kaushik <kaushikk@vmware.com> 10.0.5-2
+-   Making interface file name according to convention.
+*   Tue Jan 26 2016 Anish Swaminathan <anishs@vmware.com> 10.0.5-1
+-   Upgrade version.
+*   Wed Dec 09 2015 Anish Swaminathan <anishs@vmware.com> 10.0.0-13
+-   Edit post script.
+*   Fri Nov 27 2015 Sharath George <sharathg@vmware.com> 10.0.0-12
+-   Correcting path of pam file.
+*   Tue Sep 15 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-11
+-   Adding ssh RSA public support for password-less login.
+*   Wed Sep 09 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-10
+-   Adding option to modify /etc/hosts for lightwave on optional basis.
+*   Wed Sep 09 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-9
+-   Fixing once in while issue related to customization failure.
+*   Wed Sep 02 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-8
+-   Fixing systemd cloud-init and GOSC cloud-init race.
+*   Tue Sep 01 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-7
+-   Fixing GOSC counter bug.
+*   Wed Aug 26 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-6
+-   Avoiding reboot after successful customization.
+*   Tue Aug 25 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-5
+-   Adding support for NFS mount in GOSC scripts.
+*   Thu Aug 20 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-4
+-   Fixing GOSC-libdeploy return code problem.
+*   Thu Aug 13 2015 Kumar Kaushik <kaushikk@vmware.com> 10.0.0-3
+-   Combining all GOSC patches and adding support for lightwave.
+*   Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-2
+-   Build with fuse support.
+*   Wed Aug 12 2015 Alexey Makhalov <amakhalov@vmware.com> 10.0.0-1
 -   Update version to 10.0.0.
-*	Tue Apr 21 2015 Divya Thaluru <dthaluru@vmware.com> 9.10.0-2
-	Added open-vm-tools-stderr_r-fix upstream patch and removed glibc patch.
-*	Thu Nov 06 2014 Sharath George <sharathg@vmware.com> 9.10.0-1
-	Initial version
+*   Tue Aug 11 2015 Kumar Kaushik <kaushikk@vmware.com> 9.10.0-7
+-   VCA initial login password issue fix.
+*   Wed Aug 05 2015 Kumar Kaushik <kaushikk@vmware.com> 9.10.0-6
+-   Adding preun and post install commands.
+*   Thu Jul 30 2015 Kumar Kaushik <kaushikk@vmware.com> 9.10.0-5
+-   Adding Blob configuation support to GOSC scripts.
+*   Thu Jul 09 2015 Kumar Kaushik <kaushikk@vmware.com> 9.10.0-4
+-   Fixing GOSC to work on VCA.
+*   Tue Apr 21 2015 Kumar Kaushik <kaushikk@vmware.com> 9.10.0-3
+-   Adding guest optimizations support for photon.
+*   Tue Apr 21 2015 Divya Thaluru <dthaluru@vmware.com> 9.10.0-2
+-   Added open-vm-tools-stderr_r-fix upstream patch and removed glibc patch.
+*   Thu Nov 06 2014 Sharath George <sharathg@vmware.com> 9.10.0-1
+-   Initial version

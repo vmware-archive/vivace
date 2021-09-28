@@ -9,23 +9,23 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
 %define sha1 libXft=697ff9108deeabb66b91a478e10fe962e3c097a3
-BuildRequires:	libXrender-devel xfontconfig-devel
-Requires:	libXrender xfontconfig
+BuildRequires:	libXrender-devel
+Requires:	libXrender
 %description
 The X11 Xft runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	libXrender-devel xfontconfig-devel
+Requires:	libXrender-devel
 %description	devel
 It contains the libraries and header files to create applications
 %prep
-%setup -q
+%autosetup
 %build
 %configure
 make %{?_smp_mflags}
 %install
-make DESTDIR=%{buildroot} install
+make %{?_smp_mflags} DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*

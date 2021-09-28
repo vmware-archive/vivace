@@ -9,17 +9,17 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://dl.suckless.org/st/st-%{version}.tar.gz
 %define sha1 st=eee1b7d271ef7bdceaa8d36c30f0c468c3647f94
-BuildRequires:	libX11-devel libXft-devel xfontconfig-devel
-Requires:	libX11 libXft xfontconfig
+BuildRequires:	libXft-devel
+Requires:	libXft
 %description
 st is a simple terminal implementation for X.
 %prep
-%setup -q
+%autosetup
 %build
 sed -i '/setlocale/d' x.c
 make %{?_smp_mflags} CC=gcc
 %install
-make DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
+make %{?_smp_mflags} DESTDIR=%{buildroot} PREFIX=%{_prefix}  install
 %files
 %defattr(-,root,root)
 %{_bindir}/*

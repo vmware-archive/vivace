@@ -9,24 +9,24 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/libX11-%{version}.tar.bz2
 %define sha1 libX11=ff503c816f1e812070ac0e1841bc3634c3b370b6
-BuildRequires:	xtrans
-Requires:	xfontconfig libxcb
+BuildRequires:	xtrans xorgproto fontconfig-devel libxcb-devel
+Requires:	fontconfig libxcb
 Provides:	pkgconfig(x11)
 %description
 Core X11 protocol client library.
 %package	devel
 Summary:	Header and development files for libX11
 Requires:	%{name} = %{version}
-Requires:	xtrans
+Requires:	xtrans xorgproto fontconfig-devel libxcb-devel
 %description	devel
 It contains the libraries and header files to create applications
 %prep
-%setup -q
+%autosetup
 %build
 %configure
 make %{?_smp_mflags}
 %install
-make DESTDIR=%{buildroot} install
+make %{?_smp_mflags} DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*

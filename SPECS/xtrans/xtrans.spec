@@ -10,18 +10,18 @@ Distribution:	Photon
 BuildArch:	noarch
 Source0:	ftp://ftp.x.org/pub/individual/lib/xtrans-%{version}.tar.bz2
 %define sha1 xtrans=7c490026efb450798e02b040c05eba5212291c08
-BuildRequires:	pkg-config xfreetype2-devel xfreetype2 util-macros xfontconfig-devel libxcb-devel
-Requires:	libxcb-devel util-macros
+BuildRequires:	pkg-config freetype2-devel util-macros fontconfig-devel libxcb-devel
+Requires:	libxcb util-macros freetype2 fontconfig
 Provides:	xtrans-devel = %{version}-%{release}
 %description
 This is a dev package. it contains header and development files
 %prep
-%setup -q
+%autosetup
 %build
 %configure
 make %{?_smp_mflags}
 %install
-make DESTDIR=%{buildroot} install
+make %{?_smp_mflags} DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_datadir}

@@ -10,16 +10,16 @@ Distribution:	Photon
 Source0:	https://dl.suckless.org/dwm/dwm-6.2.tar.gz
 %define sha1 dwm=3b73a7830b060f46cb9165ea951be7c08f6eae33
 Source1:	dwm.xinitrc
-BuildRequires:	libXinerama-devel libXft-devel xfontconfig-devel libX11-devel
-Requires:	xorg-server libXinerama libXft xfontconfig libX11
+BuildRequires:	libXinerama-devel libXft-devel
+Requires:	xorg-server libXinerama libXft
 %description
 dwm is a dynamic window manager for X
 %prep
-%setup -q
+%autosetup
 %build
 make %{?_smp_mflags}
 %install
-make DESTDIR=%{buildroot} PREFIX=%{_prefix} install
+make %{?_smp_mflags} DESTDIR=%{buildroot} PREFIX=%{_prefix} install
 install -vdm 755 %{buildroot}/etc/skel
 cp %{SOURCE1} %{buildroot}/etc/skel/.xinitrc
 

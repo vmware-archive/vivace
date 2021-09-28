@@ -9,23 +9,23 @@ Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
 %define sha1 libXfont=b21b000ba527e05f77c2ec53855d2793b19189ba
-BuildRequires:	libfontenc-devel xfreetype2-devel xtrans
-Requires:	libfontenc xfreetype2
+BuildRequires:	libfontenc-devel freetype2-devel xtrans
+Requires:	libfontenc freetype2
 %description
 The X11 Xfont runtime library.
 %package	devel
 Summary:	Header and development files
 Requires:	%{name} = %{version}
-Requires:	libfontenc-devel xfreetype2-devel xtrans
+Requires:	libfontenc-devel freetype2-devel xtrans
 %description	devel
 It contains the libraries and header files to create applications
 %prep
-%setup -q
+%autosetup
 %build
 %configure --disable-devel-docs
 make %{?_smp_mflags}
 %install
-make DESTDIR=%{buildroot} install
+make %{?_smp_mflags} DESTDIR=%{buildroot} install
 %files
 %defattr(-,root,root)
 %{_libdir}/*

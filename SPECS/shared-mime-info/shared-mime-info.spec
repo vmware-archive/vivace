@@ -1,30 +1,38 @@
 Summary:	MIME database
 Name:		shared-mime-info
-Version:	1.4
+Version:	2.1
 Release:	1%{?dist}
 License:	GPLv2+
 URL:		http://freedesktop.org
 Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
-Source0:	http://freedesktop.org/~hadess/%{name}-%{version}.tar.xz
-%define sha1 shared-mime-info=f7a3881acca3df1d9757d670e99d2d56ac9f7bca
-BuildRequires:	intltool glib-devel libxml2-devel
-Requires:	gettext glib libxml2
+Source0:	https://gitlab.freedesktop.org/xdg/%{name}/-/archive/%{version}/%{name}-%{version}.tar.gz
+%define sha1 shared-mime-info=3d41d131350eec61e00f6fa26e6bfd6e242d8ef4
+BuildRequires:  meson >= 0.50
+BuildRequires:  ninja-build
+BuildRequires:	itstool xmlto glib-devel libxml2-devel
+Requires:	itstool xmlto glib libxml2
 %description
 The Shared Mime Info package contains a MIME database. This allows central updates of MIME information for all supporting applications.
 %prep
-%setup -q
+%autosetup
 %build
-./configure --prefix=%{_prefix}
-#make %{?_smp_mflags}
-make
+sed -i "s/xmlto,/xmlto, '--skip-validation',/" data/meson.build
+mkdir build
+cd build
+meson --prefix=/usr --buildtype=release -Dupdate-mimedb=true ..
+ninja
 %install
-make DESTDIR=%{buildroot} install
+pushd build
+DESTDIR=%{buildroot} ninja install
+popd
 %files
 %defattr(-,root,root)
 %{_bindir}
 %{_datadir}
 %changelog
-*	Wed Jun 3 2015 Alexey Makhalov <amakhalov@vmware.com> 1.4-1
--	initial version
+* Fri Aug 06 2021 Alexey Makhalov <amakhalov@vmware.com> 2.1-1
+- Version update
+* Wed Jun 3 2015 Alexey Makhalov <amakhalov@vmware.com> 1.4-1
+- initial version

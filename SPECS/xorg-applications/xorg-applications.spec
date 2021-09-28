@@ -79,13 +79,14 @@ Source34:	http://ftp.x.org/pub/individual/app/xwininfo-1.1.5.tar.bz2
 %define sha1 xwininfo=9f67b1eb07c5824d437bf577cf6198962af1aeb7
 Source35:	http://ftp.x.org/pub/individual/app/xwud-1.0.5.tar.bz2
 %define sha1 xwud=a85d84a1b81f8e667ea6ac126d447590c93eb079
-BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel xfreetype2-devel libXau-devel libXfont2-devel
-Requires:	libpng mesa xcb-util libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv xfreetype2 libXau libXfont2
+BuildRequires:	libpng-devel mesa-devel xbitmaps xcb-util-devel libxkbfile-devel libX11-devel libXt-devel libXmu-devel libXext-devel libXcursor-devel libXrender-devel libXfixes-devel libXtst-devel libXi-devel libXrandr-devel libXxf86vm-devel libXinerama-devel libXaw-devel libXpm-devel libXv-devel freetype2-devel libXau-devel libXfont2-devel
+Requires:	libpng mesa xcb-util libxkbfile libX11 libXt libXmu libXext libXcursor libXrender libXfixes libXtst libXi libXrandr libXxf86vm libXinerama libXaw libXpm libXv freetype2 libXau libXfont2
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations.
 %description
 The Xorg applications provide the expected applications available in previous X Window implementations.
 %prep
+# Using autosetup is not feasible
 %setup -q -c %{name}-%{version} -a0 -a1 -a2 -a3 -a4 -a5 -a6 -a7 -a8 -a9 -a10 -a11 -a12 -a13 -a14 -a15 -a16 -a17 -a18 -a19 -a20 -a21 -a22 -a23 -a24 -a25 -a26 -a27 -a28 -a29 -a30 -a31 -a32 -a33 -a34 -a35
 %build
 for pkg in `ls` ; do
