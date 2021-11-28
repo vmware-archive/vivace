@@ -1,7 +1,7 @@
 Summary:	dwm is a dynamic window manager for X
 Name:		dwm
 Version:	6.2
-Release:	1%{?dist}
+Release:	2%{?dist}
 License:	MIT/X
 URL:		https://dwm.suckless.org/
 Group:		System Environment/Libraries
@@ -10,12 +10,13 @@ Distribution:	Photon
 Source0:	https://dl.suckless.org/dwm/dwm-6.2.tar.gz
 %define sha1 dwm=3b73a7830b060f46cb9165ea951be7c08f6eae33
 Source1:	dwm.xinitrc
+Patch0:		nightly_to_display-9.patch
 BuildRequires:	libXinerama-devel libXft-devel
 Requires:	xorg-server libXinerama libXft
 %description
 dwm is a dynamic window manager for X
 %prep
-%autosetup
+%autosetup -p1
 %build
 make %{?_smp_mflags}
 %install
@@ -36,5 +37,7 @@ fi
 %{_bindir}/*
 %{_mandir}/*
 %changelog
+* Wed Nov 24 2021 Alexey Makhalov <amakhalov@vmware.com> 6.2-2
+- Move Nighty (Firefox) to desktop 9
 * Wed Jun 12 2019 Alexey Makhalov <amakhalov@vmware.com> 6.2-1
 - initial version

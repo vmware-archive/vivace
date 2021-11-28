@@ -1,0 +1,11 @@
+diff -u dwm-6.2.orig/config.def.h dwm-6.2/config.def.h
+--- dwm-6.2.orig/config.def.h	2019-02-02 12:55:28.000000032 +0000
++++ dwm-6.2/config.def.h	2021-11-28 05:08:39.475293960 +0000
+@@ -29,6 +29,7 @@
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+ 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+ 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "Nightly",   NULL,       NULL,       1 << 8,       0,           -1 },
+ };
+ 
+ /* layout(s) */

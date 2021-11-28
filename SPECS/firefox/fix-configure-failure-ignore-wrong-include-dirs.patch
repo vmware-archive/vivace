@@ -1,12 +1,12 @@
-diff -aur firefox-78.12.0_orig/python/mozbuild/mozbuild/frontend/gyp_reader.py firefox-78.12.0/python/mozbuild/mozbuild/frontend/gyp_reader.py
---- firefox-78.12.0_orig/python/mozbuild/mozbuild/frontend/gyp_reader.py	2021-08-07 07:39:32.616362144 +0000
-+++ firefox-78.12.0/python/mozbuild/mozbuild/frontend/gyp_reader.py	2021-08-07 07:39:03.680361110 +0000
-@@ -291,6 +291,8 @@
-                             mozpath.dirname(build_file), include))
-                     if not include.startswith(('!', '%')) and not os.path.exists(resolved):
+diff -aur firefox-91.3.0_orig/python/mozbuild/mozbuild/frontend/gyp_reader.py firefox-91.3.0/python/mozbuild/mozbuild/frontend/gyp_reader.py
+--- firefox-91.3.0_orig/python/mozbuild/mozbuild/frontend/gyp_reader.py	2021-08-07 07:39:32.616362144 +0000
++++ firefox-91.3.0/python/mozbuild/mozbuild/frontend/gyp_reader.py	2021-08-07 07:39:03.680361110 +0000
+@@ -330,6 +330,8 @@
+                         resolved
+                     ):
                          continue
 +                    if include == "%":
 +                        continue
-                 context['LOCAL_INCLUDES'] += [include]
+                 context["LOCAL_INCLUDES"] += [include]
  
-             context['ASFLAGS'] = target_conf.get('asflags_mozilla', [])
+             context["ASFLAGS"] = target_conf.get("asflags_mozilla", [])

@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 Summary:	Firefox is a stand-alone browser based on the Mozilla codebase.
 Name:		firefox
-Version:	78.12.0
+Version:	91.3.0
 Release:	1%{?dist}
 License:	MPLv1.1 or GPLv2+ or LGPLv2+
 URL:		http://www.mozilla.org/projects/firefox
@@ -9,16 +9,18 @@ Group:		Applications/Internet
 Vendor:		VMware, Inc.
 Distribution:	Photon
 Source0:	https://ftp.mozilla.org/pub/%{name}/releases/%{version}esr/source/%{name}-%{version}esr.source.tar.xz
-%define sha1 firefox=83ae378d8bddd9efc5badb99a6246979313f7134
+%define sha1 firefox=bbd5d3a8d445115d9a70494d58f109ec15f2069e
 Patch0:		fix-configure-failure-ignore-wrong-include-dirs.patch
 Source1:        %{name}.desktop
 BuildRequires:  clang-devel rust curl cbindgen nasm yasm
-BuildRequires:	libevent-devel autoconf213 gtk2-devel gtk3-devel which python3-devel python3-libs unzip zip nspr-devel nss-devel icu-devel zlib-devel alsa-lib-devel libffi nodejs-devel libpng-devel libXcomposite-devel libnotify-devel libXcursor-devel dbus-glib-devel
-#BuildRequires:	desktop-file-utils
-# GConf-devel libXdamage-devel libXt-devel
-Requires:	gtk2 gtk3 nspr nss icu libevent zlib alsa-lib libffi nodejs libpng libXcomposite libnotify libXcursor dbus-glib
-#desktop-file-utils
-# GConf libXdamage libXt
+BuildRequires:	libevent-devel autoconf213 gtk2-devel gtk3-devel which python3-devel python3-libs unzip zip zlib-devel alsa-lib-devel libffi nodejs-devel libpng-devel libXcomposite-devel libnotify-devel libXcursor-devel dbus-glib-devel
+BuildRequires:  nspr-devel >= 4.32
+BuildRequires:  icu-devel >= 69.1
+BuildRequires:  nss-devel >= 3.68
+Requires:       gtk2 gtk3 libevent zlib alsa-lib libffi nodejs libpng libXcomposite libnotify libXcursor dbus-glib
+Requires:       nspr >= 4.32
+Requires:       icu >= 69.1
+Requires:       nss >= 3.68
 %description
 Firefox is a stand-alone browser based on the Mozilla codebase.
 %prep
@@ -30,16 +32,10 @@ cat > mozconfig << "EOF"
 # uncommenting the next line and setting a valid number of CPU cores.
 #mk_add_options MOZ_MAKE_FLAGS="-j1"
 
-# If you have installed DBus-Glib comment out this line:
-#ac_add_options --disable-dbus
-
 # If you have installed dbus-glib, and you have installed (or will install)
 # wireless-tools, and you wish to use geolocation web services, comment out
 # this line
 ac_add_options --disable-necko-wifi
-
-# Uncomment this option if you wish to build with gtk+-3
-#ac_add_options --enable-default-toolkit=cairo-gtk3
 
 # Uncomment these lines if you have installed optional dependencies:
 #ac_add_options --enable-system-hunspell
@@ -49,28 +45,17 @@ ac_add_options --disable-necko-wifi
 ac_add_options --disable-pulseaudio
 ac_add_options --enable-alsa
 
-# Stylo is the new CSS code, including the rust 'style'
-# package. It is enabled by default but requires clang.
-# Uncomment this if you do not wish to use stylo.
-#ac_add_options --disable-stylo
-
 # Comment out following options if you have not installed
 # recommended dependencies:
-# configure: error: System SQLite library is not compiled with SQLITE_SECURE_DELETE.
-#ac_add_options --enable-system-sqlite
+ac_add_options --with-system-icu
 ac_add_options --with-system-libevent
 #ac_add_options --with-system-libvpx
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
-ac_add_options --with-system-icu
+#ac_add_options --with-system-webp
 
-# The BLFS editors recommend not changing anything below this line:
-ac_add_options --prefix=/usr
-ac_add_options --enable-application=browser
-
-ac_add_options --disable-crashreporter
-ac_add_options --disable-updater
-ac_add_options --disable-tests
+# You cannot distribute the binary if you do this
+#ac_add_options --enable-official-branding
 
 ac_add_options --disable-strip
 ac_add_options --disable-install-strip
@@ -85,8 +70,12 @@ ac_add_options --disable-debug-symbols
 # libxul.so by a few MB - comment this if you know your machine is not affected.
 ac_add_options --disable-elf-hack
 
-# You cannot distribute the binary if you do this
-ac_add_options --enable-official-branding
+# The BLFS editors recommend not changing anything below this line:
+ac_add_options --prefix=/usr
+ac_add_options --enable-application=browser
+ac_add_options --disable-crashreporter
+ac_add_options --disable-updater
+ac_add_options --disable-tests
 
 # Optimization for size is broken with gcc7 and gcc6 for aarch64
 # Build with gcc>=5 requires -fno-lifetime-dse
@@ -95,16 +84,11 @@ ac_add_options --enable-official-branding
 # The default level of optimization again produces a working build with gcc.
 ac_add_options --enable-optimize
 
-# From firefox-40, using system cairo causes firefox to crash
-# frequently when it is doing background rendering in a tab.
-# This appears to again work in firefox-56
-#ac_add_options --enable-system-cairo
 ac_add_options --enable-system-ffi
 ac_add_options --enable-system-pixman
-
 ac_add_options --with-system-jpeg
 # --with-system-png won't work because the system's libpng doesn't have APNG support
-# ac_add_options --with-system-png
+#ac_add_options --with-system-png
 ac_add_options --with-system-zlib
 
 # The following option unsets Telemetry Reporting. With the Addons Fiasco,
@@ -126,17 +110,20 @@ EOF
 # Firefox build is multithreaded by itself
 export AUTOCONF=/usr/bin/autoconf2.13
 export CC=gcc CXX=g++
+export MACH_USE_SYSTEM_PYTHON=1
 export MOZBUILD_STATE_PATH=${PWD}/mozbuild
 ./mach configure
 ./mach build
 %install
-DESTDIR=%{buildroot} ./mach install
+DESTDIR=%{buildroot} MACH_USE_SYSTEM_PYTHON=1 ./mach install
 
 %files
 %defattr(-,root,root)
 %{_bindir}/%{name}
 %{_libdir}/%{name}/
 %changelog
+* Tue Nov 23 2021 Alexey Makhalov <amakhalov@vmware.com> 91.3.0-1
+- Version update
 * Thu Aug 05 2021 Alexey Makhalov <amakhalov@vmware.com> 78.12.0-1
 - Version update
 * Thu Jun 13 2019 Alexey Makhalov <amakhalov@vmware.com> 51.0.1-1
